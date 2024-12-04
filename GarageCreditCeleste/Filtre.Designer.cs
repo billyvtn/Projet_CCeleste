@@ -29,20 +29,20 @@ namespace GarageCreditCeleste
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.btnFermer = new System.Windows.Forms.Button();
+            this.txtPuissanceMaxi = new System.Windows.Forms.TextBox();
+            this.txtPuissanceMini = new System.Windows.Forms.TextBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.button4 = new System.Windows.Forms.Button();
+            this.txtKilometrageMaxi = new System.Windows.Forms.TextBox();
+            this.txtKilometrageMini = new System.Windows.Forms.TextBox();
+            this.btnAppliquer = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.cboMarque = new System.Windows.Forms.ComboBox();
+            this.txtPrixMaxi = new System.Windows.Forms.TextBox();
+            this.txtPrixMini = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtAnneeMaxi = new System.Windows.Forms.TextBox();
+            this.txtAnneeMini = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -53,38 +53,38 @@ namespace GarageCreditCeleste
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // button1
+            // btnFermer
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
-            this.button1.Location = new System.Drawing.Point(288, 412);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(84, 28);
-            this.button1.TabIndex = 44;
-            this.button1.Text = "Fermer";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnFermer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
+            this.btnFermer.Location = new System.Drawing.Point(288, 412);
+            this.btnFermer.Name = "btnFermer";
+            this.btnFermer.Size = new System.Drawing.Size(84, 28);
+            this.btnFermer.TabIndex = 44;
+            this.btnFermer.Text = "Fermer";
+            this.btnFermer.UseVisualStyleBackColor = true;
             // 
-            // textBox7
+            // txtPuissanceMaxi
             // 
-            this.textBox7.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.textBox7.Location = new System.Drawing.Point(188, 27);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(114, 23);
-            this.textBox7.TabIndex = 1;
-            this.textBox7.Text = "Maximum";
+            this.txtPuissanceMaxi.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.txtPuissanceMaxi.Location = new System.Drawing.Point(188, 27);
+            this.txtPuissanceMaxi.Name = "txtPuissanceMaxi";
+            this.txtPuissanceMaxi.Size = new System.Drawing.Size(114, 23);
+            this.txtPuissanceMaxi.TabIndex = 1;
+            this.txtPuissanceMaxi.Text = "Maximum";
             // 
-            // textBox8
+            // txtPuissanceMini
             // 
-            this.textBox8.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.textBox8.Location = new System.Drawing.Point(56, 27);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(114, 23);
-            this.textBox8.TabIndex = 0;
-            this.textBox8.Text = "Minimum";
+            this.txtPuissanceMini.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.txtPuissanceMini.Location = new System.Drawing.Point(56, 27);
+            this.txtPuissanceMini.Name = "txtPuissanceMini";
+            this.txtPuissanceMini.Size = new System.Drawing.Size(114, 23);
+            this.txtPuissanceMini.TabIndex = 0;
+            this.txtPuissanceMini.Text = "Minimum";
             // 
             // groupBox5
             // 
-            this.groupBox5.Controls.Add(this.textBox7);
-            this.groupBox5.Controls.Add(this.textBox8);
+            this.groupBox5.Controls.Add(this.txtPuissanceMaxi);
+            this.groupBox5.Controls.Add(this.txtPuissanceMini);
             this.groupBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
             this.groupBox5.Location = new System.Drawing.Point(12, 336);
             this.groupBox5.Name = "groupBox5";
@@ -93,38 +93,38 @@ namespace GarageCreditCeleste
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Puissance";
             // 
-            // textBox5
+            // txtKilometrageMaxi
             // 
-            this.textBox5.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.textBox5.Location = new System.Drawing.Point(188, 27);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(114, 23);
-            this.textBox5.TabIndex = 1;
-            this.textBox5.Text = "Maximum";
+            this.txtKilometrageMaxi.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.txtKilometrageMaxi.Location = new System.Drawing.Point(188, 27);
+            this.txtKilometrageMaxi.Name = "txtKilometrageMaxi";
+            this.txtKilometrageMaxi.Size = new System.Drawing.Size(114, 23);
+            this.txtKilometrageMaxi.TabIndex = 1;
+            this.txtKilometrageMaxi.Text = "Maximum";
             // 
-            // textBox6
+            // txtKilometrageMini
             // 
-            this.textBox6.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.textBox6.Location = new System.Drawing.Point(56, 27);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(114, 23);
-            this.textBox6.TabIndex = 0;
-            this.textBox6.Text = "Minimum";
+            this.txtKilometrageMini.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.txtKilometrageMini.Location = new System.Drawing.Point(56, 27);
+            this.txtKilometrageMini.Name = "txtKilometrageMini";
+            this.txtKilometrageMini.Size = new System.Drawing.Size(114, 23);
+            this.txtKilometrageMini.TabIndex = 0;
+            this.txtKilometrageMini.Text = "Minimum";
             // 
-            // button4
+            // btnAppliquer
             // 
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
-            this.button4.Location = new System.Drawing.Point(198, 412);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(84, 28);
-            this.button4.TabIndex = 43;
-            this.button4.Text = "Appliquer";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnAppliquer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
+            this.btnAppliquer.Location = new System.Drawing.Point(198, 412);
+            this.btnAppliquer.Name = "btnAppliquer";
+            this.btnAppliquer.Size = new System.Drawing.Size(84, 28);
+            this.btnAppliquer.TabIndex = 43;
+            this.btnAppliquer.Text = "Appliquer";
+            this.btnAppliquer.UseVisualStyleBackColor = true;
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.textBox5);
-            this.groupBox4.Controls.Add(this.textBox6);
+            this.groupBox4.Controls.Add(this.txtKilometrageMaxi);
+            this.groupBox4.Controls.Add(this.txtKilometrageMini);
             this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
             this.groupBox4.Location = new System.Drawing.Point(12, 260);
             this.groupBox4.Name = "groupBox4";
@@ -133,36 +133,36 @@ namespace GarageCreditCeleste
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Kilométrage";
             // 
-            // comboBox1
+            // cboMarque
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(93, 27);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(173, 25);
-            this.comboBox1.TabIndex = 0;
+            this.cboMarque.FormattingEnabled = true;
+            this.cboMarque.Location = new System.Drawing.Point(93, 27);
+            this.cboMarque.Name = "cboMarque";
+            this.cboMarque.Size = new System.Drawing.Size(173, 25);
+            this.cboMarque.TabIndex = 0;
             // 
-            // textBox3
+            // txtPrixMaxi
             // 
-            this.textBox3.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.textBox3.Location = new System.Drawing.Point(188, 27);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(114, 23);
-            this.textBox3.TabIndex = 1;
-            this.textBox3.Text = "Maximum";
+            this.txtPrixMaxi.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.txtPrixMaxi.Location = new System.Drawing.Point(188, 27);
+            this.txtPrixMaxi.Name = "txtPrixMaxi";
+            this.txtPrixMaxi.Size = new System.Drawing.Size(114, 23);
+            this.txtPrixMaxi.TabIndex = 1;
+            this.txtPrixMaxi.Text = "Maximum";
             // 
-            // textBox4
+            // txtPrixMini
             // 
-            this.textBox4.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.textBox4.Location = new System.Drawing.Point(56, 27);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(114, 23);
-            this.textBox4.TabIndex = 0;
-            this.textBox4.Text = "Minimum";
+            this.txtPrixMini.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.txtPrixMini.Location = new System.Drawing.Point(56, 27);
+            this.txtPrixMini.Name = "txtPrixMini";
+            this.txtPrixMini.Size = new System.Drawing.Size(114, 23);
+            this.txtPrixMini.TabIndex = 0;
+            this.txtPrixMini.Text = "Minimum";
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.textBox3);
-            this.groupBox2.Controls.Add(this.textBox4);
+            this.groupBox2.Controls.Add(this.txtPrixMaxi);
+            this.groupBox2.Controls.Add(this.txtPrixMini);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
             this.groupBox2.Location = new System.Drawing.Point(12, 108);
             this.groupBox2.Name = "groupBox2";
@@ -171,27 +171,27 @@ namespace GarageCreditCeleste
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Prix";
             // 
-            // textBox2
+            // txtAnneeMaxi
             // 
-            this.textBox2.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.textBox2.Location = new System.Drawing.Point(188, 27);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(114, 23);
-            this.textBox2.TabIndex = 1;
-            this.textBox2.Text = "Maximum";
+            this.txtAnneeMaxi.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.txtAnneeMaxi.Location = new System.Drawing.Point(188, 27);
+            this.txtAnneeMaxi.Name = "txtAnneeMaxi";
+            this.txtAnneeMaxi.Size = new System.Drawing.Size(114, 23);
+            this.txtAnneeMaxi.TabIndex = 1;
+            this.txtAnneeMaxi.Text = "Maximum";
             // 
-            // textBox1
+            // txtAnneeMini
             // 
-            this.textBox1.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.textBox1.Location = new System.Drawing.Point(56, 27);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(114, 23);
-            this.textBox1.TabIndex = 0;
-            this.textBox1.Text = "Minimum";
+            this.txtAnneeMini.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.txtAnneeMini.Location = new System.Drawing.Point(56, 27);
+            this.txtAnneeMini.Name = "txtAnneeMini";
+            this.txtAnneeMini.Size = new System.Drawing.Size(114, 23);
+            this.txtAnneeMini.TabIndex = 0;
+            this.txtAnneeMini.Text = "Minimum";
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.comboBox1);
+            this.groupBox3.Controls.Add(this.cboMarque);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
             this.groupBox3.Location = new System.Drawing.Point(12, 32);
             this.groupBox3.Name = "groupBox3";
@@ -202,8 +202,8 @@ namespace GarageCreditCeleste
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.txtAnneeMaxi);
+            this.groupBox1.Controls.Add(this.txtAnneeMini);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
             this.groupBox1.Location = new System.Drawing.Point(12, 184);
             this.groupBox1.Name = "groupBox1";
@@ -218,18 +218,18 @@ namespace GarageCreditCeleste
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.label8.Location = new System.Drawing.Point(163, 11);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(45, 18);
+            this.label8.Size = new System.Drawing.Size(40, 18);
             this.label8.TabIndex = 37;
-            this.label8.Text = "Filtrer";
+            this.label8.Text = "Filtre";
             // 
             // Filtre
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(384, 450);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnFermer);
             this.Controls.Add(this.groupBox5);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.btnAppliquer);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox3);
@@ -253,20 +253,20 @@ namespace GarageCreditCeleste
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.Button btnFermer;
+        private System.Windows.Forms.TextBox txtPuissanceMaxi;
+        private System.Windows.Forms.TextBox txtPuissanceMini;
         private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.TextBox txtKilometrageMaxi;
+        private System.Windows.Forms.TextBox txtKilometrageMini;
+        private System.Windows.Forms.Button btnAppliquer;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.ComboBox cboMarque;
+        private System.Windows.Forms.TextBox txtPrixMaxi;
+        private System.Windows.Forms.TextBox txtPrixMini;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtAnneeMaxi;
+        private System.Windows.Forms.TextBox txtAnneeMini;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label8;
