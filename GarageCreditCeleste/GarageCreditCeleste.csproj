@@ -70,6 +70,12 @@
     <Compile Include="Demarrage.Designer.cs">
       <DependentUpon>Demarrage.cs</DependentUpon>
     </Compile>
+    <Compile Include="Entretien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Entretien.Designer.cs">
+      <DependentUpon>Entretien.cs</DependentUpon>
+    </Compile>
     <Compile Include="Filtre.cs">
       <SubType>Form</SubType>
     </Compile>
