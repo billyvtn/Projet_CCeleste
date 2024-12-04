@@ -47,5 +47,30 @@ namespace GarageCreditCeleste
         {
             Globales.demarrage.Close();
         }
+
+        private void txtNom_Click(object sender, EventArgs e)
+        {
+            txtNom.Text = "";
+        }
+
+        private void txtPrenom_Click(object sender, EventArgs e)
+        {
+            txtPrenom.Text = "";
+        }
+
+        private void txtEmail_Click(object sender, EventArgs e)
+        {
+            txtEmail.Text = "";
+        }
+
+        private void txtAdresse_Click(object sender, EventArgs e)
+        {
+            txtAdresse.Text = "";
+        }
+
+        private void btnEnregistrer_Click(object sender, EventArgs e)
+        {
+            //enregistrer infos client objet Globales
+        }
     }
 }

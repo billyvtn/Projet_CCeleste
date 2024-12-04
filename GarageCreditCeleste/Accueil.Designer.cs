@@ -104,34 +104,47 @@ namespace GarageCreditCeleste
             this.btnEnregistrer.TabIndex = 11;
             this.btnEnregistrer.Text = "Enregistrer";
             this.btnEnregistrer.UseVisualStyleBackColor = true;
+            this.btnEnregistrer.Click += new System.EventHandler(this.btnEnregistrer_Click);
             // 
             // txtAdresse
             // 
+            this.txtAdresse.ForeColor = System.Drawing.SystemColors.ScrollBar;
             this.txtAdresse.Location = new System.Drawing.Point(78, 243);
             this.txtAdresse.Name = "txtAdresse";
             this.txtAdresse.Size = new System.Drawing.Size(197, 24);
             this.txtAdresse.TabIndex = 20;
+            this.txtAdresse.Text = "ex. 1 rue Marechal Foch";
+            this.txtAdresse.Click += new System.EventHandler(this.txtAdresse_Click);
             // 
             // txtPrenom
             // 
+            this.txtPrenom.ForeColor = System.Drawing.SystemColors.ScrollBar;
             this.txtPrenom.Location = new System.Drawing.Point(78, 143);
             this.txtPrenom.Name = "txtPrenom";
             this.txtPrenom.Size = new System.Drawing.Size(197, 24);
             this.txtPrenom.TabIndex = 19;
+            this.txtPrenom.Text = "ex. Jean";
+            this.txtPrenom.Click += new System.EventHandler(this.txtPrenom_Click);
             // 
             // txtEmail
             // 
+            this.txtEmail.ForeColor = System.Drawing.SystemColors.ScrollBar;
             this.txtEmail.Location = new System.Drawing.Point(78, 193);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(197, 24);
             this.txtEmail.TabIndex = 18;
+            this.txtEmail.Text = "ex. jean.dupont@email.fr";
+            this.txtEmail.Click += new System.EventHandler(this.txtEmail_Click);
             // 
             // txtNom
             // 
+            this.txtNom.ForeColor = System.Drawing.SystemColors.ScrollBar;
             this.txtNom.Location = new System.Drawing.Point(78, 93);
             this.txtNom.Name = "txtNom";
             this.txtNom.Size = new System.Drawing.Size(197, 24);
             this.txtNom.TabIndex = 17;
+            this.txtNom.Text = "ex. Dupont";
+            this.txtNom.Click += new System.EventHandler(this.txtNom_Click);
             // 
             // rdbCivFemme
             // 
