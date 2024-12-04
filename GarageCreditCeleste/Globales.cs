@@ -18,4 +18,13 @@ namespace GarageCreditCeleste
         public static Entretien entretien;
         public static ControleTechnique controletechnique;
     }
+
+    class Client
+    {
+        private string civilite;
+        private string nom;
+        private string prenom;
+        private string email;
+        private string adresse;
+    }
 }

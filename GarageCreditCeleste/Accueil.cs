@@ -65,7 +65,7 @@ namespace GarageCreditCeleste
 
         private void txtAdresse_Click(object sender, EventArgs e)
         {
-            txtAdresse.Text = "";
+            txtAdresseNum.Text = "";
         }
 
         private void btnEnregistrer_Click(object sender, EventArgs e)
