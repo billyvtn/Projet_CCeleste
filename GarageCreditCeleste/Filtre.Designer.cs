@@ -62,6 +62,7 @@ namespace GarageCreditCeleste
             this.btnFermer.TabIndex = 44;
             this.btnFermer.Text = "Fermer";
             this.btnFermer.UseVisualStyleBackColor = true;
+            this.btnFermer.Click += new System.EventHandler(this.btnFermer_Click);
             // 
             // txtPuissanceMaxi
             // 
@@ -120,6 +121,7 @@ namespace GarageCreditCeleste
             this.btnAppliquer.TabIndex = 43;
             this.btnAppliquer.Text = "Appliquer";
             this.btnAppliquer.UseVisualStyleBackColor = true;
+            this.btnAppliquer.Click += new System.EventHandler(this.btnAppliquer_Click);
             // 
             // groupBox4
             // 

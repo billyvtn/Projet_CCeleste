@@ -63,7 +63,7 @@ namespace GarageCreditCeleste
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
             this.groupBox1.Location = new System.Drawing.Point(15, 52);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(374, 377);
+            this.groupBox1.Size = new System.Drawing.Size(374, 387);
             this.groupBox1.TabIndex = 76;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Informations du véhicule";
@@ -212,6 +212,7 @@ namespace GarageCreditCeleste
             this.btnFermer.TabIndex = 75;
             this.btnFermer.Text = "Fermer";
             this.btnFermer.UseVisualStyleBackColor = true;
+            this.btnFermer.Click += new System.EventHandler(this.btnFermer_Click);
             // 
             // groupBox2
             // 
@@ -236,6 +237,7 @@ namespace GarageCreditCeleste
             this.btnEnregistrer.TabIndex = 78;
             this.btnEnregistrer.Text = "Enregistrer";
             this.btnEnregistrer.UseVisualStyleBackColor = true;
+            this.btnEnregistrer.Click += new System.EventHandler(this.btnEnregistrer_Click);
             // 
             // Reparation
             // 

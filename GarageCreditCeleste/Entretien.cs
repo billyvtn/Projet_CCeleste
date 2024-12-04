@@ -16,5 +16,17 @@ namespace GarageCreditCeleste
         {
             InitializeComponent();
         }
+
+        private void btnFermer_Click(object sender, EventArgs e)
+        {
+            Globales.services = new Services();
+            Globales.services.Show();
+            Globales.entretien.Close();
+        }
+
+        private void btnEnregistrer_Click(object sender, EventArgs e)
+        {
+            //enregistrer les infos du rdv dans un objet Globales
+        }
     }
 }

@@ -69,6 +69,7 @@ namespace GarageCreditCeleste
             this.btnFiltrer.TabIndex = 27;
             this.btnFiltrer.Text = "Filtrer";
             this.btnFiltrer.UseVisualStyleBackColor = true;
+            this.btnFiltrer.Click += new System.EventHandler(this.btnFiltrer_Click);
             // 
             // label3
             // 
@@ -99,6 +100,7 @@ namespace GarageCreditCeleste
             this.btnChoisir.TabIndex = 24;
             this.btnChoisir.Text = "Choisir";
             this.btnChoisir.UseVisualStyleBackColor = true;
+            this.btnChoisir.Click += new System.EventHandler(this.btnChoisir_Click);
             // 
             // btnFermer
             // 
@@ -109,6 +111,7 @@ namespace GarageCreditCeleste
             this.btnFermer.TabIndex = 23;
             this.btnFermer.Text = "Fermer";
             this.btnFermer.UseVisualStyleBackColor = true;
+            this.btnFermer.Click += new System.EventHandler(this.btnFermer_Click);
             // 
             // label2
             // 
@@ -146,6 +149,7 @@ namespace GarageCreditCeleste
             this.Controls.Add(this.label1);
             this.Name = "Acheter";
             this.Text = "Acheter";
+            this.Load += new System.EventHandler(this.Acheter_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

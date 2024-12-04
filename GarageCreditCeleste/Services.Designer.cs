@@ -51,6 +51,7 @@ namespace GarageCreditCeleste
             this.btnReparation = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnEnregistrer = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -199,7 +200,7 @@ namespace GarageCreditCeleste
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
             this.groupBox1.Location = new System.Drawing.Point(15, 52);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(374, 377);
+            this.groupBox1.Size = new System.Drawing.Size(374, 387);
             this.groupBox1.TabIndex = 54;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Informations du véhicule";
@@ -213,6 +214,7 @@ namespace GarageCreditCeleste
             this.btnFermer.TabIndex = 53;
             this.btnFermer.Text = "Fermer";
             this.btnFermer.UseVisualStyleBackColor = true;
+            this.btnFermer.Click += new System.EventHandler(this.btnFermer_Click);
             // 
             // label8
             // 
@@ -233,6 +235,7 @@ namespace GarageCreditCeleste
             this.btnEntretien.TabIndex = 51;
             this.btnEntretien.Text = "Entretien";
             this.btnEntretien.UseVisualStyleBackColor = true;
+            this.btnEntretien.Click += new System.EventHandler(this.btnEntretien_Click);
             // 
             // btnControleTechnique
             // 
@@ -243,6 +246,7 @@ namespace GarageCreditCeleste
             this.btnControleTechnique.TabIndex = 50;
             this.btnControleTechnique.Text = "Contrôle technique";
             this.btnControleTechnique.UseVisualStyleBackColor = true;
+            this.btnControleTechnique.Click += new System.EventHandler(this.btnControleTechnique_Click);
             // 
             // btnReparation
             // 
@@ -253,6 +257,7 @@ namespace GarageCreditCeleste
             this.btnReparation.TabIndex = 49;
             this.btnReparation.Text = "Réparation";
             this.btnReparation.UseVisualStyleBackColor = true;
+            this.btnReparation.Click += new System.EventHandler(this.btnReparation_Click);
             // 
             // label2
             // 
@@ -274,11 +279,23 @@ namespace GarageCreditCeleste
             this.label1.TabIndex = 47;
             this.label1.Text = "Strasbourg";
             // 
+            // btnEnregistrer
+            // 
+            this.btnEnregistrer.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.btnEnregistrer.Location = new System.Drawing.Point(395, 409);
+            this.btnEnregistrer.Name = "btnEnregistrer";
+            this.btnEnregistrer.Size = new System.Drawing.Size(90, 30);
+            this.btnEnregistrer.TabIndex = 79;
+            this.btnEnregistrer.Text = "Enregistrer";
+            this.btnEnregistrer.UseVisualStyleBackColor = true;
+            this.btnEnregistrer.Click += new System.EventHandler(this.btnEnregistrer_Click);
+            // 
             // Services
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnEnregistrer);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnFermer);
             this.Controls.Add(this.label8);
@@ -320,5 +337,6 @@ namespace GarageCreditCeleste
         private System.Windows.Forms.Button btnReparation;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnEnregistrer;
     }
 }

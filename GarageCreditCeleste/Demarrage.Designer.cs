@@ -41,6 +41,7 @@ namespace GarageCreditCeleste
             this.btnDemarrer.TabIndex = 20;
             this.btnDemarrer.Text = "Démarrer";
             this.btnDemarrer.UseVisualStyleBackColor = true;
+            this.btnDemarrer.Click += new System.EventHandler(this.btnDemarrer_Click);
             // 
             // Demarrage
             // 
@@ -50,6 +51,7 @@ namespace GarageCreditCeleste
             this.Controls.Add(this.btnDemarrer);
             this.Name = "Demarrage";
             this.Text = "Demarrage";
+            this.Load += new System.EventHandler(this.Demarrage_Load);
             this.ResumeLayout(false);
 
         }
