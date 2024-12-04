@@ -108,6 +108,9 @@
     <EmbeddedResource Include="Demarrage.resx">
       <DependentUpon>Demarrage.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Entretien.resx">
+      <DependentUpon>Entretien.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Filtre.resx">
       <DependentUpon>Filtre.cs</DependentUpon>
     </EmbeddedResource>
