@@ -34,7 +34,7 @@ namespace GarageCreditCeleste
             this.btnFiltrer = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.lsbVoituresDispo = new System.Windows.Forms.ListBox();
-            this.btnAcheter = new System.Windows.Forms.Button();
+            this.btnChoisir = new System.Windows.Forms.Button();
             this.btnFermer = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -90,15 +90,15 @@ namespace GarageCreditCeleste
             this.lsbVoituresDispo.Size = new System.Drawing.Size(274, 328);
             this.lsbVoituresDispo.TabIndex = 25;
             // 
-            // btnAcheter
+            // btnChoisir
             // 
-            this.btnAcheter.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.btnAcheter.Location = new System.Drawing.Point(602, 410);
-            this.btnAcheter.Name = "btnAcheter";
-            this.btnAcheter.Size = new System.Drawing.Size(90, 30);
-            this.btnAcheter.TabIndex = 24;
-            this.btnAcheter.Text = "Acheter";
-            this.btnAcheter.UseVisualStyleBackColor = true;
+            this.btnChoisir.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.btnChoisir.Location = new System.Drawing.Point(602, 410);
+            this.btnChoisir.Name = "btnChoisir";
+            this.btnChoisir.Size = new System.Drawing.Size(90, 30);
+            this.btnChoisir.TabIndex = 24;
+            this.btnChoisir.Text = "Choisir";
+            this.btnChoisir.UseVisualStyleBackColor = true;
             // 
             // btnFermer
             // 
@@ -140,7 +140,7 @@ namespace GarageCreditCeleste
             this.Controls.Add(this.btnFiltrer);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lsbVoituresDispo);
-            this.Controls.Add(this.btnAcheter);
+            this.Controls.Add(this.btnChoisir);
             this.Controls.Add(this.btnFermer);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -158,7 +158,7 @@ namespace GarageCreditCeleste
         private System.Windows.Forms.Button btnFiltrer;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ListBox lsbVoituresDispo;
-        private System.Windows.Forms.Button btnAcheter;
+        private System.Windows.Forms.Button btnChoisir;
         private System.Windows.Forms.Button btnFermer;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
