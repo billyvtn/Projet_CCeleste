@@ -232,7 +232,7 @@ namespace GarageCreditCeleste
             // btnServices
             // 
             this.btnServices.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.btnServices.Location = new System.Drawing.Point(678, 194);
+            this.btnServices.Location = new System.Drawing.Point(668, 195);
             this.btnServices.Name = "btnServices";
             this.btnServices.Size = new System.Drawing.Size(110, 50);
             this.btnServices.TabIndex = 25;
@@ -243,7 +243,7 @@ namespace GarageCreditCeleste
             // btnVendre
             // 
             this.btnVendre.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.btnVendre.Location = new System.Drawing.Point(562, 194);
+            this.btnVendre.Location = new System.Drawing.Point(552, 195);
             this.btnVendre.Name = "btnVendre";
             this.btnVendre.Size = new System.Drawing.Size(110, 50);
             this.btnVendre.TabIndex = 24;
@@ -254,7 +254,7 @@ namespace GarageCreditCeleste
             // btnAcheter
             // 
             this.btnAcheter.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.btnAcheter.Location = new System.Drawing.Point(446, 194);
+            this.btnAcheter.Location = new System.Drawing.Point(436, 195);
             this.btnAcheter.Name = "btnAcheter";
             this.btnAcheter.Size = new System.Drawing.Size(110, 50);
             this.btnAcheter.TabIndex = 23;
