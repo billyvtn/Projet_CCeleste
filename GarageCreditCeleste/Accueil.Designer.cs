@@ -30,24 +30,24 @@ namespace GarageCreditCeleste
         private void InitializeComponent()
         {
             this.label8 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnEnvoyer = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.btnEnregistrer = new System.Windows.Forms.Button();
+            this.txtAdresse = new System.Windows.Forms.TextBox();
+            this.txtPrenom = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.txtNom = new System.Windows.Forms.TextBox();
+            this.rdbCivFemme = new System.Windows.Forms.RadioButton();
+            this.rdbCivHomme = new System.Windows.Forms.RadioButton();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnServices = new System.Windows.Forms.Button();
+            this.btnVendre = new System.Windows.Forms.Button();
+            this.btnAcheter = new System.Windows.Forms.Button();
+            this.btnFermer = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
@@ -63,25 +63,25 @@ namespace GarageCreditCeleste
             this.label8.TabIndex = 28;
             this.label8.Text = "Accueil";
             // 
-            // button1
+            // btnEnvoyer
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.button1.Location = new System.Drawing.Point(602, 410);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(90, 30);
-            this.button1.TabIndex = 27;
-            this.button1.Text = "Envoyer";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnEnvoyer.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.btnEnvoyer.Location = new System.Drawing.Point(602, 410);
+            this.btnEnvoyer.Name = "btnEnvoyer";
+            this.btnEnvoyer.Size = new System.Drawing.Size(90, 30);
+            this.btnEnvoyer.TabIndex = 27;
+            this.btnEnvoyer.Text = "Envoyer";
+            this.btnEnvoyer.UseVisualStyleBackColor = true;
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.button2);
-            this.groupBox1.Controls.Add(this.textBox4);
-            this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Controls.Add(this.radioButton2);
-            this.groupBox1.Controls.Add(this.radioButton1);
+            this.groupBox1.Controls.Add(this.btnEnregistrer);
+            this.groupBox1.Controls.Add(this.txtAdresse);
+            this.groupBox1.Controls.Add(this.txtPrenom);
+            this.groupBox1.Controls.Add(this.txtEmail);
+            this.groupBox1.Controls.Add(this.txtNom);
+            this.groupBox1.Controls.Add(this.rdbCivFemme);
+            this.groupBox1.Controls.Add(this.rdbCivHomme);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label5);
@@ -95,65 +95,65 @@ namespace GarageCreditCeleste
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Vos informations";
             // 
-            // button2
+            // btnEnregistrer
             // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.button2.Location = new System.Drawing.Point(185, 305);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(90, 30);
-            this.button2.TabIndex = 11;
-            this.button2.Text = "Enregistrer";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnEnregistrer.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.btnEnregistrer.Location = new System.Drawing.Point(185, 305);
+            this.btnEnregistrer.Name = "btnEnregistrer";
+            this.btnEnregistrer.Size = new System.Drawing.Size(90, 30);
+            this.btnEnregistrer.TabIndex = 11;
+            this.btnEnregistrer.Text = "Enregistrer";
+            this.btnEnregistrer.UseVisualStyleBackColor = true;
             // 
-            // textBox4
+            // txtAdresse
             // 
-            this.textBox4.Location = new System.Drawing.Point(78, 243);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(197, 24);
-            this.textBox4.TabIndex = 20;
+            this.txtAdresse.Location = new System.Drawing.Point(78, 243);
+            this.txtAdresse.Name = "txtAdresse";
+            this.txtAdresse.Size = new System.Drawing.Size(197, 24);
+            this.txtAdresse.TabIndex = 20;
             // 
-            // textBox3
+            // txtPrenom
             // 
-            this.textBox3.Location = new System.Drawing.Point(78, 143);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(197, 24);
-            this.textBox3.TabIndex = 19;
+            this.txtPrenom.Location = new System.Drawing.Point(78, 143);
+            this.txtPrenom.Name = "txtPrenom";
+            this.txtPrenom.Size = new System.Drawing.Size(197, 24);
+            this.txtPrenom.TabIndex = 19;
             // 
-            // textBox2
+            // txtEmail
             // 
-            this.textBox2.Location = new System.Drawing.Point(78, 193);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(197, 24);
-            this.textBox2.TabIndex = 18;
+            this.txtEmail.Location = new System.Drawing.Point(78, 193);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(197, 24);
+            this.txtEmail.TabIndex = 18;
             // 
-            // textBox1
+            // txtNom
             // 
-            this.textBox1.Location = new System.Drawing.Point(78, 93);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(197, 24);
-            this.textBox1.TabIndex = 17;
+            this.txtNom.Location = new System.Drawing.Point(78, 93);
+            this.txtNom.Name = "txtNom";
+            this.txtNom.Size = new System.Drawing.Size(197, 24);
+            this.txtNom.TabIndex = 17;
             // 
-            // radioButton2
+            // rdbCivFemme
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(171, 44);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(64, 22);
-            this.radioButton2.TabIndex = 16;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Mme.";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.rdbCivFemme.AutoSize = true;
+            this.rdbCivFemme.Location = new System.Drawing.Point(171, 44);
+            this.rdbCivFemme.Name = "rdbCivFemme";
+            this.rdbCivFemme.Size = new System.Drawing.Size(64, 22);
+            this.rdbCivFemme.TabIndex = 16;
+            this.rdbCivFemme.TabStop = true;
+            this.rdbCivFemme.Text = "Mme.";
+            this.rdbCivFemme.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
+            // rdbCivHomme
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(104, 44);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(48, 22);
-            this.radioButton1.TabIndex = 15;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Mr.";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.rdbCivHomme.AutoSize = true;
+            this.rdbCivHomme.Location = new System.Drawing.Point(104, 44);
+            this.rdbCivHomme.Name = "rdbCivHomme";
+            this.rdbCivHomme.Size = new System.Drawing.Size(48, 22);
+            this.rdbCivHomme.TabIndex = 15;
+            this.rdbCivHomme.TabStop = true;
+            this.rdbCivHomme.Text = "Mr.";
+            this.rdbCivHomme.UseVisualStyleBackColor = true;
             // 
             // label7
             // 
@@ -200,45 +200,45 @@ namespace GarageCreditCeleste
             this.label3.TabIndex = 10;
             this.label3.Text = "Civilité";
             // 
-            // button7
+            // btnServices
             // 
-            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.button7.Location = new System.Drawing.Point(627, 198);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(110, 50);
-            this.button7.TabIndex = 25;
-            this.button7.Text = "Nos services";
-            this.button7.UseVisualStyleBackColor = true;
+            this.btnServices.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.btnServices.Location = new System.Drawing.Point(627, 198);
+            this.btnServices.Name = "btnServices";
+            this.btnServices.Size = new System.Drawing.Size(110, 50);
+            this.btnServices.TabIndex = 25;
+            this.btnServices.Text = "Nos services";
+            this.btnServices.UseVisualStyleBackColor = true;
             // 
-            // button6
+            // btnVendre
             // 
-            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.button6.Location = new System.Drawing.Point(511, 198);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(110, 50);
-            this.button6.TabIndex = 24;
-            this.button6.Text = "Vendre votre véhicule";
-            this.button6.UseVisualStyleBackColor = true;
+            this.btnVendre.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.btnVendre.Location = new System.Drawing.Point(511, 198);
+            this.btnVendre.Name = "btnVendre";
+            this.btnVendre.Size = new System.Drawing.Size(110, 50);
+            this.btnVendre.TabIndex = 24;
+            this.btnVendre.Text = "Vendre votre véhicule";
+            this.btnVendre.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // btnAcheter
             // 
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.button5.Location = new System.Drawing.Point(395, 198);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(110, 50);
-            this.button5.TabIndex = 23;
-            this.button5.Text = "Acheter un de nos véhicules";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnAcheter.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.btnAcheter.Location = new System.Drawing.Point(395, 198);
+            this.btnAcheter.Name = "btnAcheter";
+            this.btnAcheter.Size = new System.Drawing.Size(110, 50);
+            this.btnAcheter.TabIndex = 23;
+            this.btnAcheter.Text = "Acheter un de nos véhicules";
+            this.btnAcheter.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // btnFermer
             // 
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.button4.Location = new System.Drawing.Point(698, 410);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(90, 30);
-            this.button4.TabIndex = 22;
-            this.button4.Text = "Fermer";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnFermer.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.btnFermer.Location = new System.Drawing.Point(698, 410);
+            this.btnFermer.Name = "btnFermer";
+            this.btnFermer.Size = new System.Drawing.Size(90, 30);
+            this.btnFermer.TabIndex = 22;
+            this.btnFermer.Text = "Fermer";
+            this.btnFermer.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
@@ -246,9 +246,9 @@ namespace GarageCreditCeleste
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.label2.Location = new System.Drawing.Point(698, 11);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(90, 18);
+            this.label2.Size = new System.Drawing.Size(94, 18);
             this.label2.TabIndex = 21;
-            this.label2.Text = "Nom garage";
+            this.label2.Text = "HDR Garage";
             // 
             // label1
             // 
@@ -256,9 +256,9 @@ namespace GarageCreditCeleste
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.label1.Location = new System.Drawing.Point(12, 11);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(34, 18);
+            this.label1.Size = new System.Drawing.Size(81, 18);
             this.label1.TabIndex = 20;
-            this.label1.Text = "Ville";
+            this.label1.Text = "Strasbourg";
             // 
             // Accueil
             // 
@@ -266,12 +266,12 @@ namespace GarageCreditCeleste
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnEnvoyer);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.button7);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.btnServices);
+            this.Controls.Add(this.btnVendre);
+            this.Controls.Add(this.btnAcheter);
+            this.Controls.Add(this.btnFermer);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "Accueil";
@@ -286,24 +286,24 @@ namespace GarageCreditCeleste
         #endregion
 
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnEnvoyer;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.Button btnEnregistrer;
+        private System.Windows.Forms.TextBox txtAdresse;
+        private System.Windows.Forms.TextBox txtPrenom;
+        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.TextBox txtNom;
+        private System.Windows.Forms.RadioButton rdbCivFemme;
+        private System.Windows.Forms.RadioButton rdbCivHomme;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnServices;
+        private System.Windows.Forms.Button btnVendre;
+        private System.Windows.Forms.Button btnAcheter;
+        private System.Windows.Forms.Button btnFermer;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
     }
