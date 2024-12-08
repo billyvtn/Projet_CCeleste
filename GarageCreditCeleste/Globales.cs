@@ -20,6 +20,8 @@ namespace GarageCreditCeleste
         public static ControleTechnique controletechnique;
 
         public static Client client;
+
+        public static Voiture voiture;
     }
 
     class Client
@@ -82,6 +84,74 @@ namespace GarageCreditCeleste
         public string getCodePostal()
         {
             return codePostal;
+        }
+    }
+
+    class Voiture
+    {
+        private string marque;
+        private string modele;
+        private int annee;
+        private int kilometrage;
+        private string couleur;
+        private int puissance;
+        private string immatriculation;
+        private int vente;
+
+        public Voiture(string marqu, string model, int anne, int kilometrag, string couleu, int puissanc, string immat)
+        {
+            marque = marqu;
+            modele = model;
+            annee = anne;
+            kilometrage = kilometrag;
+            couleur = couleu;
+            puissance = puissanc;
+            immatriculation = immat;
+        }
+
+        public Voiture(string marqu, string model, int anne, int kilometrag, string couleu, int puissanc, string immat, int vent)
+        {
+            marque = marqu;
+            modele = model;
+            annee = anne;
+            kilometrage = kilometrag;
+            couleur = couleu;
+            puissance = puissanc;
+            immatriculation = immat;
+            vente = vent;
+        }
+
+        public string getMarque()
+        {
+            return marque;
+        }
+        public string getModele()
+        {
+            return modele;
+        }
+        public int getAnnee()
+        {
+            return annee;
+        }
+        public int getKilometrage()
+        {
+            return kilometrage;
+        }
+        public string getCouleur()
+        {
+            return couleur;
+        }
+        public int getPuissance()
+        {
+            return puissance;
+        }
+        public string getImmatriculation()
+        {
+            return immatriculation;
+        }
+        public int getVente()
+        {
+            return vente;
         }
     }
 }

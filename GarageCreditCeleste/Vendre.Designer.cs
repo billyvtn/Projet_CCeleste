@@ -94,7 +94,7 @@ namespace GarageCreditCeleste
             this.txtImmatVoiture.Location = new System.Drawing.Point(145, 333);
             this.txtImmatVoiture.Name = "txtImmatVoiture";
             this.txtImmatVoiture.Size = new System.Drawing.Size(197, 23);
-            this.txtImmatVoiture.TabIndex = 46;
+            this.txtImmatVoiture.TabIndex = 7;
             // 
             // txtMarqueVoiture
             // 
@@ -102,7 +102,7 @@ namespace GarageCreditCeleste
             this.txtMarqueVoiture.Location = new System.Drawing.Point(145, 36);
             this.txtMarqueVoiture.Name = "txtMarqueVoiture";
             this.txtMarqueVoiture.Size = new System.Drawing.Size(197, 23);
-            this.txtMarqueVoiture.TabIndex = 34;
+            this.txtMarqueVoiture.TabIndex = 1;
             // 
             // txtPuissanceVoiture
             // 
@@ -110,7 +110,7 @@ namespace GarageCreditCeleste
             this.txtPuissanceVoiture.Location = new System.Drawing.Point(145, 283);
             this.txtPuissanceVoiture.Name = "txtPuissanceVoiture";
             this.txtPuissanceVoiture.Size = new System.Drawing.Size(197, 23);
-            this.txtPuissanceVoiture.TabIndex = 44;
+            this.txtPuissanceVoiture.TabIndex = 6;
             // 
             // label4
             // 
@@ -138,7 +138,7 @@ namespace GarageCreditCeleste
             this.txtCouleurVoiture.Location = new System.Drawing.Point(145, 233);
             this.txtCouleurVoiture.Name = "txtCouleurVoiture";
             this.txtCouleurVoiture.Size = new System.Drawing.Size(197, 23);
-            this.txtCouleurVoiture.TabIndex = 42;
+            this.txtCouleurVoiture.TabIndex = 5;
             // 
             // label6
             // 
@@ -176,7 +176,7 @@ namespace GarageCreditCeleste
             this.txtAnneeVoiture.Location = new System.Drawing.Point(145, 136);
             this.txtAnneeVoiture.Name = "txtAnneeVoiture";
             this.txtAnneeVoiture.Size = new System.Drawing.Size(197, 23);
-            this.txtAnneeVoiture.TabIndex = 35;
+            this.txtAnneeVoiture.TabIndex = 3;
             // 
             // label11
             // 
@@ -194,7 +194,7 @@ namespace GarageCreditCeleste
             this.txtModeleVoiture.Location = new System.Drawing.Point(145, 86);
             this.txtModeleVoiture.Name = "txtModeleVoiture";
             this.txtModeleVoiture.Size = new System.Drawing.Size(197, 23);
-            this.txtModeleVoiture.TabIndex = 36;
+            this.txtModeleVoiture.TabIndex = 2;
             // 
             // txtKilometrageVoiture
             // 
@@ -202,7 +202,7 @@ namespace GarageCreditCeleste
             this.txtKilometrageVoiture.Location = new System.Drawing.Point(145, 186);
             this.txtKilometrageVoiture.Name = "txtKilometrageVoiture";
             this.txtKilometrageVoiture.Size = new System.Drawing.Size(197, 23);
-            this.txtKilometrageVoiture.TabIndex = 37;
+            this.txtKilometrageVoiture.TabIndex = 4;
             // 
             // txtPrixVenteVoiture
             // 
@@ -210,7 +210,7 @@ namespace GarageCreditCeleste
             this.txtPrixVenteVoiture.Location = new System.Drawing.Point(555, 210);
             this.txtPrixVenteVoiture.Name = "txtPrixVenteVoiture";
             this.txtPrixVenteVoiture.Size = new System.Drawing.Size(197, 23);
-            this.txtPrixVenteVoiture.TabIndex = 52;
+            this.txtPrixVenteVoiture.TabIndex = 8;
             // 
             // label9
             // 
@@ -238,7 +238,7 @@ namespace GarageCreditCeleste
             this.btnEnregistrer.Location = new System.Drawing.Point(602, 410);
             this.btnEnregistrer.Name = "btnEnregistrer";
             this.btnEnregistrer.Size = new System.Drawing.Size(90, 30);
-            this.btnEnregistrer.TabIndex = 49;
+            this.btnEnregistrer.TabIndex = 9;
             this.btnEnregistrer.Text = "Enregistrer";
             this.btnEnregistrer.UseVisualStyleBackColor = true;
             this.btnEnregistrer.Click += new System.EventHandler(this.btnEnregistrer_Click);
@@ -249,7 +249,7 @@ namespace GarageCreditCeleste
             this.btnFermer.Location = new System.Drawing.Point(698, 410);
             this.btnFermer.Name = "btnFermer";
             this.btnFermer.Size = new System.Drawing.Size(90, 30);
-            this.btnFermer.TabIndex = 48;
+            this.btnFermer.TabIndex = 10;
             this.btnFermer.Text = "Fermer";
             this.btnFermer.UseVisualStyleBackColor = true;
             this.btnFermer.Click += new System.EventHandler(this.btnFermer_Click);
