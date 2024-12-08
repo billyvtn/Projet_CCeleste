@@ -23,8 +23,6 @@ namespace GarageCreditCeleste
         }
 
 
-
-
         //lien accueil --> vendre
         private void btnVendre_Click(object sender, EventArgs e)
         {
@@ -32,7 +30,6 @@ namespace GarageCreditCeleste
             Globales.vendre.Show();
             this.Close();
         }
-        
         //lien accueil --> acheter
         private void btnAcheter_Click(object sender, EventArgs e)
         {
@@ -40,7 +37,6 @@ namespace GarageCreditCeleste
             Globales.acheter.Show();
             this.Close();
         }
-
         //lien accueil --> services
         private void btnServices_Click(object sender, EventArgs e)
         {
@@ -48,15 +44,11 @@ namespace GarageCreditCeleste
             Globales.services.Show();
             this.Close();
         }
-
         //bouton éteindre le logiciel
         private void btnFermer_Click(object sender, EventArgs e)
         {
             Globales.demarrage.Close();
         }
-
-
-
 
 
         // Messages par défaut des champs
@@ -70,12 +62,6 @@ namespace GarageCreditCeleste
         string defaultAdresseCP = "ex. 67380";
 
 
-
-
-
-
-
-
         private void txtNom_Click(object sender, EventArgs e)
         {
             if(txtNom.Text == defaultNom)
@@ -84,7 +70,6 @@ namespace GarageCreditCeleste
                 txtNom.ForeColor = SystemColors.ControlText;
             } 
         }
-
         private void txtPrenom_Click(object sender, EventArgs e)
         {
             if(txtPrenom.Text == defaultPrenom)
@@ -93,7 +78,6 @@ namespace GarageCreditCeleste
                 txtPrenom.ForeColor = SystemColors.ControlText;
             }
         }
-
         private void txtEmail_Click(object sender, EventArgs e)
         {
             if (txtEmail.Text == defaultEmail)
@@ -102,7 +86,6 @@ namespace GarageCreditCeleste
                 txtEmail.ForeColor = SystemColors.ControlText;
             }            
         }
-
         private void txtNumeroTelephone_Click(object sender, EventArgs e)
         {
             if (txtNumeroTelephone.Text == defaultNumTele)
@@ -111,7 +94,6 @@ namespace GarageCreditCeleste
                 txtNumeroTelephone.ForeColor = SystemColors.ControlText;
             }    
         }
-
         private void txtAdresse_Click(object sender, EventArgs e)
         {
             if (txtAdresseNum.Text == defaultAdresseNum)
@@ -120,7 +102,6 @@ namespace GarageCreditCeleste
                 txtAdresseNum.ForeColor = SystemColors.ControlText;
             }  
         }
-
         private void txtAdresseVoie_Click(object sender, EventArgs e)
         {
             if (txtAdresseVoie.Text == defaultAdresseVoie)
@@ -129,7 +110,6 @@ namespace GarageCreditCeleste
                 txtAdresseVoie.ForeColor = SystemColors.ControlText;
             }
         }
-
         private void txtAdresseVille_Click(object sender, EventArgs e)
         {
             if (txtAdresseVille.Text == defaultAdresseVille)
@@ -138,7 +118,6 @@ namespace GarageCreditCeleste
                 txtAdresseVille.ForeColor = SystemColors.ControlText;
             }            
         }
-
         private void txtAdresseCP_Click(object sender, EventArgs e)
         {
             if (txtAdresseCP.Text == defaultAdresseCP)
@@ -148,8 +127,6 @@ namespace GarageCreditCeleste
 
             }
         }
-
-
 
 
         private void txtNom_TextChanged(object sender, EventArgs e)
@@ -186,12 +163,6 @@ namespace GarageCreditCeleste
         }
 
 
-
-
-
-
-
-
         private void btnEnregistrer_Click(object sender, EventArgs e)
         {
             //enregistrer infos client objet Globales
@@ -222,6 +193,12 @@ namespace GarageCreditCeleste
                 }
 
                 Globales.client = new Client(GlobalesCiv, txtNom.Text, txtPrenom.Text, txtEmail.Text, txtNumeroTelephone.Text, txtAdresseNum.Text, txtAdresseVoie.Text, txtAdresseVille.Text, txtAdresseCP.Text); ;
+                
+                btnAcheter.Enabled = true;
+                btnVendre.Enabled = true;
+                btnServices.Enabled = true;
+
+                MessageBox.Show("Les informations ont été enregistrées avec succès.", "Enregistrement", MessageBoxButtons.OK);
             }
         }
 

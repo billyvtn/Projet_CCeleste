@@ -46,5 +46,42 @@ namespace GarageCreditCeleste
             ville = vil;
             codePostal = codePos;
         }
+
+        public bool getCivilite()
+        {
+            return civilite;
+        }
+        public string getNom()
+        {
+            return nom;
+        }
+        public string getPrenom()
+        {
+            return prenom;
+        }
+        public string getEmail()
+        {
+            return email;
+        }
+        public string getNumero()
+        {
+            return numero;
+        }
+        public string getAdresseNum()
+        {
+            return numAdresse;
+        }
+        public string getAdresseVoie()
+        {
+            return voieAdresse;
+        }
+        public string getVille()
+        {
+            return ville;
+        }
+        public string getCodePostal()
+        {
+            return codePostal;
+        }
     }
 }
