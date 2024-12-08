@@ -77,7 +77,7 @@ namespace GarageCreditCeleste
             this.btnEnvoyer.Location = new System.Drawing.Point(602, 410);
             this.btnEnvoyer.Name = "btnEnvoyer";
             this.btnEnvoyer.Size = new System.Drawing.Size(90, 30);
-            this.btnEnvoyer.TabIndex = 27;
+            this.btnEnvoyer.TabIndex = 15;
             this.btnEnvoyer.Text = "Envoyer";
             this.btnEnvoyer.UseVisualStyleBackColor = true;
             // 
@@ -117,8 +117,10 @@ namespace GarageCreditCeleste
             this.txtAdresseCP.Location = new System.Drawing.Point(112, 259);
             this.txtAdresseCP.Name = "txtAdresseCP";
             this.txtAdresseCP.Size = new System.Drawing.Size(231, 24);
-            this.txtAdresseCP.TabIndex = 28;
+            this.txtAdresseCP.TabIndex = 10;
             this.txtAdresseCP.Text = "ex. 67380";
+            this.txtAdresseCP.Click += new System.EventHandler(this.txtAdresseCP_Click);
+            this.txtAdresseCP.TextChanged += new System.EventHandler(this.txtAdresseCP_TextChanged);
             // 
             // label12
             // 
@@ -135,8 +137,10 @@ namespace GarageCreditCeleste
             this.txtAdresseVille.Location = new System.Drawing.Point(112, 230);
             this.txtAdresseVille.Name = "txtAdresseVille";
             this.txtAdresseVille.Size = new System.Drawing.Size(231, 24);
-            this.txtAdresseVille.TabIndex = 26;
+            this.txtAdresseVille.TabIndex = 9;
             this.txtAdresseVille.Text = "ex. Lingolsheim";
+            this.txtAdresseVille.Click += new System.EventHandler(this.txtAdresseVille_Click);
+            this.txtAdresseVille.TextChanged += new System.EventHandler(this.txtAdresseVille_TextChanged);
             // 
             // label11
             // 
@@ -153,8 +157,10 @@ namespace GarageCreditCeleste
             this.txtAdresseVoie.Location = new System.Drawing.Point(112, 201);
             this.txtAdresseVoie.Name = "txtAdresseVoie";
             this.txtAdresseVoie.Size = new System.Drawing.Size(231, 24);
-            this.txtAdresseVoie.TabIndex = 24;
+            this.txtAdresseVoie.TabIndex = 8;
             this.txtAdresseVoie.Text = "ex. rue Marechal Foch";
+            this.txtAdresseVoie.Click += new System.EventHandler(this.txtAdresseVoie_Click);
+            this.txtAdresseVoie.TextChanged += new System.EventHandler(this.txtAdresseVoie_TextChanged);
             // 
             // label10
             // 
@@ -171,8 +177,10 @@ namespace GarageCreditCeleste
             this.txtNumeroTelephone.Location = new System.Drawing.Point(112, 143);
             this.txtNumeroTelephone.Name = "txtNumeroTelephone";
             this.txtNumeroTelephone.Size = new System.Drawing.Size(231, 24);
-            this.txtNumeroTelephone.TabIndex = 22;
+            this.txtNumeroTelephone.TabIndex = 6;
             this.txtNumeroTelephone.Text = "ex. 06 06 06 06 06";
+            this.txtNumeroTelephone.Click += new System.EventHandler(this.txtNumeroTelephone_Click);
+            this.txtNumeroTelephone.TextChanged += new System.EventHandler(this.txtNumeroTelephone_TextChanged);
             // 
             // label9
             // 
@@ -200,9 +208,10 @@ namespace GarageCreditCeleste
             this.txtAdresseNum.Location = new System.Drawing.Point(112, 172);
             this.txtAdresseNum.Name = "txtAdresseNum";
             this.txtAdresseNum.Size = new System.Drawing.Size(231, 24);
-            this.txtAdresseNum.TabIndex = 20;
+            this.txtAdresseNum.TabIndex = 7;
             this.txtAdresseNum.Text = "ex. 1, 2, 12A...";
             this.txtAdresseNum.Click += new System.EventHandler(this.txtAdresse_Click);
+            this.txtAdresseNum.TextChanged += new System.EventHandler(this.txtAdresseNum_TextChanged);
             // 
             // txtPrenom
             // 
@@ -210,9 +219,10 @@ namespace GarageCreditCeleste
             this.txtPrenom.Location = new System.Drawing.Point(112, 87);
             this.txtPrenom.Name = "txtPrenom";
             this.txtPrenom.Size = new System.Drawing.Size(231, 24);
-            this.txtPrenom.TabIndex = 19;
+            this.txtPrenom.TabIndex = 4;
             this.txtPrenom.Text = "ex. Jean";
             this.txtPrenom.Click += new System.EventHandler(this.txtPrenom_Click);
+            this.txtPrenom.TextChanged += new System.EventHandler(this.txtPrenom_TextChanged);
             // 
             // txtEmail
             // 
@@ -220,9 +230,10 @@ namespace GarageCreditCeleste
             this.txtEmail.Location = new System.Drawing.Point(112, 116);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(231, 24);
-            this.txtEmail.TabIndex = 18;
+            this.txtEmail.TabIndex = 5;
             this.txtEmail.Text = "ex. jean.dupont@email.fr";
             this.txtEmail.Click += new System.EventHandler(this.txtEmail_Click);
+            this.txtEmail.TextChanged += new System.EventHandler(this.txtEmail_TextChanged);
             // 
             // txtNom
             // 
@@ -230,9 +241,10 @@ namespace GarageCreditCeleste
             this.txtNom.Location = new System.Drawing.Point(112, 58);
             this.txtNom.Name = "txtNom";
             this.txtNom.Size = new System.Drawing.Size(231, 24);
-            this.txtNom.TabIndex = 17;
+            this.txtNom.TabIndex = 3;
             this.txtNom.Text = "ex. Dupont";
             this.txtNom.Click += new System.EventHandler(this.txtNom_Click);
+            this.txtNom.TextChanged += new System.EventHandler(this.txtNom_TextChanged);
             // 
             // rdbCivFemme
             // 
@@ -240,7 +252,7 @@ namespace GarageCreditCeleste
             this.rdbCivFemme.Location = new System.Drawing.Point(179, 31);
             this.rdbCivFemme.Name = "rdbCivFemme";
             this.rdbCivFemme.Size = new System.Drawing.Size(64, 22);
-            this.rdbCivFemme.TabIndex = 16;
+            this.rdbCivFemme.TabIndex = 2;
             this.rdbCivFemme.TabStop = true;
             this.rdbCivFemme.Text = "Mme.";
             this.rdbCivFemme.UseVisualStyleBackColor = true;
@@ -251,7 +263,7 @@ namespace GarageCreditCeleste
             this.rdbCivHomme.Location = new System.Drawing.Point(112, 31);
             this.rdbCivHomme.Name = "rdbCivHomme";
             this.rdbCivHomme.Size = new System.Drawing.Size(48, 22);
-            this.rdbCivHomme.TabIndex = 15;
+            this.rdbCivHomme.TabIndex = 1;
             this.rdbCivHomme.TabStop = true;
             this.rdbCivHomme.Text = "Mr.";
             this.rdbCivHomme.UseVisualStyleBackColor = true;
@@ -303,33 +315,36 @@ namespace GarageCreditCeleste
             // 
             // btnServices
             // 
+            this.btnServices.Enabled = false;
             this.btnServices.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.btnServices.Location = new System.Drawing.Point(668, 195);
             this.btnServices.Name = "btnServices";
             this.btnServices.Size = new System.Drawing.Size(110, 50);
-            this.btnServices.TabIndex = 25;
+            this.btnServices.TabIndex = 14;
             this.btnServices.Text = "Nos services";
             this.btnServices.UseVisualStyleBackColor = true;
             this.btnServices.Click += new System.EventHandler(this.btnServices_Click);
             // 
             // btnVendre
             // 
+            this.btnVendre.Enabled = false;
             this.btnVendre.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.btnVendre.Location = new System.Drawing.Point(552, 195);
             this.btnVendre.Name = "btnVendre";
             this.btnVendre.Size = new System.Drawing.Size(110, 50);
-            this.btnVendre.TabIndex = 24;
+            this.btnVendre.TabIndex = 13;
             this.btnVendre.Text = "Vendre votre véhicule";
             this.btnVendre.UseVisualStyleBackColor = true;
             this.btnVendre.Click += new System.EventHandler(this.btnVendre_Click);
             // 
             // btnAcheter
             // 
+            this.btnAcheter.Enabled = false;
             this.btnAcheter.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.btnAcheter.Location = new System.Drawing.Point(436, 195);
             this.btnAcheter.Name = "btnAcheter";
             this.btnAcheter.Size = new System.Drawing.Size(110, 50);
-            this.btnAcheter.TabIndex = 23;
+            this.btnAcheter.TabIndex = 12;
             this.btnAcheter.Text = "Acheter un de nos véhicules";
             this.btnAcheter.UseVisualStyleBackColor = true;
             this.btnAcheter.Click += new System.EventHandler(this.btnAcheter_Click);
@@ -340,7 +355,7 @@ namespace GarageCreditCeleste
             this.btnFermer.Location = new System.Drawing.Point(698, 410);
             this.btnFermer.Name = "btnFermer";
             this.btnFermer.Size = new System.Drawing.Size(90, 30);
-            this.btnFermer.TabIndex = 22;
+            this.btnFermer.TabIndex = 16;
             this.btnFermer.Text = "Fermer";
             this.btnFermer.UseVisualStyleBackColor = true;
             this.btnFermer.Click += new System.EventHandler(this.btnFermer_Click);
