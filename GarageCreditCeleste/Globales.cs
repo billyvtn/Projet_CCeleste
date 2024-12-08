@@ -8,6 +8,7 @@ namespace GarageCreditCeleste
 {
     static class Globales
     {
+        //Déclaration des objets fenêtre
         public static Demarrage demarrage;
         public static Accueil accueil;
         public static Vendre vendre;
@@ -17,6 +18,8 @@ namespace GarageCreditCeleste
         public static Reparation reparation;
         public static Entretien entretien;
         public static ControleTechnique controletechnique;
+
+        public static Client client;
     }
 
     class Client

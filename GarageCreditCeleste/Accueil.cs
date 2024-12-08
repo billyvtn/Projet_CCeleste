@@ -71,6 +71,7 @@ namespace GarageCreditCeleste
         private void btnEnregistrer_Click(object sender, EventArgs e)
         {
             //enregistrer infos client objet Globales
+
         }
     }
 }
