@@ -63,7 +63,7 @@ namespace GarageCreditCeleste
         {
             return email;
         }
-        public string getNumero()
+        public string getNumeroTelephone()
         {
             return numero;
         }

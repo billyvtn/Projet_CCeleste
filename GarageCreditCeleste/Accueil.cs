@@ -19,7 +19,30 @@ namespace GarageCreditCeleste
 
         private void Accueil_Load(object sender, EventArgs e)
         {
+            if (Globales.client != null)
+            {
+                btnAcheter.Enabled = true;
+                btnVendre.Enabled = true;
+                btnServices.Enabled = true;
 
+                if (Globales.client.getCivilite())
+                {
+                    rdbCivHomme.Checked = true;
+                }
+                else
+                {
+                    rdbCivFemme.Checked = false;
+                }
+
+                txtNom.Text = Globales.client.getNom();
+                txtPrenom.Text = Globales.client.getPrenom();
+                txtEmail.Text = Globales.client.getEmail();
+                txtNumeroTelephone.Text = Globales.client.getNumeroTelephone();
+                txtAdresseNum.Text = Globales.client.getAdresseNum();
+                txtAdresseVoie.Text = Globales.client.getAdresseVoie();
+                txtAdresseVille.Text = Globales.client.getVille();
+                txtAdresseCP.Text = Globales.client.getCodePostal();
+            }
         }
 
 
