@@ -46,22 +46,26 @@ namespace GarageCreditCeleste
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.txtCouleur = new System.Windows.Forms.TextBox();
             this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.groupBox6.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnFermer
             // 
             this.btnFermer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
-            this.btnFermer.Location = new System.Drawing.Point(288, 412);
+            this.btnFermer.Location = new System.Drawing.Point(288, 489);
             this.btnFermer.Name = "btnFermer";
             this.btnFermer.Size = new System.Drawing.Size(84, 28);
             this.btnFermer.TabIndex = 44;
             this.btnFermer.Text = "Fermer";
             this.btnFermer.UseVisualStyleBackColor = true;
+            this.btnFermer.Click += new System.EventHandler(this.btnFermer_Click);
             // 
             // txtPuissanceMaxi
             // 
@@ -114,12 +118,13 @@ namespace GarageCreditCeleste
             // btnAppliquer
             // 
             this.btnAppliquer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
-            this.btnAppliquer.Location = new System.Drawing.Point(198, 412);
+            this.btnAppliquer.Location = new System.Drawing.Point(198, 489);
             this.btnAppliquer.Name = "btnAppliquer";
             this.btnAppliquer.Size = new System.Drawing.Size(84, 28);
             this.btnAppliquer.TabIndex = 43;
             this.btnAppliquer.Text = "Appliquer";
             this.btnAppliquer.UseVisualStyleBackColor = true;
+            this.btnAppliquer.Click += new System.EventHandler(this.btnAppliquer_Click);
             // 
             // groupBox4
             // 
@@ -222,11 +227,32 @@ namespace GarageCreditCeleste
             this.label8.TabIndex = 37;
             this.label8.Text = "Filtre";
             // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.txtCouleur);
+            this.groupBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
+            this.groupBox6.Location = new System.Drawing.Point(12, 412);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(360, 70);
+            this.groupBox6.TabIndex = 43;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Couleur";
+            // 
+            // txtCouleur
+            // 
+            this.txtCouleur.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.txtCouleur.Location = new System.Drawing.Point(93, 31);
+            this.txtCouleur.Name = "txtCouleur";
+            this.txtCouleur.Size = new System.Drawing.Size(161, 23);
+            this.txtCouleur.TabIndex = 1;
+            this.txtCouleur.Text = "ex. rouge, bleu, noir...";
+            // 
             // Filtre
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(384, 450);
+            this.ClientSize = new System.Drawing.Size(384, 529);
+            this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.btnFermer);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.btnAppliquer);
@@ -246,6 +272,8 @@ namespace GarageCreditCeleste
             this.groupBox3.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -270,5 +298,7 @@ namespace GarageCreditCeleste
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.TextBox txtCouleur;
     }
 }

@@ -16,5 +16,20 @@ namespace GarageCreditCeleste
         {
             InitializeComponent();
         }
+
+        private void btnFermer_Click(object sender, EventArgs e)
+        {
+            Globales.acheter = new Acheter();
+            Globales.acheter.Show();
+            Globales.filtre.Close();
+        }
+
+        private void btnAppliquer_Click(object sender, EventArgs e)
+        {
+            //ajouter les filtres dans un objet Globales pour les appliquer sur la recherche
+            Globales.acheter = new Acheter();
+            Globales.acheter.Show();
+            Globales.filtre.Close();
+        }
     }
 }

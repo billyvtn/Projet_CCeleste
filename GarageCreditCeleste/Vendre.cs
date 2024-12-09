@@ -16,5 +16,22 @@ namespace GarageCreditCeleste
         {
             InitializeComponent();
         }
+
+        private void btnFermer_Click(object sender, EventArgs e)
+        {
+            Globales.accueil = new Accueil();
+            Globales.accueil.Show();
+            Globales.vendre.Close();
+        }
+
+        private void btnEnregistrer_Click(object sender, EventArgs e)
+        {
+            //enregistre les infos du véhicule et le prix de vente dans l'objet
+        }
+
+        private void Vendre_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
