@@ -149,7 +149,7 @@ namespace GarageCreditCeleste
         {
             return immatriculation;
         }
-        public int getVente()
+        public int getPrixVente()
         {
             return vente;
         }
