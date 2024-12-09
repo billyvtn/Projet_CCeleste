@@ -50,6 +50,7 @@ namespace GarageCreditCeleste
             this.Controls.Add(this.btnDemarrer);
             this.Name = "Demarrage";
             this.Text = "Demarrage";
+            this.Load += new System.EventHandler(this.Demarrage_Load);
             this.ResumeLayout(false);
 
         }

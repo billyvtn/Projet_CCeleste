@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace GarageCreditCeleste
 {
-    public partial class Accueil : Form
+    public partial class ChoixAssurance : Form
     {
-        public Accueil()
+        public ChoixAssurance()
         {
             InitializeComponent();
         }
 
-        private void Accueil_Load(object sender, EventArgs e)
+        private void ChoixAssurance_Load(object sender, EventArgs e)
         {
 
         }

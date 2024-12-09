@@ -16,5 +16,10 @@ namespace GarageCreditCeleste
         {
             InitializeComponent();
         }
+
+        private void Demarrage_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

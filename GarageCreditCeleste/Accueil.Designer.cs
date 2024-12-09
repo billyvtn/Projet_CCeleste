@@ -276,6 +276,7 @@ namespace GarageCreditCeleste
             this.Controls.Add(this.label1);
             this.Name = "Accueil";
             this.Text = "Accueil";
+            this.Load += new System.EventHandler(this.Accueil_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
