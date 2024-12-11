@@ -41,5 +41,12 @@ namespace GarageCreditCeleste
         {
             //placer les infos dans un objet Globales
         }
+
+        private void btnCredit_Click(object sender, EventArgs e)
+        {
+            Globales.credit = new Credit();
+            Globales.credit.Show();
+            this.Close();
+        }
     }
 }
