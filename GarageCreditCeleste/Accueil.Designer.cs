@@ -31,7 +31,7 @@ namespace GarageCreditCeleste
         {
             this.label8 = new System.Windows.Forms.Label();
             this.btnEnvoyer = new System.Windows.Forms.Button();
-            this.gboInfoClient = new System.Windows.Forms.GroupBox();
+            this.gpbInfoClient = new System.Windows.Forms.GroupBox();
             this.txtAdresseCP = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.txtAdresseVille = new System.Windows.Forms.TextBox();
@@ -58,7 +58,19 @@ namespace GarageCreditCeleste
             this.btnFermer = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.gboInfoClient.SuspendLayout();
+            this.gpbResume = new System.Windows.Forms.GroupBox();
+            this.lblImmat = new System.Windows.Forms.Label();
+            this.lblMarque = new System.Windows.Forms.Label();
+            this.lblModele = new System.Windows.Forms.Label();
+            this.lblAnnee = new System.Windows.Forms.Label();
+            this.lblKilometrage = new System.Windows.Forms.Label();
+            this.lblPuissance = new System.Windows.Forms.Label();
+            this.lblCouleur = new System.Windows.Forms.Label();
+            this.gpbType = new System.Windows.Forms.GroupBox();
+            this.lblPrix = new System.Windows.Forms.Label();
+            this.gpbInfoClient.SuspendLayout();
+            this.gpbResume.SuspendLayout();
+            this.gpbType.SuspendLayout();
             this.SuspendLayout();
             // 
             // label8
@@ -81,35 +93,35 @@ namespace GarageCreditCeleste
             this.btnEnvoyer.Text = "Envoyer";
             this.btnEnvoyer.UseVisualStyleBackColor = true;
             // 
-            // gboInfoClient
+            // gpbInfoClient
             // 
-            this.gboInfoClient.Controls.Add(this.txtAdresseCP);
-            this.gboInfoClient.Controls.Add(this.label12);
-            this.gboInfoClient.Controls.Add(this.txtAdresseVille);
-            this.gboInfoClient.Controls.Add(this.label11);
-            this.gboInfoClient.Controls.Add(this.txtAdresseVoie);
-            this.gboInfoClient.Controls.Add(this.label10);
-            this.gboInfoClient.Controls.Add(this.txtNumeroTelephone);
-            this.gboInfoClient.Controls.Add(this.label9);
-            this.gboInfoClient.Controls.Add(this.btnEnregistrer);
-            this.gboInfoClient.Controls.Add(this.txtAdresseNum);
-            this.gboInfoClient.Controls.Add(this.txtPrenom);
-            this.gboInfoClient.Controls.Add(this.txtEmail);
-            this.gboInfoClient.Controls.Add(this.txtNom);
-            this.gboInfoClient.Controls.Add(this.rdbCivFemme);
-            this.gboInfoClient.Controls.Add(this.rdbCivHomme);
-            this.gboInfoClient.Controls.Add(this.label7);
-            this.gboInfoClient.Controls.Add(this.label6);
-            this.gboInfoClient.Controls.Add(this.label5);
-            this.gboInfoClient.Controls.Add(this.label4);
-            this.gboInfoClient.Controls.Add(this.label3);
-            this.gboInfoClient.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.gboInfoClient.Location = new System.Drawing.Point(15, 65);
-            this.gboInfoClient.Name = "gboInfoClient";
-            this.gboInfoClient.Size = new System.Drawing.Size(403, 375);
-            this.gboInfoClient.TabIndex = 26;
-            this.gboInfoClient.TabStop = false;
-            this.gboInfoClient.Text = "Vos informations";
+            this.gpbInfoClient.Controls.Add(this.txtAdresseCP);
+            this.gpbInfoClient.Controls.Add(this.label12);
+            this.gpbInfoClient.Controls.Add(this.txtAdresseVille);
+            this.gpbInfoClient.Controls.Add(this.label11);
+            this.gpbInfoClient.Controls.Add(this.txtAdresseVoie);
+            this.gpbInfoClient.Controls.Add(this.label10);
+            this.gpbInfoClient.Controls.Add(this.txtNumeroTelephone);
+            this.gpbInfoClient.Controls.Add(this.label9);
+            this.gpbInfoClient.Controls.Add(this.btnEnregistrer);
+            this.gpbInfoClient.Controls.Add(this.txtAdresseNum);
+            this.gpbInfoClient.Controls.Add(this.txtPrenom);
+            this.gpbInfoClient.Controls.Add(this.txtEmail);
+            this.gpbInfoClient.Controls.Add(this.txtNom);
+            this.gpbInfoClient.Controls.Add(this.rdbCivFemme);
+            this.gpbInfoClient.Controls.Add(this.rdbCivHomme);
+            this.gpbInfoClient.Controls.Add(this.label7);
+            this.gpbInfoClient.Controls.Add(this.label6);
+            this.gpbInfoClient.Controls.Add(this.label5);
+            this.gpbInfoClient.Controls.Add(this.label4);
+            this.gpbInfoClient.Controls.Add(this.label3);
+            this.gpbInfoClient.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.gpbInfoClient.Location = new System.Drawing.Point(15, 65);
+            this.gpbInfoClient.Name = "gpbInfoClient";
+            this.gpbInfoClient.Size = new System.Drawing.Size(403, 375);
+            this.gpbInfoClient.TabIndex = 26;
+            this.gpbInfoClient.TabStop = false;
+            this.gpbInfoClient.Text = "Vos informations";
             // 
             // txtAdresseCP
             // 
@@ -380,14 +392,126 @@ namespace GarageCreditCeleste
             this.label1.TabIndex = 20;
             this.label1.Text = "Strasbourg";
             // 
+            // gpbResume
+            // 
+            this.gpbResume.Controls.Add(this.gpbType);
+            this.gpbResume.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.gpbResume.Location = new System.Drawing.Point(424, 65);
+            this.gpbResume.Name = "gpbResume";
+            this.gpbResume.Size = new System.Drawing.Size(368, 339);
+            this.gpbResume.TabIndex = 29;
+            this.gpbResume.TabStop = false;
+            this.gpbResume.Text = "Résumé";
+            this.gpbResume.Visible = false;
+            // 
+            // lblImmat
+            // 
+            this.lblImmat.AutoSize = true;
+            this.lblImmat.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.lblImmat.Location = new System.Drawing.Point(205, 95);
+            this.lblImmat.Name = "lblImmat";
+            this.lblImmat.Size = new System.Drawing.Size(108, 18);
+            this.lblImmat.TabIndex = 52;
+            this.lblImmat.Text = "Immatriculation";
+            // 
+            // lblMarque
+            // 
+            this.lblMarque.AutoSize = true;
+            this.lblMarque.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.lblMarque.Location = new System.Drawing.Point(24, 35);
+            this.lblMarque.Name = "lblMarque";
+            this.lblMarque.Size = new System.Drawing.Size(58, 18);
+            this.lblMarque.TabIndex = 46;
+            this.lblMarque.Text = "Marque";
+            // 
+            // lblModele
+            // 
+            this.lblModele.AutoSize = true;
+            this.lblModele.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.lblModele.Location = new System.Drawing.Point(24, 64);
+            this.lblModele.Name = "lblModele";
+            this.lblModele.Size = new System.Drawing.Size(57, 18);
+            this.lblModele.TabIndex = 47;
+            this.lblModele.Text = "Modèle";
+            // 
+            // lblAnnee
+            // 
+            this.lblAnnee.AutoSize = true;
+            this.lblAnnee.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.lblAnnee.Location = new System.Drawing.Point(24, 95);
+            this.lblAnnee.Name = "lblAnnee";
+            this.lblAnnee.Size = new System.Drawing.Size(49, 18);
+            this.lblAnnee.TabIndex = 48;
+            this.lblAnnee.Text = "Année";
+            // 
+            // lblKilometrage
+            // 
+            this.lblKilometrage.AutoSize = true;
+            this.lblKilometrage.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.lblKilometrage.Location = new System.Drawing.Point(24, 128);
+            this.lblKilometrage.Name = "lblKilometrage";
+            this.lblKilometrage.Size = new System.Drawing.Size(87, 18);
+            this.lblKilometrage.TabIndex = 49;
+            this.lblKilometrage.Text = "Kilométrage";
+            // 
+            // lblPuissance
+            // 
+            this.lblPuissance.AutoSize = true;
+            this.lblPuissance.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.lblPuissance.Location = new System.Drawing.Point(205, 66);
+            this.lblPuissance.Name = "lblPuissance";
+            this.lblPuissance.Size = new System.Drawing.Size(77, 18);
+            this.lblPuissance.TabIndex = 51;
+            this.lblPuissance.Text = "Puissance";
+            // 
+            // lblCouleur
+            // 
+            this.lblCouleur.AutoSize = true;
+            this.lblCouleur.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.lblCouleur.Location = new System.Drawing.Point(205, 35);
+            this.lblCouleur.Name = "lblCouleur";
+            this.lblCouleur.Size = new System.Drawing.Size(60, 18);
+            this.lblCouleur.TabIndex = 50;
+            this.lblCouleur.Text = "Couleur";
+            // 
+            // gpbType
+            // 
+            this.gpbType.Controls.Add(this.lblPrix);
+            this.gpbType.Controls.Add(this.lblCouleur);
+            this.gpbType.Controls.Add(this.lblImmat);
+            this.gpbType.Controls.Add(this.lblKilometrage);
+            this.gpbType.Controls.Add(this.lblMarque);
+            this.gpbType.Controls.Add(this.lblAnnee);
+            this.gpbType.Controls.Add(this.lblPuissance);
+            this.gpbType.Controls.Add(this.lblModele);
+            this.gpbType.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.gpbType.Location = new System.Drawing.Point(6, 23);
+            this.gpbType.Name = "gpbType";
+            this.gpbType.Size = new System.Drawing.Size(356, 170);
+            this.gpbType.TabIndex = 53;
+            this.gpbType.TabStop = false;
+            this.gpbType.Text = "Type";
+            this.gpbType.Visible = false;
+            // 
+            // lblPrix
+            // 
+            this.lblPrix.AutoSize = true;
+            this.lblPrix.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.lblPrix.Location = new System.Drawing.Point(205, 128);
+            this.lblPrix.Name = "lblPrix";
+            this.lblPrix.Size = new System.Drawing.Size(33, 18);
+            this.lblPrix.TabIndex = 53;
+            this.lblPrix.Text = "Prix";
+            // 
             // Accueil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.gpbResume);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.btnEnvoyer);
-            this.Controls.Add(this.gboInfoClient);
+            this.Controls.Add(this.gpbInfoClient);
             this.Controls.Add(this.btnServices);
             this.Controls.Add(this.btnVendre);
             this.Controls.Add(this.btnAcheter);
@@ -397,8 +521,11 @@ namespace GarageCreditCeleste
             this.Name = "Accueil";
             this.Text = "Accueil";
             this.Load += new System.EventHandler(this.Accueil_Load);
-            this.gboInfoClient.ResumeLayout(false);
-            this.gboInfoClient.PerformLayout();
+            this.gpbInfoClient.ResumeLayout(false);
+            this.gpbInfoClient.PerformLayout();
+            this.gpbResume.ResumeLayout(false);
+            this.gpbType.ResumeLayout(false);
+            this.gpbType.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -408,7 +535,7 @@ namespace GarageCreditCeleste
 
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnEnvoyer;
-        private System.Windows.Forms.GroupBox gboInfoClient;
+        private System.Windows.Forms.GroupBox gpbInfoClient;
         private System.Windows.Forms.Button btnEnregistrer;
         private System.Windows.Forms.TextBox txtAdresseNum;
         private System.Windows.Forms.TextBox txtPrenom;
@@ -435,5 +562,15 @@ namespace GarageCreditCeleste
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txtAdresseVoie;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.GroupBox gpbResume;
+        private System.Windows.Forms.GroupBox gpbType;
+        private System.Windows.Forms.Label lblCouleur;
+        private System.Windows.Forms.Label lblImmat;
+        private System.Windows.Forms.Label lblKilometrage;
+        private System.Windows.Forms.Label lblMarque;
+        private System.Windows.Forms.Label lblAnnee;
+        private System.Windows.Forms.Label lblPuissance;
+        private System.Windows.Forms.Label lblModele;
+        private System.Windows.Forms.Label lblPrix;
     }
 }

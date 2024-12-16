@@ -22,6 +22,8 @@ namespace GarageCreditCeleste
         public static Client client;
 
         public static Voiture voiture;
+
+        public static string Type;
     }
 
     class Client
@@ -96,7 +98,7 @@ namespace GarageCreditCeleste
         private string couleur;
         private int puissance;
         private string immatriculation;
-        private int vente;
+        private int prix;
 
         public Voiture(string marqu, string model, int anne, int kilometrag, string couleu, int puissanc, string immat)
         {
@@ -118,7 +120,7 @@ namespace GarageCreditCeleste
             couleur = couleu;
             puissance = puissanc;
             immatriculation = immat;
-            vente = vent;
+            prix = vent;
         }
 
         public string getMarque()
@@ -149,9 +151,9 @@ namespace GarageCreditCeleste
         {
             return immatriculation;
         }
-        public int getPrixVente()
+        public int getPrix()
         {
-            return vente;
+            return prix;
         }
     }
 }

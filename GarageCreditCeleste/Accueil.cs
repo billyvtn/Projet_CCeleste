@@ -43,6 +43,29 @@ namespace GarageCreditCeleste
                 txtAdresseVille.Text = Globales.client.getVille();
                 txtAdresseCP.Text = Globales.client.getCodePostal();
             }
+
+            if (Globales.Type != null)
+            {
+                btnAcheter.Visible = false;
+                btnVendre.Visible = false;
+                btnServices.Visible = false;
+                gpbResume.Visible = true;
+
+                if (Globales.Type == "Vente")
+                {
+                    gpbType.Visible = true;
+                    gpbType.Text = "Vente";
+
+                    lblMarque.Text = Globales.voiture.getMarque();
+                    lblModele.Text = Globales.voiture.getModele();
+                    lblAnnee.Text = Globales.voiture.getAnnee().ToString();
+                    lblKilometrage.Text = Globales.voiture.getKilometrage().ToString() + "km";
+                    lblCouleur.Text = Globales.voiture.getCouleur();
+                    lblPuissance.Text = Globales.voiture.getPuissance().ToString() + " cv";
+                    lblImmat.Text = Globales.voiture.getImmatriculation();
+                    lblPrix.Text = Globales.voiture.getPrix().ToString() + "€";
+                }
+            }
         }
 
 

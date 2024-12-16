@@ -28,7 +28,7 @@ namespace GarageCreditCeleste
                 txtCouleurVoiture.Text = Globales.voiture.getCouleur();
                 txtPuissanceVoiture.Text = Convert.ToString(Globales.voiture.getPuissance());
                 txtImmatVoiture.Text = Globales.voiture.getImmatriculation();
-                txtPrixVenteVoiture.Text = Convert.ToString(Globales.voiture.getPrixVente());
+                txtPrixVenteVoiture.Text = Convert.ToString(Globales.voiture.getPrix());
             }
         }
 
@@ -58,6 +58,10 @@ namespace GarageCreditCeleste
             {
                 Globales.voiture = new Voiture(txtMarqueVoiture.Text, txtModeleVoiture.Text, Convert.ToInt32(txtAnneeVoiture.Text), Convert.ToInt32(txtKilometrageVoiture.Text), txtCouleurVoiture.Text, Convert.ToInt32(txtPuissanceVoiture.Text), txtImmatVoiture.Text, Convert.ToInt32(txtPrixVenteVoiture.Text));
                 MessageBox.Show("Les informations ont été enregistrées avec succès.", "Enregistrement", MessageBoxButtons.OK);
+                Globales.Type = "Vente";
+                Globales.accueil = new Accueil();
+                Globales.accueil.Show();
+                Globales.vendre.Close();
             }
         }
 
