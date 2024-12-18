@@ -24,6 +24,7 @@ namespace GarageCreditCeleste
         public static Voiture voiture;
 
         public static string Type;
+
     }
 
     class Client
@@ -89,7 +90,7 @@ namespace GarageCreditCeleste
         }
     }
 
-    class Voiture
+    public class Voiture
     {
         private string marque;
         private string modele;

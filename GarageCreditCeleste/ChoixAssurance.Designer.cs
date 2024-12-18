@@ -37,22 +37,24 @@ namespace GarageCreditCeleste
             // btnOui
             // 
             this.btnOui.Location = new System.Drawing.Point(111, 118);
-            this.btnOui.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnOui.Margin = new System.Windows.Forms.Padding(4);
             this.btnOui.Name = "btnOui";
             this.btnOui.Size = new System.Drawing.Size(100, 28);
             this.btnOui.TabIndex = 0;
             this.btnOui.Text = "Oui";
             this.btnOui.UseVisualStyleBackColor = true;
+            this.btnOui.Click += new System.EventHandler(this.btnOui_Click);
             // 
             // btnNon
             // 
             this.btnNon.Location = new System.Drawing.Point(269, 118);
-            this.btnNon.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnNon.Margin = new System.Windows.Forms.Padding(4);
             this.btnNon.Name = "btnNon";
             this.btnNon.Size = new System.Drawing.Size(100, 28);
             this.btnNon.TabIndex = 1;
             this.btnNon.Text = "Non";
             this.btnNon.UseVisualStyleBackColor = true;
+            this.btnNon.Click += new System.EventHandler(this.btnNon_Click);
             // 
             // label1
             // 
@@ -73,7 +75,7 @@ namespace GarageCreditCeleste
             this.Controls.Add(this.btnNon);
             this.Controls.Add(this.btnOui);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ChoixAssurance";
             this.Text = "ChoixAssurance";
             this.Load += new System.EventHandler(this.ChoixAssurance_Load);
