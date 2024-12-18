@@ -70,6 +70,7 @@
     <Compile Include="ChoixAssurance.Designer.cs">
       <DependentUpon>ChoixAssurance.cs</DependentUpon>
     </Compile>
+    <Compile Include="Client.cs" />
     <Compile Include="ControleTechnique.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -115,6 +116,7 @@
     <Compile Include="Vendre.Designer.cs">
       <DependentUpon>Vendre.cs</DependentUpon>
     </Compile>
+    <Compile Include="Voiture.cs" />
     <EmbeddedResource Include="Accueil.resx">
       <DependentUpon>Accueil.cs</DependentUpon>
     </EmbeddedResource>
