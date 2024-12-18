@@ -21,5 +21,15 @@ namespace GarageCreditCeleste
         {
 
         }
+
+        private void btnOui_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnNon_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

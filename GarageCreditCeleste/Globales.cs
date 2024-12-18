@@ -24,5 +24,6 @@ namespace GarageCreditCeleste
         public static Voiture voiture;
 
         public static string Type;
+
     }
 }
