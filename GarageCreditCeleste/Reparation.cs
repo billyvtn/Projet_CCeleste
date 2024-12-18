@@ -15,6 +15,9 @@ namespace GarageCreditCeleste
         public Reparation()
         {
             InitializeComponent();
+            // Configurer le MonthCalendar
+            calReparation.MinDate = DateTime.Today; // Grise automatiquement les dates passées
+            calReparation.MaxSelectionCount = 1;   // Permet de sélectionner un seul jour à la fois
         }
 
         private void btnFermer_Click(object sender, EventArgs e)

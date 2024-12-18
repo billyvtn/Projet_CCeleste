@@ -28,5 +28,16 @@ namespace GarageCreditCeleste
         {
             //enregistrer les infos du rdv dans un objet Globales
         }
+
+        private void Entretien_Load(object sender, EventArgs e)
+        {
+            lblMarque.Text += Globales.voiture.getMarque();
+            lblModele.Text += Globales.voiture.getModele();
+            lblAnnee.Text += Globales.voiture.getAnnee();
+            lblKilometrage.Text += Globales.voiture.getKilometrage();
+            lblCouleur.Text += Globales.voiture.getCouleur();
+            lblPuissance.Text += Globales.voiture.getPuissance();
+            lblImmat.Text += Globales.voiture.getImmatriculation();
+        }
     }
 }
