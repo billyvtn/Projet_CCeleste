@@ -24,7 +24,6 @@ namespace GarageCreditCeleste
                 btnAcheter.Enabled = true;
                 btnVendre.Enabled = true;
                 btnServices.Enabled = true;
-
                 if (Globales.client.getCivilite())
                 {
                     rdbCivHomme.Checked = true;
@@ -33,7 +32,6 @@ namespace GarageCreditCeleste
                 {
                     rdbCivFemme.Checked = false;
                 }
-
                 txtNom.Text = Globales.client.getNom();
                 txtPrenom.Text = Globales.client.getPrenom();
                 txtEmail.Text = Globales.client.getEmail();
@@ -50,6 +48,25 @@ namespace GarageCreditCeleste
                 btnVendre.Visible = false;
                 btnServices.Visible = false;
                 gpbResume.Visible = true;
+
+                string civi;
+                if (Globales.client.getCivilite())
+                {
+                    //rdbCivHomme.Checked = true;
+                    civi = "Mr. ";
+                }
+                else
+                {
+                    //rdbCivFemme.Checked = false;
+                    civi = "Mme. ";
+                }
+                gpbInfoClient.Visible = false;
+                gpbInfoFixe.Visible = true;
+                lblCivNomPrenom.Text = civi + Globales.client.getNom() + " " + Globales.client.getPrenom();
+                lblEmail.Text = Globales.client.getEmail();
+                lblNumero.Text = Globales.client.getNumeroTelephone();
+                lblAdresse.Text = Globales.client.getAdresseNum() + " " + Globales.client.getAdresseVoie();
+                lblVilleCP.Text = Globales.client.getVille() + " " + Globales.client.getCodePostal();
 
                 if (Globales.Type == "Vente")
                 {
@@ -178,34 +195,58 @@ namespace GarageCreditCeleste
         private void txtNom_TextChanged(object sender, EventArgs e)
         {
             txtNom.ForeColor = SystemColors.ControlText;
+            btnAcheter.Enabled = false;
+            btnVendre.Enabled = false;
+            btnServices.Enabled = false;
         }
         private void txtPrenom_TextChanged(object sender, EventArgs e)
         {
             txtPrenom.ForeColor = SystemColors.ControlText;
+            btnAcheter.Enabled = false;
+            btnVendre.Enabled = false;
+            btnServices.Enabled = false;
         }
         private void txtEmail_TextChanged(object sender, EventArgs e)
         {
             txtEmail.ForeColor = SystemColors.ControlText;
+            btnAcheter.Enabled = false;
+            btnVendre.Enabled = false;
+            btnServices.Enabled = false;
         }
         private void txtNumeroTelephone_TextChanged(object sender, EventArgs e)
         {
             txtNumeroTelephone.ForeColor = SystemColors.ControlText;
+            btnAcheter.Enabled = false;
+            btnVendre.Enabled = false;
+            btnServices.Enabled = false;
         }
         private void txtAdresseNum_TextChanged(object sender, EventArgs e)
         {
             txtAdresseNum.ForeColor = SystemColors.ControlText;
+            btnAcheter.Enabled = false;
+            btnVendre.Enabled = false;
+            btnServices.Enabled = false;
         }
         private void txtAdresseVoie_TextChanged(object sender, EventArgs e)
         {
             txtAdresseVoie.ForeColor = SystemColors.ControlText;
+            btnAcheter.Enabled = false;
+            btnVendre.Enabled = false;
+            btnServices.Enabled = false;
         }
         private void txtAdresseVille_TextChanged(object sender, EventArgs e)
         {
             txtAdresseVille.ForeColor = SystemColors.ControlText;
+            btnAcheter.Enabled = false;
+            btnVendre.Enabled = false;
+            btnServices.Enabled = false;
         }
         private void txtAdresseCP_TextChanged(object sender, EventArgs e)
         {
             txtAdresseCP.ForeColor = SystemColors.ControlText;
+            btnAcheter.Enabled = false;
+            btnVendre.Enabled = false;
+            btnServices.Enabled = false;
         }
 
 
@@ -242,7 +283,7 @@ namespace GarageCreditCeleste
                 
                 btnAcheter.Enabled = true;
                 btnVendre.Enabled = true;
-                btnServices.Enabled = true;
+                btnServices.Enabled = true;              
 
                 MessageBox.Show("Les informations ont été enregistrées avec succès.", "Enregistrement", MessageBoxButtons.OK);
             }
