@@ -30,9 +30,6 @@ namespace GarageCreditCeleste
                 txtPuissanceVoiture.Text = Globales.voiture.getPuissance().ToString();
 
 
-
-
-
                 btnControleTechnique.Enabled = true;
                 btnReparation.Enabled = true;
                 btnEntretien.Enabled = true;
