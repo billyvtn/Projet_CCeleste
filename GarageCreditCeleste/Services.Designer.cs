@@ -62,6 +62,7 @@ namespace GarageCreditCeleste
             this.txtImmatVoiture.Name = "txtImmatVoiture";
             this.txtImmatVoiture.Size = new System.Drawing.Size(197, 23);
             this.txtImmatVoiture.TabIndex = 46;
+            this.txtImmatVoiture.TextChanged += new System.EventHandler(this.txtImmatVoiture_TextChanged);
             // 
             // label3
             // 
@@ -80,6 +81,7 @@ namespace GarageCreditCeleste
             this.txtMarqueVoiture.Name = "txtMarqueVoiture";
             this.txtMarqueVoiture.Size = new System.Drawing.Size(197, 23);
             this.txtMarqueVoiture.TabIndex = 34;
+            this.txtMarqueVoiture.TextChanged += new System.EventHandler(this.txtMarqueVoiture_TextChanged);
             // 
             // txtPuissanceVoiture
             // 
@@ -88,6 +90,7 @@ namespace GarageCreditCeleste
             this.txtPuissanceVoiture.Name = "txtPuissanceVoiture";
             this.txtPuissanceVoiture.Size = new System.Drawing.Size(197, 23);
             this.txtPuissanceVoiture.TabIndex = 44;
+            this.txtPuissanceVoiture.TextChanged += new System.EventHandler(this.txtPuissanceVoiture_TextChanged);
             // 
             // label4
             // 
@@ -116,6 +119,7 @@ namespace GarageCreditCeleste
             this.txtCouleurVoiture.Name = "txtCouleurVoiture";
             this.txtCouleurVoiture.Size = new System.Drawing.Size(197, 23);
             this.txtCouleurVoiture.TabIndex = 42;
+            this.txtCouleurVoiture.TextChanged += new System.EventHandler(this.txtCouleurVoiture_TextChanged);
             // 
             // label6
             // 
@@ -154,6 +158,7 @@ namespace GarageCreditCeleste
             this.txtAnneeVoiture.Name = "txtAnneeVoiture";
             this.txtAnneeVoiture.Size = new System.Drawing.Size(197, 23);
             this.txtAnneeVoiture.TabIndex = 35;
+            this.txtAnneeVoiture.TextChanged += new System.EventHandler(this.txtAnneeVoiture_TextChanged);
             // 
             // label11
             // 
@@ -172,6 +177,7 @@ namespace GarageCreditCeleste
             this.txtModeleVoiture.Name = "txtModeleVoiture";
             this.txtModeleVoiture.Size = new System.Drawing.Size(197, 23);
             this.txtModeleVoiture.TabIndex = 36;
+            this.txtModeleVoiture.TextChanged += new System.EventHandler(this.txtModeleVoiture_TextChanged);
             // 
             // txtKilometrageVoiture
             // 
@@ -180,6 +186,7 @@ namespace GarageCreditCeleste
             this.txtKilometrageVoiture.Name = "txtKilometrageVoiture";
             this.txtKilometrageVoiture.Size = new System.Drawing.Size(197, 23);
             this.txtKilometrageVoiture.TabIndex = 37;
+            this.txtKilometrageVoiture.TextChanged += new System.EventHandler(this.txtKilometrageVoiture_TextChanged);
             // 
             // groupBox1
             // 
@@ -228,6 +235,7 @@ namespace GarageCreditCeleste
             // 
             // btnEntretien
             // 
+            this.btnEntretien.Enabled = false;
             this.btnEntretien.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.btnEntretien.Location = new System.Drawing.Point(662, 198);
             this.btnEntretien.Name = "btnEntretien";
@@ -239,6 +247,7 @@ namespace GarageCreditCeleste
             // 
             // btnControleTechnique
             // 
+            this.btnControleTechnique.Enabled = false;
             this.btnControleTechnique.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.btnControleTechnique.Location = new System.Drawing.Point(546, 198);
             this.btnControleTechnique.Name = "btnControleTechnique";
@@ -250,6 +259,7 @@ namespace GarageCreditCeleste
             // 
             // btnReparation
             // 
+            this.btnReparation.Enabled = false;
             this.btnReparation.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.btnReparation.Location = new System.Drawing.Point(430, 198);
             this.btnReparation.Name = "btnReparation";
@@ -306,6 +316,7 @@ namespace GarageCreditCeleste
             this.Controls.Add(this.label1);
             this.Name = "Services";
             this.Text = "Services";
+            this.Load += new System.EventHandler(this.Services_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

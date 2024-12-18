@@ -84,9 +84,9 @@ namespace GarageCreditCeleste
             this.lblMarque.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
             this.lblMarque.Location = new System.Drawing.Point(36, 39);
             this.lblMarque.Name = "lblMarque";
-            this.lblMarque.Size = new System.Drawing.Size(64, 17);
+            this.lblMarque.Size = new System.Drawing.Size(68, 17);
             this.lblMarque.TabIndex = 30;
-            this.lblMarque.Text = "Marque :";
+            this.lblMarque.Text = "Marque : ";
             // 
             // lblModele
             // 
@@ -94,9 +94,9 @@ namespace GarageCreditCeleste
             this.lblModele.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
             this.lblModele.Location = new System.Drawing.Point(36, 89);
             this.lblModele.Name = "lblModele";
-            this.lblModele.Size = new System.Drawing.Size(62, 17);
+            this.lblModele.Size = new System.Drawing.Size(66, 17);
             this.lblModele.TabIndex = 31;
-            this.lblModele.Text = "Modèle :";
+            this.lblModele.Text = "Modèle : ";
             // 
             // lblAnnee
             // 
@@ -104,9 +104,9 @@ namespace GarageCreditCeleste
             this.lblAnnee.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
             this.lblAnnee.Location = new System.Drawing.Point(36, 139);
             this.lblAnnee.Name = "lblAnnee";
-            this.lblAnnee.Size = new System.Drawing.Size(57, 17);
+            this.lblAnnee.Size = new System.Drawing.Size(61, 17);
             this.lblAnnee.TabIndex = 32;
-            this.lblAnnee.Text = "Année :";
+            this.lblAnnee.Text = "Année : ";
             // 
             // lblKilometrage
             // 
@@ -114,9 +114,9 @@ namespace GarageCreditCeleste
             this.lblKilometrage.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
             this.lblKilometrage.Location = new System.Drawing.Point(36, 189);
             this.lblKilometrage.Name = "lblKilometrage";
-            this.lblKilometrage.Size = new System.Drawing.Size(91, 17);
+            this.lblKilometrage.Size = new System.Drawing.Size(95, 17);
             this.lblKilometrage.TabIndex = 33;
-            this.lblKilometrage.Text = "Kilométrage :";
+            this.lblKilometrage.Text = "Kilométrage : ";
             // 
             // lblPuissance
             // 
@@ -124,9 +124,9 @@ namespace GarageCreditCeleste
             this.lblPuissance.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
             this.lblPuissance.Location = new System.Drawing.Point(36, 286);
             this.lblPuissance.Name = "lblPuissance";
-            this.lblPuissance.Size = new System.Drawing.Size(81, 17);
+            this.lblPuissance.Size = new System.Drawing.Size(85, 17);
             this.lblPuissance.TabIndex = 39;
-            this.lblPuissance.Text = "Puissance :";
+            this.lblPuissance.Text = "Puissance : ";
             // 
             // lblCouleur
             // 
@@ -253,6 +253,7 @@ namespace GarageCreditCeleste
             this.Controls.Add(this.btnEnregistrer);
             this.Name = "Reparation";
             this.Text = "Reparation";
+            this.Load += new System.EventHandler(this.Reparation_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);

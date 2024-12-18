@@ -21,9 +21,6 @@ namespace GarageCreditCeleste
         {
             if (Globales.client != null)
             {
-                btnAcheter.Enabled = true;
-                btnVendre.Enabled = true;
-                btnServices.Enabled = true;
                 if (Globales.client.getCivilite())
                 {
                     rdbCivHomme.Checked = true;
@@ -40,6 +37,9 @@ namespace GarageCreditCeleste
                 txtAdresseVoie.Text = Globales.client.getAdresseVoie();
                 txtAdresseVille.Text = Globales.client.getVille();
                 txtAdresseCP.Text = Globales.client.getCodePostal();
+                btnAcheter.Enabled = true;
+                btnVendre.Enabled = true;
+                btnServices.Enabled = true;
             }
 
             if (Globales.Type != null)
