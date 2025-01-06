@@ -253,6 +253,7 @@ namespace GarageCreditCeleste
             this.Controls.Add(this.btnFermer);
             this.Name = "ControleTechnique";
             this.Text = "ControleTechnique";
+            this.Load += new System.EventHandler(this.ControleTechnique_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);

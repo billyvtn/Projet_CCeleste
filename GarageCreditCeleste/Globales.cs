@@ -21,31 +21,10 @@ namespace GarageCreditCeleste
         public static Credit credit;
 
         public static Client client;
-    }
 
-    class Client
-    {
-        private bool civilite; //true = homme, false = femme
-        private string nom;
-        private string prenom;
-        private string email;
-        private string numero;
-        private string numAdresse;
-        private string voieAdresse;
-        private string ville;
-        private string codePostal;
+        public static Voiture voiture;
 
-        public Client(bool civ, string no, string preno, string emai, string numer, string num, string voie, string vil, string codePos)
-        {
-            civilite = civ;
-            nom = no;
-            prenom = preno;
-            email = emai;
-            numero = numer;
-            numAdresse = num;
-            voieAdresse = voie;
-            ville = vil;
-            codePostal = codePos;
-        }
+        public static string Type;
+
     }
 }

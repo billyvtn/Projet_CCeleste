@@ -93,24 +93,39 @@ namespace GarageCreditCeleste
             this.txtImmatVoiture.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
             this.txtImmatVoiture.Location = new System.Drawing.Point(145, 333);
             this.txtImmatVoiture.Name = "txtImmatVoiture";
+<<<<<<< HEAD
             this.txtImmatVoiture.Size = new System.Drawing.Size(197, 31);
             this.txtImmatVoiture.TabIndex = 46;
+=======
+            this.txtImmatVoiture.Size = new System.Drawing.Size(197, 23);
+            this.txtImmatVoiture.TabIndex = 7;
+>>>>>>> master
             // 
             // txtMarqueVoiture
             // 
             this.txtMarqueVoiture.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
             this.txtMarqueVoiture.Location = new System.Drawing.Point(145, 36);
             this.txtMarqueVoiture.Name = "txtMarqueVoiture";
+<<<<<<< HEAD
             this.txtMarqueVoiture.Size = new System.Drawing.Size(197, 31);
             this.txtMarqueVoiture.TabIndex = 34;
+=======
+            this.txtMarqueVoiture.Size = new System.Drawing.Size(197, 23);
+            this.txtMarqueVoiture.TabIndex = 1;
+>>>>>>> master
             // 
             // txtPuissanceVoiture
             // 
             this.txtPuissanceVoiture.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
             this.txtPuissanceVoiture.Location = new System.Drawing.Point(145, 283);
             this.txtPuissanceVoiture.Name = "txtPuissanceVoiture";
+<<<<<<< HEAD
             this.txtPuissanceVoiture.Size = new System.Drawing.Size(197, 31);
             this.txtPuissanceVoiture.TabIndex = 44;
+=======
+            this.txtPuissanceVoiture.Size = new System.Drawing.Size(197, 23);
+            this.txtPuissanceVoiture.TabIndex = 6;
+>>>>>>> master
             // 
             // label4
             // 
@@ -137,8 +152,13 @@ namespace GarageCreditCeleste
             this.txtCouleurVoiture.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
             this.txtCouleurVoiture.Location = new System.Drawing.Point(145, 233);
             this.txtCouleurVoiture.Name = "txtCouleurVoiture";
+<<<<<<< HEAD
             this.txtCouleurVoiture.Size = new System.Drawing.Size(197, 31);
             this.txtCouleurVoiture.TabIndex = 42;
+=======
+            this.txtCouleurVoiture.Size = new System.Drawing.Size(197, 23);
+            this.txtCouleurVoiture.TabIndex = 5;
+>>>>>>> master
             // 
             // label6
             // 
@@ -175,8 +195,13 @@ namespace GarageCreditCeleste
             this.txtAnneeVoiture.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
             this.txtAnneeVoiture.Location = new System.Drawing.Point(145, 136);
             this.txtAnneeVoiture.Name = "txtAnneeVoiture";
+<<<<<<< HEAD
             this.txtAnneeVoiture.Size = new System.Drawing.Size(197, 31);
             this.txtAnneeVoiture.TabIndex = 35;
+=======
+            this.txtAnneeVoiture.Size = new System.Drawing.Size(197, 23);
+            this.txtAnneeVoiture.TabIndex = 3;
+>>>>>>> master
             // 
             // label11
             // 
@@ -193,24 +218,39 @@ namespace GarageCreditCeleste
             this.txtModeleVoiture.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
             this.txtModeleVoiture.Location = new System.Drawing.Point(145, 86);
             this.txtModeleVoiture.Name = "txtModeleVoiture";
+<<<<<<< HEAD
             this.txtModeleVoiture.Size = new System.Drawing.Size(197, 31);
             this.txtModeleVoiture.TabIndex = 36;
+=======
+            this.txtModeleVoiture.Size = new System.Drawing.Size(197, 23);
+            this.txtModeleVoiture.TabIndex = 2;
+>>>>>>> master
             // 
             // txtKilometrageVoiture
             // 
             this.txtKilometrageVoiture.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
             this.txtKilometrageVoiture.Location = new System.Drawing.Point(145, 186);
             this.txtKilometrageVoiture.Name = "txtKilometrageVoiture";
+<<<<<<< HEAD
             this.txtKilometrageVoiture.Size = new System.Drawing.Size(197, 31);
             this.txtKilometrageVoiture.TabIndex = 37;
+=======
+            this.txtKilometrageVoiture.Size = new System.Drawing.Size(197, 23);
+            this.txtKilometrageVoiture.TabIndex = 4;
+>>>>>>> master
             // 
             // txtPrixVenteVoiture
             // 
             this.txtPrixVenteVoiture.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
             this.txtPrixVenteVoiture.Location = new System.Drawing.Point(555, 210);
             this.txtPrixVenteVoiture.Name = "txtPrixVenteVoiture";
+<<<<<<< HEAD
             this.txtPrixVenteVoiture.Size = new System.Drawing.Size(197, 31);
             this.txtPrixVenteVoiture.TabIndex = 52;
+=======
+            this.txtPrixVenteVoiture.Size = new System.Drawing.Size(197, 23);
+            this.txtPrixVenteVoiture.TabIndex = 8;
+>>>>>>> master
             // 
             // label9
             // 
@@ -238,7 +278,7 @@ namespace GarageCreditCeleste
             this.btnEnregistrer.Location = new System.Drawing.Point(602, 410);
             this.btnEnregistrer.Name = "btnEnregistrer";
             this.btnEnregistrer.Size = new System.Drawing.Size(90, 30);
-            this.btnEnregistrer.TabIndex = 49;
+            this.btnEnregistrer.TabIndex = 9;
             this.btnEnregistrer.Text = "Enregistrer";
             this.btnEnregistrer.UseVisualStyleBackColor = true;
             this.btnEnregistrer.Click += new System.EventHandler(this.btnEnregistrer_Click);
@@ -249,7 +289,7 @@ namespace GarageCreditCeleste
             this.btnFermer.Location = new System.Drawing.Point(698, 410);
             this.btnFermer.Name = "btnFermer";
             this.btnFermer.Size = new System.Drawing.Size(90, 30);
-            this.btnFermer.TabIndex = 48;
+            this.btnFermer.TabIndex = 10;
             this.btnFermer.Text = "Fermer";
             this.btnFermer.UseVisualStyleBackColor = true;
             this.btnFermer.Click += new System.EventHandler(this.btnFermer_Click);

@@ -58,7 +58,23 @@
     <Compile Include="Acheter.Designer.cs">
       <DependentUpon>Acheter.cs</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="CCredit.cs" />
+=======
+    <Compile Include="Assurance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Assurance.Designer.cs">
+      <DependentUpon>Assurance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChoixAssurance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChoixAssurance.Designer.cs">
+      <DependentUpon>ChoixAssurance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Client.cs" />
+>>>>>>> master
     <Compile Include="ControleTechnique.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,11 +126,15 @@
     <Compile Include="Vendre.Designer.cs">
       <DependentUpon>Vendre.cs</DependentUpon>
     </Compile>
+    <Compile Include="Voiture.cs" />
     <EmbeddedResource Include="Accueil.resx">
       <DependentUpon>Accueil.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Acheter.resx">
       <DependentUpon>Acheter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChoixAssurance.resx">
+      <DependentUpon>ChoixAssurance.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ControleTechnique.resx">
       <DependentUpon>ControleTechnique.cs</DependentUpon>

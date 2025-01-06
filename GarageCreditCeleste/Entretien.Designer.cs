@@ -253,6 +253,7 @@ namespace GarageCreditCeleste
             this.Controls.Add(this.btnEnregistrer);
             this.Name = "Entretien";
             this.Text = "Entretien";
+            this.Load += new System.EventHandler(this.Entretien_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);

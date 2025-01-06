@@ -97,6 +97,7 @@ namespace GarageCreditCeleste
             this.lsbVoituresDispo.Name = "lsbVoituresDispo";
             this.lsbVoituresDispo.Size = new System.Drawing.Size(409, 497);
             this.lsbVoituresDispo.TabIndex = 25;
+            this.lsbVoituresDispo.SelectedIndexChanged += new System.EventHandler(this.lsbVoituresDispo_SelectedIndexChanged);
             // 
             // btnChoisir
             // 
