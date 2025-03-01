@@ -77,7 +77,7 @@ namespace GarageCreditCeleste
                             // Parcourir les résultats
                             while (oReader.Read())
                             {
-                                Voiture unCredit = new Voiture(Convert.ToString(oReader[0]), Convert.ToString(oReader[1]), Convert.ToInt16(oReader[2]), Convert.ToInt16(oReader[3]), Convert.ToString(oReader[4]), Convert.ToInt16(oReader[5]), Convert.ToString(oReader[6]), Convert.ToInt16(oReader[7]));
+                                Voiture unCredit = new Voiture(Convert.ToString(oReader[0]), Convert.ToString(oReader[1]), Convert.ToInt16(oReader[2]), Convert.ToInt16(oReader[3]), Convert.ToString(oReader[4]), Convert.ToInt16(oReader[5]), Convert.ToString(oReader[6]), Convert.ToBoolean(oReader[7]));
 
                                 lesVoitures.Add(unCredit);
                             }
