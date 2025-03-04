@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GarageCreditCeleste
 {
-    public class Voiture
+    class Voiture
     {
         private string marque;
         private string modele;
