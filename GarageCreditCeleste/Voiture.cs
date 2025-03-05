@@ -90,5 +90,10 @@ namespace GarageCreditCeleste
         {
             return prix;
         }
+
+        public bool getStatutNeuf()
+        {
+            return statutNeuf;
+        }
     }
 }
