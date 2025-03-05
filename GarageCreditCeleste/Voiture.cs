@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GarageCreditCeleste
 {
-    class Voiture
+    public class Voiture
     {
         private string marque;
         private string modele;
@@ -17,6 +17,7 @@ namespace GarageCreditCeleste
         private string immatriculation;
         private int prix;
         private bool statutNeuf;
+        private bool statutDispo;
 
         public Voiture(string marqu, string model, int anne, int kilometrag, string couleu, int puissanc, string immat, bool statutN)
         {
@@ -41,6 +42,20 @@ namespace GarageCreditCeleste
             immatriculation = immat;
             prix = vent;
             statutNeuf = statutN;
+        }
+
+        public Voiture(string marqu, string model, int anne, int kilometrag, string couleu, int puissanc, string immat, bool statutN, int vent, bool statutD)
+        {
+            marque = marqu;
+            modele = model;
+            annee = anne;
+            kilometrage = kilometrag;
+            couleur = couleu;
+            puissance = puissanc;
+            immatriculation = immat;
+            prix = vent;
+            statutNeuf = statutN;
+            statutDispo = statutD;
         }
 
         public string getMarque()
