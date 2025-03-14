@@ -85,7 +85,6 @@ namespace GarageCreditCeleste
             }
         }
 
-
         //lien accueil --> vendre
         private void btnVendre_Click(object sender, EventArgs e)
         {
@@ -289,6 +288,9 @@ namespace GarageCreditCeleste
             }
         }
 
-      
+        private void lblPrix_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
