@@ -18,6 +18,7 @@ namespace GarageCreditCeleste
         public static Reparation reparation;
         public static Entretien entretien;
         public static ControleTechnique controletechnique;
+        public static Assurance assurance;
 
         public static Client client;
 

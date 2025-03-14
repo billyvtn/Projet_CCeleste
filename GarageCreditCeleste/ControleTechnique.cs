@@ -41,5 +41,10 @@ namespace GarageCreditCeleste
             lblPuissance.Text += Globales.voiture.getPuissance();
             lblImmat.Text += Globales.voiture.getImmatriculation();
         }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

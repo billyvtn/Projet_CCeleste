@@ -16,10 +16,10 @@ namespace GarageCreditCeleste
         private int puissance;
         private string immatriculation;
         private int prix;
-        private bool statutNeuf;
         private bool statutDispo;
+        private double prixRachat;
 
-        public Voiture(string marqu, string model, int anne, int kilometrag, string couleu, int puissanc, string immat, bool statutN)
+        public Voiture(string marqu, string model, int anne, int kilometrag, string couleu, int puissanc, string immat, bool statutD)
         {
             marque = marqu;
             modele = model;
@@ -28,34 +28,32 @@ namespace GarageCreditCeleste
             couleur = couleu;
             puissance = puissanc;
             immatriculation = immat;
-            statutNeuf = statutN;
-        }
-
-        public Voiture(string marqu, string model, int anne, int kilometrag, string couleu, int puissanc, string immat, bool statutN, int vent)
-        {
-            marque = marqu;
-            modele = model;
-            annee = anne;
-            kilometrage = kilometrag;
-            couleur = couleu;
-            puissance = puissanc;
-            immatriculation = immat;
-            prix = vent;
-            statutNeuf = statutN;
-        }
-
-        public Voiture(string marqu, string model, int anne, int kilometrag, string couleu, int puissanc, string immat, bool statutN, int vent, bool statutD)
-        {
-            marque = marqu;
-            modele = model;
-            annee = anne;
-            kilometrage = kilometrag;
-            couleur = couleu;
-            puissance = puissanc;
-            immatriculation = immat;
-            prix = vent;
-            statutNeuf = statutN;
             statutDispo = statutD;
+        }
+
+        public Voiture(string marqu, string model, int anne, int kilometrag, string couleu, int puissanc, string immat, bool statutD, int vent)
+        {
+            marque = marqu;
+            modele = model;
+            annee = anne;
+            kilometrage = kilometrag;
+            couleur = couleu;
+            puissance = puissanc;
+            immatriculation = immat;
+            prix = vent;
+            statutDispo = statutD;
+        }
+        public Voiture(string marqu, string model, int anne, int kilometrag, string couleu, int puissanc, string immat, double prixR)
+        {
+            marque = marqu;
+            modele = model;
+            annee = anne;
+            kilometrage = kilometrag;
+            couleur = couleu;
+            puissance = puissanc;
+            immatriculation = immat;
+            prixRachat = prixR;
+            statutDispo = false;
         }
 
         public string getMarque()
@@ -91,9 +89,14 @@ namespace GarageCreditCeleste
             return prix;
         }
 
-        public bool getStatutNeuf()
+        public bool getStatutDispo()
         {
-            return statutNeuf;
+            return statutDispo;
+        }
+
+        public double getPrixRachat()
+        {
+            return prixRachat;
         }
     }
 }
