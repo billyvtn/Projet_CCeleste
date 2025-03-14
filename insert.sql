@@ -12,7 +12,7 @@ GO
 INSERT INTO VEHICULE (Marque, Modele, Annee, Valeur, Kilometrage, Couleur, Puissance, StatutDisp, Immat, idUtilisateur) VALUES
 ('Renault', 'Clio', 2020, 15000.00, 20000, 'Rouge', 90, 1, 'ABC1234', 1),
 ('Peugeot', '208', 2019, 14000.00, 25000, 'Bleu', 95, 1, 'XYZ5678', NULL),
-('Porsche', 'GT2RS', 2019, 14000.00, 25000, 'Noir', 95, 1, 'XYZ5678', NULL),
+('Porsche', 'GT2RS', 2019, 14000.00, 25000, 'Noir', 95, 1, 'BP704MH', NULL),
 ('Toyota', 'Yaris', 2021, 18000.00, 15000, 'Blanc', 100, 1, 'LMN9101', 3);
 GO
 
