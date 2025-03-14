@@ -15,9 +15,8 @@ namespace GarageCreditCeleste
         private string couleur;
         private int puissance;
         private string immatriculation;
-        private int prix;
         private bool statutDispo;
-        private double prixRachat;
+        private double prix;
 
         public Voiture(string marqu, string model, int anne, int kilometrag, string couleu, int puissanc, string immat, bool statutD)
         {
@@ -31,7 +30,7 @@ namespace GarageCreditCeleste
             statutDispo = statutD;
         }
 
-        public Voiture(string marqu, string model, int anne, int kilometrag, string couleu, int puissanc, string immat, bool statutD, int vent)
+        public Voiture(string marqu, string model, int anne, int kilometrag, string couleu, int puissanc, string immat, bool statutD, double prixA)
         {
             marque = marqu;
             modele = model;
@@ -40,7 +39,7 @@ namespace GarageCreditCeleste
             couleur = couleu;
             puissance = puissanc;
             immatriculation = immat;
-            prix = vent;
+            prix = prixA;
             statutDispo = statutD;
         }
         public Voiture(string marqu, string model, int anne, int kilometrag, string couleu, int puissanc, string immat, double prixR)
@@ -52,7 +51,7 @@ namespace GarageCreditCeleste
             couleur = couleu;
             puissance = puissanc;
             immatriculation = immat;
-            prixRachat = prixR;
+            prix = prixR;
             statutDispo = false;
         }
 
@@ -84,19 +83,13 @@ namespace GarageCreditCeleste
         {
             return immatriculation;
         }
-        public int getPrix()
+        public double getPrix()
         {
             return prix;
         }
-
         public bool getStatutDispo()
         {
             return statutDispo;
-        }
-
-        public double getPrixRachat()
-        {
-            return prixRachat;
         }
     }
 }
