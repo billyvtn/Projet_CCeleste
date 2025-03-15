@@ -58,9 +58,7 @@ namespace GarageCreditCeleste
             }
             else
             {
-                Globales.voiture = new Voiture(txtMarqueVoiture.Text, txtModeleVoiture.Text, Convert.ToInt32(txtAnneeVoiture.Text), Convert.ToInt32(txtKilometrageVoiture.Text), txtCouleurVoiture.Text, Convert.ToInt32(txtPuissanceVoiture.Text), txtImmatVoiture.Text, prixFinalVoiture);
-
-                InsererVoiture();
+                Globales.voiture = new Voiture(txtMarqueVoiture.Text, txtModeleVoiture.Text, Convert.ToInt32(txtAnneeVoiture.Text), Convert.ToInt32(txtKilometrageVoiture.Text), txtCouleurVoiture.Text, Convert.ToInt32(txtPuissanceVoiture.Text), txtImmatVoiture.Text, prixFinalVoiture);           
 
                 MessageBox.Show("Les informations ont été enregistrées avec succès.", "Enregistrement", MessageBoxButtons.OK);
 
@@ -80,47 +78,10 @@ namespace GarageCreditCeleste
                 }
                 else if (choix == DialogResult.No)
                 {
-
                     Globales.Type = "Vente";
                     Globales.accueil = new Accueil();
                     Globales.accueil.Show();
                     Globales.vendre.Close();
-                }
-            }
-        }
-
-        private void InsererVoiture()
-        {
-            string connectionString = "Data Source=10.129.184.106;User Id=connEleveSio;password=mdpEleveSi0;Initial Catalog=PROJETCC_K";
-            string strRequete = "INSERT INTO VEHICULE (Marque, Modele, Annee, Valeur, Kilometrage, Couleur, Puissance, StatutDisp, Immat, idUtilisateur) " +
-                                "VALUES (@Marque, @Modele, @Annee, @Valeur, @Kilometrage, @Couleur, @Puissance, @StatutDisp, @Immat, @idUtilisateur)";
-
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                using (SqlCommand command = new SqlCommand(strRequete, connection))
-                {
-                    try
-                    {
-                        // Ajout des paramètres sécurisés
-                        command.Parameters.AddWithValue("@Marque", Globales.voiture.getMarque());
-                        command.Parameters.AddWithValue("@Modele", Globales.voiture.getModele());
-                        command.Parameters.AddWithValue("@Annee", Globales.voiture.getAnnee());
-                        command.Parameters.AddWithValue("@Valeur", Globales.voiture.getPrix());
-                        command.Parameters.AddWithValue("@Kilometrage", Globales.voiture.getKilometrage());
-                        command.Parameters.AddWithValue("@Couleur", Globales.voiture.getCouleur());
-                        command.Parameters.AddWithValue("@Puissance", Globales.voiture.getPuissance());
-                        command.Parameters.AddWithValue("@StatutDisp", Globales.voiture.getStatutDispo());
-                        command.Parameters.AddWithValue("@Immat", Globales.voiture.getImmatriculation());
-                        command.Parameters.AddWithValue("@idUtilisateur", DBNull.Value); // NULL car c'est un véhicule du garage
-
-                        // Ouvrir la connexion et exécuter la requête
-                        connection.Open();
-                        command.ExecuteNonQuery();
-                    }
-                    catch (SqlException ex)
-                    {
-                        MessageBox.Show($"Erreur SQL : {ex.Message}", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
                 }
             }
         }
