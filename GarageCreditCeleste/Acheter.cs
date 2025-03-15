@@ -52,7 +52,19 @@ namespace GarageCreditCeleste
 
         private void lsbVoituresDispo_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (lsbVoituresDispo.SelectedItem != null)
+            {
+                Voiture voitureSelectionnee = (Voiture)lsbVoituresDispo.SelectedItem;
 
+                lblMarque.Text = voitureSelectionnee.getMarque();
+                lblModele.Text = voitureSelectionnee.getModele();
+                lblAnnee.Text = voitureSelectionnee.getAnnee().ToString();
+                lblKilometrage.Text = voitureSelectionnee.getKilometrage().ToString();
+                lblCouleur.Text = voitureSelectionnee.getCouleur();
+                lblPuissance.Text = voitureSelectionnee.getPuissance().ToString();
+                lblImmat.Text = voitureSelectionnee.getImmatriculation();
+                lblPrix.Text = voitureSelectionnee.getPrix().ToString("C"); // Affichage en format monétaire
+            }
         }
 
         public List<Voiture> RecupererVoitures()
@@ -77,7 +89,7 @@ namespace GarageCreditCeleste
                             // Parcourir les résultats
                             while (oReader.Read())
                             {
-                                Voiture uneVoiture = new Voiture(Convert.ToString(oReader[1]), Convert.ToString(oReader[2]), Convert.ToInt16(oReader[3]), Convert.ToInt16(oReader[5]), Convert.ToString(oReader[6]), Convert.ToInt16(oReader[7]), Convert.ToString(oReader[9]), Convert.ToBoolean(oReader[8]), Convert.ToDouble(oReader[4]));
+                                Voiture uneVoiture = new Voiture(Convert.ToString(oReader[1]), Convert.ToString(oReader[2]), Convert.ToInt32(oReader[3]), Convert.ToInt32(oReader[5]), Convert.ToString(oReader[6]), Convert.ToInt32(oReader[7]), Convert.ToString(oReader[9]), Convert.ToBoolean(oReader[8]), Convert.ToDouble(oReader[4]));
                                 lesVoitures.Add(uneVoiture);
                             }
                         }

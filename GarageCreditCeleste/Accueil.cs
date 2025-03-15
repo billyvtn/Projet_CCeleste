@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace GarageCreditCeleste
 {
@@ -291,6 +292,47 @@ namespace GarageCreditCeleste
         private void lblPrix_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnConfirmer_Click(object sender, EventArgs e)
+        {
+            InsererVoiture();
+        }
+
+        private void InsererVoiture()
+        {
+            string connectionString = "Data Source=10.129.184.106;User Id=connEleveSio;password=mdpEleveSi0;Initial Catalog=PROJETCC_K";
+            string strRequete = "INSERT INTO VEHICULE (Marque, Modele, Annee, Valeur, Kilometrage, Couleur, Puissance, StatutDisp, Immat, idUtilisateur) " +
+                                "VALUES (@Marque, @Modele, @Annee, @Valeur, @Kilometrage, @Couleur, @Puissance, @StatutDisp, @Immat, @idUtilisateur)";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                using (SqlCommand command = new SqlCommand(strRequete, connection))
+                {
+                    try
+                    {
+                        // Ajout des paramètres sécurisés
+                        command.Parameters.AddWithValue("@Marque", Globales.voiture.getMarque());
+                        command.Parameters.AddWithValue("@Modele", Globales.voiture.getModele());
+                        command.Parameters.AddWithValue("@Annee", Globales.voiture.getAnnee());
+                        command.Parameters.AddWithValue("@Valeur", Globales.voiture.getPrix());
+                        command.Parameters.AddWithValue("@Kilometrage", Globales.voiture.getKilometrage());
+                        command.Parameters.AddWithValue("@Couleur", Globales.voiture.getCouleur());
+                        command.Parameters.AddWithValue("@Puissance", Globales.voiture.getPuissance());
+                        command.Parameters.AddWithValue("@StatutDisp", Globales.voiture.getStatutDispo());
+                        command.Parameters.AddWithValue("@Immat", Globales.voiture.getImmatriculation());
+                        command.Parameters.AddWithValue("@idUtilisateur", DBNull.Value); // NULL car c'est un véhicule du garage
+
+                        // Ouvrir la connexion et exécuter la requête
+                        connection.Open();
+                        command.ExecuteNonQuery();
+                    }
+                    catch (SqlException ex)
+                    {
+                        MessageBox.Show($"Erreur SQL : {ex.Message}", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
         }
     }
 }

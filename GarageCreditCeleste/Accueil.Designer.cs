@@ -74,6 +74,8 @@ namespace GarageCreditCeleste
             this.lblAdresse = new System.Windows.Forms.Label();
             this.lblEmail = new System.Windows.Forms.Label();
             this.lblCivNomPrenom = new System.Windows.Forms.Label();
+            this.btnConfirmer = new System.Windows.Forms.Button();
+            this.btnAnnuler = new System.Windows.Forms.Button();
             this.gpbInfoClient.SuspendLayout();
             this.gpbResume.SuspendLayout();
             this.gpbType.SuspendLayout();
@@ -95,7 +97,7 @@ namespace GarageCreditCeleste
             // 
             this.btnEnvoyer.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.btnEnvoyer.Location = new System.Drawing.Point(803, 505);
-            this.btnEnvoyer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEnvoyer.Margin = new System.Windows.Forms.Padding(4);
             this.btnEnvoyer.Name = "btnEnvoyer";
             this.btnEnvoyer.Size = new System.Drawing.Size(120, 37);
             this.btnEnvoyer.TabIndex = 15;
@@ -126,9 +128,9 @@ namespace GarageCreditCeleste
             this.gpbInfoClient.Controls.Add(this.label3);
             this.gpbInfoClient.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.gpbInfoClient.Location = new System.Drawing.Point(20, 80);
-            this.gpbInfoClient.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gpbInfoClient.Margin = new System.Windows.Forms.Padding(4);
             this.gpbInfoClient.Name = "gpbInfoClient";
-            this.gpbInfoClient.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gpbInfoClient.Padding = new System.Windows.Forms.Padding(4);
             this.gpbInfoClient.Size = new System.Drawing.Size(537, 462);
             this.gpbInfoClient.TabIndex = 26;
             this.gpbInfoClient.TabStop = false;
@@ -138,7 +140,7 @@ namespace GarageCreditCeleste
             // 
             this.txtAdresseCP.ForeColor = System.Drawing.SystemColors.ScrollBar;
             this.txtAdresseCP.Location = new System.Drawing.Point(149, 319);
-            this.txtAdresseCP.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtAdresseCP.Margin = new System.Windows.Forms.Padding(4);
             this.txtAdresseCP.Name = "txtAdresseCP";
             this.txtAdresseCP.Size = new System.Drawing.Size(307, 29);
             this.txtAdresseCP.TabIndex = 10;
@@ -160,7 +162,7 @@ namespace GarageCreditCeleste
             // 
             this.txtAdresseVille.ForeColor = System.Drawing.SystemColors.ScrollBar;
             this.txtAdresseVille.Location = new System.Drawing.Point(149, 283);
-            this.txtAdresseVille.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtAdresseVille.Margin = new System.Windows.Forms.Padding(4);
             this.txtAdresseVille.Name = "txtAdresseVille";
             this.txtAdresseVille.Size = new System.Drawing.Size(307, 29);
             this.txtAdresseVille.TabIndex = 9;
@@ -182,7 +184,7 @@ namespace GarageCreditCeleste
             // 
             this.txtAdresseVoie.ForeColor = System.Drawing.SystemColors.ScrollBar;
             this.txtAdresseVoie.Location = new System.Drawing.Point(149, 247);
-            this.txtAdresseVoie.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtAdresseVoie.Margin = new System.Windows.Forms.Padding(4);
             this.txtAdresseVoie.Name = "txtAdresseVoie";
             this.txtAdresseVoie.Size = new System.Drawing.Size(307, 29);
             this.txtAdresseVoie.TabIndex = 8;
@@ -204,7 +206,7 @@ namespace GarageCreditCeleste
             // 
             this.txtNumeroTelephone.ForeColor = System.Drawing.SystemColors.ScrollBar;
             this.txtNumeroTelephone.Location = new System.Drawing.Point(149, 176);
-            this.txtNumeroTelephone.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNumeroTelephone.Margin = new System.Windows.Forms.Padding(4);
             this.txtNumeroTelephone.Name = "txtNumeroTelephone";
             this.txtNumeroTelephone.Size = new System.Drawing.Size(307, 29);
             this.txtNumeroTelephone.TabIndex = 6;
@@ -226,7 +228,7 @@ namespace GarageCreditCeleste
             // 
             this.btnEnregistrer.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.btnEnregistrer.Location = new System.Drawing.Point(409, 417);
-            this.btnEnregistrer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEnregistrer.Margin = new System.Windows.Forms.Padding(4);
             this.btnEnregistrer.Name = "btnEnregistrer";
             this.btnEnregistrer.Size = new System.Drawing.Size(120, 37);
             this.btnEnregistrer.TabIndex = 11;
@@ -238,7 +240,7 @@ namespace GarageCreditCeleste
             // 
             this.txtAdresseNum.ForeColor = System.Drawing.SystemColors.ScrollBar;
             this.txtAdresseNum.Location = new System.Drawing.Point(149, 212);
-            this.txtAdresseNum.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtAdresseNum.Margin = new System.Windows.Forms.Padding(4);
             this.txtAdresseNum.Name = "txtAdresseNum";
             this.txtAdresseNum.Size = new System.Drawing.Size(307, 29);
             this.txtAdresseNum.TabIndex = 7;
@@ -250,7 +252,7 @@ namespace GarageCreditCeleste
             // 
             this.txtPrenom.ForeColor = System.Drawing.SystemColors.ScrollBar;
             this.txtPrenom.Location = new System.Drawing.Point(149, 107);
-            this.txtPrenom.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPrenom.Margin = new System.Windows.Forms.Padding(4);
             this.txtPrenom.Name = "txtPrenom";
             this.txtPrenom.Size = new System.Drawing.Size(307, 29);
             this.txtPrenom.TabIndex = 4;
@@ -262,7 +264,7 @@ namespace GarageCreditCeleste
             // 
             this.txtEmail.ForeColor = System.Drawing.SystemColors.ScrollBar;
             this.txtEmail.Location = new System.Drawing.Point(149, 143);
-            this.txtEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(4);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(307, 29);
             this.txtEmail.TabIndex = 5;
@@ -274,7 +276,7 @@ namespace GarageCreditCeleste
             // 
             this.txtNom.ForeColor = System.Drawing.SystemColors.ScrollBar;
             this.txtNom.Location = new System.Drawing.Point(149, 71);
-            this.txtNom.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNom.Margin = new System.Windows.Forms.Padding(4);
             this.txtNom.Name = "txtNom";
             this.txtNom.Size = new System.Drawing.Size(307, 29);
             this.txtNom.TabIndex = 3;
@@ -286,7 +288,7 @@ namespace GarageCreditCeleste
             // 
             this.rdbCivFemme.AutoSize = true;
             this.rdbCivFemme.Location = new System.Drawing.Point(239, 38);
-            this.rdbCivFemme.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rdbCivFemme.Margin = new System.Windows.Forms.Padding(4);
             this.rdbCivFemme.Name = "rdbCivFemme";
             this.rdbCivFemme.Size = new System.Drawing.Size(79, 28);
             this.rdbCivFemme.TabIndex = 2;
@@ -298,7 +300,7 @@ namespace GarageCreditCeleste
             // 
             this.rdbCivHomme.AutoSize = true;
             this.rdbCivHomme.Location = new System.Drawing.Point(149, 38);
-            this.rdbCivHomme.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rdbCivHomme.Margin = new System.Windows.Forms.Padding(4);
             this.rdbCivHomme.Name = "rdbCivHomme";
             this.rdbCivHomme.Size = new System.Drawing.Size(58, 28);
             this.rdbCivHomme.TabIndex = 1;
@@ -361,7 +363,7 @@ namespace GarageCreditCeleste
             this.btnServices.Enabled = false;
             this.btnServices.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.btnServices.Location = new System.Drawing.Point(891, 240);
-            this.btnServices.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnServices.Margin = new System.Windows.Forms.Padding(4);
             this.btnServices.Name = "btnServices";
             this.btnServices.Size = new System.Drawing.Size(147, 62);
             this.btnServices.TabIndex = 14;
@@ -374,7 +376,7 @@ namespace GarageCreditCeleste
             this.btnVendre.Enabled = false;
             this.btnVendre.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.btnVendre.Location = new System.Drawing.Point(736, 240);
-            this.btnVendre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnVendre.Margin = new System.Windows.Forms.Padding(4);
             this.btnVendre.Name = "btnVendre";
             this.btnVendre.Size = new System.Drawing.Size(147, 62);
             this.btnVendre.TabIndex = 13;
@@ -387,7 +389,7 @@ namespace GarageCreditCeleste
             this.btnAcheter.Enabled = false;
             this.btnAcheter.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.btnAcheter.Location = new System.Drawing.Point(581, 240);
-            this.btnAcheter.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAcheter.Margin = new System.Windows.Forms.Padding(4);
             this.btnAcheter.Name = "btnAcheter";
             this.btnAcheter.Size = new System.Drawing.Size(147, 62);
             this.btnAcheter.TabIndex = 12;
@@ -399,7 +401,7 @@ namespace GarageCreditCeleste
             // 
             this.btnFermer.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.btnFermer.Location = new System.Drawing.Point(931, 505);
-            this.btnFermer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnFermer.Margin = new System.Windows.Forms.Padding(4);
             this.btnFermer.Name = "btnFermer";
             this.btnFermer.Size = new System.Drawing.Size(120, 37);
             this.btnFermer.TabIndex = 16;
@@ -431,13 +433,15 @@ namespace GarageCreditCeleste
             // 
             // gpbResume
             // 
+            this.gpbResume.Controls.Add(this.btnAnnuler);
+            this.gpbResume.Controls.Add(this.btnConfirmer);
             this.gpbResume.Controls.Add(this.gpbType);
             this.gpbResume.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.gpbResume.Location = new System.Drawing.Point(352, 80);
-            this.gpbResume.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gpbResume.Margin = new System.Windows.Forms.Padding(4);
             this.gpbResume.Name = "gpbResume";
-            this.gpbResume.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.gpbResume.Size = new System.Drawing.Size(704, 417);
+            this.gpbResume.Padding = new System.Windows.Forms.Padding(4);
+            this.gpbResume.Size = new System.Drawing.Size(704, 462);
             this.gpbResume.TabIndex = 29;
             this.gpbResume.TabStop = false;
             this.gpbResume.Text = "Résumé";
@@ -455,9 +459,9 @@ namespace GarageCreditCeleste
             this.gpbType.Controls.Add(this.lblModele);
             this.gpbType.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.gpbType.Location = new System.Drawing.Point(8, 28);
-            this.gpbType.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gpbType.Margin = new System.Windows.Forms.Padding(4);
             this.gpbType.Name = "gpbType";
-            this.gpbType.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gpbType.Padding = new System.Windows.Forms.Padding(4);
             this.gpbType.Size = new System.Drawing.Size(319, 209);
             this.gpbType.TabIndex = 53;
             this.gpbType.TabStop = false;
@@ -562,9 +566,9 @@ namespace GarageCreditCeleste
             this.gpbInfoFixe.Controls.Add(this.lblCivNomPrenom);
             this.gpbInfoFixe.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.gpbInfoFixe.Location = new System.Drawing.Point(16, 80);
-            this.gpbInfoFixe.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gpbInfoFixe.Margin = new System.Windows.Forms.Padding(4);
             this.gpbInfoFixe.Name = "gpbInfoFixe";
-            this.gpbInfoFixe.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gpbInfoFixe.Padding = new System.Windows.Forms.Padding(4);
             this.gpbInfoFixe.Size = new System.Drawing.Size(328, 238);
             this.gpbInfoFixe.TabIndex = 28;
             this.gpbInfoFixe.TabStop = false;
@@ -621,6 +625,25 @@ namespace GarageCreditCeleste
             this.lblCivNomPrenom.TabIndex = 10;
             this.lblCivNomPrenom.Text = "civ + nom + prenom";
             // 
+            // btnConfirmer
+            // 
+            this.btnConfirmer.Location = new System.Drawing.Point(451, 419);
+            this.btnConfirmer.Name = "btnConfirmer";
+            this.btnConfirmer.Size = new System.Drawing.Size(111, 33);
+            this.btnConfirmer.TabIndex = 54;
+            this.btnConfirmer.Text = "Confirmer";
+            this.btnConfirmer.UseVisualStyleBackColor = true;
+            this.btnConfirmer.Click += new System.EventHandler(this.btnConfirmer_Click);
+            // 
+            // btnAnnuler
+            // 
+            this.btnAnnuler.Location = new System.Drawing.Point(579, 419);
+            this.btnAnnuler.Name = "btnAnnuler";
+            this.btnAnnuler.Size = new System.Drawing.Size(111, 33);
+            this.btnAnnuler.TabIndex = 55;
+            this.btnAnnuler.Text = "Annuler";
+            this.btnAnnuler.UseVisualStyleBackColor = true;
+            // 
             // Accueil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -637,7 +660,7 @@ namespace GarageCreditCeleste
             this.Controls.Add(this.btnFermer);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Accueil";
             this.Text = "Accueil";
             this.Load += new System.EventHandler(this.Accueil_Load);
@@ -700,5 +723,7 @@ namespace GarageCreditCeleste
         private System.Windows.Forms.Label lblAdresse;
         private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.Label lblCivNomPrenom;
+        private System.Windows.Forms.Button btnConfirmer;
+        private System.Windows.Forms.Button btnAnnuler;
     }
 }
