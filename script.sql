@@ -21,14 +21,15 @@ GO
 
 CREATE TABLE UTILISATEUR(
    idUtilisateur INT IDENTITY(1,1) PRIMARY KEY,
+   Civ BIT NOT NULL,
    Nom VARCHAR(50) NOT NULL,
    Prenom VARCHAR(50) NOT NULL,
    Email VARCHAR(100) NOT NULL,
+   NumeroTel INT NOT NULL,
    AdresseNum INT NOT NULL,
    AdresseVoie VARCHAR(50) NOT NULL,
    AdresseVille VARCHAR(50),
    AdresseCP INT NOT NULL,
-   NumeroTel INT NOT NULL
 );
 GO
 

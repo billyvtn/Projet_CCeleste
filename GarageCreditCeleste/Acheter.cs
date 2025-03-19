@@ -13,6 +13,7 @@ namespace GarageCreditCeleste
 {
     public partial class Acheter : Form
     {
+        List<Voiture> lesVoitures = new List<Voiture>();
         public Acheter()
         {
             InitializeComponent();
@@ -48,13 +49,54 @@ namespace GarageCreditCeleste
         private void btnChoisir_Click(object sender, EventArgs e)
         {
             //placer les infos dans un objet Globales
+            Globales.voiture = lesVoitures[lsbVoituresDispo.SelectedIndex];
+            Globales.Type = "Achat";
+
+            // Afficher un message avec deux choix
+            DialogResult choix = MessageBox.Show(
+                "Voulez-vous souscrire à une de nos assurance ?",
+                "Finalisation de l'achat",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question
+            );
+
+            if (choix == DialogResult.Yes)
+            {
+                Globales.assurance = new Assurance();
+                Globales.assurance.Show();
+                Globales.acheter.Close();
+            }
+            else if (choix == DialogResult.No)
+            {
+                // Afficher un message avec deux choix
+                DialogResult choix2 = MessageBox.Show(
+                    "Voulez-vous payez votre voiture avec un crédit ?",
+                    "Finalisation de l'achat",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question
+                );
+
+                if (choix2 == DialogResult.Yes)
+                {
+                    Globales.credit = new Credit();
+                    Globales.credit.Show();
+                    Globales.acheter.Close();
+                }
+                else if (choix2 == DialogResult.No)
+                {
+                    Globales.accueil = new Accueil();
+                    Globales.accueil.Show();
+                    Globales.acheter.Close();
+                }
+            }
+
         }
 
         private void lsbVoituresDispo_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (lsbVoituresDispo.SelectedItem != null)
             {
-                Voiture voitureSelectionnee = (Voiture)lsbVoituresDispo.SelectedItem;
+                Voiture voitureSelectionnee = lesVoitures[lsbVoituresDispo.SelectedIndex];
 
                 lblMarque.Text = voitureSelectionnee.getMarque();
                 lblModele.Text = voitureSelectionnee.getModele();
@@ -69,9 +111,7 @@ namespace GarageCreditCeleste
 
         public List<Voiture> RecupererVoitures()
         {
-            string connectionString = "Data Source=10.129.184.106;User Id=connEleveSio;password=mdpEleveSi0;Initial Catalog=PROJETCC_K";
-
-            List<Voiture> lesVoitures = new List<Voiture>();
+            string connectionString = "Data Source=10.129.184.106;User Id=connEleveSio;password=mdpEleveSi0;Initial Catalog=PROJETCC_K";        
 
             string strRequete = "SELECT * FROM VEHICULE WHERE StatutDisp = 1";
 
