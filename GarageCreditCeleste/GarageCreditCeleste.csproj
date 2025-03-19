@@ -71,6 +71,12 @@
     <Compile Include="ControleTechnique.Designer.cs">
       <DependentUpon>ControleTechnique.cs</DependentUpon>
     </Compile>
+    <Compile Include="Credit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Credit.Designer.cs">
+      <DependentUpon>Credit.cs</DependentUpon>
+    </Compile>
     <Compile Include="Demarrage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,6 +122,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Acheter.resx">
       <DependentUpon>Acheter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Assurance.resx">
+      <DependentUpon>Assurance.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ControleTechnique.resx">
       <DependentUpon>ControleTechnique.cs</DependentUpon>

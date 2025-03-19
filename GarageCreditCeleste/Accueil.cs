@@ -83,6 +83,21 @@ namespace GarageCreditCeleste
                     lblImmat.Text = Globales.voiture.getImmatriculation();
                     lblPrix.Text = Globales.voiture.getPrix().ToString() + "€";
                 }
+
+                if (Globales.Type == "Achat")
+                {
+                    gpbType.Visible = true;
+                    gpbType.Text = "Achat";
+
+                    lblMarque.Text = Globales.voiture.getMarque();
+                    lblModele.Text = Globales.voiture.getModele();
+                    lblAnnee.Text = Globales.voiture.getAnnee().ToString();
+                    lblKilometrage.Text = Globales.voiture.getKilometrage().ToString() + "km";
+                    lblCouleur.Text = Globales.voiture.getCouleur();
+                    lblPuissance.Text = Globales.voiture.getPuissance().ToString() + " cv";
+                    lblImmat.Text = Globales.voiture.getImmatriculation();
+                    lblPrix.Text = Globales.voiture.getPrix().ToString() + "€";
+                }
             }
         }
 
@@ -283,8 +298,8 @@ namespace GarageCreditCeleste
                 
                 btnAcheter.Enabled = true;
                 btnVendre.Enabled = true;
-                btnServices.Enabled = true;              
-
+                btnServices.Enabled = true;
+                btnEnregistrer.Visible = false;
                 MessageBox.Show("Les informations ont été enregistrées avec succès.", "Enregistrement", MessageBoxButtons.OK);
             }
         }
@@ -333,6 +348,80 @@ namespace GarageCreditCeleste
                     }
                 }
             }
+        }
+
+        private void btnConnecter_Click(object sender, EventArgs e)
+        {
+            gpbInfoClient.Visible = false;
+            gpbSeConnecter.Visible = true;
+            RecupererClients();
+
+            foreach(Client unClit in lesClients)
+            {
+                cboClient.Items.Add($" {unClit.getCivilite()}, {unClit.getNom()}, {unClit.getPrenom()}");
+            }
+        }
+
+        private void btnEnregistrerChoixClient_Click(object sender, EventArgs e)
+        {
+            gpbSeConnecter.Visible = false;
+            gpbInfoFixe.Visible = true;
+
+            string civi;
+            if (Globales.client.getCivilite())
+            {
+                //rdbCivHomme.Checked = true;
+                civi = "Mr. ";
+            }
+            else
+            {
+                //rdbCivFemme.Checked = false;
+                civi = "Mme. ";
+            }
+            gpbInfoClient.Visible = false;
+            lblCivNomPrenom.Text = civi + Globales.client.getNom() + " " + Globales.client.getPrenom();
+            lblEmail.Text = Globales.client.getEmail();
+            lblNumero.Text = Globales.client.getNumeroTelephone();
+            lblAdresse.Text = Globales.client.getAdresseNum() + " " + Globales.client.getAdresseVoie();
+            lblVilleCP.Text = Globales.client.getVille() + " " + Globales.client.getCodePostal();
+        }
+
+        List<Client> lesClients = new List<Client>();
+        private List<Client> RecupererClients()
+        {
+            string connectionString = "Data Source=10.129.184.106;User Id=connEleveSio;password=mdpEleveSi0;Initial Catalog=PROJETCC_K";
+
+            string strRequete = "SELECT * FROM UTILISATEUR";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                using (SqlCommand command = new SqlCommand(strRequete, connection))
+                {
+                    try
+                    {
+                        //Ouvrir la connexion
+                        connection.Open();
+
+                        using (SqlDataReader oReader = command.ExecuteReader())
+                        {
+                            // Parcourir les résultats
+                            while (oReader.Read())
+                            {
+                                Client unClient = new Client(Convert.ToBoolean(oReader[1]), Convert.ToString(oReader[2]), Convert.ToString(oReader[3]), Convert.ToString(oReader[4]), Convert.ToString(oReader[5]), Convert.ToString(oReader[6]), Convert.ToString(oReader[7]), Convert.ToString(oReader[8]), Convert.ToString(oReader[9]));
+                                
+                                lesClients.Add(unClient);
+                            }
+                        }
+                    }
+                    catch (SqlException ex)
+                    {
+                        MessageBox.Show($"Erreur lors de la récupération des crédits : {ex.Message}");
+                    }
+
+                }
+            }
+
+            return lesClients;
         }
     }
 }
