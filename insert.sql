@@ -2,10 +2,10 @@ USE [PROJETCC_K];
 GO
 
 -- Insertion dans UTILISATEUR
-INSERT INTO UTILISATEUR (Nom, Prenom, Email, AdresseNum, AdresseVoie, AdresseVille, AdresseCP, NumeroTel) VALUES
-('Dupont', 'Jean', 'jean.dupont@email.com', 12, 'Rue de la Paix', 'Paris', 75001, 123456789),
-('Martin', 'Sophie', 'sophie.martin@email.com', 34, 'Avenue des Champs', 'Lyon', 69000, 987654321),
-('Durand', 'Paul', 'paul.durand@email.com', 56, 'Boulevard Haussmann', 'Marseille', 13000, 112233445);
+INSERT INTO UTILISATEUR (Civ, Nom, Prenom, Email, NumeroTel, AdresseNum, AdresseVoie, AdresseVille, AdresseCP) VALUES
+(1, 'Dupont', 'Jean', 'jean.dupont@email.com', '0642665866', 12, 'Rue de la Paix', 'Paris', 75001),
+(0, 'Martin', 'Sophie', 'sophie.martin@email.com', '0698312321', 34, 'Avenue des Champs', 'Lyon', 69000),
+(1, 'Durand', 'Paul', 'paul.durand@email.com', '0623567581', 56, 'Boulevard Haussmann', 'Marseille', 13000);
 GO
 
 -- Insertion dans VEHICULE

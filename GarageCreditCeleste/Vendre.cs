@@ -114,15 +114,16 @@ namespace GarageCreditCeleste
                 int prixNeuf = Convert.ToInt32(txtPrixNeuf.Text);
 
                 // Calcul de la dépréciation
-                double depreciationAge = 0.04 * ageVoiture; // Perte de 2% par an
+                double depreciationAge = 0.04 * ageVoiture; // Perte de 4% par an
                 double depreciationKilometrage = (kilometrage / 30000) * 0.02; // Perte de 2% tous les 30 000 km
 
                 // Prix final après dépréciation
                 prixFinalVoiture = prixNeuf * (1 - (depreciationAge + depreciationKilometrage));
 
-                if(prixFinalVoiture < 0)
+                if(prixFinalVoiture < 500)
                 {
-                    lblPrixVente.Text = "Votre véhicule ne peux pas être repris.";
+                    prixFinalVoiture = 500;
+                    lblPrixVente.Text = prixFinalVoiture.ToString("C2");
                 }
                 else
                 {

@@ -13,6 +13,8 @@ namespace GarageCreditCeleste
 {
     public partial class Accueil : Form
     {
+        List<Client> lesClients = new List<Client>();
+
         public Accueil()
         {
             InitializeComponent();
@@ -128,7 +130,7 @@ namespace GarageCreditCeleste
             Globales.demarrage.Close();
         }
 
-
+        
         // Messages par défaut des champs
         string defaultNom = "ex. Dupont";
         string defaultPrenom = "ex. Jean";
@@ -299,7 +301,8 @@ namespace GarageCreditCeleste
                 btnAcheter.Enabled = true;
                 btnVendre.Enabled = true;
                 btnServices.Enabled = true;
-                btnEnregistrer.Visible = false;
+                btnEnregistrer.Enabled = false;
+                btnConnecter.Enabled = false;
                 MessageBox.Show("Les informations ont été enregistrées avec succès.", "Enregistrement", MessageBoxButtons.OK);
             }
         }
@@ -358,7 +361,7 @@ namespace GarageCreditCeleste
 
             foreach(Client unClit in lesClients)
             {
-                cboClient.Items.Add($" {unClit.getCivilite()}, {unClit.getNom()}, {unClit.getPrenom()}");
+                cboClient.Items.Add($" {unClit.getCiviliteString()}. {unClit.getNom()} {unClit.getPrenom()}");
             }
         }
 
@@ -366,27 +369,21 @@ namespace GarageCreditCeleste
         {
             gpbSeConnecter.Visible = false;
             gpbInfoFixe.Visible = true;
-
-            string civi;
-            if (Globales.client.getCivilite())
-            {
-                //rdbCivHomme.Checked = true;
-                civi = "Mr. ";
-            }
-            else
-            {
-                //rdbCivFemme.Checked = false;
-                civi = "Mme. ";
-            }
             gpbInfoClient.Visible = false;
-            lblCivNomPrenom.Text = civi + Globales.client.getNom() + " " + Globales.client.getPrenom();
+
+            Globales.client = lesClients[cboClient.SelectedIndex];
+
+            lblCivNomPrenom.Text = Globales.client.getCiviliteString() + " " + Globales.client.getNom() + " " + Globales.client.getPrenom();
             lblEmail.Text = Globales.client.getEmail();
             lblNumero.Text = Globales.client.getNumeroTelephone();
             lblAdresse.Text = Globales.client.getAdresseNum() + " " + Globales.client.getAdresseVoie();
             lblVilleCP.Text = Globales.client.getVille() + " " + Globales.client.getCodePostal();
+
+            btnServices.Enabled = true;
+            btnAcheter.Enabled = true;
+            btnVendre.Enabled = true;
         }
 
-        List<Client> lesClients = new List<Client>();
         private List<Client> RecupererClients()
         {
             string connectionString = "Data Source=10.129.184.106;User Id=connEleveSio;password=mdpEleveSi0;Initial Catalog=PROJETCC_K";
@@ -422,6 +419,11 @@ namespace GarageCreditCeleste
             }
 
             return lesClients;
+        }
+
+        private void btnAnnuler_Click(object sender, EventArgs e)
+        {
+            Globales.demarrage.Close();
         }
     }
 }
