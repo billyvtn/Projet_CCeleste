@@ -62,8 +62,8 @@ namespace GarageCreditCeleste
 
             if (choix == DialogResult.Yes)
             {
-                Globales.assurance = new Assurance();
-                Globales.assurance.Show();
+                Globales.frmAssurance = new Assurance();
+                Globales.frmAssurance.Show();
                 Globales.acheter.Close();
             }
             else if (choix == DialogResult.No)

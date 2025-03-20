@@ -35,6 +35,19 @@ namespace GarageCreditCeleste
         {
             return civilite;
         }
+        public string getCiviliteString()
+        {
+            string civ;
+            if (civilite == true)
+            {
+                civ = "Mr";
+            }
+            else
+            {
+                civ = "Mme";
+            }
+            return civ;
+        }
         public string getNom()
         {
             return nom;

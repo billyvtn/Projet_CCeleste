@@ -64,6 +64,7 @@
     <Compile Include="Assurance.Designer.cs">
       <DependentUpon>Assurance.cs</DependentUpon>
     </Compile>
+    <Compile Include="ClAssurance.cs" />
     <Compile Include="Client.cs" />
     <Compile Include="ControleTechnique.cs">
       <SubType>Form</SubType>
