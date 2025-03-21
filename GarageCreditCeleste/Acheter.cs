@@ -50,7 +50,7 @@ namespace GarageCreditCeleste
         {
             //placer les infos dans un objet Globales
             Globales.voiture = lesVoitures[lsbVoituresDispo.SelectedIndex];
-            Globales.Type = "Achat";
+            Globales.Type.Add("Achat");
 
             // Afficher un message avec deux choix
             DialogResult choix = MessageBox.Show(
@@ -78,8 +78,8 @@ namespace GarageCreditCeleste
 
                 if (choix2 == DialogResult.Yes)
                 {
-                    Globales.credit = new Credit();
-                    Globales.credit.Show();
+                    Globales.frmCredit = new Credit();
+                    Globales.frmCredit.Show();
                     Globales.acheter.Close();
                 }
                 else if (choix2 == DialogResult.No)

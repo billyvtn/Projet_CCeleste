@@ -65,6 +65,7 @@
       <DependentUpon>Assurance.cs</DependentUpon>
     </Compile>
     <Compile Include="ClAssurance.cs" />
+    <Compile Include="ClCredit.cs" />
     <Compile Include="Client.cs" />
     <Compile Include="ControleTechnique.cs">
       <SubType>Form</SubType>
@@ -129,6 +130,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ControleTechnique.resx">
       <DependentUpon>ControleTechnique.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Credit.resx">
+      <DependentUpon>Credit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Demarrage.resx">
       <DependentUpon>Demarrage.cs</DependentUpon>

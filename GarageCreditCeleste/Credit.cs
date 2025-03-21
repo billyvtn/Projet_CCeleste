@@ -16,5 +16,70 @@ namespace GarageCreditCeleste
         {
             InitializeComponent();
         }
+
+        private void label8_Click(object sender, EventArgs e){} //pas toucher
+        private void label16_Click(object sender, EventArgs e){}//idem
+
+
+        private void Credit_Load(object sender, EventArgs e)
+        {
+            int i;
+            for (i = 1; i <= 60; i++)
+            {
+                cbxDurée.Items.Add(i);
+            }
+
+            lblMarque.Text = Globales.voiture.getMarque();
+            lblModele.Text = Globales.voiture.getModele();
+            lblAnnee.Text = Globales.voiture.getAnnee().ToString();
+            lblKilometrage.Text = Globales.voiture.getKilometrage().ToString();
+            lblCouleur.Text = Globales.voiture.getCouleur();
+            lblPuissance.Text = Globales.voiture.getPuissance().ToString();
+            lblImmat.Text = Globales.voiture.getImmatriculation();
+            lblPrix.Text = Globales.voiture.getPrix().ToString("C"); // Affichage en format monétaire
+
+            lblMontant.Text = Convert.ToString(Globales.voiture.getPrix());
+        }
+        ClCredit unCredit;
+        private void btnCalcul_Click(object sender, EventArgs e)
+        {
+            unCredit = new ClCredit(Convert.ToDouble(lblMontant.Text), Convert.ToInt32(cbxDurée.Text), Convert.ToDouble(txtTauxAnnuel.Text));
+            btnConfirmer.Enabled = true;
+            lblMens.Text = Convert.ToString(unCredit.getMensualiteCredit());
+        }
+
+        private void txtApport_TextChanged(object sender, EventArgs e)
+        {
+            btnCalcul.Enabled = false;
+            btnApport.Enabled = true;
+            if (txtApport.Text == "")
+            {
+                lblMontant.Text = Convert.ToString(Globales.voiture.getPrix());
+                btnCalcul.Enabled = true;
+                btnApport.Enabled = false;
+            }
+            lblMens.Text = "";
+            btnConfirmer.Enabled = false;
+
+        }
+
+        private void btnApport_Click(object sender, EventArgs e)
+        {
+            btnCalcul.Enabled = true;
+            btnApport.Enabled = false;
+            lblMontant.Text = Convert.ToString(Globales.voiture.getPrix() - Convert.ToInt32(txtApport.Text));
+        }
+
+        private void btnConfirmer_Click(object sender, EventArgs e)
+        {
+            Globales.credit = unCredit;
+
+            MessageBox.Show("Les informations ont été enregistrées avec succès.", "Enregistrement", MessageBoxButtons.OK);
+
+            Globales.Type.Add("Credit");
+            Globales.accueil = new Accueil();
+            Globales.accueil.Show();
+            Globales.frmCredit.Close();
+        }
     }
 }

@@ -29,19 +29,21 @@ namespace GarageCreditCeleste
             lblPuissance.Text = Globales.voiture.getPuissance().ToString();
             lblImmat.Text = Globales.voiture.getImmatriculation();
             lblPrix.Text = Globales.voiture.getPrix().ToString("C"); // Affichage en format monétaire
+
+            btnValider.Enabled = false;
         }
 
         private void btnCalculMensualité_Click(object sender, EventArgs e)
         {
-            double prixBase = 30;
+            double prixBase = 10;
             prixFinal = prixBase;
 
             double puissance = Globales.voiture.getPuissance();
             int annee = Globales.voiture.getAnnee();
 
-            prixFinal += puissance * 1.5;
+            prixFinal += puissance * 1.01;
 
-            prixFinal += (annee - 1990) * 1.1; // Plus la voiture est récente, plus c'est cher
+            prixFinal += (annee - 1990) * 1.01; // Plus la voiture est récente, plus c'est cher
 
             if (rdbTiers.Checked)
             {
@@ -49,14 +51,16 @@ namespace GarageCreditCeleste
             }
             else if (rdbTiersPlus.Checked)
             {
-                prixFinal += 40; 
+                prixFinal += 30; 
             }
             else if (rdbTousRisque.Checked)
             {
-                prixFinal += 70; 
+                prixFinal += 60; 
             }
 
             lblMensualite.Text = $"Mensualité : {prixFinal:C}"; // Affichage en format monétaire
+
+            btnValider.Enabled = true;
         }
 
         private void btnAnnuler_Click(object sender, EventArgs e)
@@ -70,13 +74,13 @@ namespace GarageCreditCeleste
 
             if (choix == DialogResult.Yes)
             {
-                Globales.credit = new Credit();
-                Globales.credit.Show();
+                Globales.frmCredit = new Credit();
+                Globales.frmCredit.Show();
                 Globales.frmAssurance.Close();
             }
             else if (choix == DialogResult.No)
             {
-                Globales.Type = "Achat";
+                Globales.Type.Add("Achat");
                 Globales.accueil = new Accueil();
                 Globales.accueil.Show();
                 Globales.frmAssurance.Close();
@@ -118,13 +122,13 @@ namespace GarageCreditCeleste
 
             if (choix == DialogResult.Yes)
             {
-                Globales.credit = new Credit();
-                Globales.credit.Show();
+                Globales.frmCredit = new Credit();
+                Globales.frmCredit.Show();
                 Globales.frmAssurance.Close();
             }
             else if (choix == DialogResult.No)
             {
-                // gestion du double type achat + assurance
+                Globales.Type.Add("Assurance");
                 Globales.accueil = new Accueil();
                 Globales.accueil.Show();
                 Globales.frmAssurance.Close();
