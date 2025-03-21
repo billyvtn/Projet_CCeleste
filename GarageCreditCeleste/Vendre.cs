@@ -78,7 +78,7 @@ namespace GarageCreditCeleste
                 }
                 else if (choix == DialogResult.No)
                 {
-                    Globales.Type = "Vente";
+                    Globales.Type.Add("Vente");
                     Globales.accueil = new Accueil();
                     Globales.accueil.Show();
                     Globales.vendre.Close();

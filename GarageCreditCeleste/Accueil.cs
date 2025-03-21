@@ -71,7 +71,7 @@ namespace GarageCreditCeleste
                 lblAdresse.Text = Globales.client.getAdresseNum() + " " + Globales.client.getAdresseVoie();
                 lblVilleCP.Text = Globales.client.getVille() + " " + Globales.client.getCodePostal();
 
-                if (Globales.Type == "Vente")
+                if (Globales.Type.Contains("Vente"))
                 {
                     gpbType.Visible = true;
                     gpbType.Text = "Vente";
@@ -86,7 +86,7 @@ namespace GarageCreditCeleste
                     lblPrix.Text = Globales.voiture.getPrix().ToString() + "€";
                 }
 
-                if (Globales.Type == "Achat")
+                if (Globales.Type.Contains("Achat"))
                 {
                     gpbType.Visible = true;
                     gpbType.Text = "Achat";
@@ -99,6 +99,24 @@ namespace GarageCreditCeleste
                     lblPuissance.Text = Globales.voiture.getPuissance().ToString() + " cv";
                     lblImmat.Text = Globales.voiture.getImmatriculation();
                     lblPrix.Text = Globales.voiture.getPrix().ToString() + "€";
+                }
+
+                if(Globales.Type.Contains("Assurance"))
+                {
+                    gpbAssurance.Visible = true;
+
+                    lblTypeAssurance.Text = Globales.assurance.getTypeAssurance();
+                    lblMensualiteAssurance.Text = Globales.assurance.getMensualite().ToString();
+                    lblDateDebutAssurance.Text = Globales.assurance.getDateDebutAssurance();
+                }
+
+                if (Globales.Type.Contains("Credit"))
+                {
+                    gpbCredit.Visible = true;
+
+                    lblMensualiteCredit.Text = Globales.credit.getMensualiteCredit().ToString();
+                    lblDureeCredit.Text = Globales.credit.getDureeCredit().ToString();
+                    lblMontantCredit.Text = Globales.credit.getMontantCredit().ToString();
                 }
             }
         }

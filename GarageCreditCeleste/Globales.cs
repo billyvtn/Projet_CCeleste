@@ -19,13 +19,15 @@ namespace GarageCreditCeleste
         public static Entretien entretien;
         public static ControleTechnique controletechnique;
         public static Assurance frmAssurance;
-        public static Credit credit;
-
+        public static Credit frmCredit;
+        
+        //Déclaration des objets pour la gestion de la bdd
         public static Client client;
         public static Voiture voiture;
         public static ClAssurance assurance;
+        public static ClCredit credit;
 
-        public static string Type;
+        public static List<String> Type;
 
     }
 }

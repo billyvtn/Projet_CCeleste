@@ -12,6 +12,10 @@ namespace GarageCreditCeleste
         private double mensualite;
         private string dateDebut;
 
+        public ClAssurance()
+        {
+
+        }
         public ClAssurance(string typeA, double mens, string dateD)
         {
             typeAssurance = typeA;
