@@ -27,7 +27,7 @@ namespace GarageCreditCeleste
         public static ClAssurance assurance;
         public static ClCredit credit;
 
-        public static List<String> Type;
+        public static List<String> Type = new List<string>();
 
     }
 }

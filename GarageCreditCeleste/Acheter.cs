@@ -111,7 +111,7 @@ namespace GarageCreditCeleste
 
         public List<Voiture> RecupererVoitures()
         {
-            string connectionString = "Data Source=10.129.184.106;User Id=connEleveSio;password=mdpEleveSi0;Initial Catalog=PROJETCC_K";        
+            string connectionString = "Data Source=10.129.184.106;User Id=connEleveSio;password=mdpEleveSi0;Initial Catalog=PROJETCC_K";
 
             string strRequete = "SELECT * FROM VEHICULE WHERE StatutDisp = 1";
 
