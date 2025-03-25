@@ -45,7 +45,7 @@ namespace GarageCreditCeleste
                 btnServices.Enabled = true;
             }
 
-            if (Globales.Type != null)
+            if (Globales.Type.Count() != 0)
             {
                 btnAcheter.Visible = false;
                 btnVendre.Visible = false;
@@ -332,19 +332,21 @@ namespace GarageCreditCeleste
 
         private void btnConfirmer_Click(object sender, EventArgs e)
         {
-            InsererVoiture();
+            if(Globales.Type.Contains("Vente"))
+            {
+                InsererVoiture();
+            }
         }
-
         private void InsererVoiture()
         {
             string connectionString = "Data Source=10.129.184.106;User Id=connEleveSio;password=mdpEleveSi0;Initial Catalog=PROJETCC_K";
-            string strRequete = "INSERT INTO VEHICULE (Marque, Modele, Annee, Valeur, Kilometrage, Couleur, Puissance, StatutDisp, Immat, idUtilisateur) " +
-                                "VALUES (@Marque, @Modele, @Annee, @Valeur, @Kilometrage, @Couleur, @Puissance, @StatutDisp, @Immat, @idUtilisateur)";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                using (SqlCommand command = new SqlCommand(strRequete, connection))
+                using (SqlCommand command = new SqlCommand("InsVoiture", connection))
                 {
+                    command.CommandType = CommandType.StoredProcedure;
+
                     try
                     {
                         // Ajout des paramètres sécurisés
@@ -359,9 +361,11 @@ namespace GarageCreditCeleste
                         command.Parameters.AddWithValue("@Immat", Globales.voiture.getImmatriculation());
                         command.Parameters.AddWithValue("@idUtilisateur", DBNull.Value); // NULL car c'est un véhicule du garage
 
-                        // Ouvrir la connexion et exécuter la requête
+                        // Ouvrir la connexion et exécuter la procédure stockée
                         connection.Open();
                         command.ExecuteNonQuery();
+
+                        MessageBox.Show("Voiture insérée avec succès.", "Succès", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     catch (SqlException ex)
                     {
@@ -404,6 +408,11 @@ namespace GarageCreditCeleste
 
         private List<Client> RecupererClients()
         {
+            //autre méthodes de connexion 
+            //string connectionString = "Data Source=10.129.184.106; Initial Catalog = PROJETCC_K; Integrated Security = True";
+            //string connectionString = "Data Source=10.129.184.106; Integrated Security=SSPI; Initial Catalog = PROJETCC_K";
+            //string connectionString = "Data Source=S924P06; Initial Catalog=PROJETCC_K; Integrated Security=SSPI";
+
             string connectionString = "Data Source=10.129.184.106;User Id=connEleveSio;password=mdpEleveSi0;Initial Catalog=PROJETCC_K";
 
             string strRequete = "SELECT * FROM UTILISATEUR";

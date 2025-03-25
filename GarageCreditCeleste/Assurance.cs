@@ -80,7 +80,6 @@ namespace GarageCreditCeleste
             }
             else if (choix == DialogResult.No)
             {
-                Globales.Type.Add("Achat");
                 Globales.accueil = new Accueil();
                 Globales.accueil.Show();
                 Globales.frmAssurance.Close();
@@ -120,6 +119,8 @@ namespace GarageCreditCeleste
                 MessageBoxIcon.Question
             );
 
+            Globales.Type.Add("Assurance");
+
             if (choix == DialogResult.Yes)
             {
                 Globales.frmCredit = new Credit();
@@ -128,7 +129,6 @@ namespace GarageCreditCeleste
             }
             else if (choix == DialogResult.No)
             {
-                Globales.Type.Add("Assurance");
                 Globales.accueil = new Accueil();
                 Globales.accueil.Show();
                 Globales.frmAssurance.Close();
