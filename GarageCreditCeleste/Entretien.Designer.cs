@@ -63,7 +63,7 @@ namespace GarageCreditCeleste
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
             this.groupBox1.Location = new System.Drawing.Point(15, 52);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(374, 387);
+            this.groupBox1.Size = new System.Drawing.Size(407, 180);
             this.groupBox1.TabIndex = 69;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Informations du véhicule";
@@ -72,7 +72,7 @@ namespace GarageCreditCeleste
             // 
             this.lblImmat.AutoSize = true;
             this.lblImmat.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
-            this.lblImmat.Location = new System.Drawing.Point(36, 336);
+            this.lblImmat.Location = new System.Drawing.Point(197, 106);
             this.lblImmat.Name = "lblImmat";
             this.lblImmat.Size = new System.Drawing.Size(110, 17);
             this.lblImmat.TabIndex = 45;
@@ -82,7 +82,7 @@ namespace GarageCreditCeleste
             // 
             this.lblMarque.AutoSize = true;
             this.lblMarque.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
-            this.lblMarque.Location = new System.Drawing.Point(36, 39);
+            this.lblMarque.Location = new System.Drawing.Point(23, 39);
             this.lblMarque.Name = "lblMarque";
             this.lblMarque.Size = new System.Drawing.Size(64, 17);
             this.lblMarque.TabIndex = 30;
@@ -92,7 +92,7 @@ namespace GarageCreditCeleste
             // 
             this.lblModele.AutoSize = true;
             this.lblModele.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
-            this.lblModele.Location = new System.Drawing.Point(36, 89);
+            this.lblModele.Location = new System.Drawing.Point(23, 69);
             this.lblModele.Name = "lblModele";
             this.lblModele.Size = new System.Drawing.Size(62, 17);
             this.lblModele.TabIndex = 31;
@@ -102,7 +102,7 @@ namespace GarageCreditCeleste
             // 
             this.lblAnnee.AutoSize = true;
             this.lblAnnee.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
-            this.lblAnnee.Location = new System.Drawing.Point(36, 139);
+            this.lblAnnee.Location = new System.Drawing.Point(23, 101);
             this.lblAnnee.Name = "lblAnnee";
             this.lblAnnee.Size = new System.Drawing.Size(57, 17);
             this.lblAnnee.TabIndex = 32;
@@ -112,7 +112,7 @@ namespace GarageCreditCeleste
             // 
             this.lblKilometrage.AutoSize = true;
             this.lblKilometrage.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
-            this.lblKilometrage.Location = new System.Drawing.Point(36, 189);
+            this.lblKilometrage.Location = new System.Drawing.Point(23, 139);
             this.lblKilometrage.Name = "lblKilometrage";
             this.lblKilometrage.Size = new System.Drawing.Size(91, 17);
             this.lblKilometrage.TabIndex = 33;
@@ -122,7 +122,7 @@ namespace GarageCreditCeleste
             // 
             this.lblPuissance.AutoSize = true;
             this.lblPuissance.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
-            this.lblPuissance.Location = new System.Drawing.Point(36, 286);
+            this.lblPuissance.Location = new System.Drawing.Point(197, 71);
             this.lblPuissance.Name = "lblPuissance";
             this.lblPuissance.Size = new System.Drawing.Size(81, 17);
             this.lblPuissance.TabIndex = 39;
@@ -132,7 +132,7 @@ namespace GarageCreditCeleste
             // 
             this.lblCouleur.AutoSize = true;
             this.lblCouleur.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
-            this.lblCouleur.Location = new System.Drawing.Point(36, 236);
+            this.lblCouleur.Location = new System.Drawing.Point(197, 39);
             this.lblCouleur.Name = "lblCouleur";
             this.lblCouleur.Size = new System.Drawing.Size(65, 17);
             this.lblCouleur.TabIndex = 38;
@@ -183,7 +183,7 @@ namespace GarageCreditCeleste
             // 
             this.lblDateHeureEntretien.AutoSize = true;
             this.lblDateHeureEntretien.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
-            this.lblDateHeureEntretien.Location = new System.Drawing.Point(16, 263);
+            this.lblDateHeureEntretien.Location = new System.Drawing.Point(17, 246);
             this.lblDateHeureEntretien.Name = "lblDateHeureEntretien";
             this.lblDateHeureEntretien.Size = new System.Drawing.Size(210, 17);
             this.lblDateHeureEntretien.TabIndex = 46;
@@ -196,9 +196,9 @@ namespace GarageCreditCeleste
             this.groupBox2.Controls.Add(this.lblDateHeureEntretien);
             this.groupBox2.Controls.Add(this.calEntretien);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
-            this.groupBox2.Location = new System.Drawing.Point(395, 52);
+            this.groupBox2.Location = new System.Drawing.Point(428, 52);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(393, 303);
+            this.groupBox2.Size = new System.Drawing.Size(360, 277);
             this.groupBox2.TabIndex = 70;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Date de l\'entretien";
@@ -207,7 +207,7 @@ namespace GarageCreditCeleste
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
-            this.label12.Location = new System.Drawing.Point(109, 224);
+            this.label12.Location = new System.Drawing.Point(95, 211);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(55, 17);
             this.label12.TabIndex = 46;
@@ -216,7 +216,7 @@ namespace GarageCreditCeleste
             // cboHeure
             // 
             this.cboHeure.FormattingEnabled = true;
-            this.cboHeure.Location = new System.Drawing.Point(170, 221);
+            this.cboHeure.Location = new System.Drawing.Point(156, 208);
             this.cboHeure.Name = "cboHeure";
             this.cboHeure.Size = new System.Drawing.Size(124, 25);
             this.cboHeure.TabIndex = 56;
@@ -224,7 +224,7 @@ namespace GarageCreditCeleste
             // calEntretien
             // 
             this.calEntretien.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
-            this.calEntretien.Location = new System.Drawing.Point(92, 28);
+            this.calEntretien.Location = new System.Drawing.Point(72, 34);
             this.calEntretien.Name = "calEntretien";
             this.calEntretien.TabIndex = 55;
             // 
