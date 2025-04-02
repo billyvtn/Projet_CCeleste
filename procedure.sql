@@ -2,8 +2,8 @@ USE [PROJETCC_K]
 GO
 
 -- Supprimer les procédures existantes si elles existent
-IF OBJECT_ID('dbo.InsVoiture', 'P') IS NOT NULL
-    DROP PROCEDURE dbo.InsVoiture;
+IF OBJECT_ID('dbo.InsVoitureEtVente', 'P') IS NOT NULL
+    DROP PROCEDURE dbo.InsVoitureEtVente;
 GO
 
 IF OBJECT_ID('dbo.InsCredit', 'P') IS NOT NULL
@@ -18,8 +18,7 @@ IF OBJECT_ID('dbo.UpdateStatutVoiture', 'P') IS NOT NULL
     DROP PROCEDURE dbo.UpdateStatutVoiture;
 GO
 
--- Création de la procédure InsVoiture
-CREATE PROCEDURE dbo.InsVoiture
+CREATE PROCEDURE dbo.InsVoitureEtVente
     @Marque VARCHAR(50),
     @Modele VARCHAR(50),
     @Annee INT,
@@ -29,13 +28,59 @@ CREATE PROCEDURE dbo.InsVoiture
     @Puissance INT,
     @StatutDisp BIT,
     @Immat VARCHAR(50),
-    @idUtilisateur INT = NULL
+    @EmailUtilisateur VARCHAR(100),  -- L'email est utilisé pour récupérer l'idUtilisateur
+    @PrixVente DECIMAL(15,2),
+    @DateVente DATE
 AS
 BEGIN
-    INSERT INTO VEHICULE (Marque, Modele, Annee, Valeur, Kilometrage, Couleur, Puissance, StatutDisp, Immat, idUtilisateur)
-    VALUES (@Marque, @Modele, @Annee, @Valeur, @Kilometrage, @Couleur, @Puissance, @StatutDisp, @Immat, @idUtilisateur);
+    DECLARE @idVehicule INT;
+    DECLARE @idUtilisateur INT;
+
+    -- Démarrer une transaction pour assurer la cohérence des données
+    BEGIN TRANSACTION;
+
+    BEGIN TRY
+        -- Récupérer l'id de l'utilisateur à partir de son email
+        SELECT @idUtilisateur = idUtilisateur FROM UTILISATEUR WHERE Email = @EmailUtilisateur;
+
+        IF @idUtilisateur IS NULL
+        BEGIN
+            RAISERROR('Utilisateur non trouvé avec cet email.', 16, 1);
+        END
+
+        -- Insérer la voiture et récupérer l'ID généré
+        INSERT INTO VEHICULE (Marque, Modele, Annee, Valeur, Kilometrage, Couleur, Puissance, StatutDisp, Immat, idUtilisateur)
+        VALUES (@Marque, @Modele, @Annee, @Valeur, @Kilometrage, @Couleur, @Puissance, @StatutDisp, @Immat, @idUtilisateur);
+
+        -- Récupérer l'ID de la voiture insérée
+        SET @idVehicule = SCOPE_IDENTITY();
+
+        IF @idVehicule IS NULL
+        BEGIN
+            RAISERROR('L''insertion du véhicule a échoué.', 16, 1);
+        END
+
+        -- Insérer la transaction de vente
+        INSERT INTO VENTE (PrixVente, DateVente, idUtilisateur, idVehicule)
+        VALUES (@PrixVente, @DateVente, @idUtilisateur, @idVehicule);
+
+        -- Valider la transaction
+        COMMIT TRANSACTION;
+    END TRY
+    BEGIN CATCH
+        -- Capture l'erreur SQL
+        DECLARE @ErrorMessage NVARCHAR(4000);
+        SET @ErrorMessage = ERROR_MESSAGE();
+
+        -- Annuler la transaction en cas d'erreur
+        ROLLBACK TRANSACTION;
+
+        -- Retourner l'erreur
+        RAISERROR(@ErrorMessage, 16, 1);
+    END CATCH
 END;
 GO
+
 
 -- Création de la procédure InsCredit
 CREATE PROCEDURE dbo.InsCredit

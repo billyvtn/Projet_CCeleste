@@ -14,7 +14,7 @@ namespace GarageCreditCeleste
     public partial class Accueil : Form
     {
         List<Client> lesClients = new List<Client>();
-
+        DateTime dateActuelle = DateTime.Now;
         public Accueil()
         {
             InitializeComponent();
@@ -333,7 +333,7 @@ namespace GarageCreditCeleste
         {
             if(Globales.Type.Contains("Vente"))
             {
-                InsererVoiture();
+                ConfirmerVente();
             }
             if (Globales.Type.Contains("Credit"))
             {
@@ -384,13 +384,13 @@ namespace GarageCreditCeleste
             }
         }
 
-        private void InsererVoiture()
+        private void ConfirmerVente()
         {
             string connectionString = "Data Source=10.129.184.106;User Id=connEleveSio;password=mdpEleveSi0;Initial Catalog=PROJETCC_K";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                using (SqlCommand command = new SqlCommand("InsVoiture", connection))
+                using (SqlCommand command = new SqlCommand("InsVoitureEtVente", connection))
                 {
                     command.CommandType = CommandType.StoredProcedure;
 
@@ -406,7 +406,9 @@ namespace GarageCreditCeleste
                         command.Parameters.AddWithValue("@Puissance", Globales.voiture.getPuissance());
                         command.Parameters.AddWithValue("@StatutDisp", Globales.voiture.getStatutDispo());
                         command.Parameters.AddWithValue("@Immat", Globales.voiture.getImmatriculation());
-                        command.Parameters.AddWithValue("@idUtilisateur", DBNull.Value); // NULL car c'est un véhicule du garage
+                        command.Parameters.AddWithValue("@EmailUtilisateur", Globales.client.getEmail()); 
+                        command.Parameters.AddWithValue("@PrixVente", Globales.voiture.getPrix());
+                        command.Parameters.AddWithValue("@DateVente", dateActuelle.ToString("dd/mm/yyyy"));
 
                         // Ouvrir la connexion et exécuter la procédure stockée
                         connection.Open();

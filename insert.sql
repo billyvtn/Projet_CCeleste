@@ -52,10 +52,10 @@ INSERT INTO CONTROLE_TECHNIQUE (DateCT, Cout, idVehicule) VALUES
 GO
 
 -- Insertion dans VENTE
-INSERT INTO VENTE (PrixVente, idUtilisateur, idVehicule) VALUES
-('16000', 1, 1),
-('15000', 2, 2),
-('17000', 3, 3);
+INSERT INTO VENTE (PrixVente, DateVente, idUtilisateur, idVehicule) VALUES
+('16000', '2024-01-20', 1, 1),
+('15000', '2024-01-20', 2, 2),
+('17000', '2024-01-20', 3, 3);
 GO
 
 -- Insertion dans ACHAT
