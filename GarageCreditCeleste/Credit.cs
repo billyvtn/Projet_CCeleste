@@ -49,6 +49,10 @@ namespace GarageCreditCeleste
                 btnConfirmer.Enabled = true;
                 lblMens.Text = Convert.ToString(unCredit.getMensualiteCredit());
             }
+            else
+            {
+                MessageBox.Show("Veuillez remplir les champs durée et taux.");
+            }
         }
 
         private void txtApport_TextChanged(object sender, EventArgs e)
