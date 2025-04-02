@@ -24,22 +24,24 @@ namespace GarageCreditCeleste
         {
             if (Globales.client != null)
             {
+                string civi;
                 if (Globales.client.getCivilite())
                 {
-                    rdbCivHomme.Checked = true;
+                    //rdbCivHomme.Checked = true;
+                    civi = "Mr. ";
                 }
                 else
                 {
-                    rdbCivFemme.Checked = false;
+                    //rdbCivFemme.Checked = false;
+                    civi = "Mme. ";
                 }
-                txtNom.Text = Globales.client.getNom();
-                txtPrenom.Text = Globales.client.getPrenom();
-                txtEmail.Text = Globales.client.getEmail();
-                txtNumeroTelephone.Text = Globales.client.getNumeroTelephone();
-                txtAdresseNum.Text = Globales.client.getAdresseNum();
-                txtAdresseVoie.Text = Globales.client.getAdresseVoie();
-                txtAdresseVille.Text = Globales.client.getVille();
-                txtAdresseCP.Text = Globales.client.getCodePostal();
+                gpbInfoClient.Visible = false;
+                gpbInfoFixe.Visible = true;
+                lblCivNomPrenom.Text = civi + Globales.client.getNom() + " " + Globales.client.getPrenom();
+                lblEmail.Text = Globales.client.getEmail();
+                lblNumero.Text = Globales.client.getNumeroTelephone();
+                lblAdresse.Text = Globales.client.getAdresseNum() + " " + Globales.client.getAdresseVoie();
+                lblVilleCP.Text = Globales.client.getVille() + " " + Globales.client.getCodePostal();
                 btnAcheter.Enabled = true;
                 btnVendre.Enabled = true;
                 btnServices.Enabled = true;
@@ -325,10 +327,7 @@ namespace GarageCreditCeleste
             }
         }
 
-        private void lblPrix_Click(object sender, EventArgs e)
-        {
-
-        }
+        private void lblPrix_Click(object sender, EventArgs e){} // pas touche
 
         private void btnConfirmer_Click(object sender, EventArgs e)
         {
@@ -336,7 +335,55 @@ namespace GarageCreditCeleste
             {
                 InsererVoiture();
             }
+            if (Globales.Type.Contains("Credit"))
+            {
+                InsererCredit();
+            }
+            if (Globales.Type.Contains("Assurance"))
+            {
+                InsererAssurance();
+            }
+            if (Globales.Type.Contains("Achat"))
+            {
+                UpdateStatutVehicule();
+            }
         }
+        private void UpdateStatutVehicule()
+        {
+            string connectionString = "Data Source=10.129.184.106;User Id=connEleveSio;password=mdpEleveSi0;Initial Catalog=PROJETCC_K";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                using (SqlCommand command = new SqlCommand("UpdateStatutVoiture", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    // Ajout des paramètres
+                    command.Parameters.AddWithValue("@Immat", Globales.voiture.getImmatriculation());
+                    command.Parameters.AddWithValue("@Email", Globales.client.getEmail());
+
+                    try
+                    {
+                        connection.Open();
+                        int rowsAffected = command.ExecuteNonQuery();
+
+                        if (rowsAffected > 0)
+                        {
+                            MessageBox.Show("Achat confirmé, le véhicule est désormais indisponible.", "Succès", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Aucune correspondance trouvée. Vérifiez l'immatriculation et l'email.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+                    }
+                    catch (SqlException ex)
+                    {
+                        MessageBox.Show($"Erreur SQL : {ex.Message}", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+        }
+
         private void InsererVoiture()
         {
             string connectionString = "Data Source=10.129.184.106;User Id=connEleveSio;password=mdpEleveSi0;Initial Catalog=PROJETCC_K";
@@ -366,6 +413,68 @@ namespace GarageCreditCeleste
                         command.ExecuteNonQuery();
 
                         MessageBox.Show("Voiture insérée avec succès.", "Succès", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    catch (SqlException ex)
+                    {
+                        MessageBox.Show($"Erreur SQL : {ex.Message}", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+        }
+        private void InsererCredit()
+        {
+            string connectionString = "Data Source=10.129.184.106;User Id=connEleveSio;password=mdpEleveSi0;Initial Catalog=PROJETCC_K";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                using (SqlCommand command = new SqlCommand("InsCredit", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    try
+                    {
+                        // Ajout des paramètres sécurisés
+                        command.Parameters.AddWithValue("@MontantTotal", Globales.credit.getMontantCredit());
+                        command.Parameters.AddWithValue("@Mensualite", Globales.credit.getMensualiteCredit());
+                        command.Parameters.AddWithValue("@Duree", Globales.credit.getDureeCredit());
+                        command.Parameters.AddWithValue("@Taux", Globales.credit.getTauxCredit());
+
+                        // Ouvrir la connexion et exécuter la procédure stockée
+                        connection.Open();
+                        command.ExecuteNonQuery();
+
+                        MessageBox.Show("Crédit insérée avec succès.", "Succès", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    catch (SqlException ex)
+                    {
+                        MessageBox.Show($"Erreur SQL : {ex.Message}", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+        }
+
+        private void InsererAssurance()
+        {
+            string connectionString = "Data Source=10.129.184.106;User Id=connEleveSio;password=mdpEleveSi0;Initial Catalog=PROJETCC_K";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                using (SqlCommand command = new SqlCommand("InsAssurance", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    try
+                    {
+                        // Ajout des paramètres sécurisés
+                        command.Parameters.AddWithValue("@TypeAssurance", Globales.assurance.getTypeAssurance());
+                        command.Parameters.AddWithValue("@Mensualite", Globales.assurance.getMensualite());
+                        command.Parameters.AddWithValue("@DateDebut", Globales.assurance.getDateDebutAssurance());
+
+                        // Ouvrir la connexion et exécuter la procédure stockée
+                        connection.Open();
+                        command.ExecuteNonQuery();
+
+                        MessageBox.Show("Assurance insérée avec succès.", "Succès", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     catch (SqlException ex)
                     {
