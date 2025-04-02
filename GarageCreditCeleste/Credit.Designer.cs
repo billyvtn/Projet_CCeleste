@@ -62,6 +62,7 @@ namespace GarageCreditCeleste
             this.btnApport = new System.Windows.Forms.Button();
             this.lblMens = new System.Windows.Forms.Label();
             this.btnConfirmer = new System.Windows.Forms.Button();
+            this.btnAnnuler = new System.Windows.Forms.Button();
             this.gpbDescription.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -405,11 +406,24 @@ namespace GarageCreditCeleste
             this.btnConfirmer.UseVisualStyleBackColor = true;
             this.btnConfirmer.Click += new System.EventHandler(this.btnConfirmer_Click);
             // 
+            // btnAnnuler
+            // 
+            this.btnAnnuler.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.btnAnnuler.Location = new System.Drawing.Point(609, 395);
+            this.btnAnnuler.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAnnuler.Name = "btnAnnuler";
+            this.btnAnnuler.Size = new System.Drawing.Size(82, 31);
+            this.btnAnnuler.TabIndex = 60;
+            this.btnAnnuler.Text = "Annuler";
+            this.btnAnnuler.UseVisualStyleBackColor = true;
+            this.btnAnnuler.Click += new System.EventHandler(this.btnAnnuler_Click_1);
+            // 
             // Credit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnAnnuler);
             this.Controls.Add(this.btnConfirmer);
             this.Controls.Add(this.lblMens);
             this.Controls.Add(this.btnApport);
@@ -472,5 +486,6 @@ namespace GarageCreditCeleste
         private System.Windows.Forms.Button btnApport;
         private System.Windows.Forms.Label lblMens;
         private System.Windows.Forms.Button btnConfirmer;
+        private System.Windows.Forms.Button btnAnnuler;
     }
 }
