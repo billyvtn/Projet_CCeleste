@@ -43,9 +43,12 @@ namespace GarageCreditCeleste
         ClCredit unCredit;
         private void btnCalcul_Click(object sender, EventArgs e)
         {
-            unCredit = new ClCredit(Convert.ToDouble(lblMontant.Text), Convert.ToInt32(cbxDurée.Text), Convert.ToDouble(txtTauxAnnuel.Text));
-            btnConfirmer.Enabled = true;
-            lblMens.Text = Convert.ToString(unCredit.getMensualiteCredit());
+            if (cbxDurée.Text != "" && txtTauxAnnuel.Text != "")
+            {
+                unCredit = new ClCredit(Convert.ToDouble(lblMontant.Text), Convert.ToInt32(cbxDurée.Text), Convert.ToDouble(txtTauxAnnuel.Text));
+                btnConfirmer.Enabled = true;
+                lblMens.Text = Convert.ToString(unCredit.getMensualiteCredit());
+            }
         }
 
         private void txtApport_TextChanged(object sender, EventArgs e)
