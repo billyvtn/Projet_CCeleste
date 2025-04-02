@@ -21,18 +21,34 @@ namespace GarageCreditCeleste
         {
             if (Globales.voiture != null)
             {
-                txtMarqueVoiture.Text = Globales.voiture.getMarque();
-                txtModeleVoiture.Text = Globales.voiture.getModele();
-                txtAnneeVoiture.Text = Globales.voiture.getAnnee().ToString();
-                txtKilometrageVoiture.Text = Globales.voiture.getKilometrage().ToString();
-                txtCouleurVoiture.Text = Globales.voiture.getCouleur();
-                txtImmatVoiture.Text = Globales.voiture.getImmatriculation();
-                txtPuissanceVoiture.Text = Globales.voiture.getPuissance().ToString();
+                groupBox1.Visible = false;
+                gpbDescription.Visible = true;
+                lblMarque.Text = Globales.voiture.getMarque();
+                lblModele.Text = Globales.voiture.getModele();
+                lblAnnee.Text = Globales.voiture.getAnnee().ToString();
+                lblKilometrage.Text = Globales.voiture.getKilometrage().ToString();
+                lblCouleur.Text = Globales.voiture.getCouleur();
+                lblImmat.Text = Globales.voiture.getImmatriculation();
+                lblPuissance.Text = Globales.voiture.getPuissance().ToString();
 
-
-                btnControleTechnique.Enabled = true;
-                btnReparation.Enabled = true;
-                btnEntretien.Enabled = true;
+                if (Globales.Type.Contains("ControleTechnique"))
+                {
+                    btnControleTechnique.Enabled = false;
+                }
+                else if (Globales.Type.Contains("Entretien"))
+                {
+                    btnEntretien.Enabled = false;
+                }
+                else if (Globales.Type.Contains("Reparation"))
+                {
+                    btnReparation.Enabled = false;
+                }
+            }
+            else
+            {
+                btnControleTechnique.Enabled = false;
+                btnReparation.Enabled = false;
+                btnEntretien.Enabled = false;
             }
 
         }
