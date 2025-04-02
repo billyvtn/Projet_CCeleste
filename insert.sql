@@ -38,10 +38,10 @@ INSERT INTO PIECE (NomPiece, Marque, idReparation) VALUES
 GO
 
 -- Insertion dans CREDIT
-INSERT INTO CREDIT (Mensualite, Apport, Taux, MontantTotal) VALUES
-(300, 2000, 3, 15000),
-(350, 2500, 2.5, 18000),
-(400, 3000, 2, 20000);
+INSERT INTO CREDIT (MontantTotal, Mensualite, Duree, Taux) VALUES
+(15000, 300, 100, 3),
+(18000, 350, 180, 2.5),
+(20000, 400, 60, 2);
 GO
 
 -- Insertion dans CONTROLE_TECHNIQUE

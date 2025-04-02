@@ -88,5 +88,27 @@ namespace GarageCreditCeleste
             Globales.accueil.Show();
             Globales.frmCredit.Close();
         }
+
+        private void btnAnnuler_Click_1(object sender, EventArgs e)
+        {
+            DialogResult choix = MessageBox.Show(
+                "Voulez-vous annuler votre crédit ?",
+                "Finalisation de l'achat",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question
+            );
+
+            if (choix == DialogResult.Yes)
+            {
+                Globales.accueil = new Accueil();
+                Globales.accueil.Show();
+                Globales.frmCredit.Close();
+            }
+            else if (choix == DialogResult.No)
+            {
+
+
+            }
+        }
     }
 }
