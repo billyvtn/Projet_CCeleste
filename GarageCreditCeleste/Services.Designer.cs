@@ -52,7 +52,23 @@ namespace GarageCreditCeleste
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnEnregistrer = new System.Windows.Forms.Button();
+            this.gpbDescription = new System.Windows.Forms.GroupBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.lblCouleur = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.lblImmat = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.lblKilometrage = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.lblMarque = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.lblAnnee = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.lblPuissance = new System.Windows.Forms.Label();
+            this.lblModele = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
+            this.gpbDescription.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtImmatVoiture
@@ -235,7 +251,6 @@ namespace GarageCreditCeleste
             // 
             // btnEntretien
             // 
-            this.btnEntretien.Enabled = false;
             this.btnEntretien.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.btnEntretien.Location = new System.Drawing.Point(662, 198);
             this.btnEntretien.Name = "btnEntretien";
@@ -247,7 +262,6 @@ namespace GarageCreditCeleste
             // 
             // btnControleTechnique
             // 
-            this.btnControleTechnique.Enabled = false;
             this.btnControleTechnique.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.btnControleTechnique.Location = new System.Drawing.Point(546, 198);
             this.btnControleTechnique.Name = "btnControleTechnique";
@@ -259,7 +273,6 @@ namespace GarageCreditCeleste
             // 
             // btnReparation
             // 
-            this.btnReparation.Enabled = false;
             this.btnReparation.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.btnReparation.Location = new System.Drawing.Point(430, 198);
             this.btnReparation.Name = "btnReparation";
@@ -300,11 +313,170 @@ namespace GarageCreditCeleste
             this.btnEnregistrer.UseVisualStyleBackColor = true;
             this.btnEnregistrer.Click += new System.EventHandler(this.btnEnregistrer_Click);
             // 
+            // gpbDescription
+            // 
+            this.gpbDescription.Controls.Add(this.label12);
+            this.gpbDescription.Controls.Add(this.label13);
+            this.gpbDescription.Controls.Add(this.lblCouleur);
+            this.gpbDescription.Controls.Add(this.label14);
+            this.gpbDescription.Controls.Add(this.lblImmat);
+            this.gpbDescription.Controls.Add(this.label15);
+            this.gpbDescription.Controls.Add(this.lblKilometrage);
+            this.gpbDescription.Controls.Add(this.label16);
+            this.gpbDescription.Controls.Add(this.lblMarque);
+            this.gpbDescription.Controls.Add(this.label17);
+            this.gpbDescription.Controls.Add(this.lblAnnee);
+            this.gpbDescription.Controls.Add(this.label18);
+            this.gpbDescription.Controls.Add(this.lblPuissance);
+            this.gpbDescription.Controls.Add(this.lblModele);
+            this.gpbDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.gpbDescription.Location = new System.Drawing.Point(12, 54);
+            this.gpbDescription.Name = "gpbDescription";
+            this.gpbDescription.Size = new System.Drawing.Size(374, 385);
+            this.gpbDescription.TabIndex = 80;
+            this.gpbDescription.TabStop = false;
+            this.gpbDescription.Text = "Description du véhicule choisi";
+            this.gpbDescription.Visible = false;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.label12.Location = new System.Drawing.Point(15, 231);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(68, 18);
+            this.label12.TabIndex = 66;
+            this.label12.Text = "Couleur :";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.label13.Location = new System.Drawing.Point(15, 317);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(116, 18);
+            this.label13.TabIndex = 68;
+            this.label13.Text = "Immatriculation :";
+            // 
+            // lblCouleur
+            // 
+            this.lblCouleur.AutoSize = true;
+            this.lblCouleur.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.lblCouleur.Location = new System.Drawing.Point(89, 231);
+            this.lblCouleur.Name = "lblCouleur";
+            this.lblCouleur.Size = new System.Drawing.Size(0, 18);
+            this.lblCouleur.TabIndex = 58;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.label14.Location = new System.Drawing.Point(15, 186);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(95, 18);
+            this.label14.TabIndex = 65;
+            this.label14.Text = "Kilométrage :";
+            // 
+            // lblImmat
+            // 
+            this.lblImmat.AutoSize = true;
+            this.lblImmat.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.lblImmat.Location = new System.Drawing.Point(130, 313);
+            this.lblImmat.Name = "lblImmat";
+            this.lblImmat.Size = new System.Drawing.Size(0, 18);
+            this.lblImmat.TabIndex = 60;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.label15.Location = new System.Drawing.Point(15, 39);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(66, 18);
+            this.label15.TabIndex = 62;
+            this.label15.Text = "Marque :";
+            // 
+            // lblKilometrage
+            // 
+            this.lblKilometrage.AutoSize = true;
+            this.lblKilometrage.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.lblKilometrage.Location = new System.Drawing.Point(112, 186);
+            this.lblKilometrage.Name = "lblKilometrage";
+            this.lblKilometrage.Size = new System.Drawing.Size(0, 18);
+            this.lblKilometrage.TabIndex = 57;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.label16.Location = new System.Drawing.Point(15, 139);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(57, 18);
+            this.label16.TabIndex = 64;
+            this.label16.Text = "Année :";
+            // 
+            // lblMarque
+            // 
+            this.lblMarque.AutoSize = true;
+            this.lblMarque.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.lblMarque.Location = new System.Drawing.Point(85, 41);
+            this.lblMarque.Name = "lblMarque";
+            this.lblMarque.Size = new System.Drawing.Size(0, 18);
+            this.lblMarque.TabIndex = 54;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.label17.Location = new System.Drawing.Point(15, 274);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(85, 18);
+            this.label17.TabIndex = 67;
+            this.label17.Text = "Puissance :";
+            // 
+            // lblAnnee
+            // 
+            this.lblAnnee.AutoSize = true;
+            this.lblAnnee.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.lblAnnee.Location = new System.Drawing.Point(77, 139);
+            this.lblAnnee.Name = "lblAnnee";
+            this.lblAnnee.Size = new System.Drawing.Size(0, 18);
+            this.lblAnnee.TabIndex = 56;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.label18.Location = new System.Drawing.Point(15, 89);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(65, 18);
+            this.label18.TabIndex = 63;
+            this.label18.Text = "Modèle :";
+            // 
+            // lblPuissance
+            // 
+            this.lblPuissance.AutoSize = true;
+            this.lblPuissance.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.lblPuissance.Location = new System.Drawing.Point(96, 274);
+            this.lblPuissance.Name = "lblPuissance";
+            this.lblPuissance.Size = new System.Drawing.Size(0, 18);
+            this.lblPuissance.TabIndex = 59;
+            // 
+            // lblModele
+            // 
+            this.lblModele.AutoSize = true;
+            this.lblModele.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.lblModele.Location = new System.Drawing.Point(79, 91);
+            this.lblModele.Name = "lblModele";
+            this.lblModele.Size = new System.Drawing.Size(0, 18);
+            this.lblModele.TabIndex = 55;
+            // 
             // Services
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.gpbDescription);
             this.Controls.Add(this.btnEnregistrer);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnFermer);
@@ -319,6 +491,8 @@ namespace GarageCreditCeleste
             this.Load += new System.EventHandler(this.Services_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.gpbDescription.ResumeLayout(false);
+            this.gpbDescription.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -349,5 +523,20 @@ namespace GarageCreditCeleste
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnEnregistrer;
+        private System.Windows.Forms.GroupBox gpbDescription;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label lblCouleur;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label lblImmat;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label lblKilometrage;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label lblMarque;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label lblAnnee;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label lblPuissance;
+        private System.Windows.Forms.Label lblModele;
     }
 }

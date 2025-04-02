@@ -29,5 +29,7 @@ namespace GarageCreditCeleste
 
         public static List<String> Type = new List<string>();
 
+        public static ClControleTechnique controleTechnique;
+
     }
 }

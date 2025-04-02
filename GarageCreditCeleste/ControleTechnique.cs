@@ -24,11 +24,44 @@ namespace GarageCreditCeleste
             Globales.services = new Services();
             Globales.services.Show();
             Globales.controletechnique.Close();
+            calControleTechnique.MaxSelectionCount = 1;
         }
 
         private void btnEnregistrer_Click(object sender, EventArgs e)
         {
             //enregistrer les infos du rdv dans un objet Globales
+            Globales.controleTechnique = new ClControleTechnique(calControleTechnique.SelectionStart.ToShortDateString(), Convert.ToString(cboHeureCT.SelectedItem));
+            Globales.Type.Add("ControleTechnique");
+
+            MessageBox.Show("Les informations ont été enregistrées avec succès.", "Enregistrement", MessageBoxButtons.OK);
+
+            if (Globales.Type.Contains("ControleTechnique") && Globales.Type.Contains("Entretien") && Globales.Type.Contains("Reparation"))
+            {
+                Globales.accueil = new Accueil();
+                Globales.accueil.Show();
+                Globales.controletechnique.Close();
+            }
+            else
+            {
+                DialogResult choix = MessageBox.Show(
+                "Voulez-vous utiliser nos autres services ?",
+                "Services",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question
+                );
+                if (choix == DialogResult.Yes)
+                {
+                    Globales.services = new Services();
+                    Globales.services.Show();
+                    Globales.controletechnique.Close();
+                }
+                else if (choix == DialogResult.No)
+                {
+                    Globales.accueil = new Accueil();
+                    Globales.accueil.Show();
+                    Globales.controletechnique.Close();
+                }
+            }
         }
 
         private void ControleTechnique_Load(object sender, EventArgs e)
@@ -40,11 +73,28 @@ namespace GarageCreditCeleste
             lblCouleur.Text += Globales.voiture.getCouleur();
             lblPuissance.Text += Globales.voiture.getPuissance();
             lblImmat.Text += Globales.voiture.getImmatriculation();
+
+            for (int hour = 9; hour <= 17; hour++)
+            {
+                if(hour != 12)
+                {
+                    cboHeureCT.Items.Add($"{hour}:00");
+                }
+            }
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
+        private void groupBox1_Enter(object sender, EventArgs e){}
 
+        private void label3_Click(object sender, EventArgs e){}
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (cboHeureCT.SelectedIndex != -1 && calControleTechnique.SelectionStart != null)
+            {
+                lblDateHeureRDV.Text += calControleTechnique.SelectionStart.ToShortDateString() + " " + Convert.ToString(cboHeureCT.SelectedItem);
+            }
+            btnEnregistrer.Enabled = true;
+            
         }
     }
 }
