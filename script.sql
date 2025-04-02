@@ -79,10 +79,10 @@ GO
 
 CREATE TABLE CREDIT(
    idCredit INT IDENTITY(1,1) PRIMARY KEY,
+   MontantTotal INT,
    Mensualite INT,
-   Apport INT,
-   Taux INT,
-   MontantTotal INT
+   Duree INT,
+   Taux INT
 );
 GO
 
@@ -120,9 +120,9 @@ GO
 
 CREATE TABLE ASSURANCE(
    idAssurance INT IDENTITY(1,1) PRIMARY KEY,
-   TypeAssurance VARCHAR(50) NOT NULL,
-   Mensualite INT,
-   DateDebut DATE,
+   TypeAssurance VARCHAR(50),
+   Mensualite DECIMAL(15,2),
+   DateDebut VARCHAR(50),
    idAchat INT UNIQUE,
    CONSTRAINT FK_ACHAT_ASSURANCE FOREIGN KEY (idAchat) REFERENCES ACHAT(idAchat)
 );
