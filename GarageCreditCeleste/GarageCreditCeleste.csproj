@@ -67,6 +67,7 @@
     <Compile Include="ClAssurance.cs" />
     <Compile Include="ClControleTechnique.cs" />
     <Compile Include="ClCredit.cs" />
+    <Compile Include="ClEntretien.cs" />
     <Compile Include="Client.cs" />
     <Compile Include="ControleTechnique.cs">
       <SubType>Form</SubType>

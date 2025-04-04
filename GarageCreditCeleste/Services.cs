@@ -35,11 +35,11 @@ namespace GarageCreditCeleste
                 {
                     btnControleTechnique.Enabled = false;
                 }
-                else if (Globales.Type.Contains("Entretien"))
+                if (Globales.Type.Contains("Entretien"))
                 {
                     btnEntretien.Enabled = false;
                 }
-                else if (Globales.Type.Contains("Reparation"))
+                if (Globales.Type.Contains("Reparation"))
                 {
                     btnReparation.Enabled = false;
                 }
