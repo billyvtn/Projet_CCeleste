@@ -408,7 +408,7 @@ namespace GarageCreditCeleste
                         command.Parameters.AddWithValue("@Immat", Globales.voiture.getImmatriculation());
                         command.Parameters.AddWithValue("@EmailUtilisateur", Globales.client.getEmail()); 
                         command.Parameters.AddWithValue("@PrixVente", Globales.voiture.getPrix());
-                        command.Parameters.AddWithValue("@DateVente", dateActuelle.ToString("dd/mm/yyyy"));
+                        command.Parameters.AddWithValue("@DateVente", dateActuelle.ToString("dd/MM/yyyy"));
 
                         // Ouvrir la connexion et exécuter la procédure stockée
                         connection.Open();

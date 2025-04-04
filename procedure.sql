@@ -30,7 +30,7 @@ CREATE PROCEDURE dbo.InsVoitureEtVente
     @Immat VARCHAR(50),
     @EmailUtilisateur VARCHAR(100),  -- L'email est utilisé pour récupérer l'idUtilisateur
     @PrixVente DECIMAL(15,2),
-    @DateVente DATE
+    @DateVente VARCHAR(50)
 AS
 BEGIN
     DECLARE @idVehicule INT;
@@ -40,7 +40,8 @@ BEGIN
     BEGIN TRANSACTION;
 
     BEGIN TRY
-        -- Récupérer l'id de l'utilisateur à partir de son email
+
+        -- Récupérer l'id de l'utilisateur à  partir de son email
         SELECT @idUtilisateur = idUtilisateur FROM UTILISATEUR WHERE Email = @EmailUtilisateur;
 
         IF @idUtilisateur IS NULL
@@ -53,12 +54,7 @@ BEGIN
         VALUES (@Marque, @Modele, @Annee, @Valeur, @Kilometrage, @Couleur, @Puissance, @StatutDisp, @Immat, @idUtilisateur);
 
         -- Récupérer l'ID de la voiture insérée
-        SET @idVehicule = SCOPE_IDENTITY();
-
-        IF @idVehicule IS NULL
-        BEGIN
-            RAISERROR('L''insertion du véhicule a échoué.', 16, 1);
-        END
+        SELECT @idVehicule = idVehicule FROM VEHICULE WHERE Immat = @Immat;
 
         -- Insérer la transaction de vente
         INSERT INTO VENTE (PrixVente, DateVente, idUtilisateur, idVehicule)
