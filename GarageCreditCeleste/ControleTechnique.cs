@@ -24,7 +24,7 @@ namespace GarageCreditCeleste
             Globales.services = new Services();
             Globales.services.Show();
             Globales.controletechnique.Close();
-            calControleTechnique.MaxSelectionCount = 1;
+            
         }
 
         private void btnEnregistrer_Click(object sender, EventArgs e)

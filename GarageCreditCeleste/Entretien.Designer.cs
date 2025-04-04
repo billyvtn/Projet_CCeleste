@@ -48,14 +48,15 @@ namespace GarageCreditCeleste
             this.calEntretien = new System.Windows.Forms.MonthCalendar();
             this.btnEnregistrer = new System.Windows.Forms.Button();
             this.gboPiece = new System.Windows.Forms.GroupBox();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton4 = new System.Windows.Forms.RadioButton();
-            this.radioButton5 = new System.Windows.Forms.RadioButton();
-            this.radioButton6 = new System.Windows.Forms.RadioButton();
-            this.radioButton7 = new System.Windows.Forms.RadioButton();
-            this.radioButton8 = new System.Windows.Forms.RadioButton();
+            this.button1 = new System.Windows.Forms.Button();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.checkBox3 = new System.Windows.Forms.CheckBox();
+            this.checkBox4 = new System.Windows.Forms.CheckBox();
+            this.checkBox5 = new System.Windows.Forms.CheckBox();
+            this.checkBox6 = new System.Windows.Forms.CheckBox();
+            this.checkBox7 = new System.Windows.Forms.CheckBox();
+            this.checkBox8 = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.gboPiece.SuspendLayout();
@@ -201,6 +202,7 @@ namespace GarageCreditCeleste
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.button1);
             this.groupBox2.Controls.Add(this.label12);
             this.groupBox2.Controls.Add(this.cboHeure);
             this.groupBox2.Controls.Add(this.lblDateHeureEntretien);
@@ -208,7 +210,7 @@ namespace GarageCreditCeleste
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
             this.groupBox2.Location = new System.Drawing.Point(428, 52);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(360, 277);
+            this.groupBox2.Size = new System.Drawing.Size(360, 328);
             this.groupBox2.TabIndex = 70;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Date de l\'entretien";
@@ -240,6 +242,7 @@ namespace GarageCreditCeleste
             // 
             // btnEnregistrer
             // 
+            this.btnEnregistrer.Enabled = false;
             this.btnEnregistrer.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.btnEnregistrer.Location = new System.Drawing.Point(602, 409);
             this.btnEnregistrer.Name = "btnEnregistrer";
@@ -251,14 +254,14 @@ namespace GarageCreditCeleste
             // 
             // gboPiece
             // 
-            this.gboPiece.Controls.Add(this.radioButton5);
-            this.gboPiece.Controls.Add(this.radioButton6);
-            this.gboPiece.Controls.Add(this.radioButton7);
-            this.gboPiece.Controls.Add(this.radioButton8);
-            this.gboPiece.Controls.Add(this.radioButton4);
-            this.gboPiece.Controls.Add(this.radioButton3);
-            this.gboPiece.Controls.Add(this.radioButton2);
-            this.gboPiece.Controls.Add(this.radioButton1);
+            this.gboPiece.Controls.Add(this.checkBox5);
+            this.gboPiece.Controls.Add(this.checkBox6);
+            this.gboPiece.Controls.Add(this.checkBox7);
+            this.gboPiece.Controls.Add(this.checkBox8);
+            this.gboPiece.Controls.Add(this.checkBox4);
+            this.gboPiece.Controls.Add(this.checkBox3);
+            this.gboPiece.Controls.Add(this.checkBox2);
+            this.gboPiece.Controls.Add(this.checkBox1);
             this.gboPiece.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
             this.gboPiece.Location = new System.Drawing.Point(12, 238);
             this.gboPiece.Name = "gboPiece";
@@ -267,93 +270,96 @@ namespace GarageCreditCeleste
             this.gboPiece.TabStop = false;
             this.gboPiece.Text = "Pièce à entretenir";
             // 
-            // radioButton1
+            // button1
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(20, 40);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(107, 21);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "radioButton1";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.button1.Location = new System.Drawing.Point(20, 281);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(115, 30);
+            this.button1.TabIndex = 66;
+            this.button1.Text = "Valider date";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // radioButton2
+            // checkBox1
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(20, 81);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(107, 21);
-            this.radioButton2.TabIndex = 1;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "radioButton2";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(29, 38);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(150, 21);
+            this.checkBox1.TabIndex = 0;
+            this.checkBox1.Text = "Huile moteur + filtre";
+            this.checkBox1.UseVisualStyleBackColor = true;
             // 
-            // radioButton3
+            // checkBox2
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(20, 121);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(107, 21);
-            this.radioButton3.TabIndex = 2;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "radioButton3";
-            this.radioButton3.UseVisualStyleBackColor = true;
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Location = new System.Drawing.Point(29, 78);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(174, 21);
+            this.checkBox2.TabIndex = 1;
+            this.checkBox2.Text = "Liquide refroidissement";
+            this.checkBox2.UseVisualStyleBackColor = true;
             // 
-            // radioButton4
+            // checkBox3
             // 
-            this.radioButton4.AutoSize = true;
-            this.radioButton4.Location = new System.Drawing.Point(20, 161);
-            this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(107, 21);
-            this.radioButton4.TabIndex = 3;
-            this.radioButton4.TabStop = true;
-            this.radioButton4.Text = "radioButton4";
-            this.radioButton4.UseVisualStyleBackColor = true;
+            this.checkBox3.AutoSize = true;
+            this.checkBox3.Location = new System.Drawing.Point(29, 121);
+            this.checkBox3.Name = "checkBox3";
+            this.checkBox3.Size = new System.Drawing.Size(125, 21);
+            this.checkBox3.TabIndex = 2;
+            this.checkBox3.Text = "Liquide de frein";
+            this.checkBox3.UseVisualStyleBackColor = true;
             // 
-            // radioButton5
+            // checkBox4
             // 
-            this.radioButton5.AutoSize = true;
-            this.radioButton5.Location = new System.Drawing.Point(203, 161);
-            this.radioButton5.Name = "radioButton5";
-            this.radioButton5.Size = new System.Drawing.Size(107, 21);
-            this.radioButton5.TabIndex = 7;
-            this.radioButton5.TabStop = true;
-            this.radioButton5.Text = "radioButton5";
-            this.radioButton5.UseVisualStyleBackColor = true;
+            this.checkBox4.AutoSize = true;
+            this.checkBox4.Location = new System.Drawing.Point(29, 160);
+            this.checkBox4.Name = "checkBox4";
+            this.checkBox4.Size = new System.Drawing.Size(146, 21);
+            this.checkBox4.TabIndex = 3;
+            this.checkBox4.Text = "Plaquettes de frein";
+            this.checkBox4.UseVisualStyleBackColor = true;
             // 
-            // radioButton6
+            // checkBox5
             // 
-            this.radioButton6.AutoSize = true;
-            this.radioButton6.Location = new System.Drawing.Point(203, 121);
-            this.radioButton6.Name = "radioButton6";
-            this.radioButton6.Size = new System.Drawing.Size(107, 21);
-            this.radioButton6.TabIndex = 6;
-            this.radioButton6.TabStop = true;
-            this.radioButton6.Text = "radioButton6";
-            this.radioButton6.UseVisualStyleBackColor = true;
+            this.checkBox5.AutoSize = true;
+            this.checkBox5.Location = new System.Drawing.Point(236, 160);
+            this.checkBox5.Name = "checkBox5";
+            this.checkBox5.Size = new System.Drawing.Size(67, 21);
+            this.checkBox5.TabIndex = 7;
+            this.checkBox5.Text = "Pneus";
+            this.checkBox5.UseVisualStyleBackColor = true;
             // 
-            // radioButton7
+            // checkBox6
             // 
-            this.radioButton7.AutoSize = true;
-            this.radioButton7.Location = new System.Drawing.Point(203, 81);
-            this.radioButton7.Name = "radioButton7";
-            this.radioButton7.Size = new System.Drawing.Size(107, 21);
-            this.radioButton7.TabIndex = 5;
-            this.radioButton7.TabStop = true;
-            this.radioButton7.Text = "radioButton7";
-            this.radioButton7.UseVisualStyleBackColor = true;
+            this.checkBox6.AutoSize = true;
+            this.checkBox6.Location = new System.Drawing.Point(236, 121);
+            this.checkBox6.Name = "checkBox6";
+            this.checkBox6.Size = new System.Drawing.Size(135, 21);
+            this.checkBox6.TabIndex = 6;
+            this.checkBox6.Text = "Filtre à carburant";
+            this.checkBox6.UseVisualStyleBackColor = true;
             // 
-            // radioButton8
+            // checkBox7
             // 
-            this.radioButton8.AutoSize = true;
-            this.radioButton8.Location = new System.Drawing.Point(203, 40);
-            this.radioButton8.Name = "radioButton8";
-            this.radioButton8.Size = new System.Drawing.Size(107, 21);
-            this.radioButton8.TabIndex = 4;
-            this.radioButton8.TabStop = true;
-            this.radioButton8.Text = "radioButton8";
-            this.radioButton8.UseVisualStyleBackColor = true;
+            this.checkBox7.AutoSize = true;
+            this.checkBox7.Location = new System.Drawing.Point(236, 78);
+            this.checkBox7.Name = "checkBox7";
+            this.checkBox7.Size = new System.Drawing.Size(119, 21);
+            this.checkBox7.TabIndex = 5;
+            this.checkBox7.Text = "Filtre habitacle";
+            this.checkBox7.UseVisualStyleBackColor = true;
+            // 
+            // checkBox8
+            // 
+            this.checkBox8.AutoSize = true;
+            this.checkBox8.Location = new System.Drawing.Point(236, 38);
+            this.checkBox8.Name = "checkBox8";
+            this.checkBox8.Size = new System.Drawing.Size(90, 21);
+            this.checkBox8.TabIndex = 4;
+            this.checkBox8.Text = "Filtre à air";
+            this.checkBox8.UseVisualStyleBackColor = true;
             // 
             // Entretien
             // 
@@ -403,13 +409,14 @@ namespace GarageCreditCeleste
         private System.Windows.Forms.MonthCalendar calEntretien;
         private System.Windows.Forms.Button btnEnregistrer;
         private System.Windows.Forms.GroupBox gboPiece;
-        private System.Windows.Forms.RadioButton radioButton5;
-        private System.Windows.Forms.RadioButton radioButton6;
-        private System.Windows.Forms.RadioButton radioButton7;
-        private System.Windows.Forms.RadioButton radioButton8;
-        private System.Windows.Forms.RadioButton radioButton4;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.CheckBox checkBox5;
+        private System.Windows.Forms.CheckBox checkBox6;
+        private System.Windows.Forms.CheckBox checkBox7;
+        private System.Windows.Forms.CheckBox checkBox8;
+        private System.Windows.Forms.CheckBox checkBox4;
+        private System.Windows.Forms.CheckBox checkBox3;
+        private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }

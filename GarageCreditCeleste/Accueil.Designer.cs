@@ -59,6 +59,22 @@ namespace GarageCreditCeleste
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.gpbResume = new System.Windows.Forms.GroupBox();
+            this.gpbCredit = new System.Windows.Forms.GroupBox();
+            this.lblMensualiteCredit = new System.Windows.Forms.Label();
+            this.lblDureeCredit = new System.Windows.Forms.Label();
+            this.lblMontantCredit = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.lblTauxCredit = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.gpbAssurance = new System.Windows.Forms.GroupBox();
+            this.lblTypeAssurance = new System.Windows.Forms.Label();
+            this.lblDateDebutAssurance = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.lblMensualiteAssurance = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
             this.btnAnnuler = new System.Windows.Forms.Button();
             this.btnConfirmer = new System.Windows.Forms.Button();
             this.gpbType = new System.Windows.Forms.GroupBox();
@@ -80,29 +96,13 @@ namespace GarageCreditCeleste
             this.btnEnregistrerChoixClient = new System.Windows.Forms.Button();
             this.cboClient = new System.Windows.Forms.ComboBox();
             this.button2 = new System.Windows.Forms.Button();
-            this.gpbAssurance = new System.Windows.Forms.GroupBox();
-            this.lblTypeAssurance = new System.Windows.Forms.Label();
-            this.lblDateDebutAssurance = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.lblMensualiteAssurance = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.gpbCredit = new System.Windows.Forms.GroupBox();
-            this.lblMensualiteCredit = new System.Windows.Forms.Label();
-            this.lblMontantCredit = new System.Windows.Forms.Label();
-            this.lblTauxCredit = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.lblDureeCredit = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
             this.gpbInfoClient.SuspendLayout();
             this.gpbResume.SuspendLayout();
+            this.gpbCredit.SuspendLayout();
+            this.gpbAssurance.SuspendLayout();
             this.gpbType.SuspendLayout();
             this.gpbInfoFixe.SuspendLayout();
             this.gpbSeConnecter.SuspendLayout();
-            this.gpbAssurance.SuspendLayout();
-            this.gpbCredit.SuspendLayout();
             this.SuspendLayout();
             // 
             // label8
@@ -149,7 +149,7 @@ namespace GarageCreditCeleste
             // btnConnecter
             // 
             this.btnConnecter.Location = new System.Drawing.Point(17, 340);
-            this.btnConnecter.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnConnecter.Margin = new System.Windows.Forms.Padding(2);
             this.btnConnecter.Name = "btnConnecter";
             this.btnConnecter.Size = new System.Drawing.Size(106, 27);
             this.btnConnecter.TabIndex = 55;
@@ -442,10 +442,186 @@ namespace GarageCreditCeleste
             this.gpbResume.Text = "Résumé";
             this.gpbResume.Visible = false;
             // 
+            // gpbCredit
+            // 
+            this.gpbCredit.Controls.Add(this.lblMensualiteCredit);
+            this.gpbCredit.Controls.Add(this.lblDureeCredit);
+            this.gpbCredit.Controls.Add(this.lblMontantCredit);
+            this.gpbCredit.Controls.Add(this.label23);
+            this.gpbCredit.Controls.Add(this.lblTauxCredit);
+            this.gpbCredit.Controls.Add(this.label21);
+            this.gpbCredit.Controls.Add(this.label16);
+            this.gpbCredit.Controls.Add(this.label19);
+            this.gpbCredit.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.gpbCredit.Location = new System.Drawing.Point(16, 206);
+            this.gpbCredit.Name = "gpbCredit";
+            this.gpbCredit.Size = new System.Drawing.Size(239, 161);
+            this.gpbCredit.TabIndex = 56;
+            this.gpbCredit.TabStop = false;
+            this.gpbCredit.Text = "Crédit";
+            this.gpbCredit.Visible = false;
+            // 
+            // lblMensualiteCredit
+            // 
+            this.lblMensualiteCredit.AutoSize = true;
+            this.lblMensualiteCredit.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.lblMensualiteCredit.Location = new System.Drawing.Point(145, 130);
+            this.lblMensualiteCredit.Name = "lblMensualiteCredit";
+            this.lblMensualiteCredit.Size = new System.Drawing.Size(45, 18);
+            this.lblMensualiteCredit.TabIndex = 61;
+            this.lblMensualiteCredit.Text = "mens";
+            // 
+            // lblDureeCredit
+            // 
+            this.lblDureeCredit.AutoSize = true;
+            this.lblDureeCredit.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.lblDureeCredit.Location = new System.Drawing.Point(145, 68);
+            this.lblDureeCredit.Name = "lblDureeCredit";
+            this.lblDureeCredit.Size = new System.Drawing.Size(45, 18);
+            this.lblDureeCredit.TabIndex = 59;
+            this.lblDureeCredit.Text = "duree";
+            // 
+            // lblMontantCredit
+            // 
+            this.lblMontantCredit.AutoSize = true;
+            this.lblMontantCredit.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.lblMontantCredit.Location = new System.Drawing.Point(145, 37);
+            this.lblMontantCredit.Name = "lblMontantCredit";
+            this.lblMontantCredit.Size = new System.Drawing.Size(42, 18);
+            this.lblMontantCredit.TabIndex = 58;
+            this.lblMontantCredit.Text = "mont";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.label23.Location = new System.Drawing.Point(6, 66);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(48, 18);
+            this.label23.TabIndex = 55;
+            this.label23.Text = "Durée";
+            // 
+            // lblTauxCredit
+            // 
+            this.lblTauxCredit.AutoSize = true;
+            this.lblTauxCredit.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.lblTauxCredit.Location = new System.Drawing.Point(145, 97);
+            this.lblTauxCredit.Name = "lblTauxCredit";
+            this.lblTauxCredit.Size = new System.Drawing.Size(35, 18);
+            this.lblTauxCredit.TabIndex = 60;
+            this.lblTauxCredit.Text = "taux";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.label21.Location = new System.Drawing.Point(6, 97);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(40, 18);
+            this.label21.TabIndex = 56;
+            this.label21.Text = "Taux";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.label16.Location = new System.Drawing.Point(6, 130);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(79, 18);
+            this.label16.TabIndex = 57;
+            this.label16.Text = "Mensualité";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.label19.Location = new System.Drawing.Point(6, 37);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(62, 18);
+            this.label19.TabIndex = 54;
+            this.label19.Text = "Montant";
+            // 
+            // gpbAssurance
+            // 
+            this.gpbAssurance.Controls.Add(this.lblTypeAssurance);
+            this.gpbAssurance.Controls.Add(this.lblDateDebutAssurance);
+            this.gpbAssurance.Controls.Add(this.label17);
+            this.gpbAssurance.Controls.Add(this.label18);
+            this.gpbAssurance.Controls.Add(this.lblMensualiteAssurance);
+            this.gpbAssurance.Controls.Add(this.label20);
+            this.gpbAssurance.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.gpbAssurance.Location = new System.Drawing.Point(261, 30);
+            this.gpbAssurance.Name = "gpbAssurance";
+            this.gpbAssurance.Size = new System.Drawing.Size(253, 170);
+            this.gpbAssurance.TabIndex = 54;
+            this.gpbAssurance.TabStop = false;
+            this.gpbAssurance.Text = "Assurance";
+            this.gpbAssurance.Visible = false;
+            // 
+            // lblTypeAssurance
+            // 
+            this.lblTypeAssurance.AutoSize = true;
+            this.lblTypeAssurance.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.lblTypeAssurance.Location = new System.Drawing.Point(145, 35);
+            this.lblTypeAssurance.Name = "lblTypeAssurance";
+            this.lblTypeAssurance.Size = new System.Drawing.Size(44, 18);
+            this.lblTypeAssurance.TabIndex = 50;
+            this.lblTypeAssurance.Text = "typeA";
+            // 
+            // lblDateDebutAssurance
+            // 
+            this.lblDateDebutAssurance.AutoSize = true;
+            this.lblDateDebutAssurance.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.lblDateDebutAssurance.Location = new System.Drawing.Point(145, 128);
+            this.lblDateDebutAssurance.Name = "lblDateDebutAssurance";
+            this.lblDateDebutAssurance.Size = new System.Drawing.Size(36, 18);
+            this.lblDateDebutAssurance.TabIndex = 52;
+            this.lblDateDebutAssurance.Text = "date";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.label17.Location = new System.Drawing.Point(6, 35);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(124, 18);
+            this.label17.TabIndex = 46;
+            this.label17.Text = "Type d\'assurance";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.label18.Location = new System.Drawing.Point(6, 128);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(99, 18);
+            this.label18.TabIndex = 48;
+            this.label18.Text = "Date de début";
+            // 
+            // lblMensualiteAssurance
+            // 
+            this.lblMensualiteAssurance.AutoSize = true;
+            this.lblMensualiteAssurance.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.lblMensualiteAssurance.Location = new System.Drawing.Point(145, 86);
+            this.lblMensualiteAssurance.Name = "lblMensualiteAssurance";
+            this.lblMensualiteAssurance.Size = new System.Drawing.Size(45, 18);
+            this.lblMensualiteAssurance.TabIndex = 51;
+            this.lblMensualiteAssurance.Text = "mens";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.label20.Location = new System.Drawing.Point(6, 84);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(79, 18);
+            this.label20.TabIndex = 47;
+            this.label20.Text = "Mensualité";
+            // 
             // btnAnnuler
             // 
             this.btnAnnuler.Location = new System.Drawing.Point(434, 340);
-            this.btnAnnuler.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAnnuler.Margin = new System.Windows.Forms.Padding(2);
             this.btnAnnuler.Name = "btnAnnuler";
             this.btnAnnuler.Size = new System.Drawing.Size(83, 27);
             this.btnAnnuler.TabIndex = 55;
@@ -456,7 +632,7 @@ namespace GarageCreditCeleste
             // btnConfirmer
             // 
             this.btnConfirmer.Location = new System.Drawing.Point(338, 340);
-            this.btnConfirmer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnConfirmer.Margin = new System.Windows.Forms.Padding(2);
             this.btnConfirmer.Name = "btnConfirmer";
             this.btnConfirmer.Size = new System.Drawing.Size(83, 27);
             this.btnConfirmer.TabIndex = 54;
@@ -654,7 +830,7 @@ namespace GarageCreditCeleste
             // 
             this.cboClient.FormattingEnabled = true;
             this.cboClient.Location = new System.Drawing.Point(32, 58);
-            this.cboClient.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cboClient.Margin = new System.Windows.Forms.Padding(2);
             this.cboClient.Name = "cboClient";
             this.cboClient.Size = new System.Drawing.Size(162, 26);
             this.cboClient.TabIndex = 12;
@@ -668,182 +844,6 @@ namespace GarageCreditCeleste
             this.button2.TabIndex = 11;
             this.button2.Text = "Enregistrer";
             this.button2.UseVisualStyleBackColor = true;
-            // 
-            // gpbAssurance
-            // 
-            this.gpbAssurance.Controls.Add(this.lblTypeAssurance);
-            this.gpbAssurance.Controls.Add(this.lblDateDebutAssurance);
-            this.gpbAssurance.Controls.Add(this.label17);
-            this.gpbAssurance.Controls.Add(this.label18);
-            this.gpbAssurance.Controls.Add(this.lblMensualiteAssurance);
-            this.gpbAssurance.Controls.Add(this.label20);
-            this.gpbAssurance.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.gpbAssurance.Location = new System.Drawing.Point(261, 30);
-            this.gpbAssurance.Name = "gpbAssurance";
-            this.gpbAssurance.Size = new System.Drawing.Size(253, 170);
-            this.gpbAssurance.TabIndex = 54;
-            this.gpbAssurance.TabStop = false;
-            this.gpbAssurance.Text = "Assurance";
-            this.gpbAssurance.Visible = false;
-            // 
-            // lblTypeAssurance
-            // 
-            this.lblTypeAssurance.AutoSize = true;
-            this.lblTypeAssurance.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.lblTypeAssurance.Location = new System.Drawing.Point(145, 35);
-            this.lblTypeAssurance.Name = "lblTypeAssurance";
-            this.lblTypeAssurance.Size = new System.Drawing.Size(44, 18);
-            this.lblTypeAssurance.TabIndex = 50;
-            this.lblTypeAssurance.Text = "typeA";
-            // 
-            // lblDateDebutAssurance
-            // 
-            this.lblDateDebutAssurance.AutoSize = true;
-            this.lblDateDebutAssurance.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.lblDateDebutAssurance.Location = new System.Drawing.Point(145, 128);
-            this.lblDateDebutAssurance.Name = "lblDateDebutAssurance";
-            this.lblDateDebutAssurance.Size = new System.Drawing.Size(36, 18);
-            this.lblDateDebutAssurance.TabIndex = 52;
-            this.lblDateDebutAssurance.Text = "date";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.label17.Location = new System.Drawing.Point(6, 35);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(124, 18);
-            this.label17.TabIndex = 46;
-            this.label17.Text = "Type d\'assurance";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.label18.Location = new System.Drawing.Point(6, 128);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(99, 18);
-            this.label18.TabIndex = 48;
-            this.label18.Text = "Date de début";
-            // 
-            // lblMensualiteAssurance
-            // 
-            this.lblMensualiteAssurance.AutoSize = true;
-            this.lblMensualiteAssurance.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.lblMensualiteAssurance.Location = new System.Drawing.Point(145, 86);
-            this.lblMensualiteAssurance.Name = "lblMensualiteAssurance";
-            this.lblMensualiteAssurance.Size = new System.Drawing.Size(45, 18);
-            this.lblMensualiteAssurance.TabIndex = 51;
-            this.lblMensualiteAssurance.Text = "mens";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.label20.Location = new System.Drawing.Point(6, 84);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(79, 18);
-            this.label20.TabIndex = 47;
-            this.label20.Text = "Mensualité";
-            // 
-            // gpbCredit
-            // 
-            this.gpbCredit.Controls.Add(this.lblMensualiteCredit);
-            this.gpbCredit.Controls.Add(this.lblDureeCredit);
-            this.gpbCredit.Controls.Add(this.lblMontantCredit);
-            this.gpbCredit.Controls.Add(this.label23);
-            this.gpbCredit.Controls.Add(this.lblTauxCredit);
-            this.gpbCredit.Controls.Add(this.label21);
-            this.gpbCredit.Controls.Add(this.label16);
-            this.gpbCredit.Controls.Add(this.label19);
-            this.gpbCredit.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.gpbCredit.Location = new System.Drawing.Point(16, 206);
-            this.gpbCredit.Name = "gpbCredit";
-            this.gpbCredit.Size = new System.Drawing.Size(239, 161);
-            this.gpbCredit.TabIndex = 56;
-            this.gpbCredit.TabStop = false;
-            this.gpbCredit.Text = "Crédit";
-            this.gpbCredit.Visible = false;
-            // 
-            // lblMensualiteCredit
-            // 
-            this.lblMensualiteCredit.AutoSize = true;
-            this.lblMensualiteCredit.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.lblMensualiteCredit.Location = new System.Drawing.Point(145, 130);
-            this.lblMensualiteCredit.Name = "lblMensualiteCredit";
-            this.lblMensualiteCredit.Size = new System.Drawing.Size(45, 18);
-            this.lblMensualiteCredit.TabIndex = 61;
-            this.lblMensualiteCredit.Text = "mens";
-            // 
-            // lblMontantCredit
-            // 
-            this.lblMontantCredit.AutoSize = true;
-            this.lblMontantCredit.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.lblMontantCredit.Location = new System.Drawing.Point(145, 37);
-            this.lblMontantCredit.Name = "lblMontantCredit";
-            this.lblMontantCredit.Size = new System.Drawing.Size(42, 18);
-            this.lblMontantCredit.TabIndex = 58;
-            this.lblMontantCredit.Text = "mont";
-            // 
-            // lblTauxCredit
-            // 
-            this.lblTauxCredit.AutoSize = true;
-            this.lblTauxCredit.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.lblTauxCredit.Location = new System.Drawing.Point(145, 97);
-            this.lblTauxCredit.Name = "lblTauxCredit";
-            this.lblTauxCredit.Size = new System.Drawing.Size(35, 18);
-            this.lblTauxCredit.TabIndex = 60;
-            this.lblTauxCredit.Text = "taux";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.label16.Location = new System.Drawing.Point(6, 130);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(79, 18);
-            this.label16.TabIndex = 57;
-            this.label16.Text = "Mensualité";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.label19.Location = new System.Drawing.Point(6, 37);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(62, 18);
-            this.label19.TabIndex = 54;
-            this.label19.Text = "Montant";
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.label21.Location = new System.Drawing.Point(6, 97);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(40, 18);
-            this.label21.TabIndex = 56;
-            this.label21.Text = "Taux";
-            // 
-            // lblDureeCredit
-            // 
-            this.lblDureeCredit.AutoSize = true;
-            this.lblDureeCredit.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.lblDureeCredit.Location = new System.Drawing.Point(145, 68);
-            this.lblDureeCredit.Name = "lblDureeCredit";
-            this.lblDureeCredit.Size = new System.Drawing.Size(45, 18);
-            this.lblDureeCredit.TabIndex = 59;
-            this.lblDureeCredit.Text = "duree";
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.label23.Location = new System.Drawing.Point(6, 66);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(48, 18);
-            this.label23.TabIndex = 55;
-            this.label23.Text = "Durée";
             // 
             // Accueil
             // 
@@ -867,15 +867,15 @@ namespace GarageCreditCeleste
             this.gpbInfoClient.ResumeLayout(false);
             this.gpbInfoClient.PerformLayout();
             this.gpbResume.ResumeLayout(false);
+            this.gpbCredit.ResumeLayout(false);
+            this.gpbCredit.PerformLayout();
+            this.gpbAssurance.ResumeLayout(false);
+            this.gpbAssurance.PerformLayout();
             this.gpbType.ResumeLayout(false);
             this.gpbType.PerformLayout();
             this.gpbInfoFixe.ResumeLayout(false);
             this.gpbInfoFixe.PerformLayout();
             this.gpbSeConnecter.ResumeLayout(false);
-            this.gpbAssurance.ResumeLayout(false);
-            this.gpbAssurance.PerformLayout();
-            this.gpbCredit.ResumeLayout(false);
-            this.gpbCredit.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
