@@ -111,7 +111,10 @@ namespace GarageCreditCeleste
 
         public List<Voiture> RecupererVoitures()
         {
-            string connectionString = "Data Source=10.129.184.106;User Id=connEleveSio;password=mdpEleveSi0;Initial Catalog=PROJETCC_K";
+            //connexion au lycée : 
+            //string connectionString = "Data Source=10.129.184.106;User Id=connEleveSio;password=mdpEleveSi0;Initial Catalog=PROJETCC_K";
+            //connexion à la maison :
+            string connectionString = "Server=localhost\\SQLEXPRESS;Database=PROJETCC_K;User Id=connEleveSio;Password=mdpEleveSi0;TrustServerCertificate=True;";
 
             string strRequete = "SELECT * FROM VEHICULE WHERE StatutDisp = 1";
 
@@ -136,7 +139,7 @@ namespace GarageCreditCeleste
                     }
                     catch (SqlException ex)
                     {
-                        MessageBox.Show($"Erreur lors de la récupération des crédits : {ex.Message}");
+                        MessageBox.Show($"Erreur SQL : {ex.Message}");
                     }
 
                 }

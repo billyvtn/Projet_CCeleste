@@ -350,7 +350,10 @@ namespace GarageCreditCeleste
         }
         private void UpdateStatutVehicule()
         {
-            string connectionString = "Data Source=10.129.184.106;User Id=connEleveSio;password=mdpEleveSi0;Initial Catalog=PROJETCC_K";
+            //connexion au lycée : 
+            //string connectionString = "Data Source=10.129.184.106;User Id=connEleveSio;password=mdpEleveSi0;Initial Catalog=PROJETCC_K";
+            //connexion à la maison :
+            string connectionString = "Server=localhost\\SQLEXPRESS;Database=PROJETCC_K;User Id=connEleveSio;Password=mdpEleveSi0;TrustServerCertificate=True;";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -386,7 +389,10 @@ namespace GarageCreditCeleste
 
         private void ConfirmerVente()
         {
-            string connectionString = "Data Source=10.129.184.106;User Id=connEleveSio;password=mdpEleveSi0;Initial Catalog=PROJETCC_K";
+            //connexion au lycée : 
+            //string connectionString = "Data Source=10.129.184.106;User Id=connEleveSio;password=mdpEleveSi0;Initial Catalog=PROJETCC_K";
+            //connexion à la maison :
+            string connectionString = "Server=localhost\\SQLEXPRESS;Database=PROJETCC_K;User Id=connEleveSio;Password=mdpEleveSi0;TrustServerCertificate=True;";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -425,7 +431,10 @@ namespace GarageCreditCeleste
         }
         private void InsererCredit()
         {
-            string connectionString = "Data Source=10.129.184.106;User Id=connEleveSio;password=mdpEleveSi0;Initial Catalog=PROJETCC_K";
+            //connexion au lycée : 
+            //string connectionString = "Data Source=10.129.184.106;User Id=connEleveSio;password=mdpEleveSi0;Initial Catalog=PROJETCC_K";
+            //connexion à la maison :
+            string connectionString = "Server=localhost\\SQLEXPRESS;Database=PROJETCC_K;User Id=connEleveSio;Password=mdpEleveSi0;TrustServerCertificate=True;";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -457,7 +466,10 @@ namespace GarageCreditCeleste
 
         private void InsererAssurance()
         {
-            string connectionString = "Data Source=10.129.184.106;User Id=connEleveSio;password=mdpEleveSi0;Initial Catalog=PROJETCC_K";
+            //connexion au lycée : 
+            //string connectionString = "Data Source=10.129.184.106;User Id=connEleveSio;password=mdpEleveSi0;Initial Catalog=PROJETCC_K";
+            //connexion à la maison :
+            string connectionString = "Server=localhost\\SQLEXPRESS;Database=PROJETCC_K;User Id=connEleveSio;Password=mdpEleveSi0;TrustServerCertificate=True;";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -524,7 +536,10 @@ namespace GarageCreditCeleste
             //string connectionString = "Data Source=10.129.184.106; Integrated Security=SSPI; Initial Catalog = PROJETCC_K";
             //string connectionString = "Data Source=S924P06; Initial Catalog=PROJETCC_K; Integrated Security=SSPI";
 
-            string connectionString = "Data Source=10.129.184.106;User Id=connEleveSio;password=mdpEleveSi0;Initial Catalog=PROJETCC_K";
+            //connexion au lycée : 
+            //string connectionString = "Data Source=10.129.184.106;User Id=connEleveSio;password=mdpEleveSi0;Initial Catalog=PROJETCC_K";
+            //connexion à la maison :
+            string connectionString = "Server=localhost\\SQLEXPRESS;Database=PROJETCC_K;User Id=connEleveSio;Password=mdpEleveSi0;TrustServerCertificate=True;";
 
             string strRequete = "SELECT * FROM UTILISATEUR";
 
@@ -550,7 +565,7 @@ namespace GarageCreditCeleste
                     }
                     catch (SqlException ex)
                     {
-                        MessageBox.Show($"Erreur lors de la récupération des crédits : {ex.Message}");
+                        MessageBox.Show($"Erreur SQL : {ex.Message}");
                     }
 
                 }
