@@ -56,7 +56,9 @@ namespace GarageCreditCeleste
             this.label1 = new System.Windows.Forms.Label();
             this.lblReduc = new System.Windows.Forms.Label();
             this.lblPrixReduc = new System.Windows.Forms.Label();
+            this.pboImageVoiture = new System.Windows.Forms.PictureBox();
             this.gpbDescription.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pboImageVoiture)).BeginInit();
             this.SuspendLayout();
             // 
             // label8
@@ -72,6 +74,7 @@ namespace GarageCreditCeleste
             // 
             // gpbDescription
             // 
+            this.gpbDescription.Controls.Add(this.pboImageVoiture);
             this.gpbDescription.Controls.Add(this.label4);
             this.gpbDescription.Controls.Add(this.lblPrix);
             this.gpbDescription.Controls.Add(this.label5);
@@ -371,6 +374,14 @@ namespace GarageCreditCeleste
             this.lblPrixReduc.TabIndex = 70;
             this.lblPrixReduc.Visible = false;
             // 
+            // pboImageVoiture
+            // 
+            this.pboImageVoiture.Location = new System.Drawing.Point(254, 62);
+            this.pboImageVoiture.Name = "pboImageVoiture";
+            this.pboImageVoiture.Size = new System.Drawing.Size(379, 207);
+            this.pboImageVoiture.TabIndex = 70;
+            this.pboImageVoiture.TabStop = false;
+            // 
             // Acheter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -393,6 +404,7 @@ namespace GarageCreditCeleste
             this.Load += new System.EventHandler(this.Acheter_Load);
             this.gpbDescription.ResumeLayout(false);
             this.gpbDescription.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pboImageVoiture)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -427,5 +439,6 @@ namespace GarageCreditCeleste
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label lblReduc;
         private System.Windows.Forms.Label lblPrixReduc;
+        private System.Windows.Forms.PictureBox pboImageVoiture;
     }
 }

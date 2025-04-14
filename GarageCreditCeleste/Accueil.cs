@@ -47,7 +47,7 @@ namespace GarageCreditCeleste
                 btnServices.Enabled = true;
             }
 
-            if (Globales.Type.Count() != 0)
+            if (Globales.Type.Count() > 1)
             {
                 btnAcheter.Visible = false;
                 btnVendre.Visible = false;
