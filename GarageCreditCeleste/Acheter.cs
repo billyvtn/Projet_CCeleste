@@ -29,6 +29,14 @@ namespace GarageCreditCeleste
             {
                 lsbVoituresDispo.Items.Add($" {uneVoit.getMarque()}, {uneVoit.getModele()}, {uneVoit.getAnnee()}");
             }
+
+            if(Globales.Type.Contains("Vente"))
+            {
+                lblPrixReduc.Visible = true;
+                lblReduc.Visible = true;
+
+                lblPrixReduc.Text = Globales.voitureRachat.getPrix().ToString("C");
+            }
         }
 
         private void btnFermer_Click(object sender, EventArgs e)
@@ -147,5 +155,7 @@ namespace GarageCreditCeleste
 
             return lesVoitures;
         }
+
+        private void gpbDescription_Enter(object sender, EventArgs e){} //oups
     }
 }

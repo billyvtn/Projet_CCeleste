@@ -16,58 +16,10 @@ INSERT INTO VEHICULE (Marque, Modele, Annee, Valeur, Kilometrage, Couleur, Puiss
 ('Toyota', 'Yaris', 2021, 18000.00, 15000, 'Blanc', 100, 1, 'LMN9101', 3);
 GO
 
--- Insertion dans ENTRETIEN
-INSERT INTO ENTRETIEN (DateEntretien, Cout, idVehicule) VALUES
-('2024-01-10', 200, 1),
-('2024-02-15', 250, 2),
-('2024-03-20', 300, 3);
-GO
-
--- Insertion dans REPARATION
-INSERT INTO REPARATION (DateReparation, Designation, Prix, idVehicule) VALUES
-('2024-01-05', 'Changement de pneus', 400, 1),
-('2024-02-10', 'Réparation moteur', 600, 2),
-('2024-03-15', 'Remplacement batterie', 150, 3);
-GO
-
 -- Insertion dans PIECE
-INSERT INTO PIECE (NomPiece, Marque, idReparation) VALUES
-('Pneu Michelin', 'Michelin', 1),
-('Filtre à huile', 'Bosch', 2),
-('Batterie Varta', 'Varta', 3);
+INSERT INTO PIECE (NomPiece, Marque) VALUES
+('Pneu Michelin', 'Michelin'),
+('Filtre à huile', 'Bosch'),
+('Batterie Varta', 'Varta');
 GO
 
--- Insertion dans CREDIT
-INSERT INTO CREDIT (MontantTotal, Mensualite, Duree, Taux) VALUES
-(15000, 300, 100, 3),
-(18000, 350, 180, 2.5),
-(20000, 400, 60, 2);
-GO
-
--- Insertion dans CONTROLE_TECHNIQUE
-INSERT INTO CONTROLE_TECHNIQUE (DateCT, Cout, idVehicule) VALUES
-('2024-01-20', 100, 1),
-('2024-02-25', 120, 2),
-('2024-03-30', 150, 3);
-GO
-
--- Insertion dans VENTE
-INSERT INTO VENTE (PrixVente, DateVente, idUtilisateur, idVehicule) VALUES
-('16000', '2024-01-20', 1, 1),
-('15000', '2024-01-20', 2, 2),
-('17000', '2024-01-20', 3, 3);
-GO
-
--- Insertion dans ACHAT
-INSERT INTO ACHAT (DateAchat, ModePaiement, idVehicule, idCredit, idUtilisateur) VALUES
-('2024-01-15', 'Virement', 1, 1, 1),
-('2024-02-20', 'Chèque', 2, 2, 2),
-('2024-03-25', 'Carte bancaire', 3, 3, 3);
-GO
-
--- Insertion dans ASSURANCE
-INSERT INTO ASSURANCE (TypeAssurance, Mensualite, DateDebut, idAchat) VALUES
-('Tous risques', 50, '2024-01-01', 1),
-('Au tiers', 30, '2024-02-01', 2),
-('Intermédiaire', 40, '2024-03-01', 3);
-GO

@@ -58,7 +58,9 @@ namespace GarageCreditCeleste
             }
             else
             {
-                Globales.voiture = new Voiture(txtMarqueVoiture.Text, txtModeleVoiture.Text, Convert.ToInt32(txtAnneeVoiture.Text), Convert.ToInt32(txtKilometrageVoiture.Text), txtCouleurVoiture.Text, Convert.ToInt32(txtPuissanceVoiture.Text), txtImmatVoiture.Text, prixFinalVoiture);           
+                Globales.Type.Add("Vente");
+
+                Globales.voitureRachat = new Voiture(txtMarqueVoiture.Text, txtModeleVoiture.Text, Convert.ToInt32(txtAnneeVoiture.Text), Convert.ToInt32(txtKilometrageVoiture.Text), txtCouleurVoiture.Text, Convert.ToInt32(txtPuissanceVoiture.Text), txtImmatVoiture.Text, prixFinalVoiture);           
 
                 MessageBox.Show("Les informations ont été enregistrées avec succès.", "Enregistrement", MessageBoxButtons.OK);
 
@@ -78,7 +80,6 @@ namespace GarageCreditCeleste
                 }
                 else if (choix == DialogResult.No)
                 {
-                    Globales.Type.Add("Vente");
                     Globales.accueil = new Accueil();
                     Globales.accueil.Show();
                     Globales.vendre.Close();

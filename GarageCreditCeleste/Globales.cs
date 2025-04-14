@@ -24,6 +24,7 @@ namespace GarageCreditCeleste
         //Déclaration des objets pour la gestion de la bdd
         public static Client client;
         public static Voiture voiture;
+        public static Voiture voitureRachat;
         public static ClAssurance assurance;
         public static ClCredit credit;
 
