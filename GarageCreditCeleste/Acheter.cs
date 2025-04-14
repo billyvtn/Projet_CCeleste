@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -114,6 +115,31 @@ namespace GarageCreditCeleste
                 lblPuissance.Text = voitureSelectionnee.getPuissance().ToString();
                 lblImmat.Text = voitureSelectionnee.getImmatriculation();
                 lblPrix.Text = voitureSelectionnee.getPrix().ToString("C"); // Affichage en format monétaire
+
+                pboImageVoiture.SizeMode = PictureBoxSizeMode.Zoom;
+                //connexion au lycée : 
+                //string connectionString = "Data Source=10.129.184.106;User Id=connEleveSio;password=mdpEleveSi0;Initial Catalog=PROJETCC_K";
+                //connexion à la maison :
+                string connectionString = "Server=localhost\\SQLEXPRESS;Database=PROJETCC_K;User Id=connEleveSio;Password=mdpEleveSi0;TrustServerCertificate=True;";
+
+                using (SqlConnection con = new SqlConnection(connectionString))
+                {
+                    SqlCommand cmd = new SqlCommand("SELECT Photo FROM VEHICULE WHERE Immat = @Immat", con);
+                    cmd.Parameters.AddWithValue("@Immat", voitureSelectionnee.getImmatriculation());
+
+                    con.Open();
+                    var result = cmd.ExecuteScalar();
+
+                    if (result != DBNull.Value)
+                    {
+                        byte[] imageData = (byte[])result;
+                        using (MemoryStream ms = new MemoryStream(imageData))
+                        {                          
+                            pboImageVoiture.Image = Image.FromStream(ms);
+                        }
+                    }
+                }
+
             }
         }
 
@@ -156,6 +182,6 @@ namespace GarageCreditCeleste
             return lesVoitures;
         }
 
-        private void gpbDescription_Enter(object sender, EventArgs e){} //oups
+        private void gpbDescription_Enter(object sender, EventArgs e){} //oups pas touche 
     }
 }
