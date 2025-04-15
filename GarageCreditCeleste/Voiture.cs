@@ -55,6 +55,11 @@ namespace GarageCreditCeleste
             statutDispo = false;
         }
 
+        public Voiture(string marqu)
+        {
+            marque = marqu;
+        }
+
         public string getMarque()
         {
             return marque;

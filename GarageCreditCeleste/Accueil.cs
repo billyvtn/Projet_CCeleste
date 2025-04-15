@@ -81,11 +81,11 @@ namespace GarageCreditCeleste
                     lblMarqueVente.Text = Globales.voitureRachat.getMarque();
                     lblModeleVente.Text = Globales.voitureRachat.getModele();
                     lblAnneeVente.Text = Globales.voitureRachat.getAnnee().ToString();
-                    lblKilometrageVente.Text = Globales.voitureRachat.getKilometrage().ToString() + "km";
+                    lblKilometrageVente.Text = Globales.voitureRachat.getKilometrage().ToString() + " km";
                     lblCouleurVente.Text = Globales.voitureRachat.getCouleur();
                     lblPuissanceVente.Text = Globales.voitureRachat.getPuissance().ToString() + " cv";
                     lblImmatVente.Text = Globales.voitureRachat.getImmatriculation();
-                    lblPrixVente.Text = Globales.voitureRachat.getPrix().ToString() + "€";
+                    lblPrixVente.Text = Globales.voitureRachat.getPrix().ToString() + " €";
                 }
 
                 if (Globales.Type.Contains("Achat"))
@@ -95,11 +95,11 @@ namespace GarageCreditCeleste
                     lblMarqueAchat.Text = Globales.voiture.getMarque();
                     lblModeleAchat.Text = Globales.voiture.getModele();
                     lblAnneeAchat.Text = Globales.voiture.getAnnee().ToString();
-                    lblKilometrageAchat.Text = Globales.voiture.getKilometrage().ToString() + "km";
+                    lblKilometrageAchat.Text = Globales.voiture.getKilometrage().ToString() + " km";
                     lblCouleurAchat.Text = Globales.voiture.getCouleur();
                     lblPuissanceAchat.Text = Globales.voiture.getPuissance().ToString() + " cv";
                     lblImmatAchat.Text = Globales.voiture.getImmatriculation();
-                    lblPrixAchat.Text = Globales.voiture.getPrix().ToString() + "€";
+                    lblPrixAchat.Text = Globales.voiture.getPrix().ToString() + " €";
                 }
 
                 if(Globales.Type.Contains("Assurance"))
@@ -107,7 +107,7 @@ namespace GarageCreditCeleste
                     gpbAssurance.Visible = true;
 
                     lblTypeAssurance.Text = Globales.assurance.getTypeAssurance();
-                    lblMensualiteAssurance.Text = Globales.assurance.getMensualite().ToString();
+                    lblMensualiteAssurance.Text = Globales.assurance.getMensualite().ToString() + " €";
                     lblDateDebutAssurance.Text = Globales.assurance.getDateDebutAssurance();
                 }
 
@@ -115,9 +115,23 @@ namespace GarageCreditCeleste
                 {
                     gpbCredit.Visible = true;
 
-                    lblMensualiteCredit.Text = Globales.credit.getMensualiteCredit().ToString();
-                    lblDureeCredit.Text = Globales.credit.getDureeCredit().ToString();
-                    lblMontantCredit.Text = Globales.credit.getMontantCredit().ToString();
+                    lblMensualiteCredit.Text = Globales.credit.getMensualiteCredit().ToString() + " €";
+                    lblDureeCredit.Text = Globales.credit.getDureeCredit().ToString() + " mois";
+                    lblMontantCredit.Text = Globales.credit.getMontantCredit().ToString() + " €";
+                    lblTauxCredit.Text = Globales.credit.getTauxCredit().ToString() + " %";
+                }
+
+                if(Globales.Type.Contains("Achat") && !Globales.Type.Contains("Vente"))
+                {
+                    lblPrixTotal.Text = Globales.voiture.getPrix().ToString("C");
+                }
+                else if(!Globales.Type.Contains("Achat") && Globales.Type.Contains("Vente"))
+                {
+                    lblPrixTotal.Text = Globales.voitureRachat.getPrix().ToString("C");
+                }
+                else if (Globales.Type.Contains("Achat") && Globales.Type.Contains("Vente"))
+                {
+                    lblPrixTotal.Text = (Globales.voiture.getPrix() - Globales.voitureRachat.getPrix()).ToString("C");
                 }
             }
         }
