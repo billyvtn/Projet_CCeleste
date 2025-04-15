@@ -59,6 +59,15 @@ namespace GarageCreditCeleste
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.gpbResume = new System.Windows.Forms.GroupBox();
+            this.gpbVente = new System.Windows.Forms.GroupBox();
+            this.lblPrixVente = new System.Windows.Forms.Label();
+            this.lblCouleurVente = new System.Windows.Forms.Label();
+            this.lblImmatVente = new System.Windows.Forms.Label();
+            this.lblKilometrageVente = new System.Windows.Forms.Label();
+            this.lblMarqueVente = new System.Windows.Forms.Label();
+            this.lblAnneeVente = new System.Windows.Forms.Label();
+            this.lblPuissanceVente = new System.Windows.Forms.Label();
+            this.lblModeleVente = new System.Windows.Forms.Label();
             this.gpbCredit = new System.Windows.Forms.GroupBox();
             this.lblMensualiteCredit = new System.Windows.Forms.Label();
             this.lblDureeCredit = new System.Windows.Forms.Label();
@@ -75,8 +84,6 @@ namespace GarageCreditCeleste
             this.label18 = new System.Windows.Forms.Label();
             this.lblMensualiteAssurance = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
-            this.btnAnnuler = new System.Windows.Forms.Button();
-            this.btnConfirmer = new System.Windows.Forms.Button();
             this.gpbAchat = new System.Windows.Forms.GroupBox();
             this.lblPrixAchat = new System.Windows.Forms.Label();
             this.lblCouleurAchat = new System.Windows.Forms.Label();
@@ -86,6 +93,8 @@ namespace GarageCreditCeleste
             this.lblAnneeAchat = new System.Windows.Forms.Label();
             this.lblPuissanceAchat = new System.Windows.Forms.Label();
             this.lblModeleAchat = new System.Windows.Forms.Label();
+            this.btnAnnuler = new System.Windows.Forms.Button();
+            this.btnConfirmer = new System.Windows.Forms.Button();
             this.gpbInfoFixe = new System.Windows.Forms.GroupBox();
             this.lblVilleCP = new System.Windows.Forms.Label();
             this.lblNumero = new System.Windows.Forms.Label();
@@ -99,24 +108,17 @@ namespace GarageCreditCeleste
             this.cboModePaiement = new System.Windows.Forms.ComboBox();
             this.label13 = new System.Windows.Forms.Label();
             this.gpbPaiement = new System.Windows.Forms.GroupBox();
-            this.gpbVente = new System.Windows.Forms.GroupBox();
-            this.lblPrixVente = new System.Windows.Forms.Label();
-            this.lblCouleurVente = new System.Windows.Forms.Label();
-            this.lblImmatVente = new System.Windows.Forms.Label();
-            this.lblKilometrageVente = new System.Windows.Forms.Label();
-            this.lblMarqueVente = new System.Windows.Forms.Label();
-            this.lblAnneeVente = new System.Windows.Forms.Label();
-            this.lblPuissanceVente = new System.Windows.Forms.Label();
-            this.lblModeleVente = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.lblPrixTotal = new System.Windows.Forms.Label();
             this.gpbInfoClient.SuspendLayout();
             this.gpbResume.SuspendLayout();
+            this.gpbVente.SuspendLayout();
             this.gpbCredit.SuspendLayout();
             this.gpbAssurance.SuspendLayout();
             this.gpbAchat.SuspendLayout();
             this.gpbInfoFixe.SuspendLayout();
             this.gpbSeConnecter.SuspendLayout();
             this.gpbPaiement.SuspendLayout();
-            this.gpbVente.SuspendLayout();
             this.SuspendLayout();
             // 
             // label8
@@ -155,9 +157,9 @@ namespace GarageCreditCeleste
             this.gpbInfoClient.Controls.Add(this.label3);
             this.gpbInfoClient.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.gpbInfoClient.Location = new System.Drawing.Point(20, 80);
-            this.gpbInfoClient.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gpbInfoClient.Margin = new System.Windows.Forms.Padding(4);
             this.gpbInfoClient.Name = "gpbInfoClient";
-            this.gpbInfoClient.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gpbInfoClient.Padding = new System.Windows.Forms.Padding(4);
             this.gpbInfoClient.Size = new System.Drawing.Size(537, 462);
             this.gpbInfoClient.TabIndex = 26;
             this.gpbInfoClient.TabStop = false;
@@ -178,7 +180,7 @@ namespace GarageCreditCeleste
             // 
             this.txtAdresseCP.ForeColor = System.Drawing.SystemColors.ScrollBar;
             this.txtAdresseCP.Location = new System.Drawing.Point(149, 319);
-            this.txtAdresseCP.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtAdresseCP.Margin = new System.Windows.Forms.Padding(4);
             this.txtAdresseCP.Name = "txtAdresseCP";
             this.txtAdresseCP.Size = new System.Drawing.Size(307, 29);
             this.txtAdresseCP.TabIndex = 10;
@@ -200,7 +202,7 @@ namespace GarageCreditCeleste
             // 
             this.txtAdresseVille.ForeColor = System.Drawing.SystemColors.ScrollBar;
             this.txtAdresseVille.Location = new System.Drawing.Point(149, 283);
-            this.txtAdresseVille.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtAdresseVille.Margin = new System.Windows.Forms.Padding(4);
             this.txtAdresseVille.Name = "txtAdresseVille";
             this.txtAdresseVille.Size = new System.Drawing.Size(307, 29);
             this.txtAdresseVille.TabIndex = 9;
@@ -222,7 +224,7 @@ namespace GarageCreditCeleste
             // 
             this.txtAdresseVoie.ForeColor = System.Drawing.SystemColors.ScrollBar;
             this.txtAdresseVoie.Location = new System.Drawing.Point(149, 247);
-            this.txtAdresseVoie.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtAdresseVoie.Margin = new System.Windows.Forms.Padding(4);
             this.txtAdresseVoie.Name = "txtAdresseVoie";
             this.txtAdresseVoie.Size = new System.Drawing.Size(307, 29);
             this.txtAdresseVoie.TabIndex = 8;
@@ -244,7 +246,7 @@ namespace GarageCreditCeleste
             // 
             this.txtNumeroTelephone.ForeColor = System.Drawing.SystemColors.ScrollBar;
             this.txtNumeroTelephone.Location = new System.Drawing.Point(149, 176);
-            this.txtNumeroTelephone.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNumeroTelephone.Margin = new System.Windows.Forms.Padding(4);
             this.txtNumeroTelephone.Name = "txtNumeroTelephone";
             this.txtNumeroTelephone.Size = new System.Drawing.Size(307, 29);
             this.txtNumeroTelephone.TabIndex = 6;
@@ -266,7 +268,7 @@ namespace GarageCreditCeleste
             // 
             this.btnEnregistrer.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.btnEnregistrer.Location = new System.Drawing.Point(409, 417);
-            this.btnEnregistrer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEnregistrer.Margin = new System.Windows.Forms.Padding(4);
             this.btnEnregistrer.Name = "btnEnregistrer";
             this.btnEnregistrer.Size = new System.Drawing.Size(120, 37);
             this.btnEnregistrer.TabIndex = 11;
@@ -278,7 +280,7 @@ namespace GarageCreditCeleste
             // 
             this.txtAdresseNum.ForeColor = System.Drawing.SystemColors.ScrollBar;
             this.txtAdresseNum.Location = new System.Drawing.Point(149, 212);
-            this.txtAdresseNum.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtAdresseNum.Margin = new System.Windows.Forms.Padding(4);
             this.txtAdresseNum.Name = "txtAdresseNum";
             this.txtAdresseNum.Size = new System.Drawing.Size(307, 29);
             this.txtAdresseNum.TabIndex = 7;
@@ -290,7 +292,7 @@ namespace GarageCreditCeleste
             // 
             this.txtPrenom.ForeColor = System.Drawing.SystemColors.ScrollBar;
             this.txtPrenom.Location = new System.Drawing.Point(149, 107);
-            this.txtPrenom.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPrenom.Margin = new System.Windows.Forms.Padding(4);
             this.txtPrenom.Name = "txtPrenom";
             this.txtPrenom.Size = new System.Drawing.Size(307, 29);
             this.txtPrenom.TabIndex = 4;
@@ -302,7 +304,7 @@ namespace GarageCreditCeleste
             // 
             this.txtEmail.ForeColor = System.Drawing.SystemColors.ScrollBar;
             this.txtEmail.Location = new System.Drawing.Point(149, 143);
-            this.txtEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(4);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(307, 29);
             this.txtEmail.TabIndex = 5;
@@ -314,7 +316,7 @@ namespace GarageCreditCeleste
             // 
             this.txtNom.ForeColor = System.Drawing.SystemColors.ScrollBar;
             this.txtNom.Location = new System.Drawing.Point(149, 71);
-            this.txtNom.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNom.Margin = new System.Windows.Forms.Padding(4);
             this.txtNom.Name = "txtNom";
             this.txtNom.Size = new System.Drawing.Size(307, 29);
             this.txtNom.TabIndex = 3;
@@ -326,7 +328,7 @@ namespace GarageCreditCeleste
             // 
             this.rdbCivFemme.AutoSize = true;
             this.rdbCivFemme.Location = new System.Drawing.Point(239, 38);
-            this.rdbCivFemme.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rdbCivFemme.Margin = new System.Windows.Forms.Padding(4);
             this.rdbCivFemme.Name = "rdbCivFemme";
             this.rdbCivFemme.Size = new System.Drawing.Size(79, 28);
             this.rdbCivFemme.TabIndex = 2;
@@ -338,7 +340,7 @@ namespace GarageCreditCeleste
             // 
             this.rdbCivHomme.AutoSize = true;
             this.rdbCivHomme.Location = new System.Drawing.Point(149, 38);
-            this.rdbCivHomme.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rdbCivHomme.Margin = new System.Windows.Forms.Padding(4);
             this.rdbCivHomme.Name = "rdbCivHomme";
             this.rdbCivHomme.Size = new System.Drawing.Size(58, 28);
             this.rdbCivHomme.TabIndex = 1;
@@ -401,7 +403,7 @@ namespace GarageCreditCeleste
             this.btnServices.Enabled = false;
             this.btnServices.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.btnServices.Location = new System.Drawing.Point(891, 240);
-            this.btnServices.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnServices.Margin = new System.Windows.Forms.Padding(4);
             this.btnServices.Name = "btnServices";
             this.btnServices.Size = new System.Drawing.Size(147, 62);
             this.btnServices.TabIndex = 14;
@@ -414,7 +416,7 @@ namespace GarageCreditCeleste
             this.btnVendre.Enabled = false;
             this.btnVendre.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.btnVendre.Location = new System.Drawing.Point(736, 240);
-            this.btnVendre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnVendre.Margin = new System.Windows.Forms.Padding(4);
             this.btnVendre.Name = "btnVendre";
             this.btnVendre.Size = new System.Drawing.Size(147, 62);
             this.btnVendre.TabIndex = 13;
@@ -427,7 +429,7 @@ namespace GarageCreditCeleste
             this.btnAcheter.Enabled = false;
             this.btnAcheter.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.btnAcheter.Location = new System.Drawing.Point(581, 240);
-            this.btnAcheter.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAcheter.Margin = new System.Windows.Forms.Padding(4);
             this.btnAcheter.Name = "btnAcheter";
             this.btnAcheter.Size = new System.Drawing.Size(147, 62);
             this.btnAcheter.TabIndex = 12;
@@ -439,7 +441,7 @@ namespace GarageCreditCeleste
             // 
             this.btnFermer.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.btnFermer.Location = new System.Drawing.Point(936, 501);
-            this.btnFermer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnFermer.Margin = new System.Windows.Forms.Padding(4);
             this.btnFermer.Name = "btnFermer";
             this.btnFermer.Size = new System.Drawing.Size(112, 33);
             this.btnFermer.TabIndex = 16;
@@ -477,496 +479,14 @@ namespace GarageCreditCeleste
             this.gpbResume.Controls.Add(this.gpbAchat);
             this.gpbResume.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.gpbResume.Location = new System.Drawing.Point(352, 80);
-            this.gpbResume.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gpbResume.Margin = new System.Windows.Forms.Padding(4);
             this.gpbResume.Name = "gpbResume";
-            this.gpbResume.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gpbResume.Padding = new System.Windows.Forms.Padding(4);
             this.gpbResume.Size = new System.Drawing.Size(696, 462);
             this.gpbResume.TabIndex = 29;
             this.gpbResume.TabStop = false;
             this.gpbResume.Text = "Résumé";
             this.gpbResume.Visible = false;
-            // 
-            // gpbCredit
-            // 
-            this.gpbCredit.Controls.Add(this.lblMensualiteCredit);
-            this.gpbCredit.Controls.Add(this.lblDureeCredit);
-            this.gpbCredit.Controls.Add(this.lblMontantCredit);
-            this.gpbCredit.Controls.Add(this.label23);
-            this.gpbCredit.Controls.Add(this.lblTauxCredit);
-            this.gpbCredit.Controls.Add(this.label21);
-            this.gpbCredit.Controls.Add(this.label16);
-            this.gpbCredit.Controls.Add(this.label19);
-            this.gpbCredit.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.gpbCredit.Location = new System.Drawing.Point(348, 249);
-            this.gpbCredit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.gpbCredit.Name = "gpbCredit";
-            this.gpbCredit.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.gpbCredit.Size = new System.Drawing.Size(337, 205);
-            this.gpbCredit.TabIndex = 56;
-            this.gpbCredit.TabStop = false;
-            this.gpbCredit.Text = "Crédit";
-            this.gpbCredit.Visible = false;
-            // 
-            // lblMensualiteCredit
-            // 
-            this.lblMensualiteCredit.AutoSize = true;
-            this.lblMensualiteCredit.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.lblMensualiteCredit.Location = new System.Drawing.Point(193, 160);
-            this.lblMensualiteCredit.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblMensualiteCredit.Name = "lblMensualiteCredit";
-            this.lblMensualiteCredit.Size = new System.Drawing.Size(57, 24);
-            this.lblMensualiteCredit.TabIndex = 61;
-            this.lblMensualiteCredit.Text = "mens";
-            // 
-            // lblDureeCredit
-            // 
-            this.lblDureeCredit.AutoSize = true;
-            this.lblDureeCredit.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.lblDureeCredit.Location = new System.Drawing.Point(193, 84);
-            this.lblDureeCredit.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblDureeCredit.Name = "lblDureeCredit";
-            this.lblDureeCredit.Size = new System.Drawing.Size(60, 24);
-            this.lblDureeCredit.TabIndex = 59;
-            this.lblDureeCredit.Text = "duree";
-            // 
-            // lblMontantCredit
-            // 
-            this.lblMontantCredit.AutoSize = true;
-            this.lblMontantCredit.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.lblMontantCredit.Location = new System.Drawing.Point(193, 46);
-            this.lblMontantCredit.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblMontantCredit.Name = "lblMontantCredit";
-            this.lblMontantCredit.Size = new System.Drawing.Size(52, 24);
-            this.lblMontantCredit.TabIndex = 58;
-            this.lblMontantCredit.Text = "mont";
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.label23.Location = new System.Drawing.Point(8, 81);
-            this.label23.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(62, 24);
-            this.label23.TabIndex = 55;
-            this.label23.Text = "Durée";
-            // 
-            // lblTauxCredit
-            // 
-            this.lblTauxCredit.AutoSize = true;
-            this.lblTauxCredit.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.lblTauxCredit.Location = new System.Drawing.Point(193, 119);
-            this.lblTauxCredit.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblTauxCredit.Name = "lblTauxCredit";
-            this.lblTauxCredit.Size = new System.Drawing.Size(45, 24);
-            this.lblTauxCredit.TabIndex = 60;
-            this.lblTauxCredit.Text = "taux";
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.label21.Location = new System.Drawing.Point(8, 119);
-            this.label21.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(53, 24);
-            this.label21.TabIndex = 56;
-            this.label21.Text = "Taux";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.label16.Location = new System.Drawing.Point(8, 160);
-            this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(101, 24);
-            this.label16.TabIndex = 57;
-            this.label16.Text = "Mensualité";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.label19.Location = new System.Drawing.Point(8, 46);
-            this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(77, 24);
-            this.label19.TabIndex = 54;
-            this.label19.Text = "Montant";
-            // 
-            // gpbAssurance
-            // 
-            this.gpbAssurance.Controls.Add(this.lblTypeAssurance);
-            this.gpbAssurance.Controls.Add(this.lblDateDebutAssurance);
-            this.gpbAssurance.Controls.Add(this.label17);
-            this.gpbAssurance.Controls.Add(this.label18);
-            this.gpbAssurance.Controls.Add(this.lblMensualiteAssurance);
-            this.gpbAssurance.Controls.Add(this.label20);
-            this.gpbAssurance.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.gpbAssurance.Location = new System.Drawing.Point(348, 37);
-            this.gpbAssurance.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.gpbAssurance.Name = "gpbAssurance";
-            this.gpbAssurance.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.gpbAssurance.Size = new System.Drawing.Size(337, 209);
-            this.gpbAssurance.TabIndex = 54;
-            this.gpbAssurance.TabStop = false;
-            this.gpbAssurance.Text = "Assurance";
-            this.gpbAssurance.Visible = false;
-            // 
-            // lblTypeAssurance
-            // 
-            this.lblTypeAssurance.AutoSize = true;
-            this.lblTypeAssurance.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.lblTypeAssurance.Location = new System.Drawing.Point(193, 43);
-            this.lblTypeAssurance.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblTypeAssurance.Name = "lblTypeAssurance";
-            this.lblTypeAssurance.Size = new System.Drawing.Size(58, 24);
-            this.lblTypeAssurance.TabIndex = 50;
-            this.lblTypeAssurance.Text = "typeA";
-            // 
-            // lblDateDebutAssurance
-            // 
-            this.lblDateDebutAssurance.AutoSize = true;
-            this.lblDateDebutAssurance.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.lblDateDebutAssurance.Location = new System.Drawing.Point(193, 158);
-            this.lblDateDebutAssurance.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblDateDebutAssurance.Name = "lblDateDebutAssurance";
-            this.lblDateDebutAssurance.Size = new System.Drawing.Size(46, 24);
-            this.lblDateDebutAssurance.TabIndex = 52;
-            this.lblDateDebutAssurance.Text = "date";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.label17.Location = new System.Drawing.Point(8, 43);
-            this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(160, 24);
-            this.label17.TabIndex = 46;
-            this.label17.Text = "Type d\'assurance";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.label18.Location = new System.Drawing.Point(8, 158);
-            this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(128, 24);
-            this.label18.TabIndex = 48;
-            this.label18.Text = "Date de début";
-            // 
-            // lblMensualiteAssurance
-            // 
-            this.lblMensualiteAssurance.AutoSize = true;
-            this.lblMensualiteAssurance.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.lblMensualiteAssurance.Location = new System.Drawing.Point(193, 106);
-            this.lblMensualiteAssurance.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblMensualiteAssurance.Name = "lblMensualiteAssurance";
-            this.lblMensualiteAssurance.Size = new System.Drawing.Size(57, 24);
-            this.lblMensualiteAssurance.TabIndex = 51;
-            this.lblMensualiteAssurance.Text = "mens";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.label20.Location = new System.Drawing.Point(8, 103);
-            this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(101, 24);
-            this.label20.TabIndex = 47;
-            this.label20.Text = "Mensualité";
-            // 
-            // btnAnnuler
-            // 
-            this.btnAnnuler.Location = new System.Drawing.Point(73, 169);
-            this.btnAnnuler.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnAnnuler.Name = "btnAnnuler";
-            this.btnAnnuler.Size = new System.Drawing.Size(111, 33);
-            this.btnAnnuler.TabIndex = 55;
-            this.btnAnnuler.Text = "Annuler";
-            this.btnAnnuler.UseVisualStyleBackColor = true;
-            this.btnAnnuler.Click += new System.EventHandler(this.btnAnnuler_Click);
-            // 
-            // btnConfirmer
-            // 
-            this.btnConfirmer.Enabled = false;
-            this.btnConfirmer.Location = new System.Drawing.Point(196, 169);
-            this.btnConfirmer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnConfirmer.Name = "btnConfirmer";
-            this.btnConfirmer.Size = new System.Drawing.Size(111, 33);
-            this.btnConfirmer.TabIndex = 54;
-            this.btnConfirmer.Text = "Confirmer";
-            this.btnConfirmer.UseVisualStyleBackColor = true;
-            this.btnConfirmer.Click += new System.EventHandler(this.btnConfirmer_Click);
-            // 
-            // gpbAchat
-            // 
-            this.gpbAchat.Controls.Add(this.lblPrixAchat);
-            this.gpbAchat.Controls.Add(this.lblCouleurAchat);
-            this.gpbAchat.Controls.Add(this.lblImmatAchat);
-            this.gpbAchat.Controls.Add(this.lblKilometrageAchat);
-            this.gpbAchat.Controls.Add(this.lblMarqueAchat);
-            this.gpbAchat.Controls.Add(this.lblAnneeAchat);
-            this.gpbAchat.Controls.Add(this.lblPuissanceAchat);
-            this.gpbAchat.Controls.Add(this.lblModeleAchat);
-            this.gpbAchat.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.gpbAchat.Location = new System.Drawing.Point(21, 37);
-            this.gpbAchat.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.gpbAchat.Name = "gpbAchat";
-            this.gpbAchat.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.gpbAchat.Size = new System.Drawing.Size(319, 209);
-            this.gpbAchat.TabIndex = 53;
-            this.gpbAchat.TabStop = false;
-            this.gpbAchat.Text = "Achat";
-            this.gpbAchat.Visible = false;
-            // 
-            // lblPrixAchat
-            // 
-            this.lblPrixAchat.AutoSize = true;
-            this.lblPrixAchat.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.lblPrixAchat.Location = new System.Drawing.Point(193, 158);
-            this.lblPrixAchat.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblPrixAchat.Name = "lblPrixAchat";
-            this.lblPrixAchat.Size = new System.Drawing.Size(42, 24);
-            this.lblPrixAchat.TabIndex = 53;
-            this.lblPrixAchat.Text = "Prix";
-            this.lblPrixAchat.Click += new System.EventHandler(this.lblPrix_Click);
-            // 
-            // lblCouleurAchat
-            // 
-            this.lblCouleurAchat.AutoSize = true;
-            this.lblCouleurAchat.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.lblCouleurAchat.Location = new System.Drawing.Point(193, 43);
-            this.lblCouleurAchat.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblCouleurAchat.Name = "lblCouleurAchat";
-            this.lblCouleurAchat.Size = new System.Drawing.Size(77, 24);
-            this.lblCouleurAchat.TabIndex = 50;
-            this.lblCouleurAchat.Text = "Couleur";
-            // 
-            // lblImmatAchat
-            // 
-            this.lblImmatAchat.AutoSize = true;
-            this.lblImmatAchat.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.lblImmatAchat.Location = new System.Drawing.Point(193, 117);
-            this.lblImmatAchat.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblImmatAchat.Name = "lblImmatAchat";
-            this.lblImmatAchat.Size = new System.Drawing.Size(135, 24);
-            this.lblImmatAchat.TabIndex = 52;
-            this.lblImmatAchat.Text = "Immatriculation";
-            // 
-            // lblKilometrageAchat
-            // 
-            this.lblKilometrageAchat.AutoSize = true;
-            this.lblKilometrageAchat.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.lblKilometrageAchat.Location = new System.Drawing.Point(8, 158);
-            this.lblKilometrageAchat.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblKilometrageAchat.Name = "lblKilometrageAchat";
-            this.lblKilometrageAchat.Size = new System.Drawing.Size(110, 24);
-            this.lblKilometrageAchat.TabIndex = 49;
-            this.lblKilometrageAchat.Text = "Kilométrage";
-            // 
-            // lblMarqueAchat
-            // 
-            this.lblMarqueAchat.AutoSize = true;
-            this.lblMarqueAchat.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.lblMarqueAchat.Location = new System.Drawing.Point(8, 43);
-            this.lblMarqueAchat.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblMarqueAchat.Name = "lblMarqueAchat";
-            this.lblMarqueAchat.Size = new System.Drawing.Size(75, 24);
-            this.lblMarqueAchat.TabIndex = 46;
-            this.lblMarqueAchat.Text = "Marque";
-            // 
-            // lblAnneeAchat
-            // 
-            this.lblAnneeAchat.AutoSize = true;
-            this.lblAnneeAchat.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.lblAnneeAchat.Location = new System.Drawing.Point(8, 117);
-            this.lblAnneeAchat.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblAnneeAchat.Name = "lblAnneeAchat";
-            this.lblAnneeAchat.Size = new System.Drawing.Size(67, 24);
-            this.lblAnneeAchat.TabIndex = 48;
-            this.lblAnneeAchat.Text = "Année";
-            // 
-            // lblPuissanceAchat
-            // 
-            this.lblPuissanceAchat.AutoSize = true;
-            this.lblPuissanceAchat.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.lblPuissanceAchat.Location = new System.Drawing.Point(193, 81);
-            this.lblPuissanceAchat.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblPuissanceAchat.Name = "lblPuissanceAchat";
-            this.lblPuissanceAchat.Size = new System.Drawing.Size(97, 24);
-            this.lblPuissanceAchat.TabIndex = 51;
-            this.lblPuissanceAchat.Text = "Puissance";
-            // 
-            // lblModeleAchat
-            // 
-            this.lblModeleAchat.AutoSize = true;
-            this.lblModeleAchat.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.lblModeleAchat.Location = new System.Drawing.Point(8, 79);
-            this.lblModeleAchat.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblModeleAchat.Name = "lblModeleAchat";
-            this.lblModeleAchat.Size = new System.Drawing.Size(74, 24);
-            this.lblModeleAchat.TabIndex = 47;
-            this.lblModeleAchat.Text = "Modèle";
-            // 
-            // gpbInfoFixe
-            // 
-            this.gpbInfoFixe.Controls.Add(this.lblVilleCP);
-            this.gpbInfoFixe.Controls.Add(this.lblNumero);
-            this.gpbInfoFixe.Controls.Add(this.lblAdresse);
-            this.gpbInfoFixe.Controls.Add(this.lblEmail);
-            this.gpbInfoFixe.Controls.Add(this.lblCivNomPrenom);
-            this.gpbInfoFixe.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.gpbInfoFixe.Location = new System.Drawing.Point(16, 80);
-            this.gpbInfoFixe.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.gpbInfoFixe.Name = "gpbInfoFixe";
-            this.gpbInfoFixe.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.gpbInfoFixe.Size = new System.Drawing.Size(328, 222);
-            this.gpbInfoFixe.TabIndex = 28;
-            this.gpbInfoFixe.TabStop = false;
-            this.gpbInfoFixe.Text = "Vos informations";
-            this.gpbInfoFixe.Visible = false;
-            // 
-            // lblVilleCP
-            // 
-            this.lblVilleCP.AutoSize = true;
-            this.lblVilleCP.Location = new System.Drawing.Point(19, 180);
-            this.lblVilleCP.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblVilleCP.Name = "lblVilleCP";
-            this.lblVilleCP.Size = new System.Drawing.Size(92, 24);
-            this.lblVilleCP.TabIndex = 25;
-            this.lblVilleCP.Text = "Ville + CP";
-            // 
-            // lblNumero
-            // 
-            this.lblNumero.AutoSize = true;
-            this.lblNumero.Location = new System.Drawing.Point(17, 111);
-            this.lblNumero.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblNumero.Name = "lblNumero";
-            this.lblNumero.Size = new System.Drawing.Size(79, 24);
-            this.lblNumero.TabIndex = 21;
-            this.lblNumero.Text = "Numéro";
-            // 
-            // lblAdresse
-            // 
-            this.lblAdresse.AutoSize = true;
-            this.lblAdresse.Location = new System.Drawing.Point(19, 145);
-            this.lblAdresse.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblAdresse.Name = "lblAdresse";
-            this.lblAdresse.Size = new System.Drawing.Size(113, 24);
-            this.lblAdresse.TabIndex = 14;
-            this.lblAdresse.Text = "Num + Nom";
-            // 
-            // lblEmail
-            // 
-            this.lblEmail.AutoSize = true;
-            this.lblEmail.Location = new System.Drawing.Point(19, 71);
-            this.lblEmail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(57, 24);
-            this.lblEmail.TabIndex = 13;
-            this.lblEmail.Text = "Email";
-            // 
-            // lblCivNomPrenom
-            // 
-            this.lblCivNomPrenom.AutoSize = true;
-            this.lblCivNomPrenom.Location = new System.Drawing.Point(19, 41);
-            this.lblCivNomPrenom.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblCivNomPrenom.Name = "lblCivNomPrenom";
-            this.lblCivNomPrenom.Size = new System.Drawing.Size(179, 24);
-            this.lblCivNomPrenom.TabIndex = 10;
-            this.lblCivNomPrenom.Text = "civ + nom + prenom";
-            // 
-            // gpbSeConnecter
-            // 
-            this.gpbSeConnecter.Controls.Add(this.btnEnregistrerChoixClient);
-            this.gpbSeConnecter.Controls.Add(this.cboClient);
-            this.gpbSeConnecter.Controls.Add(this.button2);
-            this.gpbSeConnecter.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.gpbSeConnecter.Location = new System.Drawing.Point(13, 87);
-            this.gpbSeConnecter.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.gpbSeConnecter.Name = "gpbSeConnecter";
-            this.gpbSeConnecter.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.gpbSeConnecter.Size = new System.Drawing.Size(452, 197);
-            this.gpbSeConnecter.TabIndex = 56;
-            this.gpbSeConnecter.TabStop = false;
-            this.gpbSeConnecter.Text = "Se connecter";
-            this.gpbSeConnecter.Visible = false;
-            // 
-            // btnEnregistrerChoixClient
-            // 
-            this.btnEnregistrerChoixClient.Enabled = false;
-            this.btnEnregistrerChoixClient.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.btnEnregistrerChoixClient.Location = new System.Drawing.Point(309, 138);
-            this.btnEnregistrerChoixClient.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnEnregistrerChoixClient.Name = "btnEnregistrerChoixClient";
-            this.btnEnregistrerChoixClient.Size = new System.Drawing.Size(120, 37);
-            this.btnEnregistrerChoixClient.TabIndex = 13;
-            this.btnEnregistrerChoixClient.Text = "Enregistrer";
-            this.btnEnregistrerChoixClient.UseVisualStyleBackColor = true;
-            this.btnEnregistrerChoixClient.Click += new System.EventHandler(this.btnEnregistrerChoixClient_Click);
-            // 
-            // cboClient
-            // 
-            this.cboClient.FormattingEnabled = true;
-            this.cboClient.Location = new System.Drawing.Point(43, 71);
-            this.cboClient.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.cboClient.Name = "cboClient";
-            this.cboClient.Size = new System.Drawing.Size(215, 32);
-            this.cboClient.TabIndex = 12;
-            this.cboClient.SelectedIndexChanged += new System.EventHandler(this.cboClient_SelectedIndexChanged);
-            // 
-            // button2
-            // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.button2.Location = new System.Drawing.Point(409, 417);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(120, 37);
-            this.button2.TabIndex = 11;
-            this.button2.Text = "Enregistrer";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // cboModePaiement
-            // 
-            this.cboModePaiement.FormattingEnabled = true;
-            this.cboModePaiement.Items.AddRange(new object[] {
-            "Carte bancaire",
-            "Espèces",
-            "Chèque"});
-            this.cboModePaiement.Location = new System.Drawing.Point(140, 98);
-            this.cboModePaiement.Name = "cboModePaiement";
-            this.cboModePaiement.Size = new System.Drawing.Size(167, 30);
-            this.cboModePaiement.TabIndex = 57;
-            this.cboModePaiement.SelectedIndexChanged += new System.EventHandler(this.cboModePaiement_SelectedIndexChanged);
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(11, 63);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(173, 24);
-            this.label13.TabIndex = 58;
-            this.label13.Text = "Mode de virement :";
-            // 
-            // gpbPaiement
-            // 
-            this.gpbPaiement.Controls.Add(this.label13);
-            this.gpbPaiement.Controls.Add(this.cboModePaiement);
-            this.gpbPaiement.Controls.Add(this.btnConfirmer);
-            this.gpbPaiement.Controls.Add(this.btnAnnuler);
-            this.gpbPaiement.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gpbPaiement.Location = new System.Drawing.Point(16, 328);
-            this.gpbPaiement.Name = "gpbPaiement";
-            this.gpbPaiement.Size = new System.Drawing.Size(329, 214);
-            this.gpbPaiement.TabIndex = 57;
-            this.gpbPaiement.TabStop = false;
-            this.gpbPaiement.Text = "Paiement";
-            this.gpbPaiement.Visible = false;
             // 
             // gpbVente
             // 
@@ -1077,6 +597,507 @@ namespace GarageCreditCeleste
             this.lblModeleVente.TabIndex = 47;
             this.lblModeleVente.Text = "Modèle";
             // 
+            // gpbCredit
+            // 
+            this.gpbCredit.Controls.Add(this.lblMensualiteCredit);
+            this.gpbCredit.Controls.Add(this.lblDureeCredit);
+            this.gpbCredit.Controls.Add(this.lblMontantCredit);
+            this.gpbCredit.Controls.Add(this.label23);
+            this.gpbCredit.Controls.Add(this.lblTauxCredit);
+            this.gpbCredit.Controls.Add(this.label21);
+            this.gpbCredit.Controls.Add(this.label16);
+            this.gpbCredit.Controls.Add(this.label19);
+            this.gpbCredit.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.gpbCredit.Location = new System.Drawing.Point(348, 249);
+            this.gpbCredit.Margin = new System.Windows.Forms.Padding(4);
+            this.gpbCredit.Name = "gpbCredit";
+            this.gpbCredit.Padding = new System.Windows.Forms.Padding(4);
+            this.gpbCredit.Size = new System.Drawing.Size(337, 205);
+            this.gpbCredit.TabIndex = 56;
+            this.gpbCredit.TabStop = false;
+            this.gpbCredit.Text = "Crédit";
+            this.gpbCredit.Visible = false;
+            // 
+            // lblMensualiteCredit
+            // 
+            this.lblMensualiteCredit.AutoSize = true;
+            this.lblMensualiteCredit.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.lblMensualiteCredit.Location = new System.Drawing.Point(193, 160);
+            this.lblMensualiteCredit.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblMensualiteCredit.Name = "lblMensualiteCredit";
+            this.lblMensualiteCredit.Size = new System.Drawing.Size(57, 24);
+            this.lblMensualiteCredit.TabIndex = 61;
+            this.lblMensualiteCredit.Text = "mens";
+            // 
+            // lblDureeCredit
+            // 
+            this.lblDureeCredit.AutoSize = true;
+            this.lblDureeCredit.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.lblDureeCredit.Location = new System.Drawing.Point(193, 84);
+            this.lblDureeCredit.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDureeCredit.Name = "lblDureeCredit";
+            this.lblDureeCredit.Size = new System.Drawing.Size(60, 24);
+            this.lblDureeCredit.TabIndex = 59;
+            this.lblDureeCredit.Text = "duree";
+            // 
+            // lblMontantCredit
+            // 
+            this.lblMontantCredit.AutoSize = true;
+            this.lblMontantCredit.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.lblMontantCredit.Location = new System.Drawing.Point(193, 46);
+            this.lblMontantCredit.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblMontantCredit.Name = "lblMontantCredit";
+            this.lblMontantCredit.Size = new System.Drawing.Size(52, 24);
+            this.lblMontantCredit.TabIndex = 58;
+            this.lblMontantCredit.Text = "mont";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.label23.Location = new System.Drawing.Point(8, 81);
+            this.label23.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(62, 24);
+            this.label23.TabIndex = 55;
+            this.label23.Text = "Durée";
+            // 
+            // lblTauxCredit
+            // 
+            this.lblTauxCredit.AutoSize = true;
+            this.lblTauxCredit.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.lblTauxCredit.Location = new System.Drawing.Point(193, 119);
+            this.lblTauxCredit.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTauxCredit.Name = "lblTauxCredit";
+            this.lblTauxCredit.Size = new System.Drawing.Size(45, 24);
+            this.lblTauxCredit.TabIndex = 60;
+            this.lblTauxCredit.Text = "taux";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.label21.Location = new System.Drawing.Point(8, 119);
+            this.label21.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(53, 24);
+            this.label21.TabIndex = 56;
+            this.label21.Text = "Taux";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.label16.Location = new System.Drawing.Point(8, 160);
+            this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(101, 24);
+            this.label16.TabIndex = 57;
+            this.label16.Text = "Mensualité";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.label19.Location = new System.Drawing.Point(8, 46);
+            this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(77, 24);
+            this.label19.TabIndex = 54;
+            this.label19.Text = "Montant";
+            // 
+            // gpbAssurance
+            // 
+            this.gpbAssurance.Controls.Add(this.lblTypeAssurance);
+            this.gpbAssurance.Controls.Add(this.lblDateDebutAssurance);
+            this.gpbAssurance.Controls.Add(this.label17);
+            this.gpbAssurance.Controls.Add(this.label18);
+            this.gpbAssurance.Controls.Add(this.lblMensualiteAssurance);
+            this.gpbAssurance.Controls.Add(this.label20);
+            this.gpbAssurance.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.gpbAssurance.Location = new System.Drawing.Point(348, 37);
+            this.gpbAssurance.Margin = new System.Windows.Forms.Padding(4);
+            this.gpbAssurance.Name = "gpbAssurance";
+            this.gpbAssurance.Padding = new System.Windows.Forms.Padding(4);
+            this.gpbAssurance.Size = new System.Drawing.Size(337, 209);
+            this.gpbAssurance.TabIndex = 54;
+            this.gpbAssurance.TabStop = false;
+            this.gpbAssurance.Text = "Assurance";
+            this.gpbAssurance.Visible = false;
+            // 
+            // lblTypeAssurance
+            // 
+            this.lblTypeAssurance.AutoSize = true;
+            this.lblTypeAssurance.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.lblTypeAssurance.Location = new System.Drawing.Point(193, 43);
+            this.lblTypeAssurance.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTypeAssurance.Name = "lblTypeAssurance";
+            this.lblTypeAssurance.Size = new System.Drawing.Size(58, 24);
+            this.lblTypeAssurance.TabIndex = 50;
+            this.lblTypeAssurance.Text = "typeA";
+            // 
+            // lblDateDebutAssurance
+            // 
+            this.lblDateDebutAssurance.AutoSize = true;
+            this.lblDateDebutAssurance.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.lblDateDebutAssurance.Location = new System.Drawing.Point(193, 158);
+            this.lblDateDebutAssurance.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDateDebutAssurance.Name = "lblDateDebutAssurance";
+            this.lblDateDebutAssurance.Size = new System.Drawing.Size(46, 24);
+            this.lblDateDebutAssurance.TabIndex = 52;
+            this.lblDateDebutAssurance.Text = "date";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.label17.Location = new System.Drawing.Point(8, 43);
+            this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(160, 24);
+            this.label17.TabIndex = 46;
+            this.label17.Text = "Type d\'assurance";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.label18.Location = new System.Drawing.Point(8, 158);
+            this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(128, 24);
+            this.label18.TabIndex = 48;
+            this.label18.Text = "Date de début";
+            // 
+            // lblMensualiteAssurance
+            // 
+            this.lblMensualiteAssurance.AutoSize = true;
+            this.lblMensualiteAssurance.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.lblMensualiteAssurance.Location = new System.Drawing.Point(193, 106);
+            this.lblMensualiteAssurance.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblMensualiteAssurance.Name = "lblMensualiteAssurance";
+            this.lblMensualiteAssurance.Size = new System.Drawing.Size(57, 24);
+            this.lblMensualiteAssurance.TabIndex = 51;
+            this.lblMensualiteAssurance.Text = "mens";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.label20.Location = new System.Drawing.Point(8, 103);
+            this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(101, 24);
+            this.label20.TabIndex = 47;
+            this.label20.Text = "Mensualité";
+            // 
+            // gpbAchat
+            // 
+            this.gpbAchat.Controls.Add(this.lblPrixAchat);
+            this.gpbAchat.Controls.Add(this.lblCouleurAchat);
+            this.gpbAchat.Controls.Add(this.lblImmatAchat);
+            this.gpbAchat.Controls.Add(this.lblKilometrageAchat);
+            this.gpbAchat.Controls.Add(this.lblMarqueAchat);
+            this.gpbAchat.Controls.Add(this.lblAnneeAchat);
+            this.gpbAchat.Controls.Add(this.lblPuissanceAchat);
+            this.gpbAchat.Controls.Add(this.lblModeleAchat);
+            this.gpbAchat.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.gpbAchat.Location = new System.Drawing.Point(21, 37);
+            this.gpbAchat.Margin = new System.Windows.Forms.Padding(4);
+            this.gpbAchat.Name = "gpbAchat";
+            this.gpbAchat.Padding = new System.Windows.Forms.Padding(4);
+            this.gpbAchat.Size = new System.Drawing.Size(319, 209);
+            this.gpbAchat.TabIndex = 53;
+            this.gpbAchat.TabStop = false;
+            this.gpbAchat.Text = "Achat";
+            this.gpbAchat.Visible = false;
+            // 
+            // lblPrixAchat
+            // 
+            this.lblPrixAchat.AutoSize = true;
+            this.lblPrixAchat.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.lblPrixAchat.Location = new System.Drawing.Point(193, 158);
+            this.lblPrixAchat.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblPrixAchat.Name = "lblPrixAchat";
+            this.lblPrixAchat.Size = new System.Drawing.Size(42, 24);
+            this.lblPrixAchat.TabIndex = 53;
+            this.lblPrixAchat.Text = "Prix";
+            this.lblPrixAchat.Click += new System.EventHandler(this.lblPrix_Click);
+            // 
+            // lblCouleurAchat
+            // 
+            this.lblCouleurAchat.AutoSize = true;
+            this.lblCouleurAchat.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.lblCouleurAchat.Location = new System.Drawing.Point(193, 43);
+            this.lblCouleurAchat.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblCouleurAchat.Name = "lblCouleurAchat";
+            this.lblCouleurAchat.Size = new System.Drawing.Size(77, 24);
+            this.lblCouleurAchat.TabIndex = 50;
+            this.lblCouleurAchat.Text = "Couleur";
+            // 
+            // lblImmatAchat
+            // 
+            this.lblImmatAchat.AutoSize = true;
+            this.lblImmatAchat.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.lblImmatAchat.Location = new System.Drawing.Point(193, 117);
+            this.lblImmatAchat.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblImmatAchat.Name = "lblImmatAchat";
+            this.lblImmatAchat.Size = new System.Drawing.Size(135, 24);
+            this.lblImmatAchat.TabIndex = 52;
+            this.lblImmatAchat.Text = "Immatriculation";
+            // 
+            // lblKilometrageAchat
+            // 
+            this.lblKilometrageAchat.AutoSize = true;
+            this.lblKilometrageAchat.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.lblKilometrageAchat.Location = new System.Drawing.Point(8, 158);
+            this.lblKilometrageAchat.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblKilometrageAchat.Name = "lblKilometrageAchat";
+            this.lblKilometrageAchat.Size = new System.Drawing.Size(110, 24);
+            this.lblKilometrageAchat.TabIndex = 49;
+            this.lblKilometrageAchat.Text = "Kilométrage";
+            // 
+            // lblMarqueAchat
+            // 
+            this.lblMarqueAchat.AutoSize = true;
+            this.lblMarqueAchat.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.lblMarqueAchat.Location = new System.Drawing.Point(8, 43);
+            this.lblMarqueAchat.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblMarqueAchat.Name = "lblMarqueAchat";
+            this.lblMarqueAchat.Size = new System.Drawing.Size(75, 24);
+            this.lblMarqueAchat.TabIndex = 46;
+            this.lblMarqueAchat.Text = "Marque";
+            // 
+            // lblAnneeAchat
+            // 
+            this.lblAnneeAchat.AutoSize = true;
+            this.lblAnneeAchat.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.lblAnneeAchat.Location = new System.Drawing.Point(8, 117);
+            this.lblAnneeAchat.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblAnneeAchat.Name = "lblAnneeAchat";
+            this.lblAnneeAchat.Size = new System.Drawing.Size(67, 24);
+            this.lblAnneeAchat.TabIndex = 48;
+            this.lblAnneeAchat.Text = "Année";
+            // 
+            // lblPuissanceAchat
+            // 
+            this.lblPuissanceAchat.AutoSize = true;
+            this.lblPuissanceAchat.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.lblPuissanceAchat.Location = new System.Drawing.Point(193, 81);
+            this.lblPuissanceAchat.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblPuissanceAchat.Name = "lblPuissanceAchat";
+            this.lblPuissanceAchat.Size = new System.Drawing.Size(97, 24);
+            this.lblPuissanceAchat.TabIndex = 51;
+            this.lblPuissanceAchat.Text = "Puissance";
+            // 
+            // lblModeleAchat
+            // 
+            this.lblModeleAchat.AutoSize = true;
+            this.lblModeleAchat.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.lblModeleAchat.Location = new System.Drawing.Point(8, 79);
+            this.lblModeleAchat.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblModeleAchat.Name = "lblModeleAchat";
+            this.lblModeleAchat.Size = new System.Drawing.Size(74, 24);
+            this.lblModeleAchat.TabIndex = 47;
+            this.lblModeleAchat.Text = "Modèle";
+            // 
+            // btnAnnuler
+            // 
+            this.btnAnnuler.Location = new System.Drawing.Point(73, 169);
+            this.btnAnnuler.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAnnuler.Name = "btnAnnuler";
+            this.btnAnnuler.Size = new System.Drawing.Size(111, 33);
+            this.btnAnnuler.TabIndex = 55;
+            this.btnAnnuler.Text = "Annuler";
+            this.btnAnnuler.UseVisualStyleBackColor = true;
+            this.btnAnnuler.Click += new System.EventHandler(this.btnAnnuler_Click);
+            // 
+            // btnConfirmer
+            // 
+            this.btnConfirmer.Enabled = false;
+            this.btnConfirmer.Location = new System.Drawing.Point(196, 169);
+            this.btnConfirmer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnConfirmer.Name = "btnConfirmer";
+            this.btnConfirmer.Size = new System.Drawing.Size(111, 33);
+            this.btnConfirmer.TabIndex = 54;
+            this.btnConfirmer.Text = "Confirmer";
+            this.btnConfirmer.UseVisualStyleBackColor = true;
+            this.btnConfirmer.Click += new System.EventHandler(this.btnConfirmer_Click);
+            // 
+            // gpbInfoFixe
+            // 
+            this.gpbInfoFixe.Controls.Add(this.lblVilleCP);
+            this.gpbInfoFixe.Controls.Add(this.lblNumero);
+            this.gpbInfoFixe.Controls.Add(this.lblAdresse);
+            this.gpbInfoFixe.Controls.Add(this.lblEmail);
+            this.gpbInfoFixe.Controls.Add(this.lblCivNomPrenom);
+            this.gpbInfoFixe.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.gpbInfoFixe.Location = new System.Drawing.Point(16, 80);
+            this.gpbInfoFixe.Margin = new System.Windows.Forms.Padding(4);
+            this.gpbInfoFixe.Name = "gpbInfoFixe";
+            this.gpbInfoFixe.Padding = new System.Windows.Forms.Padding(4);
+            this.gpbInfoFixe.Size = new System.Drawing.Size(328, 222);
+            this.gpbInfoFixe.TabIndex = 28;
+            this.gpbInfoFixe.TabStop = false;
+            this.gpbInfoFixe.Text = "Vos informations";
+            this.gpbInfoFixe.Visible = false;
+            // 
+            // lblVilleCP
+            // 
+            this.lblVilleCP.AutoSize = true;
+            this.lblVilleCP.Location = new System.Drawing.Point(19, 180);
+            this.lblVilleCP.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblVilleCP.Name = "lblVilleCP";
+            this.lblVilleCP.Size = new System.Drawing.Size(92, 24);
+            this.lblVilleCP.TabIndex = 25;
+            this.lblVilleCP.Text = "Ville + CP";
+            // 
+            // lblNumero
+            // 
+            this.lblNumero.AutoSize = true;
+            this.lblNumero.Location = new System.Drawing.Point(17, 111);
+            this.lblNumero.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblNumero.Name = "lblNumero";
+            this.lblNumero.Size = new System.Drawing.Size(79, 24);
+            this.lblNumero.TabIndex = 21;
+            this.lblNumero.Text = "Numéro";
+            // 
+            // lblAdresse
+            // 
+            this.lblAdresse.AutoSize = true;
+            this.lblAdresse.Location = new System.Drawing.Point(19, 145);
+            this.lblAdresse.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblAdresse.Name = "lblAdresse";
+            this.lblAdresse.Size = new System.Drawing.Size(113, 24);
+            this.lblAdresse.TabIndex = 14;
+            this.lblAdresse.Text = "Num + Nom";
+            // 
+            // lblEmail
+            // 
+            this.lblEmail.AutoSize = true;
+            this.lblEmail.Location = new System.Drawing.Point(19, 71);
+            this.lblEmail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(57, 24);
+            this.lblEmail.TabIndex = 13;
+            this.lblEmail.Text = "Email";
+            // 
+            // lblCivNomPrenom
+            // 
+            this.lblCivNomPrenom.AutoSize = true;
+            this.lblCivNomPrenom.Location = new System.Drawing.Point(19, 41);
+            this.lblCivNomPrenom.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblCivNomPrenom.Name = "lblCivNomPrenom";
+            this.lblCivNomPrenom.Size = new System.Drawing.Size(179, 24);
+            this.lblCivNomPrenom.TabIndex = 10;
+            this.lblCivNomPrenom.Text = "civ + nom + prenom";
+            // 
+            // gpbSeConnecter
+            // 
+            this.gpbSeConnecter.Controls.Add(this.btnEnregistrerChoixClient);
+            this.gpbSeConnecter.Controls.Add(this.cboClient);
+            this.gpbSeConnecter.Controls.Add(this.button2);
+            this.gpbSeConnecter.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.gpbSeConnecter.Location = new System.Drawing.Point(13, 87);
+            this.gpbSeConnecter.Margin = new System.Windows.Forms.Padding(4);
+            this.gpbSeConnecter.Name = "gpbSeConnecter";
+            this.gpbSeConnecter.Padding = new System.Windows.Forms.Padding(4);
+            this.gpbSeConnecter.Size = new System.Drawing.Size(452, 197);
+            this.gpbSeConnecter.TabIndex = 56;
+            this.gpbSeConnecter.TabStop = false;
+            this.gpbSeConnecter.Text = "Se connecter";
+            this.gpbSeConnecter.Visible = false;
+            // 
+            // btnEnregistrerChoixClient
+            // 
+            this.btnEnregistrerChoixClient.Enabled = false;
+            this.btnEnregistrerChoixClient.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.btnEnregistrerChoixClient.Location = new System.Drawing.Point(309, 138);
+            this.btnEnregistrerChoixClient.Margin = new System.Windows.Forms.Padding(4);
+            this.btnEnregistrerChoixClient.Name = "btnEnregistrerChoixClient";
+            this.btnEnregistrerChoixClient.Size = new System.Drawing.Size(120, 37);
+            this.btnEnregistrerChoixClient.TabIndex = 13;
+            this.btnEnregistrerChoixClient.Text = "Enregistrer";
+            this.btnEnregistrerChoixClient.UseVisualStyleBackColor = true;
+            this.btnEnregistrerChoixClient.Click += new System.EventHandler(this.btnEnregistrerChoixClient_Click);
+            // 
+            // cboClient
+            // 
+            this.cboClient.FormattingEnabled = true;
+            this.cboClient.Location = new System.Drawing.Point(43, 71);
+            this.cboClient.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cboClient.Name = "cboClient";
+            this.cboClient.Size = new System.Drawing.Size(215, 32);
+            this.cboClient.TabIndex = 12;
+            this.cboClient.SelectedIndexChanged += new System.EventHandler(this.cboClient_SelectedIndexChanged);
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.button2.Location = new System.Drawing.Point(409, 417);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(120, 37);
+            this.button2.TabIndex = 11;
+            this.button2.Text = "Enregistrer";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // cboModePaiement
+            // 
+            this.cboModePaiement.FormattingEnabled = true;
+            this.cboModePaiement.Items.AddRange(new object[] {
+            "Carte bancaire",
+            "Espèces",
+            "Chèque"});
+            this.cboModePaiement.Location = new System.Drawing.Point(140, 116);
+            this.cboModePaiement.Name = "cboModePaiement";
+            this.cboModePaiement.Size = new System.Drawing.Size(167, 30);
+            this.cboModePaiement.TabIndex = 57;
+            this.cboModePaiement.SelectedIndexChanged += new System.EventHandler(this.cboModePaiement_SelectedIndexChanged);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(11, 81);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(173, 24);
+            this.label13.TabIndex = 58;
+            this.label13.Text = "Mode de virement :";
+            // 
+            // gpbPaiement
+            // 
+            this.gpbPaiement.Controls.Add(this.lblPrixTotal);
+            this.gpbPaiement.Controls.Add(this.label14);
+            this.gpbPaiement.Controls.Add(this.label13);
+            this.gpbPaiement.Controls.Add(this.cboModePaiement);
+            this.gpbPaiement.Controls.Add(this.btnConfirmer);
+            this.gpbPaiement.Controls.Add(this.btnAnnuler);
+            this.gpbPaiement.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gpbPaiement.Location = new System.Drawing.Point(16, 328);
+            this.gpbPaiement.Name = "gpbPaiement";
+            this.gpbPaiement.Size = new System.Drawing.Size(329, 214);
+            this.gpbPaiement.TabIndex = 57;
+            this.gpbPaiement.TabStop = false;
+            this.gpbPaiement.Text = "Paiement";
+            this.gpbPaiement.Visible = false;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(11, 40);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(66, 24);
+            this.label14.TabIndex = 59;
+            this.label14.Text = "Total : ";
+            // 
+            // lblPrixTotal
+            // 
+            this.lblPrixTotal.AutoSize = true;
+            this.lblPrixTotal.Location = new System.Drawing.Point(76, 39);
+            this.lblPrixTotal.Name = "lblPrixTotal";
+            this.lblPrixTotal.Size = new System.Drawing.Size(0, 24);
+            this.lblPrixTotal.TabIndex = 60;
+            // 
             // Accueil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1094,13 +1115,15 @@ namespace GarageCreditCeleste
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.gpbInfoClient);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Accueil";
             this.Text = "Accueil";
             this.Load += new System.EventHandler(this.Accueil_Load);
             this.gpbInfoClient.ResumeLayout(false);
             this.gpbInfoClient.PerformLayout();
             this.gpbResume.ResumeLayout(false);
+            this.gpbVente.ResumeLayout(false);
+            this.gpbVente.PerformLayout();
             this.gpbCredit.ResumeLayout(false);
             this.gpbCredit.PerformLayout();
             this.gpbAssurance.ResumeLayout(false);
@@ -1112,8 +1135,6 @@ namespace GarageCreditCeleste
             this.gpbSeConnecter.ResumeLayout(false);
             this.gpbPaiement.ResumeLayout(false);
             this.gpbPaiement.PerformLayout();
-            this.gpbVente.ResumeLayout(false);
-            this.gpbVente.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1200,5 +1221,7 @@ namespace GarageCreditCeleste
         private System.Windows.Forms.Label lblAnneeVente;
         private System.Windows.Forms.Label lblPuissanceVente;
         private System.Windows.Forms.Label lblModeleVente;
+        private System.Windows.Forms.Label lblPrixTotal;
+        private System.Windows.Forms.Label label14;
     }
 }
