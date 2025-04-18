@@ -29,6 +29,56 @@ namespace GarageCreditCeleste
         private void btnAppliquer_Click(object sender, EventArgs e)
         {
             //ajouter les filtres dans un objet Globales pour les appliquer sur la recherche
+            if (txtPrixMini.Text != "Minimum" && txtPrixMini.Text != "")
+            {
+                Globales.Filtres.Add("PrixMin", txtPrixMini.Text);
+            }
+            if (txtPrixMaxi.Text != "Maximum" && txtPrixMini.Text != "")
+            {
+                Globales.Filtres.Add("PrixMax", txtPrixMaxi.Text);
+            }
+
+
+            if (txtAnneeMini.Text != "Minimum" && txtAnneeMini.Text != "")
+            {
+                Globales.Filtres.Add("AnneeMin", txtAnneeMini.Text);
+            }
+            if (txtAnneeMaxi.Text != "Maximum" && txtAnneeMaxi.Text != "")
+            {
+                Globales.Filtres.Add("AnneeMax", txtAnneeMaxi.Text);
+            }
+
+
+            if (txtKilometrageMini.Text != "Minimum" && txtKilometrageMini.Text != "")
+            {
+                Globales.Filtres.Add("KilometrageMin", txtKilometrageMini.Text);
+            }
+            if (txtKilometrageMaxi.Text != "Maximum" && txtKilometrageMaxi.Text != "")
+            {
+                Globales.Filtres.Add("KilometrageMax", txtKilometrageMaxi.Text);
+            }
+
+
+            if (txtPuissanceMini.Text != "Minimum" && txtPuissanceMini.Text != "")
+            {
+                Globales.Filtres.Add("PuissanceMin", txtPuissanceMini.Text);
+            }
+            if (txtPuissanceMaxi.Text != "Maximum" && txtPuissanceMaxi.Text != "")
+            {
+                Globales.Filtres.Add("PuissanceMax", txtPuissanceMaxi.Text);
+            }
+
+
+            if (txtCouleur.Text != "ex. rouge, bleu, noir..." && txtPuissanceMaxi.Text != "")
+            {
+                Globales.Filtres.Add("Couleur", txtCouleur.Text);
+            }
+
+            if (cboMarque.SelectedIndex != -1)
+            {
+                Globales.Filtres.Add("Marque", cboMarque.Text);
+            }
+
             Globales.acheter = new Acheter();
             Globales.acheter.Show();
             Globales.filtre.Close();
@@ -42,8 +92,14 @@ namespace GarageCreditCeleste
 
             foreach (Voiture uneVoit in lesVoitures)
             {
-                cboMarque.Items.Add($" {uneVoit.getMarque()}");
+                string marque = uneVoit.getMarque();
+                if (!cboMarque.Items.Contains(marque))
+                {
+                    cboMarque.Items.Add(marque);
+                }
             }
+
+            Globales.Filtres.Clear();
         }
 
         public List<Voiture> RecupererMarques()
