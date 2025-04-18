@@ -33,5 +33,7 @@ namespace GarageCreditCeleste
         public static ClControleTechnique controleTechnique;
         public static ClEntretien Entretien;
 
+        public static Dictionary<string, string> Filtres = new Dictionary<string, string>();
+
     }
 }
