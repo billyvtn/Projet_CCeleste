@@ -21,9 +21,16 @@ INSERT INTO VEHICULE (Marque, Modele, Annee, Valeur, Kilometrage, Couleur, Puiss
 GO
 
 -- Insertion dans PIECE
-INSERT INTO PIECE (NomPiece, Marque) VALUES
-('Pneu Michelin', 'Michelin'),
-('Filtre à huile', 'Bosch'),
-('Batterie Varta', 'Varta');
+INSERT INTO PIECE (NomPiece, Marque, Prix, StatutDispo) VALUES
+('Filtre à carburant', 'Bosch', 12, 1),
+('Filtre à huile', 'Bosch', 10, 1),
+('Filtre à air', 'Bosch', 10, 1),
+('Filtre à habitacle', 'Bosch', 10, 0),
+('Huile moteur', 'Shell', 50, 0),
+('Liquide de refroidissement', 'Shell', 50, 1),
+('Liquide de frein', 'Shell', 50, 1),
+('Plaquettes de frein', 'Bosch', 20, 0),
+('Pneus', 'Michelin', 70, 1),
+('Batterie 12v', 'Varta', 90, 0);
 GO
 
