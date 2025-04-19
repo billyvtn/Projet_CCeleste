@@ -69,7 +69,7 @@ namespace GarageCreditCeleste
             }
 
 
-            if (txtCouleur.Text != "ex. rouge, bleu, noir..." && txtPuissanceMaxi.Text != "")
+            if (txtCouleur.Text != "ex. rouge, bleu, noire..." && txtPuissanceMaxi.Text != "")
             {
                 Globales.Filtres.Add("Couleur", txtCouleur.Text);
             }
@@ -137,6 +137,81 @@ namespace GarageCreditCeleste
                 }
             }
             return lesMarques;
+        }
+
+        private void txtPrixMini_TextChanged(object sender, EventArgs e){} //pas touche
+
+        private void txtPrixMini_Click(object sender, EventArgs e)
+        {
+            if (txtPrixMini.Text == "Minimum")
+            {
+                txtPrixMini.Text = "";
+                txtPrixMini.ForeColor = SystemColors.ControlText;
+            }
+        }
+        private void txtPrixMaxi_Click(object sender, EventArgs e)
+        {
+            if (txtPrixMaxi.Text == "Maximum")
+            {
+                txtPrixMaxi.Text = "";
+                txtPrixMaxi.ForeColor = SystemColors.ControlText;
+            }
+        }
+        private void txtAnneeMini_Click(object sender, EventArgs e)
+        {
+            if (txtAnneeMini.Text == "Minimum")
+            {
+                txtAnneeMini.Text = "";
+                txtAnneeMini.ForeColor = SystemColors.ControlText;
+            }
+        }
+        private void txtAnneeMaxi_Click(object sender, EventArgs e)
+        {
+            if (txtAnneeMaxi.Text == "Maximum")
+            {
+                txtAnneeMaxi.Text = "";
+                txtAnneeMaxi.ForeColor = SystemColors.ControlText;
+            }
+        }
+        private void txtKilometrageMini_Click(object sender, EventArgs e)
+        {
+            if (txtKilometrageMini.Text == "Minimum")
+            {
+                txtKilometrageMini.Text = "";
+                txtKilometrageMini.ForeColor = SystemColors.ControlText;
+            }
+        }
+        private void txtKilometrageMaxi_Click(object sender, EventArgs e)
+        {
+            if (txtKilometrageMaxi.Text == "Maximum")
+            {
+                txtKilometrageMaxi.Text = "";
+                txtKilometrageMaxi.ForeColor = SystemColors.ControlText;
+            }
+        }
+        private void txtPuissanceMini_Click(object sender, EventArgs e)
+        {
+            if (txtPuissanceMini.Text == "Minimum")
+            {
+                txtPuissanceMini.Text = "";
+                txtPuissanceMini.ForeColor = SystemColors.ControlText;
+            }
+        }
+        private void txtPuissanceMaxi_Click(object sender, EventArgs e)
+        {
+            if (txtPuissanceMaxi.Text == "Maximum")
+            {
+                txtPuissanceMaxi.Text = "";
+                txtPuissanceMaxi.ForeColor = SystemColors.ControlText;
+            }
+        }
+        private void txtCouleur_Click(object sender, EventArgs e)
+        {
+            if (txtCouleur.Text == "ex. rouge, bleu, noire...")
+            {
+                txtCouleur.Text = "";
+                txtCouleur.ForeColor = SystemColors.ControlText;
+            }
         }
     }
 }
