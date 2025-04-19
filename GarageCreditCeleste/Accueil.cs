@@ -133,7 +133,81 @@ namespace GarageCreditCeleste
                 {
                     lblPrixTotal.Text = (Globales.voiture.getPrix() - Globales.voitureRachat.getPrix()).ToString("C");
                 }
+
+                if(Globales.Type.Contains("ControleTechnique"))
+                {
+                    gpbControleTech.Visible = true;
+
+                    lblDateCT.Text = Globales.controleTechnique.GetDate();
+                    lblHeureCT.Text = Globales.controleTechnique.GetHeure();
+                    lblPrixCT.Text = Globales.controleTechnique.GetCout().ToString("C");
+                }
+
+                if (Globales.Type.Contains("Entretien"))
+                {
+                    gpbEntretien.Visible = true;
+
+                    lblDateEntretien.Text = Globales.Entretien.GetDate();
+                    lblHeureEntretien.Text = Globales.Entretien.GetHeure();
+
+                    lsbPiecesEntretien.Items.Clear();
+
+                    List<string> listePieces = Globales.Entretien.GetListeEntretien();
+
+                    foreach (string piece in listePieces)
+                    {
+                        lsbPiecesEntretien.Items.Add(piece);
+                    }
+
+                    lblPrixEntretien.Text = TotalEntretien().ToString("C");
+                }
+
+                if (Globales.Type.Contains("ControleTechnique") && !Globales.Type.Contains("Entretien"))
+                {
+                    lblPrixTotal.Text = Globales.controleTechnique.GetCout().ToString("C");
+                }
+                else if (!Globales.Type.Contains("ControleTechnique") && Globales.Type.Contains("Entretien"))
+                {
+                    lblPrixTotal.Text = TotalEntretien().ToString("C");
+                }
+                else if (Globales.Type.Contains("ControleTechnique") && Globales.Type.Contains("Entretien"))
+                {
+                    lblPrixTotal.Text = (TotalEntretien() + Globales.controleTechnique.GetCout()).ToString("C");
+                }
             }
+        }
+
+        private int TotalEntretien()
+        {
+            int totalPrix = 0;
+            int mainOeuvre = 50;
+            //connexion au lycée : 
+            //string connectionString = "Data Source=10.129.184.106;User Id=connEleveSio;password=mdpEleveSi0;Initial Catalog=PROJETCC_K";
+            //connexion à la maison :
+            string connectionString = "Server=localhost\\SQLEXPRESS;Database=PROJETCC_K;User Id=connEleveSio;Password=mdpEleveSi0;TrustServerCertificate=True;";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                foreach (string nomPiece in lsbPiecesEntretien.Items)
+                {
+                    using (SqlCommand cmd = new SqlCommand("SELECT Prix FROM PIECE WHERE NomPiece = @nomPiece", connection))
+                    {
+                        cmd.Parameters.AddWithValue("@nomPiece", nomPiece);
+
+                        object result = cmd.ExecuteScalar();
+                        if (result != null && result != DBNull.Value)
+                        {
+                            totalPrix += Convert.ToInt32(result);
+                            totalPrix += mainOeuvre;
+                        }
+                    }
+                }
+
+                connection.Close();
+            }           
+            return totalPrix;
         }
 
         //lien accueil --> vendre
@@ -360,6 +434,11 @@ namespace GarageCreditCeleste
                     ConfirmerAchat();
                 }
             }
+
+            if (Globales.Type.Contains("Entretien") || Globales.Type.Contains("ControleTechnique"))
+            {
+                ConfirmerServices();
+            }
         }
 
         private void InsererClient()
@@ -513,6 +592,107 @@ namespace GarageCreditCeleste
                 }
             }
         }
+        private void ConfirmerServices()
+        {
+            //connexion au lycée : 
+            //string connectionString = "Data Source=10.129.184.106;User Id=connEleveSio;password=mdpEleveSi0;Initial Catalog=PROJETCC_K";
+            //connexion à la maison :
+            string connectionString = "Server=localhost\\SQLEXPRESS;Database=PROJETCC_K;User Id=connEleveSio;Password=mdpEleveSi0;TrustServerCertificate=True;";
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("ConfirmerServices", conn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    // Paramètres obligatoires
+                    cmd.Parameters.AddWithValue("@Email", Globales.client.getEmail());
+                    cmd.Parameters.AddWithValue("@Immat", Globales.voiture.getImmatriculation());
+                    cmd.Parameters.AddWithValue("@DateAchat", DateTime.Now.ToString("yyyy-MM-dd"));
+                    cmd.Parameters.AddWithValue("@ModePaiement", cboModePaiement.SelectedItem.ToString());
+
+                    // Détection entretien et ct
+                    bool avecEntretien = Globales.Type.Contains("Entretien");
+                    bool avecControleTechnique = Globales.Type.Contains("ControleTechnique");
+
+                    cmd.Parameters.AddWithValue("@AvecEntretien", avecEntretien);
+                    cmd.Parameters.AddWithValue("@AvecControleTechnique", avecControleTechnique);
+
+                    // Paramètres entretien (si applicable)
+                    if (avecEntretien)
+                    {
+                        cmd.Parameters.AddWithValue("@DateEntretien", Globales.Entretien.GetDate());
+                        cmd.Parameters.AddWithValue("@CoutEntretien", TotalEntretien());
+                    }
+                    else
+                    {
+                        cmd.Parameters.AddWithValue("@DateEntretien", DBNull.Value);
+                        cmd.Parameters.AddWithValue("@CoutEntretien", DBNull.Value);
+                    }
+
+                    // Paramètres ct (si applicable)
+                    if (avecControleTechnique)
+                    {
+                        cmd.Parameters.AddWithValue("@DateCT", Globales.controleTechnique.GetDate());
+                        cmd.Parameters.AddWithValue("@CoutCT", Globales.controleTechnique.GetCout());
+                    }
+                    else
+                    {
+                        cmd.Parameters.AddWithValue("@DateCT", DBNull.Value);
+                        cmd.Parameters.AddWithValue("@CoutCT", DBNull.Value);
+                    }
+
+                    try
+                    {
+                        conn.Open();
+                        cmd.ExecuteNonQuery();
+
+                        int idEntretien = 0;
+
+                        if (avecEntretien)
+                        {
+                            SqlCommand cmdId = new SqlCommand("SELECT TOP 1 idEntretien FROM ENTRETIEN ORDER BY idEntretien DESC", conn);
+                            idEntretien = (int)cmdId.ExecuteScalar();
+                        }
+                        if (avecEntretien && idEntretien > 0)
+                        {
+                            List<string> pieces = Globales.Entretien.GetListeEntretien();
+
+                            foreach (string nomPiece in pieces)
+                            {
+                                // Requête pour récupérer l'id de la pièce à partir de son nom
+                                SqlCommand cmdGetIdPiece = new SqlCommand("SELECT idPiece FROM PIECE WHERE NomPiece = @NomPiece", conn);
+                                cmdGetIdPiece.Parameters.AddWithValue("@NomPiece", nomPiece);
+
+                                object result = cmdGetIdPiece.ExecuteScalar();
+                                if (result != null)
+                                {
+                                    int idPiece = Convert.ToInt32(result);
+
+                                    // Insertion dans ENTRETIEN_PIECES
+                                    SqlCommand cmdInsert = new SqlCommand("INSERT INTO ENTRETIEN_PIECES (idEntretien, idPiece, Quantite) VALUES (@idEntretien, @idPiece, @Quantite)", conn);
+                                    cmdInsert.Parameters.AddWithValue("@idEntretien", idEntretien);
+                                    cmdInsert.Parameters.AddWithValue("@idPiece", idPiece);
+                                    cmdInsert.Parameters.AddWithValue("@Quantite", 1); 
+
+                                    cmdInsert.ExecuteNonQuery();
+                                }
+                                else
+                                {
+                                    MessageBox.Show("La pièce \"" + nomPiece + "\" n’a pas été trouvée dans la base.");
+                                }
+                            }
+                        }
+
+                        MessageBox.Show("Service confirmé avec succès !");
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Erreur lors de la confirmation du service : " + ex.Message);
+                    }
+                }
+            }
+        }
 
         private void btnConnecter_Click(object sender, EventArgs e)
         {
@@ -541,6 +721,8 @@ namespace GarageCreditCeleste
             lblNumero.Text = Globales.client.getNumeroTelephone();
             lblAdresse.Text = Globales.client.getAdresseNum() + " " + Globales.client.getAdresseVoie();
             lblVilleCP.Text = Globales.client.getVille() + " " + Globales.client.getCodePostal();
+
+            RecupererVehiculeDuClient();
 
             btnServices.Enabled = true;
             btnAcheter.Enabled = true;
@@ -591,6 +773,42 @@ namespace GarageCreditCeleste
 
             return lesClients;
         }
+        private void RecupererVehiculeDuClient()
+        {
+            string connectionString = "Server=localhost\\SQLEXPRESS;Database=PROJETCC_K;User Id=connEleveSio;Password=mdpEleveSi0;TrustServerCertificate=True;";
+            string query = "SELECT * FROM VEHICULE WHERE idUtilisateur = (SELECT idUtilisateur FROM UTILISATEUR WHERE Email = @Email)";
+
+            using (SqlConnection con = new SqlConnection(connectionString))
+            using (SqlCommand cmd = new SqlCommand(query, con))
+            {
+                cmd.Parameters.AddWithValue("@Email", Globales.client.getEmail());
+
+                try
+                {
+                    con.Open();
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            Globales.voiture = new Voiture(
+                                Convert.ToString(reader["Marque"]),
+                                Convert.ToString(reader["Modele"]),
+                                Convert.ToInt32(reader["Annee"]),
+                                Convert.ToInt32(reader["Kilometrage"]),
+                                Convert.ToString(reader["Couleur"]),
+                                Convert.ToInt32(reader["Puissance"]),
+                                Convert.ToString(reader["Immat"])
+                            );
+                        }
+                    }
+                }
+                catch (SqlException ex)
+                {
+                    MessageBox.Show($"Erreur lors de la récupération du véhicule : {ex.Message}");
+                }
+            }
+        }
+
 
         private void btnAnnuler_Click(object sender, EventArgs e)
         {
@@ -606,5 +824,7 @@ namespace GarageCreditCeleste
         {
             btnEnregistrerChoixClient.Enabled = cboClient.SelectedIndex != -1;
         }
+
+        private void gpbEntretien_Enter(object sender, EventArgs e){} //pas touche
     }
 }

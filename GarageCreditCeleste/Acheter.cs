@@ -153,7 +153,7 @@ namespace GarageCreditCeleste
                         }
                     }
                 }
-
+                btnChoisir.Enabled = true;
             }
         }
 
