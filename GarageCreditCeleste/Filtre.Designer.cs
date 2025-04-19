@@ -61,6 +61,8 @@ namespace GarageCreditCeleste
             this.btnFermer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
             this.btnFermer.Location = new System.Drawing.Point(288, 489);
             this.btnFermer.Name = "btnFermer";
+            this.btnFermer.Size = new System.Drawing.Size(84, 28);
+            this.btnFermer.TabIndex = 8;
             this.btnFermer.Text = "Fermer";
             this.btnFermer.UseVisualStyleBackColor = true;
             this.btnFermer.Click += new System.EventHandler(this.btnFermer_Click);
@@ -122,6 +124,8 @@ namespace GarageCreditCeleste
             this.btnAppliquer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
             this.btnAppliquer.Location = new System.Drawing.Point(198, 489);
             this.btnAppliquer.Name = "btnAppliquer";
+            this.btnAppliquer.Size = new System.Drawing.Size(84, 28);
+            this.btnAppliquer.TabIndex = 7;
             this.btnAppliquer.Text = "Appliquer";
             this.btnAppliquer.UseVisualStyleBackColor = true;
             this.btnAppliquer.Click += new System.EventHandler(this.btnAppliquer_Click);
@@ -133,6 +137,8 @@ namespace GarageCreditCeleste
             this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
             this.groupBox4.Location = new System.Drawing.Point(12, 260);
             this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(360, 70);
+            this.groupBox4.TabIndex = 4;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Kilométrage";
             // 
@@ -172,6 +178,8 @@ namespace GarageCreditCeleste
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
             this.groupBox2.Location = new System.Drawing.Point(12, 108);
             this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(360, 70);
+            this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Prix";
             // 
@@ -191,6 +199,8 @@ namespace GarageCreditCeleste
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
             this.groupBox3.Location = new System.Drawing.Point(12, 32);
             this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(360, 70);
+            this.groupBox3.TabIndex = 1;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Marque";
             // 
@@ -201,6 +211,8 @@ namespace GarageCreditCeleste
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
             this.groupBox1.Location = new System.Drawing.Point(12, 184);
             this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(360, 70);
+            this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Année";
             // 
@@ -211,7 +223,6 @@ namespace GarageCreditCeleste
             this.txtAnneeMini.Name = "txtAnneeMini";
             this.txtAnneeMini.Size = new System.Drawing.Size(114, 23);
             this.txtAnneeMini.TabIndex = 3;
-
             this.txtAnneeMini.Text = "Minimum";
             this.txtAnneeMini.Click += new System.EventHandler(this.txtAnneeMini_Click);
             // 
