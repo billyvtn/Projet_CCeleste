@@ -31,6 +31,7 @@ namespace GarageCreditCeleste
         {
             this.label8 = new System.Windows.Forms.Label();
             this.gpbDescription = new System.Windows.Forms.GroupBox();
+            this.pboImageVoiture = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.lblPrix = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -56,7 +57,6 @@ namespace GarageCreditCeleste
             this.label1 = new System.Windows.Forms.Label();
             this.lblReduc = new System.Windows.Forms.Label();
             this.lblPrixReduc = new System.Windows.Forms.Label();
-            this.pboImageVoiture = new System.Windows.Forms.PictureBox();
             this.gpbDescription.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pboImageVoiture)).BeginInit();
             this.SuspendLayout();
@@ -101,6 +101,14 @@ namespace GarageCreditCeleste
             this.gpbDescription.TabStop = false;
             this.gpbDescription.Text = "Description du véhicule";
             this.gpbDescription.Enter += new System.EventHandler(this.gpbDescription_Enter);
+            // 
+            // pboImageVoiture
+            // 
+            this.pboImageVoiture.Location = new System.Drawing.Point(254, 62);
+            this.pboImageVoiture.Name = "pboImageVoiture";
+            this.pboImageVoiture.Size = new System.Drawing.Size(379, 207);
+            this.pboImageVoiture.TabIndex = 70;
+            this.pboImageVoiture.TabStop = false;
             // 
             // label4
             // 
@@ -307,6 +315,7 @@ namespace GarageCreditCeleste
             // 
             // btnChoisir
             // 
+            this.btnChoisir.Enabled = false;
             this.btnChoisir.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.btnChoisir.Location = new System.Drawing.Point(803, 505);
             this.btnChoisir.Margin = new System.Windows.Forms.Padding(4);
@@ -373,14 +382,6 @@ namespace GarageCreditCeleste
             this.lblPrixReduc.Size = new System.Drawing.Size(0, 24);
             this.lblPrixReduc.TabIndex = 70;
             this.lblPrixReduc.Visible = false;
-            // 
-            // pboImageVoiture
-            // 
-            this.pboImageVoiture.Location = new System.Drawing.Point(254, 62);
-            this.pboImageVoiture.Name = "pboImageVoiture";
-            this.pboImageVoiture.Size = new System.Drawing.Size(379, 207);
-            this.pboImageVoiture.TabIndex = 70;
-            this.pboImageVoiture.TabStop = false;
             // 
             // Acheter
             // 

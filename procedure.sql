@@ -26,6 +26,10 @@ IF OBJECT_ID('dbo.ConfirmerAchatVoiture', 'P') IS NOT NULL
     DROP PROCEDURE dbo.ConfirmerAchatVoiture;
 GO
 
+IF OBJECT_ID('dbo.ConfirmerServices', 'P') IS NOT NULL
+    DROP PROCEDURE dbo.ConfirmerServices;
+GO
+
 -- Création de la procédure InsClient
 CREATE PROCEDURE dbo.InsClient
     @Civ BIT,
@@ -225,3 +229,48 @@ BEGIN
     END CATCH
 END;
 GO
+
+-- Création de la procédure ConfirmerServices
+CREATE PROCEDURE ConfirmerServices
+    @Email VARCHAR(100),
+    @Immat VARCHAR(50),
+    @DateAchat DATE,
+    @ModePaiement VARCHAR(50),
+    @AvecEntretien BIT,
+    @AvecControleTechnique BIT,
+    @DateEntretien VARCHAR(50) = NULL,
+    @CoutEntretien INT = NULL,
+    @DateCT VARCHAR(50) = NULL,
+    @CoutCT INT = NULL
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    DECLARE @idVehicule INT;
+
+    -- Récupérer l'id du véhicule via son immatriculation
+    SELECT @idVehicule = idVehicule FROM VEHICULE WHERE Immat = @Immat;
+
+    -- Sécurité : si le véhicule n'existe pas
+    IF @idVehicule IS NULL
+    BEGIN
+        RAISERROR('Véhicule non trouvé avec cette immatriculation.', 16, 1);
+        RETURN;
+    END
+
+    -- Ajouter un entretien si demandé
+    IF @AvecEntretien = 1
+    BEGIN
+        INSERT INTO ENTRETIEN (DateEntretien, Cout, ModePaiement, idVehicule)
+        VALUES (@DateEntretien, @CoutEntretien, @ModePaiement, @idVehicule);
+    END
+
+    -- Ajouter un contrôle technique si demandé
+    IF @AvecControleTechnique = 1
+    BEGIN
+        INSERT INTO CONTROLE_TECHNIQUE (DateCT, Cout, ModePaiement, idVehicule)
+        VALUES (@DateCT, @CoutCT, @ModePaiement, @idVehicule);
+    END
+END
+GO
+

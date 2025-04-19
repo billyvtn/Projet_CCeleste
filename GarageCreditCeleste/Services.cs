@@ -19,7 +19,7 @@ namespace GarageCreditCeleste
 
         private void Services_Load(object sender, EventArgs e)
         {
-            if (Globales.voiture != null)
+            if(Globales.voiture != null)
             {
                 groupBox1.Visible = false;
                 gpbDescription.Visible = true;

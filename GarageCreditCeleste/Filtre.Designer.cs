@@ -44,10 +44,10 @@ namespace GarageCreditCeleste
             this.txtAnneeMaxi = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtAnneeMini = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.txtCouleur = new System.Windows.Forms.TextBox();
-            this.txtAnneeMini = new System.Windows.Forms.TextBox();
             this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -63,7 +63,7 @@ namespace GarageCreditCeleste
             this.btnFermer.Margin = new System.Windows.Forms.Padding(4);
             this.btnFermer.Name = "btnFermer";
             this.btnFermer.Size = new System.Drawing.Size(112, 34);
-            this.btnFermer.TabIndex = 44;
+            this.btnFermer.TabIndex = 45;
             this.btnFermer.Text = "Fermer";
             this.btnFermer.UseVisualStyleBackColor = true;
             this.btnFermer.Click += new System.EventHandler(this.btnFermer_Click);
@@ -133,7 +133,7 @@ namespace GarageCreditCeleste
             this.btnAppliquer.Margin = new System.Windows.Forms.Padding(4);
             this.btnAppliquer.Name = "btnAppliquer";
             this.btnAppliquer.Size = new System.Drawing.Size(112, 34);
-            this.btnAppliquer.TabIndex = 43;
+            this.btnAppliquer.TabIndex = 44;
             this.btnAppliquer.Text = "Appliquer";
             this.btnAppliquer.UseVisualStyleBackColor = true;
             this.btnAppliquer.Click += new System.EventHandler(this.btnAppliquer_Click);
@@ -148,7 +148,7 @@ namespace GarageCreditCeleste
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox4.Size = new System.Drawing.Size(480, 86);
-            this.groupBox4.TabIndex = 39;
+            this.groupBox4.TabIndex = 41;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Kilométrage";
             // 
@@ -194,7 +194,7 @@ namespace GarageCreditCeleste
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox2.Size = new System.Drawing.Size(480, 86);
-            this.groupBox2.TabIndex = 40;
+            this.groupBox2.TabIndex = 39;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Prix";
             // 
@@ -218,7 +218,7 @@ namespace GarageCreditCeleste
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox3.Size = new System.Drawing.Size(480, 86);
-            this.groupBox3.TabIndex = 41;
+            this.groupBox3.TabIndex = 38;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Marque";
             // 
@@ -232,9 +232,20 @@ namespace GarageCreditCeleste
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(480, 86);
-            this.groupBox1.TabIndex = 38;
+            this.groupBox1.TabIndex = 40;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Année";
+            // 
+            // txtAnneeMini
+            // 
+            this.txtAnneeMini.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.txtAnneeMini.Location = new System.Drawing.Point(75, 33);
+            this.txtAnneeMini.Margin = new System.Windows.Forms.Padding(4);
+            this.txtAnneeMini.Name = "txtAnneeMini";
+            this.txtAnneeMini.Size = new System.Drawing.Size(151, 27);
+            this.txtAnneeMini.TabIndex = 0;
+            this.txtAnneeMini.Text = "Minimum";
+            this.txtAnneeMini.Click += new System.EventHandler(this.txtAnneeMini_Click);
             // 
             // label8
             // 
@@ -267,20 +278,9 @@ namespace GarageCreditCeleste
             this.txtCouleur.Margin = new System.Windows.Forms.Padding(4);
             this.txtCouleur.Name = "txtCouleur";
             this.txtCouleur.Size = new System.Drawing.Size(213, 27);
-            this.txtCouleur.TabIndex = 1;
+            this.txtCouleur.TabIndex = 0;
             this.txtCouleur.Text = "ex. rouge, bleu, noire...";
             this.txtCouleur.Click += new System.EventHandler(this.txtCouleur_Click);
-            // 
-            // txtAnneeMini
-            // 
-            this.txtAnneeMini.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.txtAnneeMini.Location = new System.Drawing.Point(75, 33);
-            this.txtAnneeMini.Margin = new System.Windows.Forms.Padding(4);
-            this.txtAnneeMini.Name = "txtAnneeMini";
-            this.txtAnneeMini.Size = new System.Drawing.Size(151, 27);
-            this.txtAnneeMini.TabIndex = 0;
-            this.txtAnneeMini.Text = "Minimum";
-            this.txtAnneeMini.Click += new System.EventHandler(this.txtAnneeMini_Click);
             // 
             // Filtre
             // 

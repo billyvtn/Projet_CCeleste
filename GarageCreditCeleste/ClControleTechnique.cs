@@ -10,11 +10,13 @@ namespace GarageCreditCeleste
     {
         private string date;
         private string heure;
+        private int cout;
 
         public ClControleTechnique(string uneDate, string uneHeure)
         {
             date = uneDate;
             heure = uneHeure;
+            cout = 80;
         }
 
         public string GetDate()
@@ -25,6 +27,11 @@ namespace GarageCreditCeleste
         public string GetHeure()
         {
             return heure;
+        }
+
+        public int GetCout()
+        {
+            return cout;
         }
     }
 }
