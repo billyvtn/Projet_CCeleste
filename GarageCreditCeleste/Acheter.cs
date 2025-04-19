@@ -22,16 +22,30 @@ namespace GarageCreditCeleste
 
         private void Acheter_Load(object sender, EventArgs e)
         {
-            List<Voiture> lesVoitures = RecupererVoitures();
-
-            lsbVoituresDispo.Items.Clear();
-
-            foreach (Voiture uneVoit in lesVoitures)
+            if (Globales.Filtres.Count() == 0)
             {
-                lsbVoituresDispo.Items.Add($" {uneVoit.getMarque()}, {uneVoit.getModele()}, {uneVoit.getAnnee()}");
+                lesVoitures = RecupererVoitures();
+
+                lsbVoituresDispo.Items.Clear();
+
+                foreach (Voiture uneVoit in lesVoitures)
+                {
+                    lsbVoituresDispo.Items.Add($" {uneVoit.getMarque()}, {uneVoit.getModele()}, {uneVoit.getAnnee()}");
+                }
+            }
+            else
+            {
+                lesVoitures = AppliquerFiltre();
+
+                lsbVoituresDispo.Items.Clear();
+
+                foreach (Voiture uneVoit in lesVoitures)
+                {
+                    lsbVoituresDispo.Items.Add($" {uneVoit.getMarque()}, {uneVoit.getModele()}, {uneVoit.getAnnee()}");
+                }
             }
 
-            if(Globales.Type.Contains("Vente"))
+            if (Globales.Type.Contains("Vente"))
             {
                 lblPrixReduc.Visible = true;
                 lblReduc.Visible = true;
@@ -183,5 +197,84 @@ namespace GarageCreditCeleste
         }
 
         private void gpbDescription_Enter(object sender, EventArgs e){} //oups pas touche 
+
+        public List<Voiture> AppliquerFiltre()
+        {
+            List<Voiture> lesVoituresFiltrees = new List<Voiture>();
+            lesVoitures = RecupererVoitures();
+
+            foreach (Voiture vtr in lesVoitures)
+            {
+                bool verif = true;
+
+                if (Globales.Filtres.ContainsKey("PrixMin"))
+                {
+                    int prixMin = Convert.ToInt32(Globales.Filtres["PrixMin"]);
+                    if (vtr.getPrix() < prixMin) verif = false;
+                }
+
+                if (Globales.Filtres.ContainsKey("PrixMax"))
+                {
+                    int prixMax = Convert.ToInt32(Globales.Filtres["PrixMax"]);
+                    if (vtr.getPrix() > prixMax) verif = false;
+                }
+
+                if (Globales.Filtres.ContainsKey("AnneeMin"))
+                {
+                    int anneeMin = Convert.ToInt32(Globales.Filtres["AnneeMin"]);
+                    if (vtr.getAnnee() < anneeMin) verif = false;
+                }
+
+                if (Globales.Filtres.ContainsKey("AnneeMax"))
+                {
+                    int anneeMax = Convert.ToInt32(Globales.Filtres["AnneeMax"]);
+                    if (vtr.getAnnee() > anneeMax) verif = false;
+                }
+
+                if (Globales.Filtres.ContainsKey("KilometrageMin"))
+                {
+                    int kilometrageMin = Convert.ToInt32(Globales.Filtres["KilometrageMin"]);
+                    if (vtr.getKilometrage() < kilometrageMin) verif = false;
+                }
+
+                if (Globales.Filtres.ContainsKey("KilometrageMax"))
+                {
+                    int kilometrageMax = Convert.ToInt32(Globales.Filtres["KilometrageMax"]);
+                    if (vtr.getKilometrage() > kilometrageMax) verif = false;
+                }
+
+                if (Globales.Filtres.ContainsKey("PuissanceMin"))
+                {
+                    int puissanceMin = Convert.ToInt32(Globales.Filtres["PuissanceMin"]);
+                    if (vtr.getPuissance() < puissanceMin) verif = false;
+                }
+
+                if (Globales.Filtres.ContainsKey("PuissanceMax"))
+                {
+                    int puissanceMax = Convert.ToInt32(Globales.Filtres["PuissanceMax"]);
+                    if (vtr.getPuissance() > puissanceMax) verif = false;
+                }
+
+                if (Globales.Filtres.ContainsKey("Couleur"))
+                {
+                    string couleur = Globales.Filtres["Couleur"];
+                    if (vtr.getCouleur().ToLower() != couleur.ToLower()) verif = false;
+                }
+
+                if (Globales.Filtres.ContainsKey("Marque"))
+                {
+                    string marque = Globales.Filtres["Marque"];
+                    if (vtr.getMarque().ToLower() != marque.ToLower()) verif = false;
+                }
+
+                if (verif)
+                {
+                    lesVoituresFiltrees.Add(vtr);
+                }
+            }
+
+            return lesVoituresFiltrees;
+        }
+
     }
 }
