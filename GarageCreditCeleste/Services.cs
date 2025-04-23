@@ -19,10 +19,52 @@ namespace GarageCreditCeleste
 
         private void Services_Load(object sender, EventArgs e)
         {
+            if(Globales.listeVoituresDuClient.Count() == 1 && Globales.voiture == null)
+            {
+                groupBox1.Visible = false;
+                gpbDescription.Visible = true;
+
+                lblMarque.Text = Globales.listeVoituresDuClient[0].getMarque();
+                lblModele.Text = Globales.listeVoituresDuClient[0].getModele();
+                lblAnnee.Text = Globales.listeVoituresDuClient[0].getAnnee().ToString();
+                lblKilometrage.Text = Globales.listeVoituresDuClient[0].getKilometrage().ToString();
+                lblCouleur.Text = Globales.listeVoituresDuClient[0].getCouleur();
+                lblImmat.Text = Globales.listeVoituresDuClient[0].getImmatriculation();
+                lblPuissance.Text = Globales.listeVoituresDuClient[0].getPuissance().ToString();
+
+                if (Globales.Type.Contains("ControleTechnique"))
+                {
+                    btnControleTechnique.Enabled = false;
+                }
+                if (Globales.Type.Contains("Entretien"))
+                {
+                    btnEntretien.Enabled = false;
+                }
+            }
+            else if (Globales.listeVoituresDuClient.Count() > 1 && Globales.voiture == null)
+            {
+                groupBox1.Visible = false;
+                gpbSelection.Visible = true;
+                lsbVoituresClient.Items.Clear();
+                foreach (Voiture uneVoit in Globales.listeVoituresDuClient)
+                {
+                    lsbVoituresClient.Items.Add($" {uneVoit.getMarque()}, {uneVoit.getModele()}, {uneVoit.getAnnee()}");
+                }
+                btnControleTechnique.Enabled = false;
+                btnReparation.Enabled = false;
+                btnEntretien.Enabled = false;
+            }
+            else if(Globales.listeVoituresDuClient.Count() == 0)
+            {
+                btnControleTechnique.Enabled = false;
+                btnReparation.Enabled = false;
+                btnEntretien.Enabled = false;
+            }
             if(Globales.voiture != null)
             {
                 groupBox1.Visible = false;
                 gpbDescription.Visible = true;
+
                 lblMarque.Text = Globales.voiture.getMarque();
                 lblModele.Text = Globales.voiture.getModele();
                 lblAnnee.Text = Globales.voiture.getAnnee().ToString();
@@ -39,16 +81,6 @@ namespace GarageCreditCeleste
                 {
                     btnEntretien.Enabled = false;
                 }
-                if (Globales.Type.Contains("Reparation"))
-                {
-                    btnReparation.Enabled = false;
-                }
-            }
-            else
-            {
-                btnControleTechnique.Enabled = false;
-                btnReparation.Enabled = false;
-                btnEntretien.Enabled = false;
             }
 
         }
@@ -148,6 +180,36 @@ namespace GarageCreditCeleste
             btnEntretien.Enabled = false;
         }
 
-        
+        private void lsbVoituresClient_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSelectionner_Click(object sender, EventArgs e)
+        {
+            if (lsbVoituresClient.SelectedIndex  != -1)
+            {
+                Globales.voiture = Globales.listeVoituresDuClient[lsbVoituresClient.SelectedIndex];
+                gpbSelection.Visible = false;
+                gpbDescription.Visible = true;
+
+                lblMarque.Text = Globales.voiture.getMarque();
+                lblModele.Text = Globales.voiture.getModele();
+                lblAnnee.Text = Globales.voiture.getAnnee().ToString();
+                lblKilometrage.Text = Globales.voiture.getKilometrage().ToString();
+                lblCouleur.Text = Globales.voiture.getCouleur();
+                lblImmat.Text = Globales.voiture.getImmatriculation();
+                lblPuissance.Text = Globales.voiture.getPuissance().ToString();
+
+                btnControleTechnique.Enabled = true;
+                btnReparation.Enabled = true;
+                btnEntretien.Enabled = true;
+            }
+            else
+            {
+                MessageBox.Show("Veuillez sélectionner une de vos voitures.");
+            }
+            
+        }
     }
 }
