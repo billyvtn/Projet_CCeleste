@@ -31,9 +31,9 @@ namespace GarageCreditCeleste
             //enregistrer les infos du rdv dans un objet Globales
             List<string> lesEntretiens = new List<string>();
 
-            foreach (CheckBox chk in gboPiece.Controls)
+            foreach (Control ctrl in gboPiece.Controls)
             {
-                if (chk.Checked)
+                if (ctrl is CheckBox chk && chk.Checked)
                 {
                     lesEntretiens.Add(chk.Text);
                 }
@@ -110,14 +110,15 @@ namespace GarageCreditCeleste
         public bool verifGboPiece()
         {
             bool coche = false;
-            foreach (CheckBox chk in gboPiece.Controls)
+            foreach (Control ctrl in gboPiece.Controls)
             {
-                if (chk.Checked)
+                if (ctrl is CheckBox chk && chk.Checked)
                 {
                     coche = true;
                 }
             }
             return coche;
         }
+
     }
 }

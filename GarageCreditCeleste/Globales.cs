@@ -15,7 +15,6 @@ namespace GarageCreditCeleste
         public static Services services;
         public static Acheter acheter;
         public static Filtre filtre;
-        public static Reparation reparation;
         public static Entretien entretien;
         public static ControleTechnique controletechnique;
         public static Assurance frmAssurance;

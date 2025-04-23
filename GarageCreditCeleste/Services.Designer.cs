@@ -48,7 +48,6 @@ namespace GarageCreditCeleste
             this.label8 = new System.Windows.Forms.Label();
             this.btnEntretien = new System.Windows.Forms.Button();
             this.btnControleTechnique = new System.Windows.Forms.Button();
-            this.btnReparation = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnEnregistrer = new System.Windows.Forms.Button();
@@ -68,8 +67,8 @@ namespace GarageCreditCeleste
             this.lblPuissance = new System.Windows.Forms.Label();
             this.lblModele = new System.Windows.Forms.Label();
             this.gpbSelection = new System.Windows.Forms.GroupBox();
-            this.lsbVoituresClient = new System.Windows.Forms.ListBox();
             this.btnSelectionner = new System.Windows.Forms.Button();
+            this.lsbVoituresClient = new System.Windows.Forms.ListBox();
             this.groupBox1.SuspendLayout();
             this.gpbDescription.SuspendLayout();
             this.gpbSelection.SuspendLayout();
@@ -256,7 +255,7 @@ namespace GarageCreditCeleste
             // btnEntretien
             // 
             this.btnEntretien.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.btnEntretien.Location = new System.Drawing.Point(662, 198);
+            this.btnEntretien.Location = new System.Drawing.Point(622, 191);
             this.btnEntretien.Name = "btnEntretien";
             this.btnEntretien.Size = new System.Drawing.Size(110, 50);
             this.btnEntretien.TabIndex = 51;
@@ -267,24 +266,13 @@ namespace GarageCreditCeleste
             // btnControleTechnique
             // 
             this.btnControleTechnique.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.btnControleTechnique.Location = new System.Drawing.Point(546, 198);
+            this.btnControleTechnique.Location = new System.Drawing.Point(461, 191);
             this.btnControleTechnique.Name = "btnControleTechnique";
             this.btnControleTechnique.Size = new System.Drawing.Size(110, 50);
             this.btnControleTechnique.TabIndex = 50;
             this.btnControleTechnique.Text = "Contrôle technique";
             this.btnControleTechnique.UseVisualStyleBackColor = true;
             this.btnControleTechnique.Click += new System.EventHandler(this.btnControleTechnique_Click);
-            // 
-            // btnReparation
-            // 
-            this.btnReparation.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.btnReparation.Location = new System.Drawing.Point(430, 198);
-            this.btnReparation.Name = "btnReparation";
-            this.btnReparation.Size = new System.Drawing.Size(110, 50);
-            this.btnReparation.TabIndex = 49;
-            this.btnReparation.Text = "Réparation";
-            this.btnReparation.UseVisualStyleBackColor = true;
-            this.btnReparation.Click += new System.EventHandler(this.btnReparation_Click);
             // 
             // label2
             // 
@@ -488,17 +476,6 @@ namespace GarageCreditCeleste
             this.gpbSelection.Text = "Sélection de votre véhicule";
             this.gpbSelection.Visible = false;
             // 
-            // lsbVoituresClient
-            // 
-            this.lsbVoituresClient.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.lsbVoituresClient.FormattingEnabled = true;
-            this.lsbVoituresClient.ItemHeight = 18;
-            this.lsbVoituresClient.Location = new System.Drawing.Point(12, 23);
-            this.lsbVoituresClient.Name = "lsbVoituresClient";
-            this.lsbVoituresClient.Size = new System.Drawing.Size(274, 310);
-            this.lsbVoituresClient.TabIndex = 82;
-            this.lsbVoituresClient.SelectedIndexChanged += new System.EventHandler(this.lsbVoituresClient_SelectedIndexChanged);
-            // 
             // btnSelectionner
             // 
             this.btnSelectionner.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
@@ -509,6 +486,17 @@ namespace GarageCreditCeleste
             this.btnSelectionner.Text = "Sélectionner";
             this.btnSelectionner.UseVisualStyleBackColor = true;
             this.btnSelectionner.Click += new System.EventHandler(this.btnSelectionner_Click);
+            // 
+            // lsbVoituresClient
+            // 
+            this.lsbVoituresClient.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.lsbVoituresClient.FormattingEnabled = true;
+            this.lsbVoituresClient.ItemHeight = 18;
+            this.lsbVoituresClient.Location = new System.Drawing.Point(12, 23);
+            this.lsbVoituresClient.Name = "lsbVoituresClient";
+            this.lsbVoituresClient.Size = new System.Drawing.Size(274, 310);
+            this.lsbVoituresClient.TabIndex = 82;
+            this.lsbVoituresClient.SelectedIndexChanged += new System.EventHandler(this.lsbVoituresClient_SelectedIndexChanged);
             // 
             // Services
             // 
@@ -523,7 +511,6 @@ namespace GarageCreditCeleste
             this.Controls.Add(this.label8);
             this.Controls.Add(this.btnEntretien);
             this.Controls.Add(this.btnControleTechnique);
-            this.Controls.Add(this.btnReparation);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "Services";
@@ -560,7 +547,6 @@ namespace GarageCreditCeleste
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnEntretien;
         private System.Windows.Forms.Button btnControleTechnique;
-        private System.Windows.Forms.Button btnReparation;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnEnregistrer;
