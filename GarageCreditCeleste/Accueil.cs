@@ -722,7 +722,7 @@ namespace GarageCreditCeleste
             lblAdresse.Text = Globales.client.getAdresseNum() + " " + Globales.client.getAdresseVoie();
             lblVilleCP.Text = Globales.client.getVille() + " " + Globales.client.getCodePostal();
 
-            RecupererVehiculeDuClient();
+            RecupererVehiculesDuClient();
 
             btnServices.Enabled = true;
             btnAcheter.Enabled = true;
@@ -773,10 +773,12 @@ namespace GarageCreditCeleste
 
             return lesClients;
         }
-        private void RecupererVehiculeDuClient()
+        private void RecupererVehiculesDuClient()
         {
             string connectionString = "Server=localhost\\SQLEXPRESS;Database=PROJETCC_K;User Id=connEleveSio;Password=mdpEleveSi0;TrustServerCertificate=True;";
             string query = "SELECT * FROM VEHICULE WHERE idUtilisateur = (SELECT idUtilisateur FROM UTILISATEUR WHERE Email = @Email)";
+
+            List<Voiture> listeVoitures = new List<Voiture>();
 
             using (SqlConnection con = new SqlConnection(connectionString))
             using (SqlCommand cmd = new SqlCommand(query, con))
@@ -788,9 +790,9 @@ namespace GarageCreditCeleste
                     con.Open();
                     using (SqlDataReader reader = cmd.ExecuteReader())
                     {
-                        if (reader.Read())
+                        while (reader.Read()) // <- Boucle sur chaque ligne
                         {
-                            Globales.voiture = new Voiture(
+                            Voiture voiture = new Voiture(
                                 Convert.ToString(reader["Marque"]),
                                 Convert.ToString(reader["Modele"]),
                                 Convert.ToInt32(reader["Annee"]),
@@ -799,12 +801,17 @@ namespace GarageCreditCeleste
                                 Convert.ToInt32(reader["Puissance"]),
                                 Convert.ToString(reader["Immat"])
                             );
+
+                            listeVoitures.Add(voiture); // <- Ajout à la liste
                         }
                     }
+
+                    // Par exemple, stocker la liste dans une variable globale
+                    Globales.listeVoituresDuClient = listeVoitures;
                 }
                 catch (SqlException ex)
                 {
-                    MessageBox.Show($"Erreur lors de la récupération du véhicule : {ex.Message}");
+                    MessageBox.Show($"Erreur lors de la récupération des véhicules : {ex.Message}");
                 }
             }
         }

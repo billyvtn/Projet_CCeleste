@@ -35,5 +35,7 @@ namespace GarageCreditCeleste
 
         public static Dictionary<string, string> Filtres = new Dictionary<string, string>();
 
+        public static List<Voiture> listeVoituresDuClient = new List<Voiture>();
+
     }
 }
