@@ -54,7 +54,7 @@ namespace GarageCreditCeleste
             prix = prixR;
             statutDispo = false;
         }
-        public Voiture(string marqu, string model, int anne, int kilometrag, string couleu, int puissanc, string immat)
+        public Voiture(string marqu, string model, int anne, int kilometrag, string couleu, int puissanc, string immat, int prixC)
         {
             marque = marqu;
             modele = model;
@@ -63,6 +63,7 @@ namespace GarageCreditCeleste
             couleur = couleu;
             puissance = puissanc;
             immatriculation = immat;
+            prix = prixC;
         }
 
         public Voiture(string marqu)

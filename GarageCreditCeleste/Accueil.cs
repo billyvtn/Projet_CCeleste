@@ -74,7 +74,7 @@ namespace GarageCreditCeleste
                 lblAdresse.Text = Globales.client.getAdresseNum() + " " + Globales.client.getAdresseVoie();
                 lblVilleCP.Text = Globales.client.getVille() + " " + Globales.client.getCodePostal();
 
-                if (Globales.Type.Contains("Vente"))
+                if (Globales.Type.Contains("Vente1") || Globales.Type.Contains("Vente2"))
                 {
                     gpbVente.Visible = true;
 
@@ -121,15 +121,15 @@ namespace GarageCreditCeleste
                     lblTauxCredit.Text = Globales.credit.getTauxCredit().ToString() + " %";
                 }
 
-                if(Globales.Type.Contains("Achat") && !Globales.Type.Contains("Vente"))
+                if(Globales.Type.Contains("Achat") && !(Globales.Type.Contains("Vente1") || Globales.Type.Contains("Vente2")))
                 {
                     lblPrixTotal.Text = Globales.voiture.getPrix().ToString("C");
                 }
-                else if(!Globales.Type.Contains("Achat") && Globales.Type.Contains("Vente"))
+                else if(!Globales.Type.Contains("Achat") && (Globales.Type.Contains("Vente1") || Globales.Type.Contains("Vente2")))
                 {
                     lblPrixTotal.Text = Globales.voitureRachat.getPrix().ToString("C");
                 }
-                else if (Globales.Type.Contains("Achat") && Globales.Type.Contains("Vente"))
+                else if (Globales.Type.Contains("Achat") && (Globales.Type.Contains("Vente1") || Globales.Type.Contains("Vente2")))
                 {
                     lblPrixTotal.Text = (Globales.voiture.getPrix() - Globales.voitureRachat.getPrix()).ToString("C");
                 }
@@ -418,9 +418,13 @@ namespace GarageCreditCeleste
 
         private void btnConfirmer_Click(object sender, EventArgs e)
         {
-            if (Globales.Type.Contains("Vente"))
+            if (Globales.Type.Contains("Vente1"))
             {
                 ConfirmerVente();
+            }
+            if (Globales.Type.Contains("Vente2"))
+            {
+                //faire la nouvelle fonction
             }
             if (Globales.Type.Contains("Achat"))
             {
@@ -799,7 +803,8 @@ namespace GarageCreditCeleste
                                 Convert.ToInt32(reader["Kilometrage"]),
                                 Convert.ToString(reader["Couleur"]),
                                 Convert.ToInt32(reader["Puissance"]),
-                                Convert.ToString(reader["Immat"])
+                                Convert.ToString(reader["Immat"]),
+                                Convert.ToInt32(reader["Valeur"])
                             );
 
                             listeVoitures.Add(voiture); // <- Ajout à la liste
