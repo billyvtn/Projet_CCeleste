@@ -102,12 +102,6 @@
     <Compile Include="Globales.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Reparation.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Reparation.Designer.cs">
-      <DependentUpon>Reparation.cs</DependentUpon>
-    </Compile>
     <Compile Include="Services.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -154,9 +148,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Reparation.resx">
-      <DependentUpon>Reparation.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Services.resx">
       <DependentUpon>Services.cs</DependentUpon>
     </EmbeddedResource>

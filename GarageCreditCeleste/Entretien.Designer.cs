@@ -49,6 +49,14 @@ namespace GarageCreditCeleste
             this.calEntretien = new System.Windows.Forms.MonthCalendar();
             this.btnEnregistrer = new System.Windows.Forms.Button();
             this.gboPiece = new System.Windows.Forms.GroupBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.checkBox5 = new System.Windows.Forms.CheckBox();
             this.checkBox6 = new System.Windows.Forms.CheckBox();
             this.checkBox7 = new System.Windows.Forms.CheckBox();
@@ -57,14 +65,6 @@ namespace GarageCreditCeleste
             this.checkBox3 = new System.Windows.Forms.CheckBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -298,10 +298,82 @@ namespace GarageCreditCeleste
             this.gboPiece.TabStop = false;
             this.gboPiece.Text = "Pièce pour l\'entretien";
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(325, 169);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(44, 17);
+            this.label11.TabIndex = 15;
+            this.label11.Text = "350 €";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(370, 129);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(36, 17);
+            this.label10.TabIndex = 14;
+            this.label10.Text = "12 €";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(364, 88);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(36, 17);
+            this.label9.TabIndex = 13;
+            this.label9.Text = "10 €";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(200, 86);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(36, 17);
+            this.label7.TabIndex = 12;
+            this.label7.Text = "50 €";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(325, 46);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(36, 17);
+            this.label6.TabIndex = 11;
+            this.label6.Text = "10 €";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(150, 168);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(36, 17);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "40 €";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(128, 129);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(36, 17);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "50 €";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(150, 46);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(36, 17);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "60 €";
+            // 
             // checkBox5
             // 
             this.checkBox5.AutoSize = true;
-            this.checkBox5.Location = new System.Drawing.Point(240, 162);
+            this.checkBox5.Location = new System.Drawing.Point(240, 168);
             this.checkBox5.Name = "checkBox5";
             this.checkBox5.Size = new System.Drawing.Size(85, 21);
             this.checkBox5.TabIndex = 7;
@@ -311,7 +383,7 @@ namespace GarageCreditCeleste
             // checkBox6
             // 
             this.checkBox6.AutoSize = true;
-            this.checkBox6.Location = new System.Drawing.Point(240, 122);
+            this.checkBox6.Location = new System.Drawing.Point(240, 128);
             this.checkBox6.Name = "checkBox6";
             this.checkBox6.Size = new System.Drawing.Size(135, 21);
             this.checkBox6.TabIndex = 6;
@@ -321,7 +393,7 @@ namespace GarageCreditCeleste
             // checkBox7
             // 
             this.checkBox7.AutoSize = true;
-            this.checkBox7.Location = new System.Drawing.Point(240, 80);
+            this.checkBox7.Location = new System.Drawing.Point(240, 86);
             this.checkBox7.Name = "checkBox7";
             this.checkBox7.Size = new System.Drawing.Size(131, 21);
             this.checkBox7.TabIndex = 5;
@@ -331,7 +403,7 @@ namespace GarageCreditCeleste
             // checkBox8
             // 
             this.checkBox8.AutoSize = true;
-            this.checkBox8.Location = new System.Drawing.Point(240, 39);
+            this.checkBox8.Location = new System.Drawing.Point(240, 45);
             this.checkBox8.Name = "checkBox8";
             this.checkBox8.Size = new System.Drawing.Size(90, 21);
             this.checkBox8.TabIndex = 4;
@@ -341,7 +413,7 @@ namespace GarageCreditCeleste
             // checkBox4
             // 
             this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point(6, 161);
+            this.checkBox4.Location = new System.Drawing.Point(6, 167);
             this.checkBox4.Name = "checkBox4";
             this.checkBox4.Size = new System.Drawing.Size(146, 21);
             this.checkBox4.TabIndex = 3;
@@ -351,7 +423,7 @@ namespace GarageCreditCeleste
             // checkBox3
             // 
             this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(6, 122);
+            this.checkBox3.Location = new System.Drawing.Point(6, 128);
             this.checkBox3.Name = "checkBox3";
             this.checkBox3.Size = new System.Drawing.Size(125, 21);
             this.checkBox3.TabIndex = 2;
@@ -361,7 +433,7 @@ namespace GarageCreditCeleste
             // checkBox2
             // 
             this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(6, 79);
+            this.checkBox2.Location = new System.Drawing.Point(6, 85);
             this.checkBox2.Name = "checkBox2";
             this.checkBox2.Size = new System.Drawing.Size(194, 21);
             this.checkBox2.TabIndex = 1;
@@ -371,84 +443,12 @@ namespace GarageCreditCeleste
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(6, 39);
+            this.checkBox1.Location = new System.Drawing.Point(6, 45);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(148, 21);
             this.checkBox1.TabIndex = 0;
             this.checkBox1.Text = "Huile + filtre à huile";
             this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(150, 40);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(36, 17);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "60 €";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(128, 123);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(36, 17);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "50 €";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(150, 162);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(36, 17);
-            this.label5.TabIndex = 10;
-            this.label5.Text = "40 €";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(325, 40);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(36, 17);
-            this.label6.TabIndex = 11;
-            this.label6.Text = "10 €";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(200, 80);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(36, 17);
-            this.label7.TabIndex = 12;
-            this.label7.Text = "50 €";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(364, 82);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(36, 17);
-            this.label9.TabIndex = 13;
-            this.label9.Text = "10 €";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(370, 123);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(36, 17);
-            this.label10.TabIndex = 14;
-            this.label10.Text = "12 €";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(325, 163);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(44, 17);
-            this.label11.TabIndex = 15;
-            this.label11.Text = "350 €";
             // 
             // label13
             // 
