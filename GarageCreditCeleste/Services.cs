@@ -51,13 +51,11 @@ namespace GarageCreditCeleste
                     lsbVoituresClient.Items.Add($" {uneVoit.getMarque()}, {uneVoit.getModele()}, {uneVoit.getAnnee()}");
                 }
                 btnControleTechnique.Enabled = false;
-                btnReparation.Enabled = false;
                 btnEntretien.Enabled = false;
             }
             else if(Globales.listeVoituresDuClient.Count() == 0)
             {
                 btnControleTechnique.Enabled = false;
-                btnReparation.Enabled = false;
                 btnEntretien.Enabled = false;
             }
             if(Globales.voiture != null)
@@ -111,17 +109,11 @@ namespace GarageCreditCeleste
                 Globales.voiture = new Voiture(txtMarqueVoiture.Text, txtModeleVoiture.Text, Convert.ToInt32(txtAnneeVoiture.Text), Convert.ToInt32(txtKilometrageVoiture.Text), txtCouleurVoiture.Text, Convert.ToInt32(txtPuissanceVoiture.Text), txtImmatVoiture.Text, false);
                 MessageBox.Show("Les informations ont été enregistrées avec succès.", "Enregistrement", MessageBoxButtons.OK);
                 btnControleTechnique.Enabled = true;
-                btnReparation.Enabled = true;
                 btnEntretien.Enabled = true;
             }
         }
 
-        private void btnReparation_Click(object sender, EventArgs e)
-        {
-            Globales.reparation = new Reparation();
-            Globales.reparation.Show();
-            Globales.services.Close();
-        }
+        private void btnReparation_Click(object sender, EventArgs e){} //pas touche
 
         private void btnControleTechnique_Click(object sender, EventArgs e)
         {
@@ -140,43 +132,36 @@ namespace GarageCreditCeleste
         private void txtMarqueVoiture_TextChanged(object sender, EventArgs e)
         {
             btnControleTechnique.Enabled = false;
-            btnReparation.Enabled = false;
             btnEntretien.Enabled = false;
         }
         private void txtModeleVoiture_TextChanged(object sender, EventArgs e)
         {
             btnControleTechnique.Enabled = false;
-            btnReparation.Enabled = false;
             btnEntretien.Enabled = false;
         }
         private void txtAnneeVoiture_TextChanged(object sender, EventArgs e)
         {
             btnControleTechnique.Enabled = false;
-            btnReparation.Enabled = false;
             btnEntretien.Enabled = false;
         }
         private void txtKilometrageVoiture_TextChanged(object sender, EventArgs e)
         {
             btnControleTechnique.Enabled = false;
-            btnReparation.Enabled = false;
             btnEntretien.Enabled = false;
         }
         private void txtCouleurVoiture_TextChanged(object sender, EventArgs e)
         {
             btnControleTechnique.Enabled = false;
-            btnReparation.Enabled = false;
             btnEntretien.Enabled = false;
         }
         private void txtPuissanceVoiture_TextChanged(object sender, EventArgs e)
         {
             btnControleTechnique.Enabled = false;
-            btnReparation.Enabled = false;
             btnEntretien.Enabled = false;
         }
         private void txtImmatVoiture_TextChanged(object sender, EventArgs e)
         {
             btnControleTechnique.Enabled = false;
-            btnReparation.Enabled = false;
             btnEntretien.Enabled = false;
         }
 
@@ -202,7 +187,6 @@ namespace GarageCreditCeleste
                 lblPuissance.Text = Globales.voiture.getPuissance().ToString();
 
                 btnControleTechnique.Enabled = true;
-                btnReparation.Enabled = true;
                 btnEntretien.Enabled = true;
             }
             else
