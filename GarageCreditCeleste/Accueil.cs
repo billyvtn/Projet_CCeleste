@@ -8,6 +8,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using Syncfusion.Pdf;
+using Syncfusion.Pdf.Graphics;
+using Syncfusion.Licensing;
+using System.Drawing;
+using System.IO;
+
 
 namespace GarageCreditCeleste
 {
@@ -445,6 +451,119 @@ namespace GarageCreditCeleste
             }
         }
 
+        private void GenererTicketPDF()
+        {
+            PdfDocument doc = new PdfDocument();
+            PdfPage page = doc.Pages.Add();
+            PdfGraphics graphics = page.Graphics;
+
+            PdfFont titleFont = new PdfStandardFont(PdfFontFamily.Helvetica, 16, PdfFontStyle.Bold);
+            PdfFont sectionFont = new PdfStandardFont(PdfFontFamily.Helvetica, 13, PdfFontStyle.Bold);
+            PdfFont labelFont = new PdfStandardFont(PdfFontFamily.Helvetica, 12, PdfFontStyle.Bold);
+            PdfFont contentFont = new PdfStandardFont(PdfFontFamily.Helvetica, 12);
+
+            float y = 0;
+
+            graphics.DrawString("=== FACTURE ===", titleFont, PdfBrushes.Black, new Syncfusion.Drawing.PointF(180, y));
+            y += 40;
+
+            // Infos client
+            graphics.DrawString("Informations client", sectionFont, PdfBrushes.Black, new Syncfusion.Drawing.PointF(0, y)); y += 25;
+            graphics.DrawString("Nom : " + Globales.client.getNom(), contentFont, PdfBrushes.Black, new Syncfusion.Drawing.PointF(10, y)); y += 20;
+            graphics.DrawString("Prénom : " + Globales.client.getPrenom(), contentFont, PdfBrushes.Black, new Syncfusion.Drawing.PointF(10, y)); y += 20;
+            graphics.DrawString("Email : " + Globales.client.getEmail(), contentFont, PdfBrushes.Black, new Syncfusion.Drawing.PointF(10, y)); y += 30;
+
+            // Détection du type de service
+            bool achat = Globales.Type.Contains("Achat");
+            bool vente = Globales.Type.Contains("Vente");
+            bool entretien = Globales.Type.Contains("Entretien");
+            bool controleTechnique = Globales.Type.Contains("ControleTechnique");
+
+            if (achat)
+            {
+                graphics.DrawString("Détails de l'achat", sectionFont, PdfBrushes.Black, new Syncfusion.Drawing.PointF(0, y)); y += 25;
+                graphics.DrawString("Immatriculation : " + Globales.voiture.getImmatriculation(), contentFont, PdfBrushes.Black, new Syncfusion.Drawing.PointF(10, y)); y += 20;
+                graphics.DrawString("Marque : " + Globales.voiture.getMarque(), contentFont, PdfBrushes.Black, new Syncfusion.Drawing.PointF(10, y)); y += 20;
+                graphics.DrawString("Modèle : " + Globales.voiture.getModele(), contentFont, PdfBrushes.Black, new Syncfusion.Drawing.PointF(10, y)); y += 20;
+                graphics.DrawString("Année : " + Globales.voiture.getAnnee(), contentFont, PdfBrushes.Black, new Syncfusion.Drawing.PointF(10, y)); y += 20;
+                graphics.DrawString("Kilométrage : " + Globales.voiture.getKilometrage() + " km", contentFont, PdfBrushes.Black, new Syncfusion.Drawing.PointF(10, y)); y += 20;
+                graphics.DrawString("Couleur : " + Globales.voiture.getCouleur(), contentFont, PdfBrushes.Black, new Syncfusion.Drawing.PointF(10, y)); y += 20;
+                graphics.DrawString("Puissance : " + Globales.voiture.getPuissance() + " CV", contentFont, PdfBrushes.Black, new Syncfusion.Drawing.PointF(10, y)); y += 20;
+                graphics.DrawString("Date Achat : " + DateTime.Now.ToString("dd/MM/yyyy"), contentFont, PdfBrushes.Black, new Syncfusion.Drawing.PointF(10, y)); y += 30;
+
+                if (Globales.assurance != null)
+                {
+                    graphics.DrawString("Informations assurance", sectionFont, PdfBrushes.Black, new Syncfusion.Drawing.PointF(0, y)); y += 25;
+                    graphics.DrawString("Assurance : " + Globales.assurance.getTypeAssurance(), contentFont, PdfBrushes.Black, new Syncfusion.Drawing.PointF(10, y)); y += 20;
+                    graphics.DrawString("Mensualités : " + Globales.assurance.getMensualite() + " Euros", contentFont, PdfBrushes.Black, new Syncfusion.Drawing.PointF(10, y)); y += 20;
+                    graphics.DrawString("Début assurance : " + Globales.assurance.getDateDebutAssurance(), contentFont, PdfBrushes.Black, new Syncfusion.Drawing.PointF(10, y)); y += 30;
+                }
+
+                if (Globales.credit != null)
+                {
+                    graphics.DrawString("Informations crédit", sectionFont, PdfBrushes.Black, new Syncfusion.Drawing.PointF(0, y)); y += 25;
+                    graphics.DrawString("Durée du crédit : " + Globales.credit.getDureeCredit(), contentFont, PdfBrushes.Black, new Syncfusion.Drawing.PointF(10, y)); y += 20;
+                    graphics.DrawString("Mensualité : " + Globales.credit.getMensualiteCredit() + " Euros", contentFont, PdfBrushes.Black, new Syncfusion.Drawing.PointF(10, y)); y += 20;
+                    graphics.DrawString("Taux du crédit : " + Globales.credit.getTauxCredit() + " %", contentFont, PdfBrushes.Black, new Syncfusion.Drawing.PointF(10, y)); y += 30;
+                }
+
+                graphics.DrawString("Mode de paiement : " + cboModePaiement.SelectedItem.ToString(), labelFont, PdfBrushes.Black, new Syncfusion.Drawing.PointF(0, y)); y += 30;
+                graphics.DrawString("TOTAL : " + Globales.voiture.getPrix().ToString("0.00") + " Euros", titleFont, PdfBrushes.Black, new Syncfusion.Drawing.PointF(0, y)); y += 30;
+            }
+
+            if (vente)
+            {
+                graphics.DrawString("Détails de la vente", sectionFont, PdfBrushes.Black, new Syncfusion.Drawing.PointF(0, y)); y += 25;
+                graphics.DrawString("Immatriculation : " + Globales.voitureRachat.getImmatriculation(), contentFont, PdfBrushes.Black, new Syncfusion.Drawing.PointF(10, y)); y += 20;
+                graphics.DrawString("Marque : " + Globales.voitureRachat.getMarque(), contentFont, PdfBrushes.Black, new Syncfusion.Drawing.PointF(10, y)); y += 20;
+                graphics.DrawString("Modèle : " + Globales.voitureRachat.getModele(), contentFont, PdfBrushes.Black, new Syncfusion.Drawing.PointF(10, y)); y += 20;
+                graphics.DrawString("Année : " + Globales.voitureRachat.getAnnee(), contentFont, PdfBrushes.Black, new Syncfusion.Drawing.PointF(10, y)); y += 20;
+                graphics.DrawString("Kilométrage : " + Globales.voitureRachat.getKilometrage() + " km", contentFont, PdfBrushes.Black, new Syncfusion.Drawing.PointF(10, y)); y += 20;
+                graphics.DrawString("Puissance : " + Globales.voitureRachat.getPuissance() + " CV", contentFont, PdfBrushes.Black, new Syncfusion.Drawing.PointF(10, y)); y += 20;
+                graphics.DrawString("Date Vente : " + DateTime.Now.ToString("dd/MM/yyyy"), contentFont, PdfBrushes.Black, new Syncfusion.Drawing.PointF(10, y)); y += 20;
+                graphics.DrawString("Prix de vente : " + Globales.voitureRachat.getPrix().ToString("0.00") + " Euros", contentFont, PdfBrushes.Black, new Syncfusion.Drawing.PointF(10, y)); y += 20;
+                graphics.DrawString("Mode de paiement : " + cboModePaiement.SelectedItem.ToString(), contentFont, PdfBrushes.Black, new Syncfusion.Drawing.PointF(10, y)); y += 30;
+            }
+
+            if (entretien)
+            {
+                graphics.DrawString("Entretien", sectionFont, PdfBrushes.Black, new Syncfusion.Drawing.PointF(0, y)); y += 25;
+                graphics.DrawString("Date : " + Globales.Entretien.GetDate(), contentFont, PdfBrushes.Black, new Syncfusion.Drawing.PointF(10, y)); y += 20;
+                graphics.DrawString("Coût : " + TotalEntretien().ToString("0.00") + " EUROS", contentFont, PdfBrushes.Black, new Syncfusion.Drawing.PointF(10, y)); y += 20;
+                graphics.DrawString("Pièces utilisées :", labelFont, PdfBrushes.Black, new Syncfusion.Drawing.PointF(10, y)); y += 15;
+
+                foreach (string piece in Globales.Entretien.GetListeEntretien())
+                {
+                    graphics.DrawString("- " + piece, contentFont, PdfBrushes.Black, new Syncfusion.Drawing.PointF(20, y)); y += 15;
+                }
+                y += 20;
+            }
+
+            if (controleTechnique)
+            {
+                graphics.DrawString("Contrôle Technique", sectionFont, PdfBrushes.Black, new Syncfusion.Drawing.PointF(0, y)); y += 25;
+                graphics.DrawString("Date : " + Globales.controleTechnique.GetDate(), contentFont, PdfBrushes.Black, new Syncfusion.Drawing.PointF(10, y)); y += 20;
+                graphics.DrawString("Coût : " + Globales.controleTechnique.GetCout().ToString("0.00") + " Euros", contentFont, PdfBrushes.Black, new Syncfusion.Drawing.PointF(10, y)); y += 30;
+            }
+
+            double total = 0;
+            if (entretien) total += TotalEntretien();
+            if (controleTechnique) total += Globales.controleTechnique.GetCout();
+            if (entretien || controleTechnique)
+            {
+                graphics.DrawString("TOTAL : " + total.ToString("0.00") + " EUROS", titleFont, PdfBrushes.Black, new Syncfusion.Drawing.PointF(0, y));
+            }
+
+            string chemin = Path.Combine(Application.StartupPath, "ticket.pdf");
+            using (FileStream fs = new FileStream(chemin, FileMode.Create))
+            {
+                doc.Save(fs);
+            }
+            doc.Close(true);
+
+            MessageBox.Show("Ticket PDF généré : " + chemin);
+        }
+
         private void InsererClient()
         {
             //connexion au lycée : 
@@ -544,6 +663,7 @@ namespace GarageCreditCeleste
                         conn.Open();
                         cmd.ExecuteNonQuery();
                         MessageBox.Show("Achat confirmé avec succès !");
+                        GenererTicketPDF();
                     }
                     catch (Exception ex)
                     {
@@ -588,6 +708,7 @@ namespace GarageCreditCeleste
                         command.ExecuteNonQuery();
 
                         MessageBox.Show("Voiture insérée avec succès.", "Succès", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        GenererTicketPDF();
                     }
                     catch (SqlException ex)
                     {
@@ -689,6 +810,7 @@ namespace GarageCreditCeleste
                         }
 
                         MessageBox.Show("Service confirmé avec succès !");
+                        GenererTicketPDF();
                     }
                     catch (Exception ex)
                     {
@@ -839,4 +961,6 @@ namespace GarageCreditCeleste
 
         private void gpbEntretien_Enter(object sender, EventArgs e){} //pas touche
     }
+
+    
 }
