@@ -12,16 +12,28 @@ namespace GarageCreditCeleste
         private int monDuree;
         private double monTaux;
         private double monMensualite;
+        private int monApport;
+        private string dateDébut;
 
         public ClCredit()
         {
         }
 
-        public ClCredit(double montant, int duree, double taux)
+        public ClCredit(double montant, int duree, double taux, string date)
         {
             monMontant = montant;
             monDuree = duree;
             monTaux = taux;
+            dateDébut = date;
+        }
+
+        public ClCredit(double montant, int duree, double taux, int apport, string date)
+        {
+            monMontant = montant;
+            monDuree = duree;
+            monTaux = taux;
+            monApport = apport;
+            dateDébut = date;
         }
 
         public ClCredit(double montant, int duree, double taux, double mensualite)
@@ -37,6 +49,10 @@ namespace GarageCreditCeleste
             return monMontant;
         }
 
+        public double getMonApport()
+        {
+            return monApport;
+        }
         public int getDureeCredit()
         {
             return monDuree;
@@ -45,6 +61,11 @@ namespace GarageCreditCeleste
         public double getTauxCredit()
         {
             return monTaux;
+        }
+
+        public string getDate()
+        {
+            return dateDébut;
         }
 
         public double getMensualiteCredit()

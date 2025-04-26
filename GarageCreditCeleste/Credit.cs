@@ -37,15 +37,34 @@ namespace GarageCreditCeleste
             lblPuissance.Text = Globales.voiture.getPuissance().ToString();
             lblImmat.Text = Globales.voiture.getImmatriculation();
             lblPrix.Text = Globales.voiture.getPrix().ToString("C"); // Affichage en format monétaire
-
-            lblMontant.Text = Convert.ToString(Globales.voiture.getPrix());
+            if(Globales.Type.Contains("Vente1") || Globales.Type.Contains("Vente2"))
+            {
+                lblMontant.Text = Convert.ToString(Globales.voiture.getPrix() - Globales.voitureRachat.getPrix());
+            }
+            else
+            {
+                lblMontant.Text = Convert.ToString(Globales.voiture.getPrix());
+            }
+            
         }
         ClCredit unCredit;
         private void btnCalcul_Click(object sender, EventArgs e)
         {
             if (cbxDurée.Text != "" && txtTauxAnnuel.Text != "")
             {
-                unCredit = new ClCredit(Convert.ToDouble(lblMontant.Text), Convert.ToInt32(cbxDurée.Text), Convert.ToDouble(txtTauxAnnuel.Text));
+                if (txtApport.Text == "" || txtApport.Text == "0")
+                {
+                    unCredit = new ClCredit(Convert.ToDouble(lblMontant.Text), Convert.ToInt32(cbxDurée.Text), Convert.ToDouble(txtTauxAnnuel.Text), DateTime.Now.AddMonths(1).ToString("dd/MM/yyyy"));
+                    btnConfirmer.Enabled = true;
+                    lblMens.Text = Convert.ToString(unCredit.getMensualiteCredit());
+                }
+                else
+                {
+                    unCredit = new ClCredit(Convert.ToDouble(lblMontant.Text), Convert.ToInt32(cbxDurée.Text), Convert.ToDouble(txtTauxAnnuel.Text), Convert.ToInt32(txtApport.Text), DateTime.Now.AddMonths(1).ToString("dd/MM/yyyy"));
+                    btnConfirmer.Enabled = true;
+                    lblMens.Text = Convert.ToString(unCredit.getMensualiteCredit());
+                }
+                //unCredit = new ClCredit(Convert.ToDouble(lblMontant.Text), Convert.ToInt32(cbxDurée.Text), Convert.ToDouble(txtTauxAnnuel.Text));
                 btnConfirmer.Enabled = true;
                 lblMens.Text = Convert.ToString(unCredit.getMensualiteCredit());
             }

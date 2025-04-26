@@ -10,6 +10,7 @@ namespace GarageCreditCeleste
     {
         //Déclaration des objets fenêtre
         public static Demarrage demarrage;
+        public static Sortie sortie;
         public static Accueil accueil;
         public static Vendre vendre;
         public static Services services;
