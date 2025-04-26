@@ -48,7 +48,7 @@ namespace GarageCreditCeleste
             {
                 Globales.accueil = new Accueil();
                 Globales.accueil.Show();
-                Globales.controletechnique.Close();
+                Globales.entretien.Close();
             }
             else
             {
