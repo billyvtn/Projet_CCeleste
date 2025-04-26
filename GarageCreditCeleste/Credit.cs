@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 
 namespace GarageCreditCeleste
 {
@@ -76,14 +77,42 @@ namespace GarageCreditCeleste
 
         private void txtApport_TextChanged(object sender, EventArgs e)
         {
-            btnCalcul.Enabled = false;
-            btnApport.Enabled = true;
-            if (txtApport.Text == "")
+            
+            double prix;
+
+            if (Globales.Type.Contains("Vente1") || Globales.Type.Contains("Vente2"))
             {
-                lblMontant.Text = Convert.ToString(Globales.voiture.getPrix());
-                btnCalcul.Enabled = true;
-                btnApport.Enabled = false;
+                prix = Globales.voiture.getPrix() - Globales.voitureRachat.getPrix();
             }
+            else
+            {
+                prix = Globales.voiture.getPrix();
+            }
+
+            if (!string.IsNullOrEmpty(txtApport.Text) && Regex.IsMatch(txtApport.Text, @"^\d+$"))
+            {
+                int apport = Convert.ToInt32(txtApport.Text);
+
+                if (apport >= prix)
+                {
+                    lblMontant.Text = Convert.ToString(Globales.voiture.getPrix());
+                    btnCalcul.Enabled = false;
+                    btnApport.Enabled = false;
+                    MessageBox.Show("L'apport ne peut pas être supérieur au montant du crédit.");
+                    txtApport.Text = "";
+                }
+                else
+                {
+                    btnCalcul.Enabled = false;
+                    btnApport.Enabled = true;
+                }
+            }
+            else
+            {
+                //MessageBox.Show("Veuillez entrer un montant valide (chiffres uniquement).");
+                txtApport.Text = "";
+            }
+
             lblMens.Text = "";
             btnConfirmer.Enabled = false;
 
