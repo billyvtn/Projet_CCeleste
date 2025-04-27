@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 
 namespace GarageCreditCeleste
 {
@@ -37,15 +38,34 @@ namespace GarageCreditCeleste
             lblPuissance.Text = Globales.voiture.getPuissance().ToString();
             lblImmat.Text = Globales.voiture.getImmatriculation();
             lblPrix.Text = Globales.voiture.getPrix().ToString("C"); // Affichage en format monétaire
-
-            lblMontant.Text = Convert.ToString(Globales.voiture.getPrix());
+            if(Globales.Type.Contains("Vente1") || Globales.Type.Contains("Vente2"))
+            {
+                lblMontant.Text = Convert.ToString(Globales.voiture.getPrix() - Globales.voitureRachat.getPrix());
+            }
+            else
+            {
+                lblMontant.Text = Convert.ToString(Globales.voiture.getPrix());
+            }
+            
         }
         ClCredit unCredit;
         private void btnCalcul_Click(object sender, EventArgs e)
         {
             if (cbxDurée.Text != "" && txtTauxAnnuel.Text != "")
             {
-                unCredit = new ClCredit(Convert.ToDouble(lblMontant.Text), Convert.ToInt32(cbxDurée.Text), Convert.ToDouble(txtTauxAnnuel.Text));
+                if (txtApport.Text == "" || txtApport.Text == "0")
+                {
+                    unCredit = new ClCredit(Convert.ToDouble(lblMontant.Text), Convert.ToInt32(cbxDurée.Text), Convert.ToDouble(txtTauxAnnuel.Text), DateTime.Now.AddMonths(1).ToString("dd/MM/yyyy"));
+                    btnConfirmer.Enabled = true;
+                    lblMens.Text = Convert.ToString(unCredit.getMensualiteCredit());
+                }
+                else
+                {
+                    unCredit = new ClCredit(Convert.ToDouble(lblMontant.Text), Convert.ToInt32(cbxDurée.Text), Convert.ToDouble(txtTauxAnnuel.Text), Convert.ToInt32(txtApport.Text), DateTime.Now.AddMonths(1).ToString("dd/MM/yyyy"));
+                    btnConfirmer.Enabled = true;
+                    lblMens.Text = Convert.ToString(unCredit.getMensualiteCredit());
+                }
+                //unCredit = new ClCredit(Convert.ToDouble(lblMontant.Text), Convert.ToInt32(cbxDurée.Text), Convert.ToDouble(txtTauxAnnuel.Text));
                 btnConfirmer.Enabled = true;
                 lblMens.Text = Convert.ToString(unCredit.getMensualiteCredit());
             }
@@ -57,14 +77,42 @@ namespace GarageCreditCeleste
 
         private void txtApport_TextChanged(object sender, EventArgs e)
         {
-            btnCalcul.Enabled = false;
-            btnApport.Enabled = true;
-            if (txtApport.Text == "")
+            
+            double prix;
+
+            if (Globales.Type.Contains("Vente1") || Globales.Type.Contains("Vente2"))
             {
-                lblMontant.Text = Convert.ToString(Globales.voiture.getPrix());
-                btnCalcul.Enabled = true;
-                btnApport.Enabled = false;
+                prix = Globales.voiture.getPrix() - Globales.voitureRachat.getPrix();
             }
+            else
+            {
+                prix = Globales.voiture.getPrix();
+            }
+
+            if (!string.IsNullOrEmpty(txtApport.Text) && Regex.IsMatch(txtApport.Text, @"^\d+$"))
+            {
+                int apport = Convert.ToInt32(txtApport.Text);
+
+                if (apport >= prix)
+                {
+                    lblMontant.Text = Convert.ToString(Globales.voiture.getPrix());
+                    btnCalcul.Enabled = false;
+                    btnApport.Enabled = false;
+                    MessageBox.Show("L'apport ne peut pas être supérieur au montant du crédit.");
+                    txtApport.Text = "";
+                }
+                else
+                {
+                    btnCalcul.Enabled = false;
+                    btnApport.Enabled = true;
+                }
+            }
+            else
+            {
+                //MessageBox.Show("Veuillez entrer un montant valide (chiffres uniquement).");
+                txtApport.Text = "";
+            }
+
             lblMens.Text = "";
             btnConfirmer.Enabled = false;
 

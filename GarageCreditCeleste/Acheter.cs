@@ -45,7 +45,7 @@ namespace GarageCreditCeleste
                 }
             }
 
-            if (Globales.Type.Contains("Vente"))
+            if (Globales.Type.Contains("Vente1") || Globales.Type.Contains("Vente2"))
             {
                 lblPrixReduc.Visible = true;
                 lblReduc.Visible = true;
@@ -91,25 +91,52 @@ namespace GarageCreditCeleste
             }
             else if (choix == DialogResult.No)
             {
-                // Afficher un message avec deux choix
-                DialogResult choix2 = MessageBox.Show(
-                    "Voulez-vous payez votre voiture avec un crédit ?",
-                    "Finalisation de l'achat",
-                    MessageBoxButtons.YesNo,
-                    MessageBoxIcon.Question
-                );
+                if (Globales.voitureRachat != null)
+                {
+                    if ((Globales.voiture.getPrix() - Globales.voitureRachat.getPrix()) > 0)
+                    {
+                        // Afficher un message avec deux choix
+                        DialogResult choix2 = MessageBox.Show(
+                            "Voulez-vous payez votre voiture avec un crédit ?",
+                            "Finalisation de l'achat",
+                            MessageBoxButtons.YesNo,
+                            MessageBoxIcon.Question);
 
-                if (choix2 == DialogResult.Yes)
-                {
-                    Globales.frmCredit = new Credit();
-                    Globales.frmCredit.Show();
-                    Globales.acheter.Close();
+                        if (choix2 == DialogResult.Yes)
+                        {
+                            Globales.frmCredit = new Credit();
+                            Globales.frmCredit.Show();
+                            Globales.acheter.Close();
+                        }
+                        else if (choix2 == DialogResult.No)
+                        {
+                            Globales.accueil = new Accueil();
+                            Globales.accueil.Show();
+                            Globales.acheter.Close();
+                        }
+                    }
                 }
-                else if (choix2 == DialogResult.No)
+                else
                 {
-                    Globales.accueil = new Accueil();
-                    Globales.accueil.Show();
-                    Globales.acheter.Close();
+                    // Afficher un message avec deux choix
+                    DialogResult choix2 = MessageBox.Show(
+                        "Voulez-vous payez votre voiture avec un crédit ?",
+                        "Finalisation de l'achat",
+                        MessageBoxButtons.YesNo,
+                        MessageBoxIcon.Question);
+
+                    if (choix2 == DialogResult.Yes)
+                    {
+                        Globales.frmCredit = new Credit();
+                        Globales.frmCredit.Show();
+                        Globales.acheter.Close();
+                    }
+                    else if (choix2 == DialogResult.No)
+                    {
+                        Globales.accueil = new Accueil();
+                        Globales.accueil.Show();
+                        Globales.acheter.Close();
+                    }
                 }
             }
 

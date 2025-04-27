@@ -112,27 +112,92 @@ namespace GarageCreditCeleste
 
             MessageBox.Show("Les informations ont été enregistrées avec succès.", "Enregistrement", MessageBoxButtons.OK);
 
-            DialogResult choix = MessageBox.Show(
-                "Voulez-vous payez votre voiture avec un crédit ?",
-                "Finalisation de l'achat",
-                MessageBoxButtons.YesNo,
-                MessageBoxIcon.Question
-            );
+            //if ((Globales.voiture.getPrix() - Globales.voitureRachat.getPrix()) > 0)
+            //{
+            //    DialogResult choix = MessageBox.Show(
+            //    "Voulez-vous payez votre voiture avec un crédit ?",
+            //    "Finalisation de l'achat",
+            //    MessageBoxButtons.YesNo,
+            //    MessageBoxIcon.Question);
+
+            //    if (choix == DialogResult.Yes)
+            //    {
+            //        Globales.frmCredit = new Credit();
+            //        Globales.frmCredit.Show();
+            //        Globales.frmAssurance.Close();
+            //    }
+            //    else if (choix == DialogResult.No)
+            //    {
+            //        Globales.accueil = new Accueil();
+            //        Globales.accueil.Show();
+            //        Globales.frmAssurance.Close();
+            //    }
+            //}
+            //else
+            //{
+            //    Globales.accueil = new Accueil();
+            //    Globales.accueil.Show();
+            //    Globales.frmAssurance.Close();
+            //}
+
+            if (Globales.voitureRachat != null)
+            {
+                if ((Globales.voiture.getPrix() - Globales.voitureRachat.getPrix()) > 0)
+                {
+                    DialogResult choix = MessageBox.Show(
+                        "Voulez-vous payer votre voiture avec un crédit ?",
+                        "Finalisation de l'achat",
+                        MessageBoxButtons.YesNo,
+                        MessageBoxIcon.Question);
+
+                    if (choix == DialogResult.Yes)
+                    {
+                        Globales.frmCredit = new Credit();
+                        Globales.frmCredit.Show();
+                        Globales.frmAssurance.Close();
+                    }
+                    else if (choix == DialogResult.No)
+                    {
+                        Globales.accueil = new Accueil();
+                        Globales.accueil.Show();
+                        Globales.frmAssurance.Close();
+                    }
+                }
+                else
+                {
+                    Globales.accueil = new Accueil();
+                    Globales.accueil.Show();
+                    Globales.frmAssurance.Close();
+                }
+            }
+            else
+            {
+                DialogResult choix = MessageBox.Show(
+                        "Voulez-vous payer votre voiture avec un crédit ?",
+                        "Finalisation de l'achat",
+                        MessageBoxButtons.YesNo,
+                        MessageBoxIcon.Question);
+
+                if (choix == DialogResult.Yes)
+                {
+                    Globales.frmCredit = new Credit();
+                    Globales.frmCredit.Show();
+                    Globales.frmAssurance.Close();
+                }
+                else if (choix == DialogResult.No)
+                {
+                    Globales.accueil = new Accueil();
+                    Globales.accueil.Show();
+                    Globales.frmAssurance.Close();
+                }
+
+            }
+
+
 
             Globales.Type.Add("Assurance");
 
-            if (choix == DialogResult.Yes)
-            {
-                Globales.frmCredit = new Credit();
-                Globales.frmCredit.Show();
-                Globales.frmAssurance.Close();
-            }
-            else if (choix == DialogResult.No)
-            {
-                Globales.accueil = new Accueil();
-                Globales.accueil.Show();
-                Globales.frmAssurance.Close();
-            }
+            
         }
     }
 }

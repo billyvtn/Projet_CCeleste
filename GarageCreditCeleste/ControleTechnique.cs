@@ -35,7 +35,7 @@ namespace GarageCreditCeleste
 
             MessageBox.Show("Les informations ont été enregistrées avec succès.", "Enregistrement", MessageBoxButtons.OK);
 
-            if (Globales.Type.Contains("ControleTechnique") && Globales.Type.Contains("Entretien") && Globales.Type.Contains("Reparation"))
+            if (Globales.Type.Contains("ControleTechnique") && Globales.Type.Contains("Entretien"))
             {
                 Globales.accueil = new Accueil();
                 Globales.accueil.Show();
