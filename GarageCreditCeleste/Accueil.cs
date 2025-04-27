@@ -570,7 +570,14 @@ namespace GarageCreditCeleste
                     graphics.DrawString("Mode de paiement : " + cboModePaiement.SelectedItem.ToString(), labelFont, PdfBrushes.Black, new Syncfusion.Drawing.PointF(x1, y)); y += 20;
                     if (Globales.Type.Contains("Achat") && (Globales.Type.Contains("Vente1") || Globales.Type.Contains("Vente2")))
                     {
-                        graphics.DrawString("TOTAL : " + (Globales.voiture.getPrix() - Globales.voitureRachat.getPrix()).ToString("C") + " Euros", titleFont, PdfBrushes.Black, new Syncfusion.Drawing.PointF(x1, y)); y += 30;
+                        if((Globales.voiture.getPrix() - Globales.voitureRachat.getPrix()) > 0)
+                        {
+                            graphics.DrawString("TOTAL A VOTRE CHARGE : " + (Globales.voiture.getPrix() - Globales.voitureRachat.getPrix()).ToString("C") + " Euros", titleFont, PdfBrushes.Black, new Syncfusion.Drawing.PointF(x1, y)); y += 30;
+                        }
+                        else
+                        {
+                            graphics.DrawString("TOTAL A NOTRE CHARGE: " + (Globales.voiture.getPrix() - Globales.voitureRachat.getPrix()).ToString("C") + " Euros", titleFont, PdfBrushes.Black, new Syncfusion.Drawing.PointF(x1, y)); y += 30;
+                        }
                     }
                     else
                     {
