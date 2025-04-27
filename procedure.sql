@@ -30,6 +30,10 @@ IF OBJECT_ID('dbo.ConfirmerServices', 'P') IS NOT NULL
     DROP PROCEDURE dbo.ConfirmerServices;
 GO
 
+IF OBJECT_ID('dbo.MajVoitureEtVente', 'P') IS NOT NULL
+    DROP PROCEDURE dbo.MajVoitureEtVente;
+GO
+
 -- Création de la procédure InsClient
 CREATE PROCEDURE dbo.InsClient
     @Civ BIT,
@@ -123,11 +127,12 @@ CREATE PROCEDURE dbo.InsCredit
     @MontantTotal INT,
     @Mensualite INT,
     @Duree INT,
-    @Taux INT
+    @Taux INT,
+	@DateDebutCredit VARCHAR(50)
 AS
 BEGIN
-    INSERT INTO CREDIT (MontantTotal, Mensualite, Duree, Taux)
-    VALUES (@MontantTotal, @Mensualite, @Duree, @Taux);
+    INSERT INTO CREDIT (MontantTotal, Mensualite, Duree, Taux, DateDebutCredit)
+    VALUES (@MontantTotal, @Mensualite, @Duree, @Taux, @DateDebutCredit);
 END;
 GO
 
@@ -170,6 +175,7 @@ CREATE PROCEDURE dbo.ConfirmerAchatVoiture
     @Mensualite INT = NULL,
     @Duree INT = NULL,
     @Taux INT = NULL,
+	@DateDebutCredit VARCHAR(50) = NULL,
 
     -- Champs de l'assurance (optionnels)
     @AvecAssurance BIT,
@@ -202,7 +208,7 @@ BEGIN
         -- Si crédit, insérer et récupérer id
         IF @AvecCredit = 1
         BEGIN
-            EXEC dbo.InsCredit @MontantTotal, @Mensualite, @Duree, @Taux;
+            EXEC dbo.InsCredit @MontantTotal, @Mensualite, @Duree, @Taux, @DateDebutCredit;
 
             SELECT TOP 1 @idCredit = idCredit FROM CREDIT ORDER BY idCredit DESC;
         END
@@ -241,21 +247,43 @@ CREATE PROCEDURE ConfirmerServices
     @DateEntretien VARCHAR(50) = NULL,
     @CoutEntretien INT = NULL,
     @DateCT VARCHAR(50) = NULL,
-    @CoutCT INT = NULL
+    @CoutCT INT = NULL,
+    -- Ajout de paramètres supplémentaires pour créer un nouveau véhicule si besoin
+    @Marque VARCHAR(50) = NULL,
+    @Modele VARCHAR(50) = NULL,
+    @Annee INT = NULL,
+	@Valeur DECIMAL(15,2) = NULL,
+    @Couleur VARCHAR(50) = NULL,
+    @Kilometrage INT = NULL,
+    @Puissance INT = NULL
 AS
 BEGIN
     SET NOCOUNT ON;
 
     DECLARE @idVehicule INT;
+    DECLARE @idUtilisateur INT;
 
     -- Récupérer l'id du véhicule via son immatriculation
     SELECT @idVehicule = idVehicule FROM VEHICULE WHERE Immat = @Immat;
 
-    -- Sécurité : si le véhicule n'existe pas
+    -- Si le véhicule n'existe pas, on l'insère
     IF @idVehicule IS NULL
     BEGIN
-        RAISERROR('Véhicule non trouvé avec cette immatriculation.', 16, 1);
-        RETURN;
+        -- Essayer de récupérer l'utilisateur
+        SELECT @idUtilisateur = idUtilisateur FROM UTILISATEUR WHERE Email = @Email;
+
+        IF @idUtilisateur IS NULL
+        BEGIN
+            RAISERROR('Utilisateur non trouvé avec cet email.', 16, 1);
+            RETURN;
+        END
+
+        -- Insérer le véhicule 
+        INSERT INTO VEHICULE (Marque, Modele, Annee, Valeur, Kilometrage, Couleur, Puissance, StatutDisp, Immat, idUtilisateur)
+        VALUES (@Marque, @Modele, @Annee, @Valeur, @Kilometrage, @Couleur, @Puissance, 0, @Immat, @idUtilisateur);
+
+        -- Récupérer l'ID de la voiture insérée
+        SELECT @idVehicule = idVehicule FROM VEHICULE WHERE Immat = @Immat;
     END
 
     -- Ajouter un entretien si demandé
@@ -272,5 +300,60 @@ BEGIN
         VALUES (@DateCT, @CoutCT, @ModePaiement, @idVehicule);
     END
 END
+GO
+
+-- Création de la procédure MajVoitureEtVente
+CREATE PROCEDURE dbo.MajVoitureEtVente
+    @Immat VARCHAR(50),
+    @PrixRachat DECIMAL(15,2),
+    @DateVente VARCHAR(50),
+    @ModePaiement VARCHAR(50),
+    @EmailUtilisateur VARCHAR(100) 
+AS
+BEGIN
+    DECLARE @idVehicule INT;
+    DECLARE @idUtilisateur INT;
+
+    BEGIN TRANSACTION;
+
+    BEGIN TRY
+        -- Récupérer l'id du véhicule via l'immatriculation
+        SELECT @idVehicule = idVehicule FROM VEHICULE WHERE Immat = @Immat;
+
+        IF @idVehicule IS NULL
+        BEGIN
+            RAISERROR('Véhicule non trouvé avec cette immatriculation.', 16, 1);
+        END
+
+        -- Récupérer l'id du vendeur (utilisateur) via son email
+        SELECT @idUtilisateur = idUtilisateur FROM UTILISATEUR WHERE Email = @EmailUtilisateur;
+
+        IF @idUtilisateur IS NULL
+        BEGIN
+            RAISERROR('Utilisateur non trouvé avec cet email.', 16, 1);
+        END
+
+        -- Mettre à jour le véhicule : dispo, nouvelle valeur, et enlever l'ancien propriétaire
+        UPDATE VEHICULE
+        SET 
+            StatutDisp = 1,
+            Valeur = @PrixRachat * 1.2,
+            idUtilisateur = NULL
+        WHERE idVehicule = @idVehicule;
+
+        -- Insérer la vente
+        INSERT INTO VENTE (PrixVente, DateVente, ModePaiement, idUtilisateur, idVehicule)
+        VALUES (@PrixRachat, @DateVente, @ModePaiement, @idUtilisateur, @idVehicule);
+
+        COMMIT TRANSACTION;
+    END TRY
+    BEGIN CATCH
+        DECLARE @ErrorMessage NVARCHAR(4000);
+        SET @ErrorMessage = ERROR_MESSAGE();
+
+        ROLLBACK TRANSACTION;
+        RAISERROR(@ErrorMessage, 16, 1);
+    END CATCH
+END;
 GO
 

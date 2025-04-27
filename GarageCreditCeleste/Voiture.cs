@@ -18,7 +18,7 @@ namespace GarageCreditCeleste
         private bool statutDispo;
         private double prix;
 
-        public Voiture(string marqu, string model, int anne, int kilometrag, string couleu, int puissanc, string immat, bool statutD)
+        public Voiture(string marqu, string model, int anne, int kilometrag, string couleu, int puissanc, string immat, int prixN, bool statutD)
         {
             marque = marqu;
             modele = model;
@@ -27,6 +27,7 @@ namespace GarageCreditCeleste
             couleur = couleu;
             puissance = puissanc;
             immatriculation = immat;
+            prix = prixN;
             statutDispo = statutD;
         }
 

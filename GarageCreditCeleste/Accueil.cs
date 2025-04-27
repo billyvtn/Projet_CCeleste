@@ -450,6 +450,7 @@ namespace GarageCreditCeleste
                 btnEnregistrer.Enabled = false;
                 btnConnecter.Enabled = false;
                 MessageBox.Show("Les informations ont été enregistrées avec succès.", "Enregistrement", MessageBoxButtons.OK);
+                Globales.Type.Add("NouveauClient");
             }
         }
 
@@ -463,7 +464,7 @@ namespace GarageCreditCeleste
             }
             if (Globales.Type.Contains("Vente2"))
             {
-                //faire la nouvelle fonction
+                ConfirmerRachatVoitureExistante();
             }
             if (Globales.Type.Contains("Achat"))
             {
@@ -482,9 +483,12 @@ namespace GarageCreditCeleste
             {
                 ConfirmerServices();
             }
-        }
 
-       
+            GenererTicketPDF();
+            Globales.sortie = new Sortie();
+            Globales.sortie.Show();
+            Globales.accueil.Close();
+        }
 
         private void GenererTicketPDF()
         {
@@ -615,14 +619,14 @@ namespace GarageCreditCeleste
                 graphics.DrawString("TOTAL : " + total.ToString("0.00") + " EUROS", titleFont, PdfBrushes.Black, new Syncfusion.Drawing.PointF(x1, y));
             }
 
-            string chemin = Path.Combine(Application.StartupPath, "ticket.pdf");
+            string chemin = Path.Combine(Application.StartupPath, "facture.pdf");
             using (FileStream fs = new FileStream(chemin, FileMode.Create))
             {
                 doc.Save(fs);
             }
             doc.Close(true);
 
-            MessageBox.Show("Ticket PDF généré : " + chemin);
+            MessageBox.Show("Facture PDF généré : " + chemin);
         }
 
         private void InsererClient()
@@ -696,6 +700,7 @@ namespace GarageCreditCeleste
                         cmd.Parameters.AddWithValue("@Mensualite", Convert.ToInt32(Globales.credit.getMensualiteCredit()));
                         cmd.Parameters.AddWithValue("@Duree", Convert.ToInt32(Globales.credit.getDureeCredit()));
                         cmd.Parameters.AddWithValue("@Taux", Convert.ToInt32(Globales.credit.getTauxCredit()));
+                        cmd.Parameters.AddWithValue("@DateDebutCredit", Globales.credit.getDate());
                     }
                     else
                     {
@@ -703,6 +708,7 @@ namespace GarageCreditCeleste
                         cmd.Parameters.AddWithValue("@Mensualite", DBNull.Value);
                         cmd.Parameters.AddWithValue("@Duree", DBNull.Value);
                         cmd.Parameters.AddWithValue("@Taux", DBNull.Value);
+                        cmd.Parameters.AddWithValue("@DateDebutCredit", DBNull.Value);
                     }
 
                     // Paramètres assurance (si applicable)
@@ -724,10 +730,7 @@ namespace GarageCreditCeleste
                         conn.Open();
                         cmd.ExecuteNonQuery();
                         MessageBox.Show("Achat confirmé avec succès !");
-                        GenererTicketPDF();
-                        Globales.sortie = new Sortie();
-                        Globales.sortie.Show();
-                        Globales.accueil.Close();
+
                     }
                     catch (Exception ex)
                     {
@@ -772,10 +775,7 @@ namespace GarageCreditCeleste
                         command.ExecuteNonQuery();
 
                         MessageBox.Show("Voiture insérée avec succès.", "Succès", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        GenererTicketPDF();
-                        Globales.sortie = new Sortie();
-                        Globales.sortie.Show();
-                        Globales.accueil.Close();
+
                     }
                     catch (SqlException ex)
                     {
@@ -784,6 +784,41 @@ namespace GarageCreditCeleste
                 }
             }
         }
+        private void ConfirmerRachatVoitureExistante()
+        {
+            //connexion au lycée : 
+            //string connectionString = "Data Source=10.129.184.106;User Id=connEleveSio;password=mdpEleveSi0;Initial Catalog=PROJETCC_K";
+            //connexion à la maison :
+            string connectionString = "Server=localhost\\SQLEXPRESS;Database=PROJETCC_K;User Id=connEleveSio;Password=mdpEleveSi0;TrustServerCertificate=True;";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                using (SqlCommand command = new SqlCommand("MajVoitureEtVente", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    try
+                    {
+                        command.Parameters.AddWithValue("@Immat", Globales.voitureRachat.getImmatriculation());
+                        command.Parameters.AddWithValue("@PrixRachat", Globales.voitureRachat.getPrix());
+                        command.Parameters.AddWithValue("@DateVente", DateTime.Now.ToString("dd/MM/yyyy"));
+                        command.Parameters.AddWithValue("@ModePaiement", cboModePaiement.SelectedItem.ToString());
+                        command.Parameters.AddWithValue("@EmailUtilisateur", Globales.client.getEmail());
+
+                        connection.Open();
+                        command.ExecuteNonQuery();
+
+                        MessageBox.Show("Rachat du véhicule existant confirmé.", "Succès", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    }
+                    catch (SqlException ex)
+                    {
+                        MessageBox.Show($"Erreur SQL : {ex.Message}", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+        }
+
         private void ConfirmerServices()
         {
             //connexion au lycée : 
@@ -809,6 +844,14 @@ namespace GarageCreditCeleste
 
                     cmd.Parameters.AddWithValue("@AvecEntretien", avecEntretien);
                     cmd.Parameters.AddWithValue("@AvecControleTechnique", avecControleTechnique);
+
+                    cmd.Parameters.AddWithValue("@Marque", Globales.voiture.getMarque());
+                    cmd.Parameters.AddWithValue("@Modele", Globales.voiture.getModele());
+                    cmd.Parameters.AddWithValue("@Annee", Globales.voiture.getAnnee());
+                    cmd.Parameters.AddWithValue("@Valeur", Globales.voiture.getPrix());
+                    cmd.Parameters.AddWithValue("@Couleur", Globales.voiture.getCouleur());
+                    cmd.Parameters.AddWithValue("@Kilometrage", Globales.voiture.getKilometrage());
+                    cmd.Parameters.AddWithValue("@Puissance", Globales.voiture.getPuissance());
 
                     // Paramètres entretien (si applicable)
                     if (avecEntretien)
@@ -877,10 +920,7 @@ namespace GarageCreditCeleste
                         }
 
                         MessageBox.Show("Service confirmé avec succès !");
-                        GenererTicketPDF();
-                        Globales.sortie = new Sortie();
-                        Globales.sortie.Show();
-                        Globales.accueil.Close();
+
                     }
                     catch (Exception ex)
                     {
@@ -971,6 +1011,9 @@ namespace GarageCreditCeleste
         }
         private void RecupererVehiculesDuClient()
         {
+            //connexion au lycée : 
+            //string connectionString = "Data Source=10.129.184.106;User Id=connEleveSio;password=mdpEleveSi0;Initial Catalog=PROJETCC_K";
+            //connexion à la maison :
             string connectionString = "Server=localhost\\SQLEXPRESS;Database=PROJETCC_K;User Id=connEleveSio;Password=mdpEleveSi0;TrustServerCertificate=True;";
             string query = "SELECT * FROM VEHICULE WHERE idUtilisateur = (SELECT idUtilisateur FROM UTILISATEUR WHERE Email = @Email)";
 
@@ -986,7 +1029,7 @@ namespace GarageCreditCeleste
                     con.Open();
                     using (SqlDataReader reader = cmd.ExecuteReader())
                     {
-                        while (reader.Read()) // <- Boucle sur chaque ligne
+                        while (reader.Read()) 
                         {
                             Voiture voiture = new Voiture(
                                 Convert.ToString(reader["Marque"]),
@@ -999,11 +1042,10 @@ namespace GarageCreditCeleste
                                 Convert.ToInt32(reader["Valeur"])
                             );
 
-                            listeVoitures.Add(voiture); // <- Ajout à la liste
+                            listeVoitures.Add(voiture); 
                         }
                     }
 
-                    // Par exemple, stocker la liste dans une variable globale
                     Globales.listeVoituresDuClient = listeVoitures;
                 }
                 catch (SqlException ex)
@@ -1031,17 +1073,9 @@ namespace GarageCreditCeleste
 
         private void gpbEntretien_Enter(object sender, EventArgs e){} //pas touche
 
-        private void gpbPaiement_Enter(object sender, EventArgs e)
-        {
+        private void gpbPaiement_Enter(object sender, EventArgs e){ } //pas touche
 
-
-
-        }
-
-        private void gpbCredit_Enter(object sender, EventArgs e)
-        {
-
-        }
+        private void gpbCredit_Enter(object sender, EventArgs e){ } //pas touche
     }
 
     
