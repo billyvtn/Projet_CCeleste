@@ -82,6 +82,7 @@ namespace GarageCreditCeleste
             lblCouleur.Text += Globales.voiture.getCouleur();
             lblPuissance.Text += Globales.voiture.getPuissance();
             lblImmat.Text += Globales.voiture.getImmatriculation();
+            lblPrix.Text += Globales.voiture.getPrix() + " €";
 
             for (int hour = 9; hour <= 17; hour++)
             {

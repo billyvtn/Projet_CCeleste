@@ -28,6 +28,7 @@ namespace GarageCreditCeleste
             {
                 groupBox1.Visible = false;
                 gpbDescription.Visible = true;
+                Globales.voiture = Globales.listeVoituresDuClient[0];
 
                 lblMarque.Text = Globales.listeVoituresDuClient[0].getMarque();
                 lblModele.Text = Globales.listeVoituresDuClient[0].getModele();
@@ -37,6 +38,7 @@ namespace GarageCreditCeleste
                 lblImmat.Text = Globales.listeVoituresDuClient[0].getImmatriculation();
                 lblPuissance.Text = Globales.listeVoituresDuClient[0].getPuissance().ToString();
 
+                btnCalculPrix.Enabled = true;
             }
             else if (Globales.listeVoituresDuClient.Count() > 1 && Globales.voiture == null)
             {
@@ -60,6 +62,12 @@ namespace GarageCreditCeleste
                 lblCouleur.Text = Globales.voiture.getCouleur();
                 lblImmat.Text = Globales.voiture.getImmatriculation();
                 lblPuissance.Text = Globales.voiture.getPuissance().ToString();
+                lblPrixNeuf.Text += Convert.ToString(Globales.voiture.getPrix());
+                btnCalculPrix.Enabled = true;
+            }
+            else
+            {
+                btnCalculPrix.Enabled = true;
             }
         }
 

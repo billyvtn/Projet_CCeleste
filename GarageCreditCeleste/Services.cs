@@ -21,8 +21,10 @@ namespace GarageCreditCeleste
         {
             if(Globales.listeVoituresDuClient.Count() == 1 && Globales.voiture == null)
             {
+                Globales.voiture = Globales.listeVoituresDuClient[0];
                 groupBox1.Visible = false;
                 gpbDescription.Visible = true;
+                btnEnregistrer.Visible = false;
 
                 lblMarque.Text = Globales.listeVoituresDuClient[0].getMarque();
                 lblModele.Text = Globales.listeVoituresDuClient[0].getModele();
@@ -45,6 +47,7 @@ namespace GarageCreditCeleste
             {
                 groupBox1.Visible = false;
                 gpbSelection.Visible = true;
+                btnEnregistrer.Visible = false;
                 lsbVoituresClient.Items.Clear();
                 foreach (Voiture uneVoit in Globales.listeVoituresDuClient)
                 {
@@ -53,7 +56,7 @@ namespace GarageCreditCeleste
                 btnControleTechnique.Enabled = false;
                 btnEntretien.Enabled = false;
             }
-            else if(Globales.listeVoituresDuClient.Count() == 0)
+            else if(Globales.voiture == null)
             {
                 btnControleTechnique.Enabled = false;
                 btnEntretien.Enabled = false;
@@ -62,6 +65,7 @@ namespace GarageCreditCeleste
             {
                 groupBox1.Visible = false;
                 gpbDescription.Visible = true;
+                btnEnregistrer.Visible = false;
 
                 lblMarque.Text = Globales.voiture.getMarque();
                 lblModele.Text = Globales.voiture.getModele();
@@ -70,6 +74,7 @@ namespace GarageCreditCeleste
                 lblCouleur.Text = Globales.voiture.getCouleur();
                 lblImmat.Text = Globales.voiture.getImmatriculation();
                 lblPuissance.Text = Globales.voiture.getPuissance().ToString();
+                lblPrixNeuf.Text = Globales.voiture.getPrix().ToString("C");
 
                 if (Globales.Type.Contains("ControleTechnique"))
                 {
@@ -99,14 +104,15 @@ namespace GarageCreditCeleste
                 string.IsNullOrWhiteSpace(txtKilometrageVoiture.Text) ||
                 string.IsNullOrWhiteSpace(txtCouleurVoiture.Text) ||
                 string.IsNullOrWhiteSpace(txtPuissanceVoiture.Text) ||
-                string.IsNullOrWhiteSpace(txtImmatVoiture.Text))
+                string.IsNullOrWhiteSpace(txtImmatVoiture.Text) ||
+                string.IsNullOrWhiteSpace(txtPrixNeuf.Text))
             {
                 // Afficher un message d'erreur si des champs sont vides ou contiennent des messages par défaut
                 MessageBox.Show("Veuillez remplir tous les champs correctement avant de continuer.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
-                Globales.voiture = new Voiture(txtMarqueVoiture.Text, txtModeleVoiture.Text, Convert.ToInt32(txtAnneeVoiture.Text), Convert.ToInt32(txtKilometrageVoiture.Text), txtCouleurVoiture.Text, Convert.ToInt32(txtPuissanceVoiture.Text), txtImmatVoiture.Text, false);
+                Globales.voiture = new Voiture(txtMarqueVoiture.Text, txtModeleVoiture.Text, Convert.ToInt32(txtAnneeVoiture.Text), Convert.ToInt32(txtKilometrageVoiture.Text), txtCouleurVoiture.Text, Convert.ToInt32(txtPuissanceVoiture.Text), txtImmatVoiture.Text, Convert.ToInt32(txtPrixNeuf.Text), false);
                 MessageBox.Show("Les informations ont été enregistrées avec succès.", "Enregistrement", MessageBoxButtons.OK);
                 btnControleTechnique.Enabled = true;
                 btnEntretien.Enabled = true;
@@ -165,10 +171,7 @@ namespace GarageCreditCeleste
             btnEntretien.Enabled = false;
         }
 
-        private void lsbVoituresClient_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
+        private void lsbVoituresClient_SelectedIndexChanged(object sender, EventArgs e){} //pas touche
 
         private void btnSelectionner_Click(object sender, EventArgs e)
         {
@@ -185,6 +188,7 @@ namespace GarageCreditCeleste
                 lblCouleur.Text = Globales.voiture.getCouleur();
                 lblImmat.Text = Globales.voiture.getImmatriculation();
                 lblPuissance.Text = Globales.voiture.getPuissance().ToString();
+                lblPrixNeuf.Text = Globales.voiture.getPrix().ToString();
 
                 btnControleTechnique.Enabled = true;
                 btnEntretien.Enabled = true;
@@ -195,5 +199,7 @@ namespace GarageCreditCeleste
             }
             
         }
+
+        private void gpbDescription_Enter(object sender, EventArgs e){} //pas touche
     }
 }

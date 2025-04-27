@@ -34,21 +34,27 @@ namespace GarageCreditCeleste
             // 
             // btnDemarrer
             // 
-            this.btnDemarrer.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.btnDemarrer.Location = new System.Drawing.Point(355, 210);
+            this.btnDemarrer.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnDemarrer.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDemarrer.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnDemarrer.Location = new System.Drawing.Point(561, 80);
+            this.btnDemarrer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnDemarrer.Name = "btnDemarrer";
-            this.btnDemarrer.Size = new System.Drawing.Size(90, 30);
+            this.btnDemarrer.Size = new System.Drawing.Size(135, 58);
             this.btnDemarrer.TabIndex = 20;
             this.btnDemarrer.Text = "Démarrer";
-            this.btnDemarrer.UseVisualStyleBackColor = true;
+            this.btnDemarrer.UseVisualStyleBackColor = false;
             this.btnDemarrer.Click += new System.EventHandler(this.btnDemarrer_Click);
             // 
             // Demarrage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.BackgroundImage = global::GarageCreditCeleste.Properties.Resources.garage;
+            this.ClientSize = new System.Drawing.Size(778, 521);
             this.Controls.Add(this.btnDemarrer);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Demarrage";
             this.Text = "Demarrage";
             this.Load += new System.EventHandler(this.Demarrage_Load);

@@ -139,7 +139,6 @@ namespace GarageCreditCeleste
                     }
                 }
             }
-
         }
 
         private void lsbVoituresDispo_SelectedIndexChanged(object sender, EventArgs e)
