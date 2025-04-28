@@ -13,6 +13,7 @@ using Syncfusion.Pdf.Graphics;
 using Syncfusion.Licensing;
 using System.Drawing;
 using System.IO;
+using System.Text.RegularExpressions;
 
 
 namespace GarageCreditCeleste
@@ -281,7 +282,7 @@ namespace GarageCreditCeleste
         string defaultNom = "ex. Dupont";
         string defaultPrenom = "ex. Jean";
         string defaultEmail = "ex. jean.dupont@email.fr";
-        string defaultNumTele = "ex. 06 06 06 06 06";
+        string defaultNumTele = "ex. 0606060606";
         string defaultAdresseNum = "ex. 1, 2, 12A...";
         string defaultAdresseVoie = "ex. rue Marechal Foch";
         string defaultAdresseVille = "ex. Lingolsheim";
@@ -353,10 +354,12 @@ namespace GarageCreditCeleste
 
             }
         }
-
-
         private void txtNom_TextChanged(object sender, EventArgs e)
         {
+            if (!Regex.IsMatch(txtNom.Text, @"^[a-zA-Z]+$"))
+            {
+                txtNom.Text = "";
+            }
             txtNom.ForeColor = SystemColors.ControlText;
             btnAcheter.Enabled = false;
             btnVendre.Enabled = false;
@@ -364,6 +367,10 @@ namespace GarageCreditCeleste
         }
         private void txtPrenom_TextChanged(object sender, EventArgs e)
         {
+            if (!Regex.IsMatch(txtPrenom.Text, @"^[a-zA-Z]+$"))
+            {
+                txtPrenom.Text = "";
+            }
             txtPrenom.ForeColor = SystemColors.ControlText;
             btnAcheter.Enabled = false;
             btnVendre.Enabled = false;
@@ -378,6 +385,10 @@ namespace GarageCreditCeleste
         }
         private void txtNumeroTelephone_TextChanged(object sender, EventArgs e)
         {
+            if (!Regex.IsMatch(txtNumeroTelephone.Text, @"^\d*$"))
+            {
+                txtNumeroTelephone.Text = "";
+            }
             txtNumeroTelephone.ForeColor = SystemColors.ControlText;
             btnAcheter.Enabled = false;
             btnVendre.Enabled = false;
@@ -392,6 +403,10 @@ namespace GarageCreditCeleste
         }
         private void txtAdresseVoie_TextChanged(object sender, EventArgs e)
         {
+            if (!Regex.IsMatch(txtAdresseVoie.Text, @"^[a-zA-Z]+$"))
+            {
+                txtAdresseVoie.Text = "";
+            }
             txtAdresseVoie.ForeColor = SystemColors.ControlText;
             btnAcheter.Enabled = false;
             btnVendre.Enabled = false;
@@ -399,6 +414,10 @@ namespace GarageCreditCeleste
         }
         private void txtAdresseVille_TextChanged(object sender, EventArgs e)
         {
+            if (!Regex.IsMatch(txtAdresseVille.Text, @"^[a-zA-Z]+$"))
+            {
+                txtAdresseVille.Text = "";
+            }
             txtAdresseVille.ForeColor = SystemColors.ControlText;
             btnAcheter.Enabled = false;
             btnVendre.Enabled = false;
@@ -406,6 +425,10 @@ namespace GarageCreditCeleste
         }
         private void txtAdresseCP_TextChanged(object sender, EventArgs e)
         {
+            if (!Regex.IsMatch(txtAdresseCP.Text, @"^\d*$"))
+            {
+                txtAdresseCP.Text = "";
+            }
             txtAdresseCP.ForeColor = SystemColors.ControlText;
             btnAcheter.Enabled = false;
             btnVendre.Enabled = false;
@@ -418,13 +441,13 @@ namespace GarageCreditCeleste
             //enregistrer infos client objet Globales
             // Vérification combinée des champs obligatoires, non vides, et différents des messages par défaut
             if (string.IsNullOrWhiteSpace(txtNom.Text) || txtNom.Text == defaultNom ||
-                string.IsNullOrWhiteSpace(txtPrenom.Text) || txtPrenom.Text == defaultPrenom ||
-                string.IsNullOrWhiteSpace(txtEmail.Text) || txtEmail.Text == defaultEmail ||
-                string.IsNullOrWhiteSpace(txtNumeroTelephone.Text) || txtNumeroTelephone.Text == defaultNumTele ||
+                string.IsNullOrWhiteSpace(txtPrenom.Text) || txtPrenom.Text == defaultPrenom || 
+                string.IsNullOrWhiteSpace(txtEmail.Text) || txtEmail.Text == defaultEmail || (!Regex.IsMatch(txtEmail.Text, @"^[^@\s]+@[^@\s]+\.[^@\s]+$")) ||
+                string.IsNullOrWhiteSpace(txtNumeroTelephone.Text) || txtNumeroTelephone.Text == defaultNumTele || (txtNumeroTelephone.TextLength != 10) ||
                 string.IsNullOrWhiteSpace(txtAdresseNum.Text) || txtAdresseNum.Text == defaultAdresseNum ||
                 string.IsNullOrWhiteSpace(txtAdresseVoie.Text) || txtAdresseVoie.Text == defaultAdresseVoie ||
                 string.IsNullOrWhiteSpace(txtAdresseVille.Text) || txtAdresseVille.Text == defaultAdresseVille ||
-                string.IsNullOrWhiteSpace(txtAdresseCP.Text) || txtAdresseCP.Text == defaultAdresseCP ||
+                string.IsNullOrWhiteSpace(txtAdresseCP.Text) || txtAdresseCP.Text == defaultAdresseCP || (txtAdresseCP.TextLength != 5) ||
                 (rdbCivHomme.Checked == false && rdbCivFemme.Checked == false))
             {
                 // Afficher un message d'erreur si des champs sont vides ou contiennent des messages par défaut
