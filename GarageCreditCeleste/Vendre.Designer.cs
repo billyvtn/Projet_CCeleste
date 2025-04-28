@@ -84,7 +84,7 @@ namespace GarageCreditCeleste
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
             this.label3.Location = new System.Drawing.Point(36, 336);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(129, 22);
+            this.label3.Size = new System.Drawing.Size(102, 17);
             this.label3.TabIndex = 45;
             this.label3.Text = "Immatriculation";
             // 
@@ -119,8 +119,9 @@ namespace GarageCreditCeleste
             this.txtPrixNeuf.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
             this.txtPrixNeuf.Location = new System.Drawing.Point(145, 379);
             this.txtPrixNeuf.Name = "txtPrixNeuf";
-            this.txtPrixNeuf.Size = new System.Drawing.Size(197, 27);
+            this.txtPrixNeuf.Size = new System.Drawing.Size(197, 23);
             this.txtPrixNeuf.TabIndex = 46;
+            this.txtPrixNeuf.TextChanged += new System.EventHandler(this.txtPrixNeuf_TextChanged);
             // 
             // label12
             // 
@@ -128,7 +129,7 @@ namespace GarageCreditCeleste
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
             this.label12.Location = new System.Drawing.Point(36, 382);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(81, 22);
+            this.label12.Size = new System.Drawing.Size(63, 17);
             this.label12.TabIndex = 47;
             this.label12.Text = "Prix neuf";
             // 
@@ -137,24 +138,27 @@ namespace GarageCreditCeleste
             this.txtImmatVoiture.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
             this.txtImmatVoiture.Location = new System.Drawing.Point(145, 333);
             this.txtImmatVoiture.Name = "txtImmatVoiture";
-            this.txtImmatVoiture.Size = new System.Drawing.Size(197, 27);
+            this.txtImmatVoiture.Size = new System.Drawing.Size(197, 23);
             this.txtImmatVoiture.TabIndex = 7;
+            this.txtImmatVoiture.TextChanged += new System.EventHandler(this.txtImmatVoiture_TextChanged);
             // 
             // txtMarqueVoiture
             // 
             this.txtMarqueVoiture.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
             this.txtMarqueVoiture.Location = new System.Drawing.Point(145, 36);
             this.txtMarqueVoiture.Name = "txtMarqueVoiture";
-            this.txtMarqueVoiture.Size = new System.Drawing.Size(197, 27);
+            this.txtMarqueVoiture.Size = new System.Drawing.Size(197, 23);
             this.txtMarqueVoiture.TabIndex = 1;
+            this.txtMarqueVoiture.TextChanged += new System.EventHandler(this.txtMarqueVoiture_TextChanged);
             // 
             // txtPuissanceVoiture
             // 
             this.txtPuissanceVoiture.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
             this.txtPuissanceVoiture.Location = new System.Drawing.Point(145, 283);
             this.txtPuissanceVoiture.Name = "txtPuissanceVoiture";
-            this.txtPuissanceVoiture.Size = new System.Drawing.Size(197, 27);
+            this.txtPuissanceVoiture.Size = new System.Drawing.Size(197, 23);
             this.txtPuissanceVoiture.TabIndex = 6;
+            this.txtPuissanceVoiture.TextChanged += new System.EventHandler(this.txtPuissanceVoiture_TextChanged);
             // 
             // label4
             // 
@@ -162,7 +166,7 @@ namespace GarageCreditCeleste
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
             this.label4.Location = new System.Drawing.Point(36, 39);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(70, 22);
+            this.label4.Size = new System.Drawing.Size(56, 17);
             this.label4.TabIndex = 30;
             this.label4.Text = "Marque";
             // 
@@ -172,7 +176,7 @@ namespace GarageCreditCeleste
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
             this.label5.Location = new System.Drawing.Point(36, 89);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(68, 22);
+            this.label5.Size = new System.Drawing.Size(54, 17);
             this.label5.TabIndex = 31;
             this.label5.Text = "Modèle";
             // 
@@ -181,8 +185,9 @@ namespace GarageCreditCeleste
             this.txtCouleurVoiture.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
             this.txtCouleurVoiture.Location = new System.Drawing.Point(145, 233);
             this.txtCouleurVoiture.Name = "txtCouleurVoiture";
-            this.txtCouleurVoiture.Size = new System.Drawing.Size(197, 27);
+            this.txtCouleurVoiture.Size = new System.Drawing.Size(197, 23);
             this.txtCouleurVoiture.TabIndex = 5;
+            this.txtCouleurVoiture.TextChanged += new System.EventHandler(this.txtCouleurVoiture_TextChanged);
             // 
             // label6
             // 
@@ -190,7 +195,7 @@ namespace GarageCreditCeleste
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
             this.label6.Location = new System.Drawing.Point(36, 139);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(62, 22);
+            this.label6.Size = new System.Drawing.Size(49, 17);
             this.label6.TabIndex = 32;
             this.label6.Text = "Année";
             // 
@@ -200,7 +205,7 @@ namespace GarageCreditCeleste
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
             this.label7.Location = new System.Drawing.Point(36, 189);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(105, 22);
+            this.label7.Size = new System.Drawing.Size(83, 17);
             this.label7.TabIndex = 33;
             this.label7.Text = "Kilométrage";
             // 
@@ -210,7 +215,7 @@ namespace GarageCreditCeleste
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
             this.label10.Location = new System.Drawing.Point(36, 286);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(93, 22);
+            this.label10.Size = new System.Drawing.Size(73, 17);
             this.label10.TabIndex = 39;
             this.label10.Text = "Puissance";
             // 
@@ -219,8 +224,9 @@ namespace GarageCreditCeleste
             this.txtAnneeVoiture.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
             this.txtAnneeVoiture.Location = new System.Drawing.Point(145, 136);
             this.txtAnneeVoiture.Name = "txtAnneeVoiture";
-            this.txtAnneeVoiture.Size = new System.Drawing.Size(197, 27);
+            this.txtAnneeVoiture.Size = new System.Drawing.Size(197, 23);
             this.txtAnneeVoiture.TabIndex = 3;
+            this.txtAnneeVoiture.TextChanged += new System.EventHandler(this.txtAnneeVoiture_TextChanged);
             // 
             // label11
             // 
@@ -228,7 +234,7 @@ namespace GarageCreditCeleste
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
             this.label11.Location = new System.Drawing.Point(36, 236);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(73, 22);
+            this.label11.Size = new System.Drawing.Size(57, 17);
             this.label11.TabIndex = 38;
             this.label11.Text = "Couleur";
             // 
@@ -237,16 +243,18 @@ namespace GarageCreditCeleste
             this.txtModeleVoiture.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
             this.txtModeleVoiture.Location = new System.Drawing.Point(145, 86);
             this.txtModeleVoiture.Name = "txtModeleVoiture";
-            this.txtModeleVoiture.Size = new System.Drawing.Size(197, 27);
+            this.txtModeleVoiture.Size = new System.Drawing.Size(197, 23);
             this.txtModeleVoiture.TabIndex = 2;
+            this.txtModeleVoiture.TextChanged += new System.EventHandler(this.txtModeleVoiture_TextChanged);
             // 
             // txtKilometrageVoiture
             // 
             this.txtKilometrageVoiture.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
             this.txtKilometrageVoiture.Location = new System.Drawing.Point(145, 186);
             this.txtKilometrageVoiture.Name = "txtKilometrageVoiture";
-            this.txtKilometrageVoiture.Size = new System.Drawing.Size(197, 27);
+            this.txtKilometrageVoiture.Size = new System.Drawing.Size(197, 23);
             this.txtKilometrageVoiture.TabIndex = 4;
+            this.txtKilometrageVoiture.TextChanged += new System.EventHandler(this.txtKilometrageVoiture_TextChanged);
             // 
             // label9
             // 
@@ -254,7 +262,7 @@ namespace GarageCreditCeleste
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
             this.label9.Location = new System.Drawing.Point(456, 236);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(131, 22);
+            this.label9.Size = new System.Drawing.Size(103, 17);
             this.label9.TabIndex = 51;
             this.label9.Text = "Prix de rachat :";
             // 
@@ -264,7 +272,7 @@ namespace GarageCreditCeleste
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.label1.Location = new System.Drawing.Point(12, 11);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(101, 24);
+            this.label1.Size = new System.Drawing.Size(81, 18);
             this.label1.TabIndex = 46;
             this.label1.Text = "Strasbourg";
             // 
@@ -297,7 +305,7 @@ namespace GarageCreditCeleste
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.label2.Location = new System.Drawing.Point(698, 11);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(117, 24);
+            this.label2.Size = new System.Drawing.Size(94, 18);
             this.label2.TabIndex = 47;
             this.label2.Text = "HDR Garage";
             // 
@@ -307,7 +315,7 @@ namespace GarageCreditCeleste
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.label8.Location = new System.Drawing.Point(378, 11);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(73, 24);
+            this.label8.Size = new System.Drawing.Size(54, 18);
             this.label8.TabIndex = 50;
             this.label8.Text = "Vendre";
             // 
@@ -328,11 +336,12 @@ namespace GarageCreditCeleste
             this.lblPrixVente.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
             this.lblPrixVente.Location = new System.Drawing.Point(589, 236);
             this.lblPrixVente.Name = "lblPrixVente";
-            this.lblPrixVente.Size = new System.Drawing.Size(0, 22);
+            this.lblPrixVente.Size = new System.Drawing.Size(0, 17);
             this.lblPrixVente.TabIndex = 56;
             // 
             // gpbDescription
             // 
+            this.gpbDescription.Controls.Add(this.gpbSelection);
             this.gpbDescription.Controls.Add(this.lblPrixNeuf);
             this.gpbDescription.Controls.Add(this.label13);
             this.gpbDescription.Controls.Add(this.label14);
@@ -349,7 +358,7 @@ namespace GarageCreditCeleste
             this.gpbDescription.Controls.Add(this.lblPuissance);
             this.gpbDescription.Controls.Add(this.lblModele);
             this.gpbDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.gpbDescription.Location = new System.Drawing.Point(21, 42);
+            this.gpbDescription.Location = new System.Drawing.Point(27, 42);
             this.gpbDescription.Name = "gpbDescription";
             this.gpbDescription.Size = new System.Drawing.Size(374, 418);
             this.gpbDescription.TabIndex = 81;
@@ -363,7 +372,7 @@ namespace GarageCreditCeleste
             this.lblPrixNeuf.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.lblPrixNeuf.Location = new System.Drawing.Point(15, 369);
             this.lblPrixNeuf.Name = "lblPrixNeuf";
-            this.lblPrixNeuf.Size = new System.Drawing.Size(99, 24);
+            this.lblPrixNeuf.Size = new System.Drawing.Size(77, 18);
             this.lblPrixNeuf.TabIndex = 69;
             this.lblPrixNeuf.Text = "Prix neuf : ";
             // 
@@ -373,7 +382,7 @@ namespace GarageCreditCeleste
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.label13.Location = new System.Drawing.Point(15, 234);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(87, 24);
+            this.label13.Size = new System.Drawing.Size(68, 18);
             this.label13.TabIndex = 66;
             this.label13.Text = "Couleur :";
             // 
@@ -383,7 +392,7 @@ namespace GarageCreditCeleste
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.label14.Location = new System.Drawing.Point(15, 323);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(145, 24);
+            this.label14.Size = new System.Drawing.Size(116, 18);
             this.label14.TabIndex = 68;
             this.label14.Text = "Immatriculation :";
             // 
@@ -393,7 +402,7 @@ namespace GarageCreditCeleste
             this.lblCouleur.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.lblCouleur.Location = new System.Drawing.Point(89, 234);
             this.lblCouleur.Name = "lblCouleur";
-            this.lblCouleur.Size = new System.Drawing.Size(0, 24);
+            this.lblCouleur.Size = new System.Drawing.Size(0, 18);
             this.lblCouleur.TabIndex = 58;
             // 
             // label15
@@ -402,7 +411,7 @@ namespace GarageCreditCeleste
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.label15.Location = new System.Drawing.Point(15, 186);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(120, 24);
+            this.label15.Size = new System.Drawing.Size(95, 18);
             this.label15.TabIndex = 65;
             this.label15.Text = "Kilométrage :";
             // 
@@ -412,7 +421,7 @@ namespace GarageCreditCeleste
             this.lblImmat.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.lblImmat.Location = new System.Drawing.Point(130, 323);
             this.lblImmat.Name = "lblImmat";
-            this.lblImmat.Size = new System.Drawing.Size(0, 24);
+            this.lblImmat.Size = new System.Drawing.Size(0, 18);
             this.lblImmat.TabIndex = 60;
             // 
             // label16
@@ -421,7 +430,7 @@ namespace GarageCreditCeleste
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.label16.Location = new System.Drawing.Point(15, 39);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(85, 24);
+            this.label16.Size = new System.Drawing.Size(66, 18);
             this.label16.TabIndex = 62;
             this.label16.Text = "Marque :";
             // 
@@ -431,7 +440,7 @@ namespace GarageCreditCeleste
             this.lblKilometrage.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.lblKilometrage.Location = new System.Drawing.Point(112, 186);
             this.lblKilometrage.Name = "lblKilometrage";
-            this.lblKilometrage.Size = new System.Drawing.Size(0, 24);
+            this.lblKilometrage.Size = new System.Drawing.Size(0, 18);
             this.lblKilometrage.TabIndex = 57;
             // 
             // label17
@@ -440,7 +449,7 @@ namespace GarageCreditCeleste
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.label17.Location = new System.Drawing.Point(15, 139);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(77, 24);
+            this.label17.Size = new System.Drawing.Size(57, 18);
             this.label17.TabIndex = 64;
             this.label17.Text = "Année :";
             // 
@@ -450,7 +459,7 @@ namespace GarageCreditCeleste
             this.lblMarque.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.lblMarque.Location = new System.Drawing.Point(85, 41);
             this.lblMarque.Name = "lblMarque";
-            this.lblMarque.Size = new System.Drawing.Size(0, 24);
+            this.lblMarque.Size = new System.Drawing.Size(0, 18);
             this.lblMarque.TabIndex = 54;
             // 
             // label18
@@ -459,7 +468,7 @@ namespace GarageCreditCeleste
             this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.label18.Location = new System.Drawing.Point(15, 281);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(107, 24);
+            this.label18.Size = new System.Drawing.Size(85, 18);
             this.label18.TabIndex = 67;
             this.label18.Text = "Puissance :";
             // 
@@ -469,7 +478,7 @@ namespace GarageCreditCeleste
             this.lblAnnee.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.lblAnnee.Location = new System.Drawing.Point(77, 139);
             this.lblAnnee.Name = "lblAnnee";
-            this.lblAnnee.Size = new System.Drawing.Size(0, 24);
+            this.lblAnnee.Size = new System.Drawing.Size(0, 18);
             this.lblAnnee.TabIndex = 56;
             // 
             // label19
@@ -478,7 +487,7 @@ namespace GarageCreditCeleste
             this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.label19.Location = new System.Drawing.Point(15, 89);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(84, 24);
+            this.label19.Size = new System.Drawing.Size(65, 18);
             this.label19.TabIndex = 63;
             this.label19.Text = "Modèle :";
             // 
@@ -488,7 +497,7 @@ namespace GarageCreditCeleste
             this.lblPuissance.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.lblPuissance.Location = new System.Drawing.Point(96, 281);
             this.lblPuissance.Name = "lblPuissance";
-            this.lblPuissance.Size = new System.Drawing.Size(0, 24);
+            this.lblPuissance.Size = new System.Drawing.Size(0, 18);
             this.lblPuissance.TabIndex = 59;
             // 
             // lblModele
@@ -497,7 +506,7 @@ namespace GarageCreditCeleste
             this.lblModele.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.lblModele.Location = new System.Drawing.Point(79, 91);
             this.lblModele.Name = "lblModele";
-            this.lblModele.Size = new System.Drawing.Size(0, 24);
+            this.lblModele.Size = new System.Drawing.Size(0, 18);
             this.lblModele.TabIndex = 55;
             // 
             // gpbSelection
@@ -505,7 +514,7 @@ namespace GarageCreditCeleste
             this.gpbSelection.Controls.Add(this.btnSelectionner);
             this.gpbSelection.Controls.Add(this.lsbVoituresClient);
             this.gpbSelection.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.gpbSelection.Location = new System.Drawing.Point(15, 42);
+            this.gpbSelection.Location = new System.Drawing.Point(0, 0);
             this.gpbSelection.Name = "gpbSelection";
             this.gpbSelection.Size = new System.Drawing.Size(374, 387);
             this.gpbSelection.TabIndex = 82;
@@ -528,7 +537,7 @@ namespace GarageCreditCeleste
             // 
             this.lsbVoituresClient.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.lsbVoituresClient.FormattingEnabled = true;
-            this.lsbVoituresClient.ItemHeight = 24;
+            this.lsbVoituresClient.ItemHeight = 18;
             this.lsbVoituresClient.Location = new System.Drawing.Point(12, 23);
             this.lsbVoituresClient.Name = "lsbVoituresClient";
             this.lsbVoituresClient.Size = new System.Drawing.Size(274, 292);
@@ -536,10 +545,9 @@ namespace GarageCreditCeleste
             // 
             // Vendre
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(840, 472);
-            this.Controls.Add(this.gpbSelection);
             this.Controls.Add(this.gpbDescription);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.lblPrixVente);

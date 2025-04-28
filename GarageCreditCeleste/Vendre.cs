@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Text.RegularExpressions;
 
 namespace GarageCreditCeleste
 {
@@ -163,14 +164,12 @@ namespace GarageCreditCeleste
             {
                 if (string.IsNullOrWhiteSpace(txtMarqueVoiture.Text) ||
                 string.IsNullOrWhiteSpace(txtModeleVoiture.Text) ||
-                string.IsNullOrWhiteSpace(txtAnneeVoiture.Text) ||
+                string.IsNullOrWhiteSpace(txtAnneeVoiture.Text) || (txtAnneeVoiture.TextLength != 4) || (Convert.ToInt32(txtAnneeVoiture.Text) > 2025) || (Convert.ToInt32(txtAnneeVoiture.Text) < 1950) ||
                 string.IsNullOrWhiteSpace(txtKilometrageVoiture.Text) ||
                 string.IsNullOrWhiteSpace(txtCouleurVoiture.Text) ||
                 string.IsNullOrWhiteSpace(txtPuissanceVoiture.Text) ||
-                string.IsNullOrWhiteSpace(txtImmatVoiture.Text) ||
-                string.IsNullOrWhiteSpace(txtAnneeVoiture.Text) ||
-                string.IsNullOrWhiteSpace(txtPrixNeuf.Text) ||
-                string.IsNullOrWhiteSpace(txtKilometrageVoiture.Text))
+                string.IsNullOrWhiteSpace(txtImmatVoiture.Text) || (txtImmatVoiture.TextLength != 7) ||
+                string.IsNullOrWhiteSpace(txtPrixNeuf.Text))
                 {
                     // Afficher un message d'erreur si des champs sont vides ou contiennent des messages par défaut
                     MessageBox.Show("Veuillez remplir tous les champs correctement avant de continuer.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -257,6 +256,64 @@ namespace GarageCreditCeleste
             else
             {
                 MessageBox.Show("Veuillez sélectionner une de vos voitures.");
+            }
+        }
+
+        private void txtMarqueVoiture_TextChanged(object sender, EventArgs e)
+        {
+            if (!Regex.IsMatch(txtMarqueVoiture.Text, @"^[a-zA-Z]+$"))
+            {
+                txtMarqueVoiture.Text = "";
+            }
+        }
+
+        private void txtModeleVoiture_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtAnneeVoiture_TextChanged(object sender, EventArgs e)
+        {
+            if (!Regex.IsMatch(txtAnneeVoiture.Text, @"^\d*$"))
+            {
+                txtAnneeVoiture.Text = "";
+            }
+        }
+
+        private void txtKilometrageVoiture_TextChanged(object sender, EventArgs e)
+        {
+            if (!Regex.IsMatch(txtKilometrageVoiture.Text, @"^\d*$"))
+            {
+                txtKilometrageVoiture.Text = "";
+            }
+        }
+
+        private void txtCouleurVoiture_TextChanged(object sender, EventArgs e)
+        {
+            if (!Regex.IsMatch(txtCouleurVoiture.Text, @"^[a-zA-Z]+$"))
+            {
+                txtCouleurVoiture.Text = "";
+            }
+        }
+
+        private void txtPuissanceVoiture_TextChanged(object sender, EventArgs e)
+        {
+            if (!Regex.IsMatch(txtPuissanceVoiture.Text, @"^\d*$"))
+            {
+                txtPuissanceVoiture.Text = "";
+            }
+        }
+
+        private void txtImmatVoiture_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtPrixNeuf_TextChanged(object sender, EventArgs e)
+        {
+            if (!Regex.IsMatch(txtPrixNeuf.Text, @"^\d*$"))
+            {
+                txtPrixNeuf.Text = "";
             }
         }
     }
