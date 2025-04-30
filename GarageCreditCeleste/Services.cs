@@ -38,10 +38,12 @@ namespace GarageCreditCeleste
                 if (Globales.Type.Contains("ControleTechnique"))
                 {
                     btnControleTechnique.Enabled = false;
+                    btnAutreVehiculeInfo.Visible = false;
                 }
                 if (Globales.Type.Contains("Entretien"))
                 {
                     btnEntretien.Enabled = false;
+                    btnAutreVehiculeInfo.Visible = false;
                 }
             }
             else if (Globales.listeVoituresDuClient.Count() > 1 && Globales.voiture == null)
@@ -61,6 +63,7 @@ namespace GarageCreditCeleste
             {
                 btnControleTechnique.Enabled = false;
                 btnEntretien.Enabled = false;
+                btnEnregistrer.Visible = true;
             }
             if(Globales.voiture != null)
             {
@@ -80,10 +83,12 @@ namespace GarageCreditCeleste
                 if (Globales.Type.Contains("ControleTechnique"))
                 {
                     btnControleTechnique.Enabled = false;
+                    btnAutreVehiculeInfo.Visible = false;
                 }
                 if (Globales.Type.Contains("Entretien"))
                 {
                     btnEntretien.Enabled = false;
+                    btnAutreVehiculeInfo.Visible = false;
                 }
             }
 
@@ -231,6 +236,28 @@ namespace GarageCreditCeleste
             }
             btnControleTechnique.Enabled = false;
             btnEntretien.Enabled = false;
+        }
+
+        private void btnAutreVehiculeInfo_Click(object sender, EventArgs e)
+        {
+            groupBox1.Visible = true;
+            gpbDescription.Visible = false;
+            gpbSelection.Visible = false;
+            btnEnregistrer.Visible = true;
+            btnControleTechnique.Enabled = false;
+            btnEntretien.Enabled = false;
+            Globales.voiture = null;
+        }
+
+        private void btnAutreVehiculeListe_Click(object sender, EventArgs e)
+        {
+            groupBox1.Visible = true;
+            gpbDescription.Visible = false;
+            gpbSelection.Visible = false;
+            btnEnregistrer.Visible = true;
+            btnControleTechnique.Enabled = false;
+            btnEntretien.Enabled = false;
+            Globales.voiture = null;
         }
     }
 }

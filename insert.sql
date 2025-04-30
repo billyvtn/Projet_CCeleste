@@ -39,7 +39,7 @@ INSERT INTO PIECE (NomPiece, Marque, Prix) VALUES
 ('Liquide de refroidissement', 'Shell', 50),
 ('Liquide de frein', 'Shell', 50),
 ('Plaquettes de frein', 'Bosch', 40),
-('Pneus', 'Michelin', 350),
+('Pneus x4', 'Michelin', 350),
 ('Batterie 12v', 'Varta', 90);
 GO
 

@@ -73,6 +73,8 @@ namespace GarageCreditCeleste
             this.gpbSelection = new System.Windows.Forms.GroupBox();
             this.btnSelectionner = new System.Windows.Forms.Button();
             this.lsbVoituresClient = new System.Windows.Forms.ListBox();
+            this.btnAutreVehiculeInfo = new System.Windows.Forms.Button();
+            this.btnAutreVehiculeListe = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.gpbDescription.SuspendLayout();
             this.gpbSelection.SuspendLayout();
@@ -332,6 +334,7 @@ namespace GarageCreditCeleste
             // 
             // gpbDescription
             // 
+            this.gpbDescription.Controls.Add(this.btnAutreVehiculeInfo);
             this.gpbDescription.Controls.Add(this.lblPrixNeuf);
             this.gpbDescription.Controls.Add(this.label19);
             this.gpbDescription.Controls.Add(this.label12);
@@ -349,7 +352,7 @@ namespace GarageCreditCeleste
             this.gpbDescription.Controls.Add(this.lblPuissance);
             this.gpbDescription.Controls.Add(this.lblModele);
             this.gpbDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.gpbDescription.Location = new System.Drawing.Point(395, 45);
+            this.gpbDescription.Location = new System.Drawing.Point(9, 53);
             this.gpbDescription.Name = "gpbDescription";
             this.gpbDescription.Size = new System.Drawing.Size(374, 387);
             this.gpbDescription.TabIndex = 80;
@@ -513,12 +516,13 @@ namespace GarageCreditCeleste
             // 
             // gpbSelection
             // 
+            this.gpbSelection.Controls.Add(this.btnAutreVehiculeListe);
             this.gpbSelection.Controls.Add(this.btnSelectionner);
             this.gpbSelection.Controls.Add(this.lsbVoituresClient);
             this.gpbSelection.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.gpbSelection.Location = new System.Drawing.Point(342, 51);
+            this.gpbSelection.Location = new System.Drawing.Point(9, 53);
             this.gpbSelection.Name = "gpbSelection";
-            this.gpbSelection.Size = new System.Drawing.Size(374, 387);
+            this.gpbSelection.Size = new System.Drawing.Size(377, 386);
             this.gpbSelection.TabIndex = 81;
             this.gpbSelection.TabStop = false;
             this.gpbSelection.Text = "Sélection de votre véhicule";
@@ -546,13 +550,35 @@ namespace GarageCreditCeleste
             this.lsbVoituresClient.TabIndex = 82;
             this.lsbVoituresClient.SelectedIndexChanged += new System.EventHandler(this.lsbVoituresClient_SelectedIndexChanged);
             // 
+            // btnAutreVehiculeInfo
+            // 
+            this.btnAutreVehiculeInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.btnAutreVehiculeInfo.Location = new System.Drawing.Point(258, 17);
+            this.btnAutreVehiculeInfo.Name = "btnAutreVehiculeInfo";
+            this.btnAutreVehiculeInfo.Size = new System.Drawing.Size(110, 30);
+            this.btnAutreVehiculeInfo.TabIndex = 84;
+            this.btnAutreVehiculeInfo.Text = "Autre véhicule";
+            this.btnAutreVehiculeInfo.UseVisualStyleBackColor = true;
+            this.btnAutreVehiculeInfo.Click += new System.EventHandler(this.btnAutreVehiculeInfo_Click);
+            // 
+            // btnAutreVehiculeListe
+            // 
+            this.btnAutreVehiculeListe.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.btnAutreVehiculeListe.Location = new System.Drawing.Point(12, 351);
+            this.btnAutreVehiculeListe.Name = "btnAutreVehiculeListe";
+            this.btnAutreVehiculeListe.Size = new System.Drawing.Size(110, 30);
+            this.btnAutreVehiculeListe.TabIndex = 85;
+            this.btnAutreVehiculeListe.Text = "Autre véhicule";
+            this.btnAutreVehiculeListe.UseVisualStyleBackColor = true;
+            this.btnAutreVehiculeListe.Click += new System.EventHandler(this.btnAutreVehiculeListe_Click);
+            // 
             // Services
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.gpbSelection);
             this.Controls.Add(this.gpbDescription);
+            this.Controls.Add(this.gpbSelection);
             this.Controls.Add(this.btnEnregistrer);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnFermer);
@@ -620,5 +646,7 @@ namespace GarageCreditCeleste
         private System.Windows.Forms.Label lblPrixNeuf;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtPrixNeuf;
+        private System.Windows.Forms.Button btnAutreVehiculeInfo;
+        private System.Windows.Forms.Button btnAutreVehiculeListe;
     }
 }

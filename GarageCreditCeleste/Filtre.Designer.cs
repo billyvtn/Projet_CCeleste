@@ -76,6 +76,7 @@ namespace GarageCreditCeleste
             this.txtPuissanceMaxi.TabIndex = 8;
             this.txtPuissanceMaxi.Text = "Maximum";
             this.txtPuissanceMaxi.Click += new System.EventHandler(this.txtPuissanceMaxi_Click);
+            this.txtPuissanceMaxi.TextChanged += new System.EventHandler(this.txtPuissanceMaxi_TextChanged);
             // 
             // txtPuissanceMini
             // 
@@ -86,6 +87,7 @@ namespace GarageCreditCeleste
             this.txtPuissanceMini.TabIndex = 7;
             this.txtPuissanceMini.Text = "Minimum";
             this.txtPuissanceMini.Click += new System.EventHandler(this.txtPuissanceMini_Click);
+            this.txtPuissanceMini.TextChanged += new System.EventHandler(this.txtPuissanceMini_TextChanged);
             // 
             // groupBox5
             // 
@@ -108,6 +110,7 @@ namespace GarageCreditCeleste
             this.txtKilometrageMaxi.TabIndex = 6;
             this.txtKilometrageMaxi.Text = "Maximum";
             this.txtKilometrageMaxi.Click += new System.EventHandler(this.txtKilometrageMaxi_Click);
+            this.txtKilometrageMaxi.TextChanged += new System.EventHandler(this.txtKilometrageMaxi_TextChanged);
             // 
             // txtKilometrageMini
             // 
@@ -118,6 +121,7 @@ namespace GarageCreditCeleste
             this.txtKilometrageMini.TabIndex = 5;
             this.txtKilometrageMini.Text = "Minimum";
             this.txtKilometrageMini.Click += new System.EventHandler(this.txtKilometrageMini_Click);
+            this.txtKilometrageMini.TextChanged += new System.EventHandler(this.txtKilometrageMini_TextChanged);
             // 
             // btnAppliquer
             // 
@@ -159,6 +163,7 @@ namespace GarageCreditCeleste
             this.txtPrixMaxi.TabIndex = 2;
             this.txtPrixMaxi.Text = "Maximum";
             this.txtPrixMaxi.Click += new System.EventHandler(this.txtPrixMaxi_Click);
+            this.txtPrixMaxi.TextChanged += new System.EventHandler(this.txtPrixMaxi_TextChanged);
             // 
             // txtPrixMini
             // 
@@ -192,6 +197,7 @@ namespace GarageCreditCeleste
             this.txtAnneeMaxi.TabIndex = 4;
             this.txtAnneeMaxi.Text = "Maximum";
             this.txtAnneeMaxi.Click += new System.EventHandler(this.txtAnneeMaxi_Click);
+            this.txtAnneeMaxi.TextChanged += new System.EventHandler(this.txtAnneeMaxi_TextChanged);
             // 
             // groupBox3
             // 
@@ -225,6 +231,7 @@ namespace GarageCreditCeleste
             this.txtAnneeMini.TabIndex = 3;
             this.txtAnneeMini.Text = "Minimum";
             this.txtAnneeMini.Click += new System.EventHandler(this.txtAnneeMini_Click);
+            this.txtAnneeMini.TextChanged += new System.EventHandler(this.txtAnneeMini_TextChanged);
             // 
             // label8
             // 
@@ -256,6 +263,7 @@ namespace GarageCreditCeleste
             this.txtCouleur.TabIndex = 9;
             this.txtCouleur.Text = "ex. rouge, bleu, noire...";
             this.txtCouleur.Click += new System.EventHandler(this.txtCouleur_Click);
+            this.txtCouleur.TextChanged += new System.EventHandler(this.txtCouleur_TextChanged);
             // 
             // Filtre
             // 
