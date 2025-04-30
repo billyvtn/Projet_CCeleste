@@ -104,6 +104,7 @@ namespace GarageCreditCeleste
             this.txtTauxAnnuel.Name = "txtTauxAnnuel";
             this.txtTauxAnnuel.Size = new System.Drawing.Size(121, 24);
             this.txtTauxAnnuel.TabIndex = 13;
+            this.txtTauxAnnuel.TextChanged += new System.EventHandler(this.txtTauxAnnuel_TextChanged);
             // 
             // label2
             // 
@@ -123,6 +124,7 @@ namespace GarageCreditCeleste
             this.cbxDurée.Name = "cbxDurée";
             this.cbxDurée.Size = new System.Drawing.Size(121, 26);
             this.cbxDurée.TabIndex = 11;
+            this.cbxDurée.TextChanged += new System.EventHandler(this.cbxDurée_TextChanged);
             // 
             // label1
             // 
@@ -398,9 +400,9 @@ namespace GarageCreditCeleste
             // 
             this.btnConfirmer.Enabled = false;
             this.btnConfirmer.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConfirmer.Location = new System.Drawing.Point(696, 396);
+            this.btnConfirmer.Location = new System.Drawing.Point(696, 395);
             this.btnConfirmer.Name = "btnConfirmer";
-            this.btnConfirmer.Size = new System.Drawing.Size(91, 30);
+            this.btnConfirmer.Size = new System.Drawing.Size(91, 31);
             this.btnConfirmer.TabIndex = 42;
             this.btnConfirmer.Text = "Confirmer";
             this.btnConfirmer.UseVisualStyleBackColor = true;

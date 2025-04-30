@@ -158,5 +158,21 @@ namespace GarageCreditCeleste
 
             }
         }
+
+        private void txtTauxAnnuel_TextChanged(object sender, EventArgs e)
+        {
+            if (!Regex.IsMatch(txtTauxAnnuel.Text, @"^\d*$"))
+            {
+                txtTauxAnnuel.Text = "";
+            }
+        }
+
+        private void cbxDurée_TextChanged(object sender, EventArgs e)
+        {
+            if (!Regex.IsMatch(cbxDurée.Text, @"^\d*$"))
+            {
+                cbxDurée.Text = "";
+            }
+        }
     }
 }

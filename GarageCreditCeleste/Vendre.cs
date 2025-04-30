@@ -316,5 +316,21 @@ namespace GarageCreditCeleste
                 txtPrixNeuf.Text = "";
             }
         }
+
+        private void btnAutreVehiculeListe_Click(object sender, EventArgs e)
+        {
+            groupBox1.Visible = true;
+            gpbDescription.Visible = false;
+            gpbSelection.Visible = false;
+            Globales.voiture = null;
+        }
+
+        private void btnAutreVehiculeInfos_Click(object sender, EventArgs e)
+        {
+            groupBox1.Visible = true;
+            gpbDescription.Visible = false;
+            gpbSelection.Visible = false;
+            Globales.voiture = null;
+        }
     }
 }

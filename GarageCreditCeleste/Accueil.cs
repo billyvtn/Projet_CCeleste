@@ -531,7 +531,7 @@ namespace GarageCreditCeleste
 
             graphics.DrawString("=== FACTURE ===", titleFont, PdfBrushes.Black, new Syncfusion.Drawing.PointF(180, y)); y += 20;
             graphics.DrawString("Date : " + DateTime.Now.ToString("dd/MM/yyyy"), contentFont, PdfBrushes.Black, new Syncfusion.Drawing.PointF(x1, y)); y += 20;
-            graphics.DrawString("Garage Credit Celeste", sectionFont, PdfBrushes.Black, new Syncfusion.Drawing.PointF(x1, y));
+            graphics.DrawString("HDR Garage Credit Celeste", sectionFont, PdfBrushes.Black, new Syncfusion.Drawing.PointF(x1, y));
             y += 40;
 
             // Infos client
@@ -556,9 +556,7 @@ namespace GarageCreditCeleste
                 graphics.DrawString("Kilométrage : " + Globales.voitureRachat.getKilometrage() + " km", contentFont, PdfBrushes.Black, new Syncfusion.Drawing.PointF(x1, y));
                 graphics.DrawString("Puissance : " + Globales.voitureRachat.getPuissance() + " CV", contentFont, PdfBrushes.Black, new Syncfusion.Drawing.PointF(x2, y)); y += 20;
                 graphics.DrawString("Date Vente : " + DateTime.Now.ToString("dd/MM/yyyy"), contentFont, PdfBrushes.Black, new Syncfusion.Drawing.PointF(x1, y));
-                graphics.DrawString("Prix de vente : " + Globales.voitureRachat.getPrix().ToString("0.00") + " Euros", contentFont, PdfBrushes.Black, new Syncfusion.Drawing.PointF(x2, y)); y += 20;
-                graphics.DrawString("Mode de paiement : " + cboModePaiement.SelectedItem.ToString(), contentFont, PdfBrushes.Black, new Syncfusion.Drawing.PointF(x1, y)); y += 30;
-                graphics.DrawString("TOTAL A NOTRE CHARGE: " + Globales.voitureRachat.getPrix().ToString("C") + " Euros", titleFont, PdfBrushes.Black, new Syncfusion.Drawing.PointF(x1, y)); y += 30;
+                graphics.DrawString("Prix de vente : " + Globales.voitureRachat.getPrix().ToString("0.00") + " Euros", contentFont, PdfBrushes.Black, new Syncfusion.Drawing.PointF(x2, y)); y += 40;
             }
 
          
@@ -587,11 +585,12 @@ namespace GarageCreditCeleste
                 {
                     graphics.DrawString("Informations crédit", sectionFont, PdfBrushes.Black, new Syncfusion.Drawing.PointF(x1, y)); y += 25;
                     graphics.DrawString("Début du crédit : " + Globales.credit.getDate(), contentFont, PdfBrushes.Black, new Syncfusion.Drawing.PointF(x1, y));
-                    graphics.DrawString("Durée du crédit : " + Globales.credit.getDureeCredit(), contentFont, PdfBrushes.Black, new Syncfusion.Drawing.PointF(x2, y)); y += 20;
+                    graphics.DrawString("Durée du crédit : " + Globales.credit.getDureeCredit() + " mois", contentFont, PdfBrushes.Black, new Syncfusion.Drawing.PointF(x2, y)); y += 20;
                     graphics.DrawString("Mensualité : " + Globales.credit.getMensualiteCredit() + " Euros", contentFont, PdfBrushes.Black, new Syncfusion.Drawing.PointF(x1, y));
                     graphics.DrawString("Taux du crédit : " + Globales.credit.getTauxCredit() + " %", contentFont, PdfBrushes.Black, new Syncfusion.Drawing.PointF(x2, y)); y += 20;
-                    graphics.DrawString("Mode de paiement : " + cboModePaiement.SelectedItem.ToString(), labelFont, PdfBrushes.Black, new Syncfusion.Drawing.PointF(x1, y));
-                    graphics.DrawString("TOTAL : " + (0 + Globales.credit.getMonApport()).ToString("C") + " Euros", labelFont, PdfBrushes.Black, new Syncfusion.Drawing.PointF(x2, y)); y += 30;
+                    graphics.DrawString("Total du crédit : " + Globales.credit.getMontantCredit().ToString("0.00") + " Euros", contentFont, PdfBrushes.Black, new Syncfusion.Drawing.PointF(x1, y)); y += 40;
+                    graphics.DrawString("Mode de paiement : " + cboModePaiement.SelectedItem.ToString(), titleFont, PdfBrushes.Black, new Syncfusion.Drawing.PointF(x1, y)); y += 20;
+                    graphics.DrawString("TOTAL A VOTRE CHARGE : " + (0 + Globales.credit.getMonApport()).ToString("C") + " Euros", titleFont, PdfBrushes.Black, new Syncfusion.Drawing.PointF(x1, y)); y += 30;
                 }
                 else
                 {
@@ -614,6 +613,23 @@ namespace GarageCreditCeleste
                 }
             }
 
+            if(vente && !achat)
+            {
+                graphics.DrawString("Mode de paiement : " + cboModePaiement.SelectedItem.ToString(), labelFont, PdfBrushes.Black, new Syncfusion.Drawing.PointF(x1, y)); y += 20;
+                graphics.DrawString("TOTAL A NOTRE CHARGE : " + Globales.voitureRachat.getPrix().ToString("C") + " Euros", titleFont, PdfBrushes.Black, new Syncfusion.Drawing.PointF(x1, y)); y += 30;
+            }
+
+            if(entretien || controleTechnique)
+            {
+                graphics.DrawString("Informations du véhicule client", sectionFont, PdfBrushes.Black, new Syncfusion.Drawing.PointF(x1, y)); y += 25;
+                graphics.DrawString("Immatriculation : " + Globales.voiture.getImmatriculation(), contentFont, PdfBrushes.Black, new Syncfusion.Drawing.PointF(x1, y));
+                graphics.DrawString("Marque : " + Globales.voiture.getMarque(), contentFont, PdfBrushes.Black, new Syncfusion.Drawing.PointF(x2, y)); y += 20;
+                graphics.DrawString("Modèle : " + Globales.voiture.getModele(), contentFont, PdfBrushes.Black, new Syncfusion.Drawing.PointF(x1, y));
+                graphics.DrawString("Année : " + Globales.voiture.getAnnee(), contentFont, PdfBrushes.Black, new Syncfusion.Drawing.PointF(x2, y)); y += 20;
+                graphics.DrawString("Kilométrage : " + Globales.voiture.getKilometrage() + " km", contentFont, PdfBrushes.Black, new Syncfusion.Drawing.PointF(x1, y));
+                graphics.DrawString("Couleur : " + Globales.voiture.getCouleur(), contentFont, PdfBrushes.Black, new Syncfusion.Drawing.PointF(x2, y)); y += 20;
+                graphics.DrawString("Puissance : " + Globales.voiture.getPuissance() + " CV", contentFont, PdfBrushes.Black, new Syncfusion.Drawing.PointF(x1, y)); y += 30;
+            }
             if (entretien)
             {
                 graphics.DrawString("Entretien", sectionFont, PdfBrushes.Black, new Syncfusion.Drawing.PointF(x1, y)); y += 25;
