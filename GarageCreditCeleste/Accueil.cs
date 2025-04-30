@@ -147,9 +147,7 @@ namespace GarageCreditCeleste
                     
                     lblDateMensualité.Text = Globales.credit.getDate();
                     
-                }
-                
-                    
+                }                                  
 
                 if(Globales.Type.Contains("Achat") && !(Globales.Type.Contains("Vente1") || Globales.Type.Contains("Vente2")))
                 {
@@ -171,9 +169,7 @@ namespace GarageCreditCeleste
                         lblPrixTotal.Text = (0 + Globales.credit.getMonApport()).ToString("C");
                     }
                 }
-               
-
-
+              
                 if (Globales.Type.Contains("ControleTechnique"))
                 {
                     gpbControleTech.Visible = true;
@@ -276,7 +272,6 @@ namespace GarageCreditCeleste
         {
             Globales.demarrage.Close();
         }
-
         
         // Messages par défaut des champs
         string defaultNom = "ex. Dupont";
@@ -287,7 +282,6 @@ namespace GarageCreditCeleste
         string defaultAdresseVoie = "ex. rue Marechal Foch";
         string defaultAdresseVille = "ex. Lingolsheim";
         string defaultAdresseCP = "ex. 67380";
-
 
         private void txtNom_Click(object sender, EventArgs e)
         {
@@ -403,7 +397,7 @@ namespace GarageCreditCeleste
         }
         private void txtAdresseVoie_TextChanged(object sender, EventArgs e)
         {
-            if (!Regex.IsMatch(txtAdresseVoie.Text, @"^[a-zA-Z]+$"))
+            if (!Regex.IsMatch(txtAdresseVoie.Text, @"^[a-zA-Z\s]+$"))
             {
                 txtAdresseVoie.Text = "";
             }
@@ -434,7 +428,6 @@ namespace GarageCreditCeleste
             btnVendre.Enabled = false;
             btnServices.Enabled = false;
         }
-
 
         private void btnEnregistrer_Click(object sender, EventArgs e)
         {
@@ -474,6 +467,25 @@ namespace GarageCreditCeleste
                 btnConnecter.Enabled = false;
                 MessageBox.Show("Les informations ont été enregistrées avec succès.", "Enregistrement", MessageBoxButtons.OK);
                 Globales.Type.Add("NouveauClient");
+
+                string civi;
+                if (Globales.client.getCivilite())
+                {
+                    //rdbCivHomme.Checked = true;
+                    civi = "Mr. ";
+                }
+                else
+                {
+                    //rdbCivFemme.Checked = false;
+                    civi = "Mme. ";
+                }
+                gpbInfoClient.Visible = false;
+                gpbInfoFixe.Visible = true;
+                lblCivNomPrenom.Text = civi + Globales.client.getNom() + " " + Globales.client.getPrenom();
+                lblEmail.Text = Globales.client.getEmail();
+                lblNumero.Text = Globales.client.getNumeroTelephone();
+                lblAdresse.Text = Globales.client.getAdresseNum() + " " + Globales.client.getAdresseVoie();
+                lblVilleCP.Text = Globales.client.getVille() + " " + Globales.client.getCodePostal();
             }
         }
 
@@ -1094,7 +1106,6 @@ namespace GarageCreditCeleste
                 }
             }
         }
-
 
         private void btnAnnuler_Click(object sender, EventArgs e)
         {

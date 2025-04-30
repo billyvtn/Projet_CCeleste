@@ -54,6 +54,7 @@ namespace GarageCreditCeleste
             this.label1 = new System.Windows.Forms.Label();
             this.btnEnregistrer = new System.Windows.Forms.Button();
             this.gpbDescription = new System.Windows.Forms.GroupBox();
+            this.btnAutreVehiculeInfo = new System.Windows.Forms.Button();
             this.lblPrixNeuf = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -71,10 +72,9 @@ namespace GarageCreditCeleste
             this.lblPuissance = new System.Windows.Forms.Label();
             this.lblModele = new System.Windows.Forms.Label();
             this.gpbSelection = new System.Windows.Forms.GroupBox();
+            this.btnAutreVehiculeListe = new System.Windows.Forms.Button();
             this.btnSelectionner = new System.Windows.Forms.Button();
             this.lsbVoituresClient = new System.Windows.Forms.ListBox();
-            this.btnAutreVehiculeInfo = new System.Windows.Forms.Button();
-            this.btnAutreVehiculeListe = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.gpbDescription.SuspendLayout();
             this.gpbSelection.SuspendLayout();
@@ -304,7 +304,9 @@ namespace GarageCreditCeleste
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.SystemColors.Control;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.label2.ForeColor = System.Drawing.SystemColors.Desktop;
             this.label2.Location = new System.Drawing.Point(698, 12);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(94, 18);
@@ -360,6 +362,17 @@ namespace GarageCreditCeleste
             this.gpbDescription.Text = "Description de votre véhicule";
             this.gpbDescription.Visible = false;
             this.gpbDescription.Enter += new System.EventHandler(this.gpbDescription_Enter);
+            // 
+            // btnAutreVehiculeInfo
+            // 
+            this.btnAutreVehiculeInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.btnAutreVehiculeInfo.Location = new System.Drawing.Point(258, 17);
+            this.btnAutreVehiculeInfo.Name = "btnAutreVehiculeInfo";
+            this.btnAutreVehiculeInfo.Size = new System.Drawing.Size(110, 30);
+            this.btnAutreVehiculeInfo.TabIndex = 84;
+            this.btnAutreVehiculeInfo.Text = "Autre véhicule";
+            this.btnAutreVehiculeInfo.UseVisualStyleBackColor = true;
+            this.btnAutreVehiculeInfo.Click += new System.EventHandler(this.btnAutreVehiculeInfo_Click);
             // 
             // lblPrixNeuf
             // 
@@ -528,6 +541,17 @@ namespace GarageCreditCeleste
             this.gpbSelection.Text = "Sélection de votre véhicule";
             this.gpbSelection.Visible = false;
             // 
+            // btnAutreVehiculeListe
+            // 
+            this.btnAutreVehiculeListe.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.btnAutreVehiculeListe.Location = new System.Drawing.Point(12, 351);
+            this.btnAutreVehiculeListe.Name = "btnAutreVehiculeListe";
+            this.btnAutreVehiculeListe.Size = new System.Drawing.Size(110, 30);
+            this.btnAutreVehiculeListe.TabIndex = 85;
+            this.btnAutreVehiculeListe.Text = "Autre véhicule";
+            this.btnAutreVehiculeListe.UseVisualStyleBackColor = true;
+            this.btnAutreVehiculeListe.Click += new System.EventHandler(this.btnAutreVehiculeListe_Click);
+            // 
             // btnSelectionner
             // 
             this.btnSelectionner.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
@@ -549,28 +573,6 @@ namespace GarageCreditCeleste
             this.lsbVoituresClient.Size = new System.Drawing.Size(274, 292);
             this.lsbVoituresClient.TabIndex = 82;
             this.lsbVoituresClient.SelectedIndexChanged += new System.EventHandler(this.lsbVoituresClient_SelectedIndexChanged);
-            // 
-            // btnAutreVehiculeInfo
-            // 
-            this.btnAutreVehiculeInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.btnAutreVehiculeInfo.Location = new System.Drawing.Point(258, 17);
-            this.btnAutreVehiculeInfo.Name = "btnAutreVehiculeInfo";
-            this.btnAutreVehiculeInfo.Size = new System.Drawing.Size(110, 30);
-            this.btnAutreVehiculeInfo.TabIndex = 84;
-            this.btnAutreVehiculeInfo.Text = "Autre véhicule";
-            this.btnAutreVehiculeInfo.UseVisualStyleBackColor = true;
-            this.btnAutreVehiculeInfo.Click += new System.EventHandler(this.btnAutreVehiculeInfo_Click);
-            // 
-            // btnAutreVehiculeListe
-            // 
-            this.btnAutreVehiculeListe.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.btnAutreVehiculeListe.Location = new System.Drawing.Point(12, 351);
-            this.btnAutreVehiculeListe.Name = "btnAutreVehiculeListe";
-            this.btnAutreVehiculeListe.Size = new System.Drawing.Size(110, 30);
-            this.btnAutreVehiculeListe.TabIndex = 85;
-            this.btnAutreVehiculeListe.Text = "Autre véhicule";
-            this.btnAutreVehiculeListe.UseVisualStyleBackColor = true;
-            this.btnAutreVehiculeListe.Click += new System.EventHandler(this.btnAutreVehiculeListe_Click);
             // 
             // Services
             // 
